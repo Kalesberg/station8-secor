@@ -1,5 +1,5 @@
 ---
-parent: ".forestry/content/pages/markets.json"
+parent: ".forestry/content/pages/blog.json"
 date: 2020-08-19T11:15:45.000+00:00
 heroImage: "/.forestry/content/images/img_3323.JPG"
 tags:
