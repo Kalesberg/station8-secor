@@ -1,0 +1,18 @@
+---
+label: Developer Settings
+hide_body: true
+fields:
+- name: settings
+  type: field_group
+  config: {}
+  fields:
+  - name: disabled
+    type: boolean
+    label: Disabled
+    default: false
+    description: Turn this setting on to hide this element and everything it contains
+      without deleting it's contents.
+  label: Developer Settings
+  description: "<strong>Warning:</strong> Modifying anything in here may break the
+    site."
+  hidden: false

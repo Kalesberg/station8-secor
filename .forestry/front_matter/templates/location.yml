@@ -1,0 +1,119 @@
+---
+label: Location
+hide_body: true
+fields:
+- name: type
+  type: text
+  config:
+    required: true
+  label: Type
+  hidden: true
+  default: Location
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+  description: Name of the location
+- name: phoneNumber
+  type: text
+  config:
+    required: true
+  label: Phone Number
+- name: description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Description
+- name: addressLine1
+  type: text
+  config:
+    required: true
+  label: Address Line 1
+- name: addressLine2
+  type: text
+  config:
+    required: false
+  label: Address Line 2
+- name: city
+  type: text
+  config:
+    required: true
+  label: City
+- name: state
+  type: select
+  default: []
+  config:
+    required: true
+    options:
+    - AL
+    - AK
+    - AZ
+    - AR
+    - CA
+    - CO
+    - CT
+    - DE
+    - FL
+    - GA
+    - HI
+    - ID
+    - IL
+    - IN
+    - IA
+    - KS
+    - KY
+    - LA
+    - ME
+    - MD
+    - MA
+    - MI
+    - MN
+    - MS
+    - MO
+    - MT
+    - NE
+    - NV
+    - HG
+    - NJ
+    - NM
+    - NY
+    - NC
+    - ND
+    - OH
+    - OK
+    - OR
+    - PA
+    - RI
+    - SC
+    - SD
+    - TN
+    - TX
+    - UT
+    - VT
+    - VA
+    - WA
+    - WV
+    - WI
+    - WY
+    - DC
+    - AS
+    - GU
+    - MP
+    - PR
+    - VI
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: State
+- name: zipCode
+  type: text
+  config:
+    required: true
+  label: ZIP Code

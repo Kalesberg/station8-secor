@@ -1,0 +1,47 @@
+---
+label: Site Config
+hide_body: true
+fields:
+- name: favicon
+  type: file
+  config:
+    maxSize: 64
+  label: Favicon
+- type: text
+  name: title
+  label: Title
+  description: The name of the site
+  config:
+    required: true
+  default: Gatsby Forestry Template
+- type: text
+  name: description
+  label: Site Description
+  description: Used for SEO purposes
+  config:
+    required: true
+- type: text
+  name: repositoryUrl
+  label: Repository URL
+- name: titleDivider
+  type: text
+  config:
+    required: true
+    min: 1
+  label: Title Divider
+  description: The title divider is placed between the site name and the page title
+    in the tab/window title.
+  default: " | "
+- name: author
+  type: text
+  config:
+    required: true
+  label: Author
+  description: Used for SEO purposes
+  default: Demo
+- name: metaTags
+  type: tag_list
+  default: []
+  label: Meta Tags
+pages:
+- ".forestry/content/settings/config.json"

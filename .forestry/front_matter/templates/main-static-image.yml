@@ -1,0 +1,44 @@
+---
+label: 'Main: Static Image'
+hide_body: true
+fields:
+- name: heading
+  type: text
+  config:
+    required: true
+  label: Heading
+- name: subheading
+  type: text
+  config:
+    required: false
+  label: Subheading
+- name: image
+  type: field_group
+  config: {}
+  fields:
+  - name: image
+    type: include
+    config: {}
+    template: image
+    label: Image
+  label: Placeholder Image
+- name: videos
+  type: image_gallery
+  config: {}
+  label: Videos
+- name: showButton
+  type: boolean
+  label: Show Button
+- name: button
+  type: include
+  config: {}
+  template: shared-button
+  label: Button
+  showOnly:
+    field: showButton
+    value: true
+- name: developerSettings
+  type: include
+  config: {}
+  template: developer-settings-main-blocks
+  label: Developer Settings

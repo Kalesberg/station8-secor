@@ -1,0 +1,54 @@
+---
+label: 'Header: Contact Form with Video Background'
+hide_body: true
+fields:
+- name: heading
+  type: text
+  config:
+    required: true
+  label: Heading
+- name: subheading
+  type: text
+  config:
+    required: true
+  label: Subheading
+- name: nameLabel
+  type: text
+  config:
+    required: true
+  label: Name Label
+- name: phoneLabel
+  type: text
+  config:
+    required: true
+  label: Email Label
+- name: messageLabel
+  type: text
+  config:
+    required: true
+  label: Message Label
+- name: image
+  type: file
+  config:
+    maxSize: 64
+  label: Cutout Image
+- name: video
+  type: text
+  config:
+    required: true
+  label: Cutout Video URL
+- name: videoFile
+  type: file
+  config:
+    maxSize: 64
+  label: Video
+- name: url
+  type: text
+  config:
+    required: true
+  label: Form Submission URL
+- name: developerSettings
+  type: include
+  config: {}
+  template: developer-settings
+  label: Developer Settings

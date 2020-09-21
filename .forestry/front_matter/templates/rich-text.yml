@@ -1,0 +1,32 @@
+---
+label: Rich Text
+hide_body: true
+fields:
+- name: content
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: html-blocks
+  label: Content
+  description: Add self-hosted images as a separate block. Only external url images
+    supported here.
+- name: color
+  type: select
+  default: []
+  config:
+    required: false
+    options: []
+    source:
+      type: documents
+      section: colors-d15e61e1-3b25-4cc6-ace1-0a6173891c38
+      file: ".forestry/content/settings/colors.json"
+      path: 
+  label: Color
+- name: settings
+  type: include
+  config: {}
+  template: developer-settings
+  label: Developer Settings

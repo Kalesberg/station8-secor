@@ -1,0 +1,14 @@
+---
+label: 'Settings: Social Media Account'
+hide_body: true
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+- name: icon
+  type: file
+  config:
+    maxSize: 64
+  label: Icon

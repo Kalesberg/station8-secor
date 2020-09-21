@@ -1,0 +1,65 @@
+---
+label: 'Main: Hero'
+hide_body: true
+fields:
+- name: smallHeading
+  type: text
+  config:
+    required: true
+  label: Small Heading
+- name: largeHeading
+  type: text
+  config:
+    required: true
+  label: Large Heading
+- name: mediumHeading
+  type: text
+  config:
+    required: false
+  label: Medium Heading
+- name: body
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Body
+- name: backgrounds
+  type: field_group_list
+  fields:
+  - name: class
+    type: text
+    config:
+      required: false
+    label: Custom Class Name
+  - name: image
+    type: include
+    config: {}
+    template: image
+    label: Image
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Background Layers
+  description: Layers will be stacked with the top layer being on bottom.
+- name: pageDownIcon
+  type: field_group
+  config: {}
+  fields:
+  - name: icon
+    type: include
+    config: {}
+    template: image
+    label: Icon
+  label: Page Down Icon
+- name: showRedBar
+  type: boolean
+  label: Show Red Bar
+- name: developerSettings
+  type: include
+  config: {}
+  template: developer-settings-main-blocks
+  label: Developer Settings

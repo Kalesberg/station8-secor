@@ -1,0 +1,9 @@
+---
+label: 'Footer: Logo'
+hide_body: true
+fields:
+- name: logo
+  type: include
+  config: {}
+  template: image
+  label: Logo

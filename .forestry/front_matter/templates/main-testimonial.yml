@@ -1,0 +1,45 @@
+---
+label: 'Main: Testimonial'
+hide_body: true
+fields:
+- name: quote
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Quote
+- name: author
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Author
+- name: buttonLabel
+  type: text
+  config:
+    required: false
+  label: Button Label
+- name: images
+  type: field_group_list
+  fields:
+  - name: image
+    type: include
+    config: {}
+    template: image
+    label: Image
+  config:
+    min: 
+    max: 
+    labelField: title
+  label: Images
+- name: settings
+  type: include
+  config: {}
+  template: developer-settings-main-blocks
+  label: Developer Settings

@@ -1,0 +1,80 @@
+.header {
+  background: white;
+  position: fixed;
+  grid-column: 1;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: var(--window-height);
+  width: 88px;
+  pointer-events: none;
+  .menu-button {
+    pointer-events: all;
+    cursor: pointer;
+    padding: 1.5rem 1rem;
+    z-index: 2;
+    margin-bottom: 0;
+    width: 5rem;
+    height: 5rem;
+    transition: all 0.5s ease-in-out;
+    transform: scale(1);
+    &:hover {
+      transform: scale(1.05);
+    }
+    &.close-button {
+      padding: 1.5rem;
+      transition: all 0.5s ease-in-out;
+      transform: scale(1);
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  .menu {
+    pointer-events: all;
+    background: white;
+    display: grid;
+    grid-template-columns: auto 1fr;
+
+    grid-template-rows: 1fr auto;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: calc(-100vw - 88px);
+    width: calc(100vw - 88px);
+    height: var(--window-height);
+    min-height: var(--window-height);
+    z-index: 1;
+    transition: all 0.5s ease-in-out;
+    overflow-y: auto;
+    &.active {
+      left: 88px;
+    }
+  }
+  @media (max-width: 1023px) {
+    background: white;
+    grid-column: 1 / 3;
+    grid-row: 2;
+    height: 88px;
+    width: 100%;
+    position: relative;
+    .menu {
+      z-index: 3;
+      background: white;
+      top: var(--window-height);
+      left: 0;
+      width: 100%;
+      margin: 0;
+      padding: 16vw 10vw 0;
+      grid-template-columns: 1fr;
+      min-height: unset;
+      height: var(--window-height);
+      transition: all 0.5s ease-in-out;
+      overflow: hidden;
+      &.active {
+        left: unset;
+        top: -88px;
+      }
+    }
+  }
+}

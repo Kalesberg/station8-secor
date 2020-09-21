@@ -1,0 +1,51 @@
+---
+label: 'Main: Contact Form'
+hide_body: true
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+  default: Contact Us
+- name: subtitle
+  type: text
+  config:
+    required: false
+  label: Subtitle
+  default: Submit your information and we will be in touch!
+- name: nameLabel
+  type: text
+  config:
+    required: false
+  label: Name Label
+  default: 'Contact Name:'
+- name: methodLabel
+  type: text
+  config:
+    required: false
+  label: Method Label
+  default: Contact Method
+- name: buttonLabel
+  type: text
+  config:
+    required: false
+  label: Button Label
+  default: Submit
+- name: termsAndConditionsLabel
+  type: text
+  config:
+    required: false
+  label: Terms and Conditions Label
+  default: I agree to the terms and conditions
+- name: pageclipLink
+  type: text
+  config:
+    required: false
+  label: Pageclip Link
+  default: https://send.pageclip.co/Od5O1Ov6E3apA4SrUgdyzObHzMdu5VBK
+- name: settings
+  type: include
+  config: {}
+  template: developer-settings-main-blocks
+  label: Developer Settings

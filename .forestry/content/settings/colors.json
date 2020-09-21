@@ -1,0 +1,24 @@
+{
+  "colors": [
+    {
+      "name": "Venetian Red",
+      "color": "#D0021B"
+    },
+    {
+      "name": "Grey",
+      "color": "#7F7F7F"
+    },
+    {
+      "name": "Dark Pastel Green",
+      "color": "#08B237"
+    },
+    {
+      "name": "Alizarin",
+      "color": "#ED1C24"
+    },
+    {
+      "name": "Midnight Express",
+      "color": "#181E49"
+    }
+  ]
+}

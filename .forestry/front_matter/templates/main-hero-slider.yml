@@ -1,0 +1,91 @@
+---
+label: 'Main: Hero Slider'
+hide_body: true
+fields:
+- name: slides
+  type: field_group_list
+  fields:
+  - name: image
+    type: file
+    config:
+      maxSize: 64
+    label: Image
+    description: A high quality, wide image with visual focus on the right half of
+      the image works best in hero blocks
+  - name: heading
+    type: text
+    config:
+      required: false
+    label: Heading
+    description: The heading is left-justified and appears above the body text (if
+      field left blank, <strong>Title</strong> will be used)
+  - name: body
+    type: textarea
+    default: ''
+    config:
+      required: true
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: Body
+    description: Main text for the hero slide
+  - name: developerSettings
+    type: include
+    config: {}
+    template: developer-settings
+    label: Developer Settings
+  config:
+    min: 1
+    max: 
+    labelField: heading
+  label: Slides
+  description: Each hero block needs at least one slide containing text and an image,
+    but multiple slides are supported
+- name: options
+  type: field_group
+  config: {}
+  fields:
+  - name: showScrollButton
+    type: boolean
+    label: Show Scroll Button
+    default: true
+  - name: showPauseButton
+    type: boolean
+    label: Show Pause Button
+    default: true
+  - name: autoCyclePages
+    type: boolean
+    label: Auto Cycle Pages
+    default: true
+  - name: autoCycleDelay
+    type: number
+    label: Auto Cycle Delay
+    description: ''
+    default: 10
+    required: true
+    config:
+      min: 
+      max: 
+      step: 
+    showOnly:
+      field: autoCyclePages
+      value: true
+  - name: clickCycleDelay
+    type: number
+    label: Click Cycle Delay
+    description: ''
+    default: 20
+    required: true
+    config:
+      min: 
+      max: 
+      step: 
+    showOnly:
+      field: autoCyclePages
+      value: true
+  label: Options
+- name: developerSettings
+  type: include
+  config: {}
+  template: developer-settings-main-blocks
+  label: Developer Settings

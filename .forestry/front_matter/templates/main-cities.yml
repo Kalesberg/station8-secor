@@ -1,0 +1,59 @@
+---
+label: 'Main: Cities'
+hide_body: true
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+- name: body
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Body
+- name: cities
+  type: field_group_list
+  fields:
+  - name: image
+    type: field_group
+    config: {}
+    fields:
+    - name: image
+      type: include
+      config: {}
+      template: image
+      label: Image
+    label: Image
+  - name: name
+    type: text
+    config:
+      required: true
+    label: Name
+  - name: nativeLanguageName
+    type: text
+    config:
+      required: true
+    label: Native Language Name
+  - name: developerSettings
+    type: include
+    config: {}
+    template: developer-settings
+    label: Developer Settings
+  config:
+    min: 
+    max: 
+    labelField: name
+  label: Cities
+- name: showRedBar
+  type: boolean
+  label: Show Red Bar
+- name: developerSettings
+  type: include
+  config: {}
+  template: developer-settings-main-blocks
+  label: Developer Settings

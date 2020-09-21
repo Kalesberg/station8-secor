@@ -1,0 +1,60 @@
+---
+label: 'Main: Company Merger'
+hide_body: true
+fields:
+- name: heading
+  type: text
+  config:
+    required: true
+  label: Heading
+- name: body
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Body
+- name: companies
+  type: field_group_list
+  fields:
+  - name: logo
+    type: field_group
+    config: {}
+    fields:
+    - name: image
+      type: include
+      config: {}
+      template: image
+      label: Image
+    label: Logo
+  - name: description
+    type: textarea
+    default: ''
+    config:
+      required: true
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: Description
+  - name: link
+    type: text
+    config:
+      required: true
+    label: Link
+  - name: developerSettings
+    type: include
+    config: {}
+    template: developer-settings
+    label: Developer Settings
+  config:
+    min: 
+    max: 
+    labelField: description
+  label: Companies
+- name: developerSettings
+  type: include
+  config: {}
+  template: developer-settings-main-blocks
+  label: Developer Settings

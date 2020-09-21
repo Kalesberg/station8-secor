@@ -1,0 +1,28 @@
+---
+label: Button
+hide_body: true
+fields:
+- name: style
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - Fill Button
+    - Fill Icon
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Style
+- name: buttonText
+  type: text
+  config:
+    required: false
+  label: Button Text
+- name: settings
+  type: include
+  config: {}
+  template: developer-settings
+  label: Developer Settings

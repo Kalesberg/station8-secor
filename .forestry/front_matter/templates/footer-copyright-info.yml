@@ -1,0 +1,18 @@
+---
+label: 'Footer: Copyright Info'
+hide_body: true
+fields:
+- name: blocks
+  type: blocks
+  label: Copyright Blocks
+  template_types:
+  - copyright-info-link
+  - copyright-info-text
+  config:
+    min: 
+    max: 
+- name: developerSettings
+  type: include
+  config: {}
+  template: developer-settings
+  label: Developer Settings

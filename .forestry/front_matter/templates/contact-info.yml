@@ -1,0 +1,52 @@
+---
+label: Contact Info
+hide_body: true
+fields:
+- name: phoneNumber
+  type: text
+  config:
+    required: true
+    min: 10
+    max: 10
+  label: Phone Number
+  description: Business phone number in a 10-digit format with no extra spacing or
+    characters.
+- name: address
+  type: textarea
+  config:
+    required: true
+  label: Address
+  description: Business address
+- name: googleMapsLink
+  type: text
+  config:
+    required: true
+  label: Google Maps Link
+- name: socialMediaLinks
+  type: field_group_list
+  fields:
+  - name: label
+    type: text
+    config:
+      required: true
+    label: Label
+    description: Label for the social media link
+  - name: link
+    type: text
+    config:
+      required: true
+    label: Link
+    description: Link to the social media profile
+  config:
+    min: 
+    max: 
+    labelField: label
+  label: Social Media Links
+  description: Insert social media links to be used throughout the site
+- name: email
+  type: text
+  config:
+    required: false
+  label: Email Address
+pages:
+- ".forestry/content/settings/contact.json"

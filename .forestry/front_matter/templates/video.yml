@@ -1,0 +1,19 @@
+---
+label: Video
+hide_body: true
+fields:
+- name: videoUrl
+  type: text
+  config:
+    required: true
+  label: Video URL
+- name: label
+  type: text
+  config:
+    required: false
+  label: Label
+- name: settings
+  type: include
+  config: {}
+  template: developer-settings
+  label: Developer Settings

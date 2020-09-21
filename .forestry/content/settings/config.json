@@ -1,0 +1,13 @@
+{
+  "title": "3 Seas Energy",
+  "description": "Description for the site",
+  "repositoryUrl": "https://github.com/s8webteam/3-seas",
+  "titleDivider": " | ",
+  "author": "Station8",
+  "metaTags": [
+    "Gatsby",
+    "Forestry.io",
+    "Station8"
+  ],
+  "favicon": "/.forestry/content/images/favicon.svg"
+}

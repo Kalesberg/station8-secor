@@ -1,0 +1,100 @@
+---
+label: Page
+hide_body: true
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+  description: The title will appear in the window/tab label after the site name.
+    For the home page, enter "Home"
+  default: Untitled
+- name: slug
+  type: text
+  config:
+    required: false
+  label: Slug
+  description: This is the text after the domain a user would enter to navigate to
+    this page. The slugs '<strong>/</strong>' and '<strong>404</strong>' are reserved
+    so do not use them in places they are not currently used. If nothing is entered
+    here, the slug will become a slug-ified version of the page title.
+- name: type
+  type: text
+  config:
+    required: true
+  label: Type
+  hidden: true
+  default: page
+- name: rows
+  type: field_group_list
+  fields:
+  - name: label
+    type: text
+    config:
+      required: true
+    label: Label
+    default: Untitled Row
+    hidden: false
+  - name: columns
+    type: field_group_list
+    fields:
+    - name: label
+      type: text
+      config:
+        required: true
+      label: Label
+      hidden: false
+      default: Untitled Column
+    - name: blocks
+      type: blocks
+      label: Blocks
+      template_types:
+      - main-animated-image
+      - main-articles-grid
+      - main-cities
+      - main-company-merger
+      - main-featured-articles
+      - main-hero
+      - main-highlights
+      - main-infographic
+      - main-leadership
+      - main-recent-articles
+      - main-rich-text
+      - main-static-image
+      config:
+        min: 
+        max: 
+    - name: settings
+      type: include
+      config: {}
+      template: developer-settings
+      label: Developer Settings
+    config:
+      min: 
+      max: 
+      labelField: 
+    label: Columns
+  - name: settings
+    type: include
+    config: {}
+    template: developer-settings
+    label: Developer Settings
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Rows
+- name: settings
+  type: include
+  config: {}
+  template: developer-settings
+  label: Developer Settings
+pages:
+- ".forestry/content/pages/404.json"
+- ".forestry/content/pages/about.json"
+- ".forestry/content/pages/demo.json"
+- ".forestry/content/pages/home.json"
+- ".forestry/content/pages/markets.json"
+- ".forestry/content/pages/press.json"
+- ".forestry/content/pages/privacy-cookie-policy.json"

@@ -1,0 +1,189 @@
+.default {
+  background: white;
+  padding: 0 8vw;
+  color: var(--color-midnight-express);
+  .heading {
+    padding-left: 2vw;
+    font: var(--font-soleto-black);
+    font-size: 2.4vw;
+    margin-bottom: 3vw;
+    text-transform: uppercase;
+    border: none;
+    background-color: unset;
+    cursor: pointer;
+    transform: scale(1);
+    transition: all 0.5s ease-in-out;
+    padding: 0;
+    margin-right: 2vw;
+    color: var(--color-grey);
+    pointer-events: none;
+    &:hover {
+      transform: scale(1.05);
+    }
+    &.active {
+      pointer-events: none;
+      color: var(--color-midnight-express);
+    }
+  }
+  .select-container {
+    padding: 3vw 3vw 3vw 39vw;
+    display: none;
+    justify-content: stretch;
+    .categories-list {
+      display: unset;
+      grid-column: 2;
+      font: var(--font-roboto-bold);
+      font-size: 4vw;
+      color: var(--color-midnight-express);
+    }
+  }
+  .desktop {
+    display: unset;
+  }
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    .leaders {
+      color: white;
+      display: grid;
+      grid-gap: 1vw;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      .leader {
+        margin-bottom: 0;
+        &.active {
+          color: inherit;
+        }
+        .image {
+          background-position: top !important;
+          transition: all 0.5s ease-in-out;
+          transform: scale(1);
+          cursor: pointer;
+          font: var(--font-soleto-black);
+          text-transform: uppercase;
+          height: 24vw;
+          display: grid;
+          grid-template-rows: 1fr auto auto;
+          justify-content: flex-start;
+          align-items: flex-end;
+          padding: 2vw;
+          &:hover {
+            transform: scale(1.05);
+          }
+          .name {
+            grid-row: 2;
+            font-size: 1.2vw;
+            margin-bottom: 0;
+          }
+          .title {
+            font: var(--font-soleto-bold);
+            grid-row: 3;
+            font-size: 1.1vw;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    .detail {
+      padding: 4vw 8vw;
+      .name {
+        font: var(--font-soleto-bold);
+        font-size: 2.8rem;
+        margin-bottom: 0.5rem;
+      }
+      .title {
+        font: var(--font-soleto-bold);
+        color: var(--color-alizarin);
+        font-size: 1.2rem;
+      }
+      .biography {
+        padding-top: 3rem;
+        color: inherit;
+        column-count: 2;
+        column-gap: 3rem;
+        font-size: 1rem;
+        color: var(--color-grey);
+        font: var(--font-roboto-regular);
+        .paragraph {
+          line-height: 1.4rem;
+        }
+      }
+    }
+  }
+  .mobile {
+    .leaders {
+      color: white;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(50vw, 1fr));
+      .leader {
+        margin-bottom: 0;
+        &.active {
+          color: inherit;
+        }
+        .image {
+          height: 50vw;
+          padding: 4vw;
+          transition: all 0.5s ease-in-out;
+          transform: scale(1);
+          cursor: pointer;
+          font: var(--font-soleto-black);
+          display: grid;
+          grid-template-rows: 1fr auto auto;
+          justify-content: flex-start;
+          align-items: flex-end;
+          padding: 2vw;
+          .name {
+            grid-row: 2;
+            font-size: 4vw;
+            margin-bottom: 0;
+          }
+          .title {
+            grid-row: 3;
+            margin-bottom: 0;
+            font: var(--font-soleto-regular);
+            font-size: 2.3vw;
+          }
+        }
+      }
+    }
+    .detail {
+      padding: 2rem;
+      .name {
+        font: var(--font-soleto-bold);
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+      .title {
+        font: var(--font-soleto-bold);
+        color: var(--color-alizarin);
+        font-size: 1.1rem;
+      }
+      .biography {
+        font-size: 1rem;
+        color: var(--color-grey);
+        font: var(--font-roboto-regular);
+        .paragraph {
+          line-height: 1.4rem;
+        }
+      }
+    }
+  }
+  @media (max-width: 1023px) {
+    padding: 0;
+    .heading {
+      text-align: right;
+      width: 100%;
+      padding: 0 3vw;
+      font-size: 4vw;
+    }
+    .select-container {
+      display: grid;
+    }
+    .desktop {
+      display: none;
+    }
+    .mobile {
+      display: unset;
+    }
+  }
+}

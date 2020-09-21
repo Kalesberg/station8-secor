@@ -1,0 +1,45 @@
+---
+label: Post
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: Title
+  config:
+    required: true
+- name: authors
+  type: list
+  config:
+    use_select: true
+    min: 1
+    max: 
+    source:
+      type: pages
+      section: authors
+  label: Authors
+- name: date
+  type: datetime
+  label: Date
+  description: Date post was created
+  config:
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: false
+  default: now
+- name: heroImage
+  type: file
+  config:
+    maxSize: 64
+  label: Hero Image
+  description: Enter hero image for blog post here
+  default: "/.forestry/content/images/sarah-dorweiler-9Z1KRIfpBTM-unsplash.jpg"
+- name: body
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Body

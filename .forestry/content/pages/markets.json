@@ -1,0 +1,125 @@
+{
+  "title": "Markets",
+  "type": "page",
+  "slug": "",
+  "rows": [
+    {
+      "label": "Hero Row",
+      "columns": [
+        {
+          "label": "Hero Column",
+          "blocks": [
+            {
+              "template": "main-hero",
+              "smallHeading": "Markets of focus.",
+              "largeHeading": "Bringing U.S. resources to Central and Eastern Europe — and beyond.",
+              "backgrounds": [
+                {
+                  "class": "base",
+                  "image": "/.forestry/content/images/regions3.png",
+                  "title": "Aerial View",
+                  "description": "Aerial View",
+                  "settings": {
+                    "disabled": false
+                  },
+                  "alt": "Aerial View"
+                },
+                {
+                  "class": "regionsLogo",
+                  "image": "/.forestry/content/images/regions2.png",
+                  "title": "Logo",
+                  "alt": "Logo",
+                  "description": "Logo",
+                  "settings": {
+                    "disabled": false
+                  }
+                },
+                {
+                  "class": "regionsRoads",
+                  "image": "/.forestry/content/images/regions.png",
+                  "title": "Roads",
+                  "alt": "Roads",
+                  "description": "Roads",
+                  "settings": {
+                    "disabled": false
+                  }
+                }
+              ],
+              "body": "",
+              "pageDownIcon": {
+                "image": "/.forestry/content/images/scroll.svg",
+                "title": "Scroll",
+                "alt": "Scroll",
+                "description": "Scroll",
+                "settings": {
+                  "disabled": false
+                }
+              },
+              "settings": {
+                "disabled": false,
+                "class": ""
+              },
+              "showRedBar": true,
+              "mediumHeading": ""
+            }
+          ],
+          "settings": {
+            "disabled": false
+          }
+        }
+      ],
+      "settings": {
+        "disabled": false
+      }
+    },
+    {
+      "label": "Static Image Row",
+      "columns": [
+        {
+          "label": "Static Image Column",
+          "blocks": [
+            {
+              "template": "main-static-image",
+              "button": {
+                "page": [
+
+                ],
+                "label": "Find out more",
+                "settings": {
+                  "disabled": false
+                },
+                "direction": "Right",
+                "link": ""
+              },
+              "text": "",
+              "image": {
+                "image": "/.forestry/content/images/map3seas.svg",
+                "title": "Placeholder",
+                "alt": "Placeholder",
+                "description": "Placeholder",
+                "settings": {
+                  "disabled": false
+                }
+              },
+              "settings": {
+                "disabled": false,
+                "class": ""
+              },
+              "heading": "Fueling the North-South energy corridor in the 3 Seas region.",
+              "showButton": true
+            }
+          ],
+          "settings": {
+            "disabled": false
+          }
+        }
+      ],
+      "settings": {
+        "disabled": false
+      }
+    }
+  ],
+  "settings": {
+    "disabled": false
+  }
+}

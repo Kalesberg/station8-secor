@@ -1,0 +1,578 @@
+{
+  "title": "Demo",
+  "type": "page",
+  "rows": [
+    {
+      "label": "Highlights Row",
+      "columns": [
+        {
+          "label": "Highlights Column",
+          "blocks": [
+            {
+              "template": "main-highlights",
+              "highlights": [
+                {
+                  "title": "Highlight 1 Title",
+                  "image": {
+                    "image": "/.forestry/content/images/placeholder.png",
+                    "title": "Highlight 1 Image Title",
+                    "alt": "Highlight 1 Alt Text",
+                    "description": "Highlight 1 Image Description",
+                    "settings": {
+                      "disabled": false
+                    }
+                  },
+                  "body": "Highlight 1 Body",
+                  "settings": {
+                    "disabled": false
+                  },
+                  "button": {
+                    "label": "Get in touch",
+                    "direction": "Right"
+                  }
+                },
+                {
+                  "title": "Highlight 2 Title",
+                  "body": "Highlight 2 Body",
+                  "image": {
+                    "image": "/.forestry/content/images/placeholder.png",
+                    "title": "Highlight 2 Image Title",
+                    "alt": "Highlight 2 Alt Text",
+                    "description": "Highlight 2 Description",
+                    "settings": {
+                      "disabled": false
+                    }
+                  },
+                  "settings": {
+                    "disabled": false
+                  },
+                  "button": {
+                    "label": "Get in touch",
+                    "direction": "Right"
+                  }
+                },
+                {
+                  "title": "Highlight 3 Title",
+                  "body": "Highlight 3 Body",
+                  "image": {
+                    "image": "/.forestry/content/images/placeholder.png",
+                    "title": "Highlight 3 Image Title",
+                    "alt": "Highlight 3 Alt Text",
+                    "description": "Highlight 3 Description",
+                    "settings": {
+                      "disabled": false
+                    }
+                  },
+                  "settings": {
+                    "disabled": false
+                  },
+                  "button": {
+                    "label": "Get in touch",
+                    "direction": "Right"
+                  }
+                }
+              ],
+              "settings": {
+                "disabled": false,
+                "class": ""
+              },
+              "heading": "Heading",
+              "showRedBar": false
+            }
+          ],
+          "settings": {
+            "disabled": false
+          }
+        }
+      ],
+      "settings": {
+        "disabled": false
+      }
+    },
+    {
+      "label": "Static Image Row",
+      "columns": [
+        {
+          "label": "Static Image Column",
+          "blocks": [
+            {
+              "template": "main-static-image",
+              "button": {
+                "page": ".forestry/content/pages/demo.json",
+                "label": "Button Label",
+                "settings": {
+                  "disabled": false
+                },
+                "direction": "Right",
+                "link": ".forestry/content/pages/press.json"
+              },
+              "text": "Text",
+              "image": {
+                "image": "/.forestry/content/images/placeholder.png",
+                "title": "Image Title",
+                "alt": "Alt Text",
+                "description": "Image Description",
+                "settings": {
+                  "disabled": false
+                }
+              },
+              "settings": {
+                "disabled": false,
+                "class": ""
+              },
+              "heading": "Heading",
+              "subheading": "Subheading",
+              "showButton": true,
+              "videos": [
+
+              ]
+            }
+          ],
+          "settings": {
+            "disabled": false
+          }
+        }
+      ],
+      "settings": {
+        "disabled": false
+      }
+    },
+    {
+      "label": "Animated Image Row",
+      "columns": [
+        {
+          "label": "Animated Image Column",
+          "blocks": [
+            {
+              "template": "main-animated-image",
+              "heading1": "Heading 1",
+              "heading2": "Heading 2",
+              "animatedElement": "Water",
+              "backgrounds": [
+                {
+                  "image": "/.forestry/content/images/placeholder.png",
+                  "title": "Background Image",
+                  "alt": "Background Image",
+                  "description": "Background Image",
+                  "settings": {
+                    "disabled": false
+                  },
+                  "class": "background"
+                },
+                {
+                  "image": "/.forestry/content/images/cutout.svg",
+                  "title": "Foreground Image",
+                  "alt": "Foreground Image",
+                  "description": "Foreground Image",
+                  "settings": {
+                    "disabled": false
+                  },
+                  "class": "foreground"
+                }
+              ],
+              "settings": {
+                "disabled": false,
+                "class": ""
+              }
+            }
+          ],
+          "settings": {
+            "disabled": false
+          }
+        }
+      ],
+      "settings": {
+        "disabled": false
+      }
+    },
+    {
+      "label": "Hero Row",
+      "columns": [
+        {
+          "label": "Hero Column",
+          "blocks": [
+            {
+              "template": "main-hero",
+              "smallHeading": "Small Heading",
+              "largeHeading": "Large Heading",
+              "body": "Body",
+              "pageDownIcon": {
+                "image": "/.forestry/content/images/placeholder.png",
+                "title": "Page Down Icon",
+                "alt": "Page Down",
+                "description": "Scroll the page",
+                "settings": {
+                  "disabled": false
+                }
+              },
+              "backgrounds": [
+                {
+                  "class": "background",
+                  "image": "/.forestry/content/images/placeholder.png",
+                  "title": "Background Layer",
+                  "alt": "Background Layer",
+                  "description": "Background Layer",
+                  "settings": {
+                    "disabled": false
+                  }
+                },
+                {
+                  "class": "foreground",
+                  "image": "/.forestry/content/images/cutout.svg",
+                  "title": "Foreground Image",
+                  "alt": "Foreground Image",
+                  "description": "Foreground Image",
+                  "settings": {
+                    "disabled": false
+                  }
+                }
+              ],
+              "settings": {
+                "disabled": false,
+                "class": ""
+              },
+              "mediumHeading": "",
+              "showRedBar": false
+            }
+          ],
+          "settings": {
+            "disabled": false
+          }
+        }
+      ],
+      "settings": {
+        "disabled": false
+      }
+    },
+    {
+      "label": "Recent Articles Row",
+      "columns": [
+        {
+          "label": "Recent Articles Column",
+          "blocks": [
+            {
+              "template": "main-recent-articles",
+              "settings": {
+                "disabled": false,
+                "class": ""
+              }
+            }
+          ],
+          "settings": {
+            "disabled": false
+          }
+        }
+      ],
+      "settings": {
+        "disabled": false
+      }
+    },
+    {
+      "label": "Featured Articles Row",
+      "columns": [
+        {
+          "label": "Featured Articles Column",
+          "blocks": [
+            {
+              "template": "main-featured-articles",
+              "articles": [
+                ".forestry/content/articles/on-the-geneology-of-morals.md",
+                ".forestry/content/articles/ne-te-quaesiveris-extra.md",
+                ".forestry/content/articles/an-essay-on-walking.md"
+              ],
+              "settings": {
+                "disabled": false,
+                "class": ""
+              },
+              "title": "Featured Articles",
+              "subtitle": "Check this out",
+              "body": "And here's the body.",
+              "button": {
+                "label": "Button",
+                "direction": "Right",
+                "link": ".forestry/content/pages/home.json"
+              },
+              "mobileTitle": "Short Title"
+            }
+          ],
+          "settings": {
+            "disabled": false
+          }
+        }
+      ],
+      "settings": {
+        "disabled": false
+      }
+    },
+    {
+      "label": "Articles Grid Row",
+      "columns": [
+        {
+          "label": "Articles Grid Column",
+          "blocks": [
+            {
+              "template": "main-articles-grid",
+              "settings": {
+                "disabled": false,
+                "class": ""
+              }
+            }
+          ],
+          "settings": {
+            "disabled": false
+          }
+        }
+      ],
+      "settings": {
+        "disabled": false
+      }
+    },
+    {
+      "label": "Cities Row",
+      "columns": [
+        {
+          "label": "Cities Column",
+          "blocks": [
+            {
+              "template": "main-cities",
+              "title": "Cities Title",
+              "body": "Cities Body",
+              "cities": [
+                {
+                  "image": {
+                    "image": "/.forestry/content/images/placeholder.png",
+                    "title": "City 1",
+                    "alt": "City 1",
+                    "description": "City 1",
+                    "settings": {
+                      "disabled": false
+                    }
+                  },
+                  "name": "City 1",
+                  "nativeLanguageName": "City 1",
+                  "settings": {
+                    "disabled": false
+                  }
+                },
+                {
+                  "image": {
+                    "image": "/.forestry/content/images/placeholder.png",
+                    "title": "City 2",
+                    "alt": "City 2",
+                    "description": "City 2",
+                    "settings": {
+                      "disabled": false
+                    }
+                  },
+                  "name": "City 2",
+                  "nativeLanguageName": "City 2",
+                  "settings": {
+                    "disabled": false
+                  }
+                },
+                {
+                  "image": {
+                    "title": "City 3",
+                    "alt": "City 3",
+                    "description": "City 3",
+                    "image": "/.forestry/content/images/placeholder.png",
+                    "settings": {
+                      "disabled": false
+                    }
+                  },
+                  "name": "City 3",
+                  "nativeLanguageName": "City 3",
+                  "settings": {
+                    "disabled": false
+                  }
+                },
+                {
+                  "image": {
+                    "image": "/.forestry/content/images/placeholder.png",
+                    "title": "City 4",
+                    "alt": "City 4",
+                    "description": "City 4",
+                    "settings": {
+                      "disabled": false
+                    }
+                  },
+                  "name": "City 4",
+                  "nativeLanguageName": "City 4",
+                  "settings": {
+                    "disabled": false
+                  }
+                },
+                {
+                  "image": {
+                    "title": "City 5",
+                    "alt": "City 5",
+                    "description": "City 5",
+                    "image": "/.forestry/content/images/placeholder.png",
+                    "settings": {
+                      "disabled": false
+                    }
+                  },
+                  "name": "City 5",
+                  "nativeLanguageName": "City 5",
+                  "settings": {
+                    "disabled": false
+                  }
+                }
+              ],
+              "settings": {
+                "disabled": false,
+                "class": ""
+              },
+              "button": {
+                "label": "Get in touch",
+                "direction": "Right"
+              },
+              "showRedBar": false
+            }
+          ],
+          "settings": {
+            "disabled": false
+          }
+        }
+      ],
+      "settings": {
+        "disabled": false
+      }
+    },
+    {
+      "label": "Company Merger Row",
+      "columns": [
+        {
+          "label": "Company Merger Column",
+          "blocks": [
+            {
+              "template": "main-company-merger",
+              "heading": "Heading",
+              "body": "Body",
+              "companies": [
+                {
+                  "logo": {
+                    "image": "/.forestry/content/images/logo.png",
+                    "title": "Company 1",
+                    "alt": "Company 1",
+                    "description": "Company 1",
+                    "settings": {
+                      "disabled": false
+                    }
+                  },
+                  "description": "Company 1 is the first company",
+                  "settings": {
+                    "disabled": false
+                  },
+                  "link": "nonsense"
+                },
+                {
+                  "logo": {
+                    "title": "Company 2",
+                    "alt": "Company 2",
+                    "description": "Company 2",
+                    "image": "/.forestry/content/images/logo.png",
+                    "settings": {
+                      "disabled": false
+                    }
+                  },
+                  "description": "Company 2 is the second company",
+                  "settings": {
+                    "disabled": false
+                  },
+                  "link": "nonsense"
+                }
+              ],
+              "settings": {
+                "disabled": false,
+                "class": ""
+              }
+            }
+          ],
+          "settings": {
+            "disabled": false
+          }
+        }
+      ],
+      "settings": {
+        "disabled": false
+      }
+    },
+    {
+      "label": "Leadership Row",
+      "columns": [
+        {
+          "label": "Leadership Column",
+          "blocks": [
+            {
+              "template": "main-leadership",
+              "heading": "Heading",
+              "leaders": [
+                {
+                  "photo": {
+                    "image": "/.forestry/content/images/placeholder.png",
+                    "title": "Jane Smith",
+                    "alt": "Jane Smith",
+                    "description": "Jane Smith",
+                    "settings": {
+                      "disabled": false
+                    }
+                  },
+                  "name": "Jane Smith",
+                  "title": "Manager",
+                  "biography": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare massa eget egestas purus viverra accumsan. Non blandit massa enim nec dui. Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus nullam. Sit amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus. Interdum posuere lorem ipsum dolor sit. Vitae sapien pellentesque habitant morbi tristique senectus et netus. Sem fringilla ut morbi tincidunt augue interdum velit. Enim nunc faucibus a pellentesque sit amet porttitor eget. Ut sem viverra aliquet eget sit amet. Semper eget duis at tellus at urna condimentum mattis pellentesque.\n\nErat nam at lectus urna duis convallis convallis tellus. A diam maecenas sed enim. Commodo viverra maecenas accumsan lacus vel facilisis. Turpis massa sed elementum tempus egestas. Nisl purus in mollis nunc sed id semper risus. Aliquet porttitor lacus luctus accumsan. Risus quis varius quam quisque id diam vel. Sit amet consectetur adipiscing elit duis tristique sollicitudin nibh. Mauris sit amet massa vitae. Lacinia quis vel eros donec ac odio tempor orci dapibus. Urna id volutpat lacus laoreet non. Pellentesque dignissim enim sit amet venenatis urna cursus eget nunc.\n\nVulputate odio ut enim blandit volutpat maecenas volutpat blandit. Urna duis convallis convallis tellus id interdum. Id neque aliquam vestibulum morbi blandit cursus risus at. Turpis egestas integer eget aliquet nibh praesent tristique magna. Faucibus et molestie ac feugiat sed lectus vestibulum mattis ullamcorper. Sociis natoque penatibus et magnis. Consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis. Tortor condimentum lacinia quis vel. Enim ut sem viverra aliquet eget sit amet. Fames ac turpis egestas maecenas. Nulla pellentesque dignissim enim sit amet venenatis urna. Placerat in egestas erat imperdiet sed euismod nisi. Enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Odio ut enim blandit volutpat. Orci a scelerisque purus semper eget duis at tellus at. Morbi tincidunt ornare massa eget egestas purus.\n\nSit amet commodo nulla facilisi nullam vehicula. Leo urna molestie at elementum eu facilisis sed. Interdum velit euismod in pellentesque. Donec ac odio tempor orci. Dui ut ornare lectus sit amet. Sagittis id consectetur purus ut faucibus pulvinar elementum integer. Mauris a diam maecenas sed enim ut. Elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl. Ante metus dictum at tempor commodo ullamcorper a. Dictum non consectetur a erat. Mattis molestie a iaculis at erat pellentesque adipiscing. Sagittis vitae et leo duis ut. Mauris nunc congue nisi vitae suscipit. In egestas erat imperdiet sed. Vestibulum morbi blandit cursus risus at ultrices mi tempus. Tincidunt eget nullam non nisi est sit amet facilisis. Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Nulla facilisi morbi tempus iaculis urna id volutpat lacus laoreet. Pulvinar proin gravida hendrerit lectus. Neque gravida in fermentum et.\n\nVel facilisis volutpat est velit egestas dui id. Tempor nec feugiat nisl pretium fusce id. Bibendum arcu vitae elementum curabitur vitae nunc sed velit. Diam phasellus vestibulum lorem sed risus ultricies tristique. Pulvinar elementum integer enim neque volutpat. Pretium lectus quam id leo in vitae. Sed risus ultricies tristique nulla aliquet enim tortor at. Ipsum a arcu cursus vitae congue mauris rhoncus. Gravida in fermentum et sollicitudin ac orci phasellus. Odio eu feugiat pretium nibh ipsum.",
+                  "settings": {
+                    "disabled": false
+                  }
+                },
+                {
+                  "photo": {
+                    "image": "/.forestry/content/images/placeholder.png",
+                    "title": "John Doe",
+                    "alt": "John Doe",
+                    "description": "John Doe",
+                    "settings": {
+                      "disabled": false
+                    }
+                  },
+                  "name": "John Doe",
+                  "biography": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim blandit volutpat maecenas. Sem integer vitae justo eget magna fermentum iaculis. Mollis aliquam ut porttitor leo a diam sollicitudin. Libero justo laoreet sit amet cursus sit. Fames ac turpis egestas maecenas pharetra convallis. Nisi scelerisque eu ultrices vitae auctor eu augue. Sit amet consectetur adipiscing elit duis. Sodales ut eu sem integer vitae justo eget magna fermentum. Tellus at urna condimentum mattis pellentesque.\n\nIn est ante in nibh mauris cursus mattis. Libero nunc consequat interdum varius sit. A scelerisque purus semper eget. Aenean euismod elementum nisi quis eleifend. Mus mauris vitae ultricies leo integer. Mauris commodo quis imperdiet massa tincidunt. Volutpat commodo sed egestas egestas. Pretium viverra suspendisse potenti nullam ac tortor vitae. Eget nullam non nisi est sit amet. Volutpat diam ut venenatis tellus in metus vulputate eu scelerisque. Duis tristique sollicitudin nibh sit amet commodo nulla facilisi. Suspendisse potenti nullam ac tortor vitae purus faucibus. Leo a diam sollicitudin tempor id eu nisl nunc. Lectus arcu bibendum at varius.\n\nQuis viverra nibh cras pulvinar. Id faucibus nisl tincidunt eget nullam non. Justo donec enim diam vulputate ut pharetra sit amet. Enim praesent elementum facilisis leo. Et netus et malesuada fames. Elementum facilisis leo vel fringilla est. Sed id semper risus in. Purus ut faucibus pulvinar elementum. Eget est lorem ipsum dolor sit amet consectetur. Turpis in eu mi bibendum neque egestas congue. Aenean et tortor at risus. Vestibulum mattis ullamcorper velit sed. Fusce id velit ut tortor pretium viverra suspendisse. Pretium vulputate sapien nec sagittis. Sit amet cursus sit amet dictum sit. Faucibus in ornare quam viverra orci sagittis eu.\n\nRutrum quisque non tellus orci ac. Parturient montes nascetur ridiculus mus. Eget sit amet tellus cras adipiscing. Maecenas ultricies mi eget mauris pharetra et ultrices neque ornare. Sit amet venenatis urna cursus. Tristique magna sit amet purus. Accumsan tortor posuere ac ut consequat semper viverra nam. Dignissim suspendisse in est ante in nibh mauris. Justo donec enim diam vulputate ut pharetra. Pharetra pharetra massa massa ultricies mi quis hendrerit. Suspendisse sed nisi lacus sed viverra tellus in hac habitasse. Sagittis aliquam malesuada bibendum arcu vitae. In dictum non consectetur a erat nam. Sit amet commodo nulla facilisi nullam. Gravida cum sociis natoque penatibus et. Ultrices neque ornare aenean euismod elementum nisi quis. Massa sapien faucibus et molestie.\n\nNunc aliquet bibendum enim facilisis gravida neque convallis. Eget sit amet tellus cras adipiscing enim. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Nisl condimentum id venenatis a condimentum vitae. Curabitur vitae nunc sed velit dignissim sodales. Lorem donec massa sapien faucibus. Quis varius quam quisque id diam vel quam elementum pulvinar. Nibh ipsum consequat nisl vel pretium lectus quam id leo. Et tortor at risus viverra adipiscing at in tellus integer. Risus quis varius quam quisque id. Consequat nisl vel pretium lectus. Enim nunc faucibus a pellentesque sit amet porttitor eget. Tortor pretium viverra suspendisse potenti nullam ac tortor. Eget egestas purus viverra accumsan in nisl. Nibh sed pulvinar proin gravida hendrerit. Scelerisque eleifend donec pretium vulputate sapien nec. Suspendisse potenti nullam ac tortor. Massa sapien faucibus et molestie ac feugiat sed. At imperdiet dui accumsan sit amet.",
+                  "title": "Title",
+                  "settings": {
+                    "disabled": false
+                  }
+                }
+              ],
+              "settings": {
+                "disabled": false,
+                "class": ""
+              },
+              "staff": [
+
+              ]
+            }
+          ],
+          "settings": {
+            "disabled": false
+          }
+        }
+      ],
+      "settings": {
+        "disabled": false
+      }
+    }
+  ],
+  "posts": [
+
+  ],
+  "settings": {
+    "disabled": false
+  },
+  "articles": {
+    "subdirectory": "",
+    "articles": [
+
+    ]
+  },
+  "slug": ""
+}

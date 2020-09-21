@@ -1,0 +1,61 @@
+---
+label: Style
+hide_body: true
+display_field: classname
+fields:
+- name: classes
+  type: tag_list
+  default: []
+  label: Classes
+  description: 'Add additional classes to this component. Global classes are stored
+    in <em>/src/components/_global.scss </em>but Tailwind CSS classes are preferred.
+    <a href="CSS framework for rapidly building custom designs." title="" target="_blank">Tailwind
+    CSS</a> is a utility-first CSS framework for rapidly building custom designs. '
+- name: font
+  type: select
+  default: []
+  config:
+    required: false
+    options: []
+    source:
+      type: pages
+      section: fonts
+      file: 
+      path: 
+  label: Font
+- name: colorProperties
+  type: field_group_list
+  fields:
+  - name: property
+    type: text
+    config:
+      required: true
+    label: CSS Property
+  - name: value
+    type: include
+    config: {}
+    template: color-select
+    label: Value
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Color Properties
+- name: cssProperties
+  type: field_group_list
+  fields:
+  - name: property
+    type: text
+    config:
+      required: true
+    label: CSS Property
+  - name: value
+    type: text
+    config:
+      required: true
+    label: Value
+  config:
+    min: 
+    max: 
+    labelField: property
+  label: CSS Properties

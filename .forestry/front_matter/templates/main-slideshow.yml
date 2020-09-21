@@ -1,0 +1,41 @@
+---
+label: 'Main: Slideshow'
+hide_body: true
+fields:
+- name: slides
+  type: field_group_list
+  fields:
+  - name: image
+    type: field_group
+    config: {}
+    fields:
+    - name: image
+      type: include
+      config: {}
+      template: image
+      label: Image
+    label: Image
+  - name: description
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: Description
+  - name: developerSettings
+    type: include
+    config: {}
+    template: developer-settings
+    label: Developer Settings
+  config:
+    min: 
+    max: 
+    labelField: description
+  label: Slides
+- name: developerSettings
+  type: include
+  config: {}
+  template: developer-settings-main-blocks
+  label: Developer Settings

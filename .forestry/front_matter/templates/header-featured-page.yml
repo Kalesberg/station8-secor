@@ -1,0 +1,21 @@
+---
+label: 'Header: Featured Page'
+hide_body: true
+fields:
+- name: page
+  type: select
+  default: []
+  config:
+    required: false
+    options: []
+    source:
+      type: pages
+      section: pages
+      file: 
+      path: 
+  label: Page
+- name: developerSettings
+  type: include
+  config: {}
+  template: developer-settings
+  label: Developer Settings

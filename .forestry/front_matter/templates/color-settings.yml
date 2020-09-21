@@ -1,0 +1,29 @@
+---
+label: Color Settings
+hide_body: true
+fields:
+- name: colors
+  type: field_group_list
+  fields:
+  - name: name
+    type: text
+    config:
+      required: true
+    label: Name
+    description: '<strong>Developer Note</strong>: This will be converted to slug
+      case preceded by <strong>--color-</strong> and will be accessible in CSS for
+      assignment to any color property like this for a color named "Dark Gray":<br>font:
+      var(--color-dark-gray);'
+  - name: color
+    type: color
+    label: Color
+    config:
+      required: true
+      color_format: Hex
+  config:
+    min: 
+    max: 
+    labelField: name
+  label: Colors
+pages:
+- ".forestry/content/settings/colors.json"

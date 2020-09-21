@@ -1,0 +1,98 @@
+---
+label: 'Main: Leadership'
+hide_body: true
+fields:
+- name: heading
+  type: text
+  config:
+    required: true
+  label: Heading
+- name: leaders
+  type: field_group_list
+  fields:
+  - name: photo
+    type: field_group
+    config: {}
+    fields:
+    - name: image
+      type: include
+      config: {}
+      template: image
+      label: Image
+    label: Photo
+  - name: name
+    type: text
+    config:
+      required: true
+    label: Name
+  - name: title
+    type: text
+    config:
+      required: true
+    label: Title
+  - name: biography
+    type: textarea
+    default: ''
+    config:
+      required: true
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: Biography
+  - name: developerSettings
+    type: include
+    config: {}
+    template: developer-settings
+    label: Developer Settings
+  config:
+    min: 
+    max: 
+    labelField: name
+  label: Leaders
+- name: staff
+  type: field_group_list
+  fields:
+  - name: photo
+    type: field_group
+    config: {}
+    fields:
+    - name: image
+      type: include
+      config: {}
+      template: image
+      label: Image
+    label: Photo
+  - name: name
+    type: text
+    config:
+      required: true
+    label: Name
+  - name: title
+    type: text
+    config:
+      required: true
+    label: Title
+  - name: biography
+    type: textarea
+    default: ''
+    config:
+      required: true
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: Biography
+  - name: developerSettings
+    type: include
+    config: {}
+    template: developer-settings
+    label: Developer Settings
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Staff
+- name: developerSettings
+  type: include
+  config: {}
+  template: developer-settings-main-blocks
+  label: Developer Settings

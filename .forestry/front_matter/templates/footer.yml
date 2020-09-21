@@ -1,0 +1,21 @@
+---
+label: Footer
+hide_body: true
+fields:
+- name: blocks
+  type: blocks
+  label: Blocks
+  template_types:
+  - footer-contact-info
+  - footer-copyright-info
+  - footer-logo
+  config:
+    min: 
+    max: 
+- name: developerSettings
+  type: include
+  config: {}
+  template: developer-settings
+  label: Developer Settings
+pages:
+- ".forestry/content/settings/footer.json"

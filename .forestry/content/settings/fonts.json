@@ -1,0 +1,54 @@
+{
+  "fonts": [
+    {
+      "name": "Roboto Regular",
+      "family": "'Roboto', sans-serif",
+      "weight": "400"
+    },
+    {
+      "name": "Roboto Bold",
+      "family": "'Roboto', sans-serif",
+      "weight": "700"
+    },
+    {
+      "name": "Roboto Black",
+      "family": "'Roboto', sans-serif",
+      "weight": "900"
+    },
+    {
+      "name": "Soleto Thin",
+      "family": "soleto, sans-serif",
+      "weight": "200"
+    },
+    {
+      "name": "Soleto Light",
+      "family": "soleto, sans-serif",
+      "weight": "300"
+    },
+    {
+      "name": "Soleto Regular",
+      "family": "soleto, sans-serif",
+      "weight": "400"
+    },
+    {
+      "name": "Soleto Medium",
+      "family": "soleto, sans-serif",
+      "weight": "500"
+    },
+    {
+      "name": "Soleto Bold",
+      "family": "soleto, sans-serif",
+      "weight": "700"
+    },
+    {
+      "name": "Soleto XBold",
+      "family": "soleto, sans-serif",
+      "weight": "800"
+    },
+    {
+      "name": "Soleto Black",
+      "family": "soleto, sans-serif",
+      "weight": "900"
+    }
+  ]
+}

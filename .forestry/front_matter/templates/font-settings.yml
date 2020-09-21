@@ -1,0 +1,52 @@
+---
+label: Font Settings
+hide_body: true
+fields:
+- name: fonts
+  type: field_group_list
+  fields:
+  - name: name
+    type: text
+    config:
+      required: true
+    label: Variable Name
+    description: '<strong>Developer Note</strong>: This will be converted to slug
+      case preceded by <strong>--font-</strong> and will be accessible in CSS for
+      assignment to an element''s <strong>font property</strong> like this for a font
+      named "Open Sans Bold":<br>font: var(--font-open-sans-bold);'
+  - name: family
+    type: text
+    config:
+      required: true
+    label: Font Family
+    description: '<strong>Developer Note</strong>: This is the string of fonts that
+      define the font and set fallbacks for the font. Do not end with a semicolon.
+      Here''s an example for Open Sans:<br>"Open Sans", sans-serif'
+  - name: weight
+    type: select
+    default: '400'
+    config:
+      required: true
+      options:
+      - '100'
+      - '200'
+      - '300'
+      - '400'
+      - '500'
+      - '600'
+      - '700'
+      - '800'
+      - '900'
+      source:
+        type: simple
+        section: 
+        file: 
+        path: 
+    label: Font Weight
+  config:
+    min: 
+    max: 
+    labelField: name
+  label: Fonts
+pages:
+- ".forestry/content/settings/fonts.json"

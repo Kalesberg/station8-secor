@@ -1,0 +1,72 @@
+---
+label: Article
+hide_body: false
+fields:
+- name: parent
+  type: select
+  default: []
+  config:
+    required: true
+    options: []
+    source:
+      type: pages
+      section: pages
+      file: 
+      path: 
+  label: Parent
+  description: Select a page to be the parent folder for this article. For instance,
+    if you have a page named <strong>blog</strong> and you select it as the parent,
+    your article named <strong>article</strong> will be located at <strong>example.com/blog/article</strong>.
+- type: text
+  name: title
+  label: Title
+  config:
+    required: true
+    max: 
+- name: date
+  type: datetime
+  label: Date
+  description: Date post was created
+  config:
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: false
+  default: now
+- name: authors
+  type: list
+  config:
+    use_select: true
+    min: 1
+    max: 
+    source:
+      type: pages
+      section: authors
+  label: Authors
+- name: heroImage
+  type: file
+  config:
+    maxSize: 64
+  label: Hero Image
+  description: Enter hero image for blog post here
+  default: "/.forestry/content/images/sarah-dorweiler-9Z1KRIfpBTM-unsplash.jpg"
+- name: tags
+  type: tag_list
+  default: []
+  label: Tags
+- name: type
+  type: text
+  config:
+    required: false
+  label: Type
+  hidden: true
+  default: article
+- name: developerSettings
+  type: include
+  config: {}
+  template: developer-settings
+  label: Developer Settings
+pages:
+- ".forestry/content/articles/pair-of-local-companies-helping-provide-oil-to-belarus.md"
+- ".forestry/content/articles/second-tanker-delivers-american-oil-for-belarus.md"
+- ".forestry/content/articles/u.s.based-3-seas-energy-inks-historic-deal-to-provide-belarus-with-oil.md"

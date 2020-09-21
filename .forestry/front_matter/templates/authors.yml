@@ -1,0 +1,70 @@
+---
+label: Authors
+hide_body: true
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+- name: firstName
+  type: text
+  config:
+    required: false
+  label: First Name
+- name: lastName
+  type: text
+  config:
+    required: false
+  label: Last Name
+- name: biography
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Biography
+- name: phoneNumber
+  type: text
+  config:
+    required: false
+  label: Phone Number
+- name: emailAddress
+  type: text
+  config:
+    required: false
+  label: Email Address
+- name: socialMediaLinks
+  type: field_group_list
+  fields:
+  - name: label
+    type: text
+    config:
+      required: true
+    label: Label
+  - name: url
+    type: text
+    config:
+      required: true
+    label: URL
+  - name: icon
+    type: file
+    config:
+      maxSize: 64
+    label: Icon
+  config:
+    min: 
+    max: 
+    labelField: label
+  label: Social Media Links
+- name: type
+  type: text
+  config:
+    required: true
+  label: Type
+  hidden: true
+  default: author
+pages:
+- ".forestry/content/authors/3seas-energy.json"

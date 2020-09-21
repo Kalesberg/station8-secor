@@ -1,0 +1,1 @@
+export default text => text.replace('.forestry/content/pages', '').replace('.forestry/content/research', '/research').replace('.forestry/content/locations', '/find-treatment').replace('.md', '').replace('.json', '')

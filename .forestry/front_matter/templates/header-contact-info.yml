@@ -1,0 +1,9 @@
+---
+label: 'Header: Contact Info'
+hide_body: true
+fields:
+- name: developerSettings
+  type: include
+  config: {}
+  template: developer-settings
+  label: Developer Settings

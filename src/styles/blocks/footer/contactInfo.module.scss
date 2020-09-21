@@ -1,0 +1,108 @@
+.default {
+  background-color: var(--color-midnight-express);
+  color: white;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 9rem 0 1rem;
+  grid-row: 1 / 3;
+  margin-bottom: 6rem;
+  .container {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 1rem;
+    .phone-number {
+      position: relative;
+      top: 0;
+      transition: all 0.5s ease-in-out;
+      font-size: 2.6rem;
+      &:hover {
+        top: -.5rem;
+      }
+    }
+    .button-container {
+      margin-bottom:  4vw;
+      .button {
+        position: relative;
+        pointer-events: all;
+        background: transparent;
+        border: none;
+        font: var(--font-soleto-black);
+        display: flex;
+        grid-auto-flow: column;
+        padding: 0;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+        top: 0;
+        justify-content: center;
+        .label {
+          font-size: 1.75vw;
+          margin-bottom: 0;
+        }
+        .arrow {
+          width: 2.5vw;
+          margin-bottom: 0;
+          margin-right: 0.5vw;
+        }
+        &:hover {
+          top: -.5rem;
+        }
+      }
+    }
+    .email {
+      position: relative;
+      top: 0;
+      transition: all 0.5s ease-in-out;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      &:hover {
+        top: -.5rem;
+      }
+    }
+    .address {
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 1023px) {
+    width: 80vw;
+    padding: 4rem 0 6rem;
+    margin-bottom: 0;
+    .container {
+      .phone-number {
+        font-size: 8vw;
+      }
+      .email {
+        font-size: 4vw;
+      }
+      .address {
+        font-size: 4vw;
+      }
+      .button-container {
+        margin-bottom: 1rem;
+        width: 100%;
+        display: grid;
+        justify-content: stretch;
+        .button {
+          display: flex;
+          grid-auto-flow: column;
+          grid-template-columns: 5vw 20vw;
+          align-items: center;
+          justify-content: flex-start;
+          .arrow {
+            grid-column: 1;
+            grid-row: 1;
+            width: 15vw;
+            margin: 0 2vw 0 0;
+            padding: 0;
+          }
+          .label {
+            grid-row: 1;
+            grid-column: 2;
+            font-size: 8vw;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
