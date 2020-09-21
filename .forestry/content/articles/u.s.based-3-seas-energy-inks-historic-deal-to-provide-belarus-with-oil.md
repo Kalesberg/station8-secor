@@ -1,6 +1,6 @@
 ---
-parent: ".forestry/content/pages/press.json"
-date: 2020-08-25T13:36:31Z
+parent: ".forestry/content/pages/blog.json"
+date: 2020-08-25T13:36:31.000+00:00
 heroImage: "/.forestry/content/images/logo.svg"
 tags: []
 type: article
