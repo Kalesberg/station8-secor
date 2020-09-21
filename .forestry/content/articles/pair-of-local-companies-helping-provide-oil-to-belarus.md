@@ -1,5 +1,5 @@
 ---
-parent: ".forestry/content/pages/press.json"
+parent: ".forestry/content/pages/blog.json"
 date: 2020-07-16T05:00:00.000+00:00
 heroImage: "/.forestry/content/images/5f11dd5b446b4-image.jpg"
 tags:
