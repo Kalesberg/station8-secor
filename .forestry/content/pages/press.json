@@ -3,65 +3,7 @@
   "type": "page",
   "slug": "",
   "rows": [
-    {
-      "label": "Featured Articles Row",
-      "columns": [
-        {
-          "label": "Featured Articles Column",
-          "blocks": [
-            {
-              "template": "main-featured-articles",
-              "articles": [
-                ".forestry/content/articles/second-tanker-delivers-american-oil-for-belarus.md",
-                ".forestry/content/articles/pair-of-local-companies-helping-provide-oil-to-belarus.md"
-              ],
-              "settings": {
-                "disabled": false,
-                "class": ""
-              },
-              "title": "Press and News Room",
-              "subtitle": "Featured Press Releases",
-              "body": "",
-              "button": {
-                "label": "Push to feed",
-                "direction": "Down",
-                "link": ""
-              },
-              "mobileTitle": "Press Room"
-            }
-          ],
-          "settings": {
-            "disabled": false
-          }
-        }
-      ],
-      "settings": {
-        "disabled": false
-      }
-    },
-    {
-      "label": "Articles Grid Row",
-      "columns": [
-        {
-          "label": "Articles Grid Column",
-          "blocks": [
-            {
-              "template": "main-articles-grid",
-              "settings": {
-                "disabled": false,
-                "class": ""
-              }
-            }
-          ],
-          "settings": {
-            "disabled": false
-          }
-        }
-      ],
-      "settings": {
-        "disabled": false
-      }
-    }
+
   ],
   "settings": {
     "disabled": false
