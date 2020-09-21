@@ -22,14 +22,6 @@ sections:
   new_doc_ext: md
   templates:
   - article
-- type: directory
-  path: ".forestry/content/authors"
-  label: Authors
-  create: documents
-  match: "**/*"
-  new_doc_ext: json
-  templates:
-  - authors
 - type: heading
   label: Settings
 - type: document

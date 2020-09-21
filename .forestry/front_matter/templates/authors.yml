@@ -66,5 +66,3 @@ fields:
   label: Type
   hidden: true
   default: author
-pages:
-- ".forestry/content/authors/3seas-energy.json"
