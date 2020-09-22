@@ -35,11 +35,6 @@ fields:
   config:
     min: 
     max: 
-- name: settings
-  type: include
-  config: {}
-  template: developer-settings
-  label: Developer Settings
 pages:
 - ".forestry/content/pages/404.json"
 - ".forestry/content/pages/about.json"
