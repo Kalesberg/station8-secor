@@ -14,7 +14,8 @@ fields:
   - name: block
     type: blocks
     label: Block
-    template_types: []
+    template_types:
+    - main-create-account
     config:
       min: 
       max: 
