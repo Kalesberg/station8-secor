@@ -23,6 +23,11 @@ fields:
   config:
     required: true
     max: 
+- name: snippet
+  type: text
+  config:
+    required: true
+  label: Snippet
 - name: date
   type: datetime
   label: Date
