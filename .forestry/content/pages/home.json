@@ -44,7 +44,7 @@
       }
     },
     {
-      "label": "Untitled Row",
+      "label": "Fabrication Animation Row",
       "columns": [
         {
           "label": "Fabrication Animation Column",
@@ -63,36 +63,76 @@
       }
     },
     {
-      "label": "Untitled Row",
+      "label": "Interactive Tools Row",
       "columns": [
-
+        {
+          "label": "Interactive Tools Column",
+          "blocks": [
+            {
+              "template": "main-interactive-tools"
+            }
+          ],
+          "settings": {
+            "disabled": false
+          }
+        }
       ],
       "settings": {
         "disabled": false
       }
     },
     {
-      "label": "Untitled Row",
+      "label": "Basic Contact Form Row",
       "columns": [
-
+        {
+          "label": "Basic Contact Form Column",
+          "blocks": [
+            {
+              "template": "main-basic-contact-form"
+            }
+          ],
+          "settings": {
+            "disabled": false
+          }
+        }
       ],
       "settings": {
         "disabled": false
       }
     },
     {
-      "label": "Untitled Row",
+      "label": "Interactive Markets Row",
       "columns": [
-
+        {
+          "label": "Interactive Markets Column",
+          "blocks": [
+            {
+              "template": "main-interactive-markets"
+            }
+          ],
+          "settings": {
+            "disabled": false
+          }
+        }
       ],
       "settings": {
         "disabled": false
       }
     },
     {
-      "label": "Untitled Row",
+      "label": "Contact Form Row",
       "columns": [
-
+        {
+          "label": "Contact Form Column",
+          "blocks": [
+            {
+              "template": "main-contact-form"
+            }
+          ],
+          "settings": {
+            "disabled": false
+          }
+        }
       ],
       "settings": {
         "disabled": false
