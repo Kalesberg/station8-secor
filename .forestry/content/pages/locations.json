@@ -7,5 +7,46 @@
   ],
   "settings": {
     "disabled": false
-  }
+  },
+  "blocks": [
+    {
+      "template": "main-locations",
+      "locations": [
+        {
+          "city": "Houston",
+          "image": "/.forestry/content/images/placeholder.png",
+          "phone": "2815561661",
+          "address": "17321 Groeschke Road\nHouston, TX 77084"
+        },
+        {
+          "city": "Dallas",
+          "image": "/.forestry/content/images/placeholder.png",
+          "phone": "9727366435",
+          "address": "218 Monte Carlo Blvd\nPrinceton, TX 75407"
+        },
+        {
+          "city": "Gillette",
+          "image": "/.forestry/content/images/placeholder.png",
+          "address": "1460 Garman Court\nGillette, WY 82716",
+          "phone": "3076827307"
+        },
+        {
+          "city": "Albuquerque",
+          "image": "/.forestry/content/images/placeholder.png",
+          "phone": "5053410777",
+          "address": "705 Rankin Road NE\nAlbuquerque, NM 87107"
+        },
+        {
+          "city": "Denver",
+          "image": "/.forestry/content/images/placeholder.png",
+          "address": "9335 W. 44th Ave.\nWheat Ridge, CO 80033",
+          "phone": "3039404749"
+        }
+      ],
+      "settings": {
+        "disabled": false,
+        "class": ""
+      }
+    }
+  ]
 }
