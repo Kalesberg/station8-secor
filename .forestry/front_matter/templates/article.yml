@@ -1,5 +1,5 @@
 ---
-label: 'Content: Article'
+label: 'Content Type: Article'
 hide_body: false
 fields:
 - name: parent
