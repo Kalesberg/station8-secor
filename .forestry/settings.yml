@@ -31,7 +31,7 @@ sections:
   templates:
   - career
 - type: heading
-  label: Settings
+  label: Global Settings
 - type: document
   path: ".forestry/content/settings/config.json"
   label: Site Info
