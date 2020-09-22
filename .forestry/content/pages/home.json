@@ -25,14 +25,5 @@
       }
     }
   ],
-  "posts": [
-
-  ],
-  "slug": "/",
-  "articles": {
-    "subdirectory": "",
-    "articles": [
-
-    ]
-  }
+  "slug": "/"
 }
