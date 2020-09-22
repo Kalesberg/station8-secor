@@ -50,18 +50,7 @@ fields:
       type: blocks
       label: Blocks
       template_types:
-      - main-animated-image
-      - main-articles-grid
-      - main-cities
-      - main-company-merger
-      - main-featured-articles
       - main-hero
-      - main-highlights
-      - main-infographic
-      - main-leadership
-      - main-recent-articles
-      - main-rich-text
-      - main-static-image
       config:
         min: 
         max: 
