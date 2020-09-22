@@ -2,6 +2,16 @@
 label: 'Main: Account Creation'
 hide_body: true
 fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+- name: text
+  type: text
+  config:
+    required: true
+  label: Text
 - name: columns
   type: field_group_list
   fields:
@@ -29,6 +39,8 @@ fields:
           required: true
           options:
           - Text
+          - Password
+          - Phone
           source:
             type: simple
             section: 
