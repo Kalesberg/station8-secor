@@ -64,8 +64,3 @@ fields:
   showOnly:
     field: button
     value: true
-- name: developerSettings
-  type: include
-  config: {}
-  template: developer-settings-main-blocks
-  label: Developer Settings
