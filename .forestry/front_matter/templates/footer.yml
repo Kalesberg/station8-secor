@@ -12,10 +12,5 @@ fields:
   config:
     min: 
     max: 
-- name: developerSettings
-  type: include
-  config: {}
-  template: developer-settings
-  label: Developer Settings
 pages:
 - ".forestry/content/settings/footer.json"
