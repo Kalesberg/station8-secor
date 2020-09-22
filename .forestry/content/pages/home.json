@@ -167,5 +167,74 @@
       }
     }
   ],
-  "slug": "/"
+  "slug": "/",
+  "blocks": [
+    {
+      "template": "main-hero",
+      "image": "/.forestry/content/images/placeholder.png",
+      "button": true,
+      "buttonLink": ".forestry/content/pages/get-a-quote.json",
+      "buttonText": "Get a quote",
+      "text": [
+        {
+          "element": "Heading 1",
+          "text": "QUALITY"
+        },
+        {
+          "element": "Heading 2",
+          "text": "FLOWS HERE"
+        },
+        {
+          "element": "Paragraph",
+          "text": "HDPE PIPE, FITTINGS, AND EQUIPMENT"
+        }
+      ],
+      "settings": {
+        "disabled": false,
+        "class": ""
+      }
+    },
+    {
+      "template": "main-product-descriptions",
+      "settings": {
+        "disabled": false,
+        "class": ""
+      }
+    },
+    {
+      "template": "main-fabrication-animation",
+      "settings": {
+        "disabled": false,
+        "class": ""
+      }
+    },
+    {
+      "template": "main-interactive-tools",
+      "settings": {
+        "disabled": false,
+        "class": ""
+      }
+    },
+    {
+      "template": "main-basic-contact-form",
+      "settings": {
+        "disabled": false,
+        "class": ""
+      }
+    },
+    {
+      "template": "main-interactive-markets",
+      "settings": {
+        "disabled": false,
+        "class": ""
+      }
+    },
+    {
+      "template": "main-contact-form",
+      "settings": {
+        "disabled": false,
+        "class": ""
+      }
+    }
+  ]
 }

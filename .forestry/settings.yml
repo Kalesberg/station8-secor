@@ -22,6 +22,12 @@ sections:
   new_doc_ext: md
   templates:
   - article
+- type: directory
+  path: ".forestry/content/careers"
+  label: Careers
+  create: documents
+  match: "**/*"
+  new_doc_ext: json
 - type: heading
   label: Settings
 - type: document

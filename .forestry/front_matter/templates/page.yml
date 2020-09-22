@@ -19,67 +19,20 @@ fields:
     this page. The slugs '<strong>/</strong>' and '<strong>404</strong>' are reserved
     so do not use them in places they are not currently used. If nothing is entered
     here, the slug will become a slug-ified version of the page title.
-- name: type
-  type: text
-  config:
-    required: true
-  label: Type
-  hidden: true
-  default: page
-- name: rows
-  type: field_group_list
-  fields:
-  - name: label
-    type: text
-    config:
-      required: true
-    label: Label
-    default: Untitled Row
-    hidden: false
-  - name: columns
-    type: field_group_list
-    fields:
-    - name: label
-      type: text
-      config:
-        required: true
-      label: Label
-      hidden: false
-      default: Untitled Column
-    - name: blocks
-      type: blocks
-      label: Blocks
-      template_types:
-      - main-basic-contact-form
-      - main-contact-form
-      - main-fabrication-animation
-      - main-hero
-      - main-interactive-markets
-      - main-interactive-tools
-      - main-product-descriptions
-      config:
-        min: 
-        max: 
-    - name: settings
-      type: include
-      config: {}
-      template: developer-settings
-      label: Developer Settings
-    config:
-      min: 
-      max: 
-      labelField: 
-    label: Columns
-  - name: settings
-    type: include
-    config: {}
-    template: developer-settings
-    label: Developer Settings
+- name: blocks
+  type: blocks
+  label: Blocks
+  template_types:
+  - main-basic-contact-form
+  - main-contact-form
+  - main-fabrication-animation
+  - main-hero
+  - main-interactive-markets
+  - main-interactive-tools
+  - main-product-descriptions
   config:
     min: 
     max: 
-    labelField: 
-  label: Rows
 - name: settings
   type: include
   config: {}

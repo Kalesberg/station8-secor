@@ -1,0 +1,59 @@
+---
+label: Career
+hide_body: true
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+  description: The title will appear in the window/tab label before the site name.
+- name: slug
+  type: text
+  config:
+    required: false
+  label: Slug
+  description: This is the text after the domain + '/careers' a user would enter to
+    navigate to this page. If nothing is entered here, the slug will become a slug-ified
+    version of the page title.
+- name: location
+  type: text
+  config:
+    required: true
+  label: Location
+- name: description
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Description
+- name: body
+  type: field_group_list
+  fields:
+  - name: heading
+    type: text
+    config:
+      required: false
+    label: Heading
+  - name: text
+    type: textarea
+    default: ''
+    config:
+      required: true
+      wysiwyg: true
+      schema:
+        format: markdown
+    label: Text
+  config:
+    min: 1
+    max: 
+    labelField: 
+  label: Body
+- name: developerSettings
+  type: include
+  config: {}
+  template: developer-settings
+  label: Developer Settings

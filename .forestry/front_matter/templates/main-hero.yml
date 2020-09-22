@@ -2,6 +2,68 @@
 label: 'Main: Hero'
 hide_body: true
 fields:
+- name: image
+  type: file
+  config:
+    maxSize: 64
+  label: Image
+  default: "/.forestry/content/images/placeholder.png"
+- name: text
+  type: field_group_list
+  fields:
+  - name: element
+    type: select
+    default: Heading 1
+    config:
+      required: true
+      options:
+      - Heading 1
+      - Heading 2
+      - Heading 3
+      - Paragraph
+      source:
+        type: simple
+        section: 
+        file: 
+        path: 
+    label: Element
+  - name: text
+    type: text
+    config:
+      required: true
+    label: Text
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Text
+- name: button
+  type: boolean
+  label: Show Button
+  default: true
+- name: buttonText
+  type: text
+  config:
+    required: true
+  label: Button Text
+  showOnly:
+    field: button
+    value: true
+- name: buttonLink
+  type: select
+  default: []
+  config:
+    required: true
+    options: []
+    source:
+      type: pages
+      section: pages
+      file: 
+      path: 
+  label: Button Link
+  showOnly:
+    field: button
+    value: true
 - name: developerSettings
   type: include
   config: {}
