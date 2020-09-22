@@ -2,7 +2,25 @@
   "title": "Demo",
   "type": "page",
   "rows": [
-
+    {
+      "label": "Untitled Row",
+      "columns": [
+        {
+          "label": "Untitled Column",
+          "blocks": [
+            {
+              "template": "main-hero"
+            }
+          ],
+          "settings": {
+            "disabled": false
+          }
+        }
+      ],
+      "settings": {
+        "disabled": false
+      }
+    }
   ],
   "posts": [
 
