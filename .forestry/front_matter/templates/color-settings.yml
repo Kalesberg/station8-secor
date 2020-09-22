@@ -1,5 +1,5 @@
 ---
-label: Color Settings
+label: 'Global Settings: Color'
 hide_body: true
 fields:
 - name: colors
