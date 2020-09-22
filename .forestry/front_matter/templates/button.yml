@@ -21,8 +21,3 @@ fields:
   config:
     required: false
   label: Button Text
-- name: settings
-  type: include
-  config: {}
-  template: developer-settings
-  label: Developer Settings
