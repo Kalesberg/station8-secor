@@ -12,7 +12,11 @@
           "label": "Hero Column",
           "blocks": [
             {
-              "template": "main-hero"
+              "template": "main-hero",
+              "settings": {
+                "disabled": false,
+                "class": ""
+              }
             }
           ],
           "settings": {
@@ -31,7 +35,11 @@
           "label": "Product Descriptions Column",
           "blocks": [
             {
-              "template": "main-product-descriptions"
+              "template": "main-product-descriptions",
+              "settings": {
+                "disabled": false,
+                "class": ""
+              }
             }
           ],
           "settings": {
@@ -50,7 +58,11 @@
           "label": "Fabrication Animation Column",
           "blocks": [
             {
-              "template": "main-fabrication-animation"
+              "template": "main-fabrication-animation",
+              "settings": {
+                "disabled": false,
+                "class": ""
+              }
             }
           ],
           "settings": {
@@ -69,7 +81,11 @@
           "label": "Interactive Tools Column",
           "blocks": [
             {
-              "template": "main-interactive-tools"
+              "template": "main-interactive-tools",
+              "settings": {
+                "disabled": false,
+                "class": ""
+              }
             }
           ],
           "settings": {
@@ -88,7 +104,11 @@
           "label": "Basic Contact Form Column",
           "blocks": [
             {
-              "template": "main-basic-contact-form"
+              "template": "main-basic-contact-form",
+              "settings": {
+                "disabled": false,
+                "class": ""
+              }
             }
           ],
           "settings": {
@@ -107,7 +127,11 @@
           "label": "Interactive Markets Column",
           "blocks": [
             {
-              "template": "main-interactive-markets"
+              "template": "main-interactive-markets",
+              "settings": {
+                "disabled": false,
+                "class": ""
+              }
             }
           ],
           "settings": {
@@ -126,7 +150,11 @@
           "label": "Contact Form Column",
           "blocks": [
             {
-              "template": "main-contact-form"
+              "template": "main-contact-form",
+              "settings": {
+                "disabled": false,
+                "class": ""
+              }
             }
           ],
           "settings": {
