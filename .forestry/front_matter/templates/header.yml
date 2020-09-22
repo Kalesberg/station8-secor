@@ -1,5 +1,5 @@
 ---
-label: Header
+label: 'Global Settings: Header'
 hide_body: true
 fields:
 - name: logo
