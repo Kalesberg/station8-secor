@@ -1,5 +1,5 @@
 ---
-label: 'Main: Hero'
+label: 'Page Block: Hero'
 hide_body: true
 fields:
 - name: image
