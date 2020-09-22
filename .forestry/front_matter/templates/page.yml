@@ -56,7 +56,7 @@ fields:
       - main-hero
       - main-interactive-markets
       - main-interactive-tools
-      - main-product-description
+      - main-product-descriptions
       config:
         min: 
         max: 
