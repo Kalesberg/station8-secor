@@ -50,7 +50,13 @@ fields:
       type: blocks
       label: Blocks
       template_types:
+      - main-basic-contact-form
+      - main-contact-form
+      - main-fabrication-animation
       - main-hero
+      - main-interactive-markets
+      - main-interactive-tools
+      - main-product-description
       config:
         min: 
         max: 
