@@ -1,31 +1,6 @@
 {
   "blocks": [
     {
-      "template": "header-navigation",
-      "settings": {
-        "customClasses": [
-
-        ],
-        "disabled": false,
-        "colors": {
-          "textColor": "",
-          "backgroundColor": ""
-        }
-      },
-      "navigationItems": [
-        ".forestry/content/pages/home.json",
-        ".forestry/content/pages/about.json",
-        ".forestry/content/pages/markets.json",
-        ".forestry/content/pages/press.json"
-      ]
-    },
-    {
-      "template": "header-contact-info",
-      "settings": {
-        "disabled": false
-      }
-    },
-    {
       "template": "header-contact-form-with-video-background",
       "heading": "Building cross-continent relationships.",
       "subheading": "Get in touch with us!",

@@ -2,31 +2,10 @@
 label: 'Global Settings: Header'
 hide_body: true
 fields:
-- name: logo
-  type: field_group
-  config: {}
-  fields:
-  - name: logo
-    type: include
-    config: {}
-    template: image
-    label: Logo
-  label: Logo
-- name: floatingLogo
-  type: field_group
-  config: {}
-  fields:
-  - name: floatingLogo
-    type: include
-    config: {}
-    template: image
-    label: Floating Logo
-  label: Floating Logo
 - name: blocks
   type: blocks
   label: Blocks
   template_types:
-  - header-contact-form-with-video-background
   - header-contact-info
   - header-navigation
   config:
