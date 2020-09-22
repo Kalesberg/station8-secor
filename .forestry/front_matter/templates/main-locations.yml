@@ -38,8 +38,3 @@ fields:
     max: 
     labelField: city
   label: Locations
-- name: developerSettings
-  type: include
-  config: {}
-  template: developer-settings-main-blocks
-  label: Developer Settings
