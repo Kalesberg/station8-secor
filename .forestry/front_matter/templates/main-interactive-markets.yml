@@ -1,9 +1,4 @@
 ---
 label: 'Main: Interactive Markets'
 hide_body: true
-fields:
-- name: developerSettings
-  type: include
-  config: {}
-  template: developer-settings-main-blocks
-  label: Developer Settings
+fields: []
