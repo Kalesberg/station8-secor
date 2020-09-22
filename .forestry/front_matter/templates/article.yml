@@ -23,11 +23,12 @@ fields:
   config:
     required: true
     max: 
-- name: snippet
+- name: summary
   type: text
   config:
     required: true
-  label: Snippet
+  label: Summary
+  description: Describe this career in 1-2 sentences
 - name: date
   type: datetime
   label: Date
