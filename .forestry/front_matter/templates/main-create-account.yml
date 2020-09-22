@@ -1,4 +1,14 @@
 ---
-label: Main Create Account
+label: 'Main: Create Account'
 hide_body: true
-fields: []
+fields:
+- name: form
+  type: include
+  config: {}
+  template: template-form
+  label: Form
+- name: developerSettings
+  type: include
+  config: {}
+  template: developer-settings-main-blocks
+  label: Developer Settings
