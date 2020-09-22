@@ -57,3 +57,5 @@ fields:
   config: {}
   template: developer-settings
   label: Developer Settings
+pages:
+- ".forestry/content/careers/position-title.json"
