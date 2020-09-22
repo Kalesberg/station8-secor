@@ -5,7 +5,25 @@
     "disabled": false
   },
   "rows": [
-
+    {
+      "label": "Hero Row",
+      "columns": [
+        {
+          "label": "Hero Column",
+          "blocks": [
+            {
+              "template": "main-hero"
+            }
+          ],
+          "settings": {
+            "disabled": false
+          }
+        }
+      ],
+      "settings": {
+        "disabled": false
+      }
+    }
   ],
   "posts": [
 
