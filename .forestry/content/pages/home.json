@@ -23,6 +23,80 @@
       "settings": {
         "disabled": false
       }
+    },
+    {
+      "label": "Product Descriptions Row",
+      "columns": [
+        {
+          "label": "Product Descriptions Column",
+          "blocks": [
+            {
+              "template": "main-product-descriptions"
+            }
+          ],
+          "settings": {
+            "disabled": false
+          }
+        }
+      ],
+      "settings": {
+        "disabled": false
+      }
+    },
+    {
+      "label": "Untitled Row",
+      "columns": [
+        {
+          "label": "Fabrication Animation Column",
+          "blocks": [
+            {
+              "template": "main-fabrication-animation"
+            }
+          ],
+          "settings": {
+            "disabled": false
+          }
+        }
+      ],
+      "settings": {
+        "disabled": false
+      }
+    },
+    {
+      "label": "Untitled Row",
+      "columns": [
+
+      ],
+      "settings": {
+        "disabled": false
+      }
+    },
+    {
+      "label": "Untitled Row",
+      "columns": [
+
+      ],
+      "settings": {
+        "disabled": false
+      }
+    },
+    {
+      "label": "Untitled Row",
+      "columns": [
+
+      ],
+      "settings": {
+        "disabled": false
+      }
+    },
+    {
+      "label": "Untitled Row",
+      "columns": [
+
+      ],
+      "settings": {
+        "disabled": false
+      }
     }
   ],
   "slug": "/"
