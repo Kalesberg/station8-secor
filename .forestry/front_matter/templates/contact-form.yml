@@ -1,5 +1,5 @@
 ---
-label: Contact Form
+label: 'Global Settings: Contact Form'
 hide_body: true
 fields:
 - name: heading
