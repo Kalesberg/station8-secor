@@ -52,10 +52,5 @@ fields:
     max: 
     labelField: 
   label: Body
-- name: developerSettings
-  type: include
-  config: {}
-  template: developer-settings
-  label: Developer Settings
 pages:
 - ".forestry/content/careers/position-title.json"
