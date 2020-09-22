@@ -1,5 +1,5 @@
 ---
-label: Contact Info
+label: 'Global Settings: Contact Info'
 hide_body: true
 fields:
 - name: phoneNumber
