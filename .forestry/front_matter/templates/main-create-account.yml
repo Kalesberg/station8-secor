@@ -1,5 +1,5 @@
 ---
-label: 'Main: Create Account'
+label: 'Page Block: Create Account'
 hide_body: true
 fields:
 - name: form
