@@ -58,10 +58,5 @@ fields:
   label: Type
   hidden: true
   default: article
-- name: developerSettings
-  type: include
-  config: {}
-  template: developer-settings
-  label: Developer Settings
 pages:
 - ".forestry/content/articles/featured-article.md"
