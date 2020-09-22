@@ -93,6 +93,7 @@ fields:
 pages:
 - ".forestry/content/pages/404.json"
 - ".forestry/content/pages/about.json"
+- ".forestry/content/pages/account.json"
 - ".forestry/content/pages/blog.json"
 - ".forestry/content/pages/demo.json"
 - ".forestry/content/pages/get-a-quote.json"
