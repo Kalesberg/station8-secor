@@ -1,13 +1,11 @@
 {
-  "title": "3 Seas Energy",
+  "title": "Secor",
   "description": "Description for the site",
-  "repositoryUrl": "https://github.com/s8webteam/3-seas",
+  "repositoryUrl": "https://github.com/s8webteam/secor",
   "titleDivider": " | ",
-  "author": "Station8",
+  "author": "Secor",
   "metaTags": [
-    "Gatsby",
-    "Forestry.io",
-    "Station8"
+    "Secor"
   ],
-  "favicon": "/.forestry/content/images/favicon.svg"
+  "favicon": "/.forestry/content/images/secor-logo-white.svg"
 }
