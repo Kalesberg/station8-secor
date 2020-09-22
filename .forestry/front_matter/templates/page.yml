@@ -29,6 +29,7 @@ fields:
   - main-hero
   - main-interactive-markets
   - main-interactive-tools
+  - main-locations
   - main-product-descriptions
   config:
     min: 
