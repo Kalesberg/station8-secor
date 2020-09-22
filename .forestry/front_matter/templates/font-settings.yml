@@ -1,5 +1,5 @@
 ---
-label: Font Settings
+label: 'Global Settings: Fonts'
 hide_body: true
 fields:
 - name: fonts
