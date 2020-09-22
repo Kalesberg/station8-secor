@@ -1,5 +1,5 @@
 ---
-label: Page
+label: 'Content: Page'
 hide_body: true
 fields:
 - name: title
