@@ -5,10 +5,7 @@ fields:
 - name: blocks
   type: blocks
   label: Blocks
-  template_types:
-  - footer-contact-info
-  - footer-copyright-info
-  - footer-logo
+  template_types: []
   config:
     min: 
     max: 
