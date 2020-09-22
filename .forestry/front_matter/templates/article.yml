@@ -4,7 +4,7 @@ hide_body: false
 fields:
 - name: parent
   type: select
-  default: []
+  default: ".forestry/content/pages/blog.json"
   config:
     required: true
     options: []
@@ -17,6 +17,7 @@ fields:
   description: Select a page to be the parent folder for this article. For instance,
     if you have a page named <strong>blog</strong> and you select it as the parent,
     your article named <strong>article</strong> will be located at <strong>example.com/blog/article</strong>.
+  hidden: true
 - type: text
   name: title
   label: Title
