@@ -1,5 +1,5 @@
 ---
-label: Site Config
+label: 'Global Settings: Site Config'
 hide_body: true
 fields:
 - name: favicon
