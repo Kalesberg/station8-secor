@@ -1,5 +1,8 @@
 {
   "blocks": [
-
+    {
+      "template": "header-logo",
+      "image": "/.forestry/content/images/secor-logo-white.svg"
+    }
   ]
 }
