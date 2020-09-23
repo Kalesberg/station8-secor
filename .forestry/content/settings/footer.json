@@ -1,49 +1,5 @@
 {
   "blocks": [
-    {
-      "template": "footer-contact-info",
-      "settings": {
-        "disabled": false
-      },
-      "button": {
-        "label": "Get in touch",
-        "direction": "Right"
-      }
-    },
-    {
-      "template": "footer-logo",
-      "title": "Logo",
-      "alt": "Logo",
-      "description": "Logo",
-      "image": "/.forestry/content/images/logo.svg",
-      "settings": {
-        "disabled": false
-      }
-    },
-    {
-      "template": "footer-copyright-info",
-      "blocks": [
-        {
-          "template": "copyright-info-link",
-          "page": ".forestry/content/pages/privacy-cookie-policy.json",
-          "settings": {
-            "disabled": false
-          }
-        },
-        {
-          "template": "copyright-info-text",
-          "text": "© 3 Seas Energy all rights reserved",
-          "settings": {
-            "disabled": false
-          }
-        }
-      ],
-      "settings": {
-        "disabled": false
-      }
-    }
-  ],
-  "settings": {
-    "disabled": false
-  }
+    
+  ]
 }

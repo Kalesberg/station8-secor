@@ -12,18 +12,9 @@
             {
               "template": "main-hero"
             }
-          ],
-          "settings": {
-            "disabled": false
-          }
+          ]
         }
-      ],
-      "settings": {
-        "disabled": false
-      }
+      ]
     }
-  ],
-  "settings": {
-    "disabled": false
-  }
+  ]
 }

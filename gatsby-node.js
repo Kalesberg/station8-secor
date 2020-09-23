@@ -1,8 +1,10 @@
 const path = require('path')
 const slugify = require('slugify')
 
-const articleTemplate = path.resolve('./src/templates/article.tsx')
-const pageTemplate = path.resolve('./src/templates/page.tsx')
+const articleTemplate = path.resolve('./src/templates/article/article.tsx')
+const careerTemplate = path.resolve('./src/templates/career/career.tsx')
+const pageTemplate = path.resolve('./src/templates/page/page.tsx')
+const productTemplate = path.resolve('./src/templates/product/product.tsx')
 
 module.exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
@@ -17,15 +19,12 @@ module.exports.onCreateNode = ({ node, actions }) => {
 }
 
 module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
-  const { data: { articles: { nodes: articles }, pages: { nodes: pages }, images: { nodes: images }, pageFiles: { nodes: pageFiles }, authors: { nodes: authors } } } = await graphql(`
+  const { data: { articles: { nodes: articles }, pages: { nodes: pages }, images: { nodes: images }, pageFiles: { nodes: pageFiles } } } = await graphql(`
   {
-    pages: allPagesJson(filter: {settings: {disabled: {eq: false}}}) {
+    pages: allPagesJson {
       nodes {
         title
         slug
-        settings {
-          disabled
-        }
       }
     }
     pageFiles: allFile(filter: {relativeDirectory: {eq: "pages"}}) {
@@ -59,17 +58,13 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         }
       }
     }
-    articles: allMarkdownRemark(filter: {frontmatter: {type: {eq: "article"}, settings: {disabled: {eq: false}}}}, sort: {fields: frontmatter___date, order: DESC}) {
+    articles: allMarkdownRemark(filter: {frontmatter: {type: {eq: "article"}}}, sort: {fields: frontmatter___date, order: DESC}) {
       nodes {
         fields {
           slug
         }
         frontmatter {
           parent
-          authors
-          settings {
-            disabled
-          }
           heroImage {
             relativePath
           }
@@ -81,24 +76,9 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         excerpt(pruneLength: 56)
       }
     }
-    authors: allMarkdownRemark(filter: {frontmatter: {type: {eq: "author"}}}) {
-      nodes {
-        frontmatter {
-          firstName
-          lastName
-          type
-        }
-        parent {
-          ... on File {
-            relativePath
-          }
-        }
-      }
-    }
   }
   `)
 
-  // const authors = allMarkdownRemark.nodes.filter(node => node.frontmatter.type === 'author')
   const pagesWithExtras = pages.map(page => {
     const file = pageFiles.find(file => file.childPagesJson.slug === page.slug && file.childPagesJson.title === page.title)
     const filePath = `/${page.slug === '/' ? '' : page.slug || slugify(page.title).toLowerCase()}`
@@ -125,13 +105,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
   articles.forEach(article => {
     const slug = article.fields.slug
     const parent = pageFiles.find(page => article.frontmatter.parent.includes(page.relativePath)).childPagesJson
-    const articleAuthors = article.frontmatter.authors.map(author => {
-      const item = authors.find(item => author.includes(item.parent.relativePath))
-      return ({
-        firstName: item ? item.frontmatter.firstName : '',
-        lastName: item ? item.frontmatter.lastName : ''
-      })
-    })
     const path = `/${parent.slug === '/' ? '' : parent.slug || slugify(parent.title).toLowerCase()}` + `${parent.slug === '/' ? '' : '/'}` + slug
     createPage({
       component: articleTemplate,
@@ -139,7 +112,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       context: {
         slug,
         parent: article.frontmatter.parent,
-        authors: articleAuthors,
         images,
         pages: pagesWithExtras,
         articles

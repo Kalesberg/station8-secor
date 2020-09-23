@@ -5,9 +5,6 @@
   "rows": [
 
   ],
-  "settings": {
-    "disabled": false
-  },
   "blocks": [
     {
       "template": "main-locations",
@@ -42,11 +39,7 @@
           "address": "9335 W. 44th Ave.\nWheat Ridge, CO 80033",
           "phone": "3039404749"
         }
-      ],
-      "settings": {
-        "disabled": false,
-        "class": ""
-      }
+      ]
     }
   ]
 }

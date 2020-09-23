@@ -11,23 +11,14 @@
             {
               "template": "main-hero"
             }
-          ],
-          "settings": {
-            "disabled": false
-          }
+          ]
         }
-      ],
-      "settings": {
-        "disabled": false
-      }
+      ]
     }
   ],
   "posts": [
 
   ],
-  "settings": {
-    "disabled": false
-  },
   "articles": {
     "subdirectory": "",
     "articles": [

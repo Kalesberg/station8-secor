@@ -1,49 +1,5 @@
 {
   "blocks": [
-    {
-      "template": "header-contact-form-with-video-background",
-      "heading": "Building cross-continent relationships.",
-      "subheading": "Get in touch with us!",
-      "nameLabel": "Name",
-      "phoneLabel": "Email Address",
-      "messageLabel": "How can we help?...",
-      "video": "https://youtu.be/Dx6P3347jz0",
-      "image": "/.forestry/content/images/menumask.svg",
-      "settings": {
-        "disabled": false
-      },
-      "url": "https://send.pageclip.co/HIvIixhB5Flr6Eqmxj1vvaMiec3fmiM3/Default",
-      "videoFile": "/.forestry/content/images/sizzle.mp4"
-    }
-  ],
-  "settings": {
-    "disabled": false,
-    "customClasses": [
 
-    ],
-    "colors": {
-      "textColor": "",
-      "backgroundColor": ""
-    }
-  },
-  "logo": {
-    "image": "/.forestry/content/images/mark.svg",
-    "title": "Placeholder",
-    "alt": "Placeholder",
-    "description": "Placeholder",
-    "settings": {
-      "disabled": false
-    },
-    "color": ""
-  },
-  "floatingLogo": {
-    "image": "/.forestry/content/images/text.svg",
-    "title": "Placeholder",
-    "alt": "Placeholder",
-    "description": "Placeholder",
-    "settings": {
-      "disabled": false
-    },
-    "color": ""
-  }
+  ]
 }

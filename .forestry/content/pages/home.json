@@ -1,9 +1,6 @@
 {
   "title": "Home",
   "type": "page",
-  "settings": {
-    "disabled": false
-  },
   "rows": [
     {
       "label": "Hero Row",
@@ -12,21 +9,11 @@
           "label": "Hero Column",
           "blocks": [
             {
-              "template": "main-hero",
-              "settings": {
-                "disabled": false,
-                "class": ""
-              }
+              "template": "main-hero"
             }
-          ],
-          "settings": {
-            "disabled": false
-          }
+          ]
         }
-      ],
-      "settings": {
-        "disabled": false
-      }
+      ]
     },
     {
       "label": "Product Descriptions Row",
@@ -35,21 +22,11 @@
           "label": "Product Descriptions Column",
           "blocks": [
             {
-              "template": "main-product-descriptions",
-              "settings": {
-                "disabled": false,
-                "class": ""
-              }
+              "template": "main-product-descriptions"
             }
-          ],
-          "settings": {
-            "disabled": false
-          }
+          ]
         }
-      ],
-      "settings": {
-        "disabled": false
-      }
+      ]
     },
     {
       "label": "Fabrication Animation Row",
@@ -58,21 +35,11 @@
           "label": "Fabrication Animation Column",
           "blocks": [
             {
-              "template": "main-fabrication-animation",
-              "settings": {
-                "disabled": false,
-                "class": ""
-              }
+              "template": "main-fabrication-animation"
             }
-          ],
-          "settings": {
-            "disabled": false
-          }
+          ]
         }
-      ],
-      "settings": {
-        "disabled": false
-      }
+      ]
     },
     {
       "label": "Interactive Tools Row",
@@ -81,21 +48,11 @@
           "label": "Interactive Tools Column",
           "blocks": [
             {
-              "template": "main-interactive-tools",
-              "settings": {
-                "disabled": false,
-                "class": ""
-              }
+              "template": "main-interactive-tools"
             }
-          ],
-          "settings": {
-            "disabled": false
-          }
+          ]
         }
-      ],
-      "settings": {
-        "disabled": false
-      }
+      ]
     },
     {
       "label": "Basic Contact Form Row",
@@ -104,21 +61,11 @@
           "label": "Basic Contact Form Column",
           "blocks": [
             {
-              "template": "main-basic-contact-form",
-              "settings": {
-                "disabled": false,
-                "class": ""
-              }
+              "template": "main-basic-contact-form"
             }
-          ],
-          "settings": {
-            "disabled": false
-          }
+          ]
         }
-      ],
-      "settings": {
-        "disabled": false
-      }
+      ]
     },
     {
       "label": "Interactive Markets Row",
@@ -127,21 +74,11 @@
           "label": "Interactive Markets Column",
           "blocks": [
             {
-              "template": "main-interactive-markets",
-              "settings": {
-                "disabled": false,
-                "class": ""
-              }
+              "template": "main-interactive-markets"
             }
-          ],
-          "settings": {
-            "disabled": false
-          }
+          ]
         }
-      ],
-      "settings": {
-        "disabled": false
-      }
+      ]
     },
     {
       "label": "Contact Form Row",
@@ -150,21 +87,11 @@
           "label": "Contact Form Column",
           "blocks": [
             {
-              "template": "main-contact-form",
-              "settings": {
-                "disabled": false,
-                "class": ""
-              }
+              "template": "main-contact-form"
             }
-          ],
-          "settings": {
-            "disabled": false
-          }
+          ]
         }
-      ],
-      "settings": {
-        "disabled": false
-      }
+      ]
     }
   ],
   "slug": "/",
@@ -188,53 +115,25 @@
           "element": "Paragraph",
           "text": "HDPE PIPE, FITTINGS, AND EQUIPMENT"
         }
-      ],
-      "settings": {
-        "disabled": false,
-        "class": ""
-      }
+      ]
     },
     {
-      "template": "main-product-descriptions",
-      "settings": {
-        "disabled": false,
-        "class": ""
-      }
+      "template": "main-product-descriptions"
     },
     {
-      "template": "main-fabrication-animation",
-      "settings": {
-        "disabled": false,
-        "class": ""
-      }
+      "template": "main-fabrication-animation"
     },
     {
-      "template": "main-interactive-tools",
-      "settings": {
-        "disabled": false,
-        "class": ""
-      }
+      "template": "main-interactive-tools"
     },
     {
-      "template": "main-basic-contact-form",
-      "settings": {
-        "disabled": false,
-        "class": ""
-      }
+      "template": "main-basic-contact-form"
     },
     {
-      "template": "main-interactive-markets",
-      "settings": {
-        "disabled": false,
-        "class": ""
-      }
+      "template": "main-interactive-markets"
     },
     {
-      "template": "main-contact-form",
-      "settings": {
-        "disabled": false,
-        "class": ""
-      }
+      "template": "main-contact-form"
     }
   ]
 }
