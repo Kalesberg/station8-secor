@@ -25,5 +25,3 @@ fields:
     max: 
     labelField: name
   label: Colors
-pages:
-- ".forestry/content/settings/colors.json"
