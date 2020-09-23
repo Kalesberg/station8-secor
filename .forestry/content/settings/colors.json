@@ -1,6 +1,10 @@
 {
   "colors": [
     {
+      "name": "White",
+      "color": "#FFFFFF"
+    },
+    {
       "name": "Black",
       "color": "#000000"
     },
