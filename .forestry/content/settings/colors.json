@@ -1,6 +1,10 @@
 {
   "colors": [
     {
+      "name": "Nero",
+      "color": "#212121"
+    },
+    {
       "name": "Persian Red",
       "color": "#E02020"
     }
