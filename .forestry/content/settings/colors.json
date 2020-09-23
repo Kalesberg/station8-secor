@@ -1,6 +1,14 @@
 {
   "colors": [
     {
+      "name": "Matterhorn",
+      "color": "#525252"
+    },
+    {
+      "name": "Dark Gray",
+      "color": "#A4A4A4"
+    },
+    {
       "name": "Nero",
       "color": "#212121"
     },
