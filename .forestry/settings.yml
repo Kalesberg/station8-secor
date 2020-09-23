@@ -36,9 +36,6 @@ sections:
   path: ".forestry/content/settings/config.json"
   label: Site Info
 - type: document
-  path: ".forestry/content/settings/contactForm.json"
-  label: Contact Form
-- type: document
   path: ".forestry/content/settings/contact.json"
   label: Contact Info
 - type: document

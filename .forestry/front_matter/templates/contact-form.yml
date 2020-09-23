@@ -32,5 +32,3 @@ fields:
   config:
     required: true
   label: Form Submission URL
-pages:
-- ".forestry/content/settings/contactForm.json"
