@@ -1,6 +1,10 @@
 {
   "colors": [
     {
+      "name": "Rich Red",
+      "color": "#D50F09"
+    },
+    {
       "name": "Matterhorn",
       "color": "#525252"
     },
