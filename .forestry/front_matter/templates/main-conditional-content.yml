@@ -1,5 +1,5 @@
 ---
-label: 'Page Block: Conditional Content'
+label: 'Main Block: Conditional Content'
 hide_body: true
 fields:
 - name: conditionalBlocks
