@@ -7,14 +7,6 @@ sections:
 - type: heading
   label: Content
 - type: directory
-  path: ".forestry/content/pages"
-  label: Pages
-  create: documents
-  match: "**/*"
-  new_doc_ext: json
-  templates:
-  - page
-- type: directory
   path: ".forestry/content/articles"
   label: Articles
   create: documents
@@ -30,6 +22,14 @@ sections:
   new_doc_ext: json
   templates:
   - career
+- type: directory
+  path: ".forestry/content/pages"
+  label: Pages
+  create: documents
+  match: "**/*"
+  new_doc_ext: json
+  templates:
+  - page
 - type: heading
   label: Global Settings
 - type: document
