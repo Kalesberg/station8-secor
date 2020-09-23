@@ -3,6 +3,17 @@
     {
       "template": "header-logo",
       "image": "/.forestry/content/images/secor-logo-white.svg"
+    },
+    {
+      "template": "header-links",
+      "links": [
+        ".forestry/content/pages/why-hdpe.json",
+        ".forestry/content/pages/products-equipment.json",
+        ".forestry/content/pages/mcelroy.json",
+        ".forestry/content/pages/get-a-quote.json",
+        ".forestry/content/pages/training.json",
+        ".forestry/content/pages/about.json"
+      ]
     }
   ]
 }
