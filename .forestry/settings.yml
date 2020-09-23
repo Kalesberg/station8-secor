@@ -47,9 +47,6 @@ sections:
 - type: document
   path: ".forestry/content/settings/colors.json"
   label: Colors
-- type: document
-  path: ".forestry/content/settings/fonts.json"
-  label: Fonts
 upload_dir: ".forestry/content/images"
 public_path: "/.forestry/content/images"
 front_matter_path: ''

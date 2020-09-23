@@ -48,5 +48,3 @@ fields:
     max: 
     labelField: name
   label: Fonts
-pages:
-- ".forestry/content/settings/fonts.json"
