@@ -1,7 +1,12 @@
 ---
-label: Footer Links
+label: 'Footer Block: Links'
 hide_body: false
 fields:
+- name: label
+  type: text
+  config:
+    required: true
+  label: Label
 - name: columns
   type: field_group_list
   fields:
