@@ -1,4 +1,26 @@
 ---
-label: Footer Quotes
+label: 'Footer Block: Quotes'
 hide_body: true
-fields: []
+fields:
+- name: quote
+  type: field_group_list
+  fields:
+  - name: text
+    type: textarea
+    default: ''
+    config:
+      required: true
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: Text
+  - name: author
+    type: text
+    config:
+      required: true
+    label: Author
+  config:
+    min: 
+    max: 
+    labelField: author
+  label: Quote
