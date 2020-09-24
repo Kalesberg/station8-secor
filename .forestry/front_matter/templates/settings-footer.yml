@@ -14,7 +14,9 @@ fields:
 - name: bottomRow
   type: blocks
   label: Bottom Row
-  template_types: []
+  template_types:
+  - footer-social-media-links
+  - footer-text-and-links
   config:
     min: 
     max: 
