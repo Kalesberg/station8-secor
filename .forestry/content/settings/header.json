@@ -20,7 +20,8 @@
     },
     {
       "template": "header-quote-menu",
-      "icon": "/.forestry/content/images/quote.svg"
+      "icon": "/.forestry/content/images/quote.svg",
+      "label": "My quote"
     },
     {
       "template": "header-user-menu",
