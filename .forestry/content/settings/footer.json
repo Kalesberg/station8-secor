@@ -9,14 +9,6 @@
           "bold": false
         },
         {
-          "page": ".forestry/content/pages/products-equipment.json",
-          "bold": false
-        },
-        {
-          "page": ".forestry/content/pages/mcelroy.json",
-          "bold": false
-        },
-        {
           "page": ".forestry/content/pages/get-a-quote.json",
           "bold": false
         },
@@ -25,15 +17,19 @@
           "bold": false
         },
         {
-          "page": ".forestry/content/pages/about.json",
-          "bold": false
-        },
-        {
-          "page": ".forestry/content/pages/training.json",
+          "page": ".forestry/content/pages/products-equipment.json",
           "bold": false
         },
         {
           "page": ".forestry/content/pages/blog.json",
+          "bold": false
+        },
+        {
+          "page": ".forestry/content/pages/mcelroy.json",
+          "bold": false
+        },
+        {
+          "page": ".forestry/content/pages/about.json",
           "bold": false
         },
         {
