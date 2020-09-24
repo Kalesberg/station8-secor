@@ -1,4 +1,12 @@
 ---
-label: Header Call Button
+label: 'Header Block: Call Button'
 hide_body: true
-fields: []
+fields:
+- name: phone
+  type: text
+  config:
+    required: true
+    min: 10
+    max: 10
+  label: Phone Number
+  description: " Enter the 10-digit number with no extra formatting"
