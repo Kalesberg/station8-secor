@@ -1,7 +1,7 @@
 import React from 'react'
 import ScrollAnimation from 'react-animate-on-scroll'
 
-import { AnimatedImage, ArticlesGrid, ArticlesSlider, Cities, CompanyMerger, ContactForm3seas, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, Hero3Seas, HeroSlider, Highlights, ImageBar, Images, Infographic, KnowledgeBase, Leadership, Map, Posts, RecentArticles, RichText, Slideshow, StaticImage, Testimonial } from '../../components/main/blocks'
+import { AnimatedImage, ArticlesGrid, ArticlesSlider, Cities, CompanyMerger, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, HeroSlider, Highlights, ImageBar, Images, Infographic, KnowledgeBase, Leadership, Map, Posts, RecentArticles, RichText, Slideshow, StaticImage, Testimonial } from '../../components/main/blocks'
 
 import styles from './main.module.scss'
 
@@ -29,10 +29,6 @@ export default ({ blocks, children, images, menuOpen, scrollListener, articles, 
           <ScrollAnimation animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
             <CompanyMerger key={i} block={block} images={images} />
           </ScrollAnimation>
-        ) : block.template === 'main-contact-form-3seas' ? (
-          <ScrollAnimation animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
-            <ContactForm3seas key={i} block={block} />
-          </ScrollAnimation>
         ) : block.template === 'main-content-columns' ? (
           <ScrollAnimation animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
             <ContentColumns key={i} block={block} images={images} />
@@ -52,10 +48,6 @@ export default ({ blocks, children, images, menuOpen, scrollListener, articles, 
         ) : block.template === 'main-gallery' ? (
           <ScrollAnimation animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
             <Gallery key={i} block={block} />
-          </ScrollAnimation>
-        ) : block.template === 'main-hero-3-seas' ? (
-          <ScrollAnimation animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
-            <Hero3Seas key={i} block={block} images={images} />
           </ScrollAnimation>
         ) : block.template === 'main-hero-slider' ? (
           <ScrollAnimation animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
