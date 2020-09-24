@@ -1,0 +1,34 @@
+.default {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 3vw;
+  .label {
+    font-size: 1.75vw;
+    margin-bottom: 0;
+  }
+  .columns {
+    display: grid;
+    grid-auto-flow: column;
+    // grid-template-columns: repeat(auto-fit, 12vw);
+    .column {
+      display: grid;
+      grid-template-rows: repeat(auto-fit, 2vw);
+      .link {
+        .label {
+          font-size: 0.9vw;
+          font-family: 'Open Sans', sans-serif;
+          font-weight: 700;
+          margin-bottom: 0;
+          color: #212121;
+          transition: all 0.5s;
+          &.bold {
+            font-weight: 900;
+          }
+          &:hover {
+            color: #D50F09;
+          }
+        }
+      }
+    }
+  }
+}

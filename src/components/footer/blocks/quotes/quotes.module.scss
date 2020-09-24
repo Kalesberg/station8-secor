@@ -1,0 +1,20 @@
+.default {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4vw;
+  .quote {
+    font-family: 'Open Sans', sans-serif;
+    .text {
+      font-size: 0.9vw;
+      font-weight: 600;
+      margin-bottom: 1vw;
+    }
+    .author {
+      font-size: 1vw;
+      font-weight: 900;
+      margin-bottom: 0;
+      letter-spacing: -0.04vw;
+    }
+  }
+}

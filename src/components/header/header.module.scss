@@ -1,12 +1,12 @@
 .header {
   height: 4.2vw;
   background-color: #D50F09;
+  padding: 0 0.5vw;
   .menu {
     display: grid;
     grid-auto-flow: column;
     height: 100%;
     grid-template-columns: auto auto 1fr auto;
-    gap: 3.1vw;
   }
   @media (max-width: 1023px) {
     font-family: inherit;

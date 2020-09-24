@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { CallButton, ContactFormWithVideoBackground, ContactInfo, FavoritePage, FeaturedPage, FillSpace, Logo, Navigation, Search } from './blocks'
+import { CallButton, ContactButton, ContactFormWithVideoBackground, ContactInfo, FavoritePage, FeaturedPage, FillSpace, Logo, Navigation, Search, QuoteMenu, UserMenu } from './blocks'
 
 import styles from './header.module.scss'
 
@@ -14,7 +14,9 @@ export default ({ images, pages, menuOpen, setMenuOpen, toggleForm }) => (
     <div className={styles.menu + `${menuOpen ? ` ${styles.active}` : ''}`}>
       {headerConfig.blocks.map((block, i: number) => {
         return block.template === 'header-call-button' ? (
-          <CallButton key={i} block={block} images={images} />
+          <CallButton key={i} block={block} />
+        ) : block.template === 'header-contact-button' ? (
+          <ContactButton key={i} block={block} images={images} />
         ) : block.template === 'header-contact-form-with-video-background' ? (
           <ContactFormWithVideoBackground key={i} block={block} images={images} menuOpen={menuOpen} />
         ) : block.template === 'header-contact-info' ? (
@@ -31,6 +33,10 @@ export default ({ images, pages, menuOpen, setMenuOpen, toggleForm }) => (
           <Navigation key={i} block={block} pages={pages} setMenuOpen={setMenuOpen} toggleForm={toggleForm} />
         ) : block.template === 'header-search' ? (
           <Search key={i} block={block} images={images} />
+        ) : block.template === 'header-quote-menu' ? (
+          <QuoteMenu key={i} block={block} images={images} />
+        ) : block.template === 'header-user-menu' ? (
+          <UserMenu key={i} block={block} images={images} />
         ) : <p key={i}>{block.template} not defined</p>
       })}
     </div>
