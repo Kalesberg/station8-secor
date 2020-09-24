@@ -1,5 +1,5 @@
 ---
-label: 'Footer Block: Sitemap'
+label: 'Footer Block: Links'
 hide_body: true
 fields:
 - name: title

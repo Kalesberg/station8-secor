@@ -6,8 +6,8 @@ fields:
   type: blocks
   label: Blocks
   template_types:
+  - footer-links
   - footer-quotes
-  - footer-sitemap
   config:
     min: 
     max: 
