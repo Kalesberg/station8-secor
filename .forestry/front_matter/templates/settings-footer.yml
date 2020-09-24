@@ -11,5 +11,12 @@ fields:
   config:
     min: 
     max: 
+- name: bottomRow
+  type: blocks
+  label: Bottom Row
+  template_types: []
+  config:
+    min: 
+    max: 
 pages:
 - ".forestry/content/settings/footer.json"
