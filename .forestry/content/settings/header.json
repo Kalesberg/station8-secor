@@ -19,7 +19,8 @@
       "template": "header-fill-space"
     },
     {
-      "template": "header-quote-menu"
+      "template": "header-quote-menu",
+      "icon": "/.forestry/content/images/placeholder.png"
     },
     {
       "template": "header-user-menu",
