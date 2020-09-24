@@ -1,14 +1,6 @@
 {
   "blocks": [
     {
-      "template": "footer-links",
-      "title": "Sitemap"
-    },
-    {
-      "template": "footer-links",
-      "title": "Support"
-    },
-    {
       "template": "footer-quotes",
       "quote": [
         {
