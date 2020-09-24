@@ -1,0 +1,327 @@
+// .default {
+//   background-color: white;
+//   position: relative;
+//   min-height: var(--window-height);
+//   height: 100%;
+//   display: grid;
+//   justify-content: center;
+//   align-items: center;
+//   grid-template-rows: 1fr auto;
+//   > * {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     height: 100%;
+//     width: 100%;
+//   }
+//   .red-bar-container {
+//     position: absolute;
+//     pointer-events: none;
+//     z-index: 2;
+//     height: unset;
+//     top: unset;
+//     bottom: 0;
+//     left: calc(11% + 2rem);
+//     .red-bar {
+//       position: relative;
+//       bottom: -25vh;
+//       background-color: var(--color-venetian-red);
+//       opacity: .7;
+//       width: 7.5rem;
+//       height: 40vh;
+//     }
+//   }
+//   .backgrounds {
+//     overflow: hidden;
+//     .image-container {
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       height: 100%;
+//       width: 100%;
+//       overflow: hidden;
+//       &.base {
+//         color: inherit;
+//       }
+//       &.about-logo {
+//         animation: logo-animate 30s infinite ease-in-out;
+//       }
+//       &.about-shoreline {
+//         color: inherit;
+//       }
+//       &.about-balloon {
+//         animation: balloon 240s infinite ease-in-out alternate;
+//         animation-delay: -120s;
+//       }
+//       &.home-composite {
+//         color: inherit;
+//       }
+//       &.home-logo {
+//         animation: logo-animate 30s infinite ease-in-out;
+//       }
+//       &.home-mountains {
+//         color: inherit;
+//       }
+//       &.home-fog {
+//         transform: scale(1.10);
+//         animation: fog 30s infinite ease-in-out alternate;
+//       }
+//       &.regions-logo {
+//         animation: logo-animate 30s infinite ease-in-out;
+//       }
+//       &.regions-roads {
+//         color: inherit;
+//       }
+//     }
+//   }
+//   .price-container {
+//     left: unset;
+//     right: 0;
+//     width: 22rem;
+//     padding: 2rem;
+//     font-size: 1rem;
+//     .oil-price {
+//       display: grid;
+//       grid-auto-flow: column;
+//       gap: 0.5rem;
+//       color: inherit;
+//       .name {
+//         color: inherit;
+//         font: var(--font-soleto-bold);
+//         font-size: 1rem;
+//       }
+//       .icons-container {
+//         .icon {
+//           width: 1rem;
+//           height: 1rem;
+//           margin-bottom: 0;
+//         }
+//         .change {
+//           color: inherit;
+//           &.decrease {
+//             color: inherit;
+//           }
+//           &.increase {
+//             color: inherit;
+//           }
+//           .icon {
+//             width: 1rem;
+//             height: 1rem;
+//             margin-bottom: 0;
+//           }
+//         }
+//       }
+//       &:nth-of-type(1) {
+//         animation: roll-back 3s infinite alternate;
+//       }
+//       &:nth-of-type(2) {
+//         animation: roll-back 3s infinite alternate-reverse;
+//       }
+//       .price {
+//         font: var(--font-soleto-bold);
+//         font-size: 1rem;
+//       }
+//       .difference {
+//         font: var(--font-soleto-bold);
+//         font-size: 1rem;
+//       }
+//       .percent {
+//         font: var(--font-soleto-bold);
+//         font-size: 1rem;
+//         &.decrease {
+//           color: var(--color-alizarin);
+//         }
+//         &.increase {
+//           color: var(--color-dark-pastel-green);
+//         }
+//       }
+//     }
+//   }
+//   .text-container {
+//     position: relative;
+//     height: unset;
+//     margin: 80px 0 0;
+//     width: calc(100vw - 88px);
+//     color: white;
+//     display: grid;
+//     padding: 2rem 12vw 1rem 12vw;
+//     .small-heading {
+//       font: var(--font-soleto-bold);
+//       text-shadow: 2px 2px 1rem rgba(0, 0, 0, 0.9);
+//       font-size: 2rem;
+//       margin-bottom: 0;
+//     }
+//     .large-heading {
+//       font: var(--font-soleto-black);
+//       text-transform: uppercase;
+//       font-size: 5rem;
+//       text-shadow: 2px 2px 1rem rgba(0, 0, 0, 0.9);
+//       margin-bottom: 0;
+//       max-width: 900px;
+//     }
+//     .medium-heading {
+//       margin-top: 4rem;
+//       font: var(--font-soleto-black);
+//       text-shadow: 2px 2px 1rem rgba(0, 0, 0, 0.9);
+//       text-transform: uppercase;
+//       font-size: 3rem;
+//       max-width: 500px;
+//     }
+//     .body {
+//       text-shadow: 2px 2px 1rem rgba(0, 0, 0, 0.9);
+//       font-size: 5vw;
+//       font-size: 2rem;
+//       max-width: 700px;
+//       padding-top: 6%;
+//     }
+//   }
+//   .page-down-icon-container {
+//     position: relative;
+//     justify-self: center;
+//     align-self: flex-end;
+//     margin-bottom: 1.5rem;
+//     color: white;
+//     display: grid;
+//     height: unset;
+//     top: unset;
+//     bottom: 0;
+//     color: inherit;
+//     justify-content: center;
+//     .icon {
+//       position: relative;
+//       margin: 0 auto;
+//       max-width: 4rem;
+//       cursor: pointer;
+//       animation: bounce 2s infinite ease-in-out;
+//     }
+//     .label {
+//       font-size: 5vw;
+//      margin-bottom: 0;
+//      font-size: 1rem;
+//      color: #fff;
+//     }
+//   }
+//   @media (max-width: 1023px) {
+//     min-height: calc(var(--window-height) - 88px);
+//     height: 100%;
+//     .red-bar-container {
+//       bottom: 15vh;
+//       .red-bar {
+//         width: 8rem;
+//         max-width: 20vw;
+//         height: 20vh;
+//       }
+//     }
+//     .text-container {
+//       margin: 80px 0 0;
+//       min-width: 100vw;
+//       display: grid;
+//       padding: 10vw 0;
+//       .small-heading {
+//         font-size: 5vw;
+//         margin-bottom: 5vw;
+//         padding: 0 30vw 0 10vw;
+//         max-width: unset;
+//       }
+//       .large-heading {
+//         font-size: 8vw;
+//         margin-bottom: 10vw;
+//         padding: 0 30vw 0 10vw;
+//         max-width: unset;
+//       }
+//       .medium-heading {
+//         font-size: 6.5vw;
+//         margin-top: 5vw;
+//         margin-bottom: 0;
+//         padding: 0 30vw 0 10vw;
+//         max-width: unset;
+//       }
+//       .body {
+//         margin-top: 10vw;
+//         font-size: 1rem;
+//         padding: 0 15vw 0 10vw;
+//         max-width: unset;
+//       }
+//     }
+//     .price-container {
+//       width: 12rem;
+//       padding: 1rem;
+//       .difference, .percent {
+//         display: none;
+//       }
+//     }
+//   }
+// }
+
+// @keyframes balloon {
+//   0% {
+//     left: -100vw;
+//     transform: scale(1.1);
+//     top: 30vh;
+//   }
+//   100% {
+//     left: 50vw;
+//     top: -10vh;
+//     transform: scale(0.25);
+//   }
+// }
+
+// @keyframes bounce {
+//   0%, 100% {
+//     top: -2vh;
+//   }
+//   50% {
+//     top: 0;
+//   }
+// }
+
+// @keyframes logo-animate {
+//   0%, 100% {
+//     opacity: .2;
+//     top: 10vh;
+//   }
+//   50% {
+//     opacity: 1;
+//     top: 0;
+//   }
+// }
+// @keyframes fog {
+//   0% {
+//     opacity: 0.5;
+//     left: 5%;
+//   }
+//   33% {
+//     opacity: 1;
+//     left: -5%;
+//   }
+//   66% {
+//     opacity: .7;
+//     left: 5%;
+//   }
+//   100% {
+//     opacity: .4;
+//     left: -5%;
+//   }
+// }
+
+// @keyframes roll-back {
+//   0%, 50% {
+//     transform: scaleY(1);
+//     height: 2rem;
+//     opacity: 1;
+//   }
+//   75%, 100% {
+//     transform: scaleY(0);
+//     height: 0;
+//     opacity: 0;
+//   }
+// }
+
+// @keyframes bounce {
+//   0%, 100% {
+//     top: -2vh;
+//   }
+//   50% {
+//     top: 0;
+//   }
+// }

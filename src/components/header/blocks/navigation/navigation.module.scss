@@ -1,0 +1,48 @@
+.default {
+  height: 100%;
+  .list {
+    display: grid;
+    gap: 2.6vw;
+    grid-auto-flow: column;
+    height: 100%;
+    .list-item {
+      margin-bottom: 0;
+      .link {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        .label {
+          color: white;
+          font-weight: 300;
+          font-size: 1.25vw;
+        }
+        &:hover {
+          color: var(--color-alizarin);
+          cursor: pointer;
+          transform: scale(1.05);
+        }
+        &.active {
+          color: var(--color-grey);
+          .label {
+            color: inherit;
+          }
+        }
+      }
+    }
+  }
+  // @media (max-width: 1023px) {
+  //   .list {
+  //     grid-gap: 1.75vh;
+  //     margin: 0 0 6vh;
+  //     .link, .button-container .button {
+  //       .label {
+  //         font-size: 1.8rem;
+  //       }
+  //     }
+  //     .button-container {
+  //       display: unset;
+  //     }
+  //   }
+  // }
+}

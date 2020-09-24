@@ -1,0 +1,9 @@
+.layout {
+  height: 100vh;
+  height: var(--window-height);
+  min-height: 100vh;
+  min-height: var(--window-height);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+}

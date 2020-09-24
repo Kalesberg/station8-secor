@@ -1,0 +1,251 @@
+// .default {
+//   position: relative;
+//   background: white;
+//   display: grid;
+//   grid-template-columns: 1fr 57%;
+//   font: var(--font-soleto-black);
+//   text-transform: uppercase;
+//   color: white;
+//   grid-gap: 2.2vw;
+//   padding: 2vw;
+//   .text-container {
+//     color: var(--color-midnight-express);
+//     grid-row: 1;
+//     grid-column: 1;
+//     padding-left: 14.5vw;
+//     display: grid;
+//     grid-auto-flow: row;
+//     grid-template-rows: auto 1fr auto;
+//     .title {
+//       font-size: 2.5vw;
+//     }
+//     .body {
+//       font: var(--font-soleto-light);
+//       text-transform: none;
+//       font-size: 1.5vw;
+//     }
+//     .button-container {
+//       margin-bottom: 2vw;
+//       .button {
+//         position: relative;
+//         pointer-events: all;
+//         background: transparent;
+//         border: none;
+//         font: var(--font-soleto-black);
+//         display: flex;
+//         grid-auto-flow: column;
+//         padding: 0;
+//         cursor: pointer;
+//         transition: all 0.5s ease-in-out;
+//         top: 0;
+//         .label {
+//           font-size: 1.75vw;
+//           margin-bottom: 0;
+//         }
+//         .arrow {
+//           width: 2.5vw;
+//           margin-bottom: 0;
+//           margin-right: 0.5vw;
+//         }
+//         &:hover {
+//           top: -.5rem;
+//         }
+//       }
+//     }
+//   }
+//   .featured-city {
+//     grid-row: 1;
+//     grid-column: 2;
+//     height: calc(40vw - 88px);
+//     box-shadow: inset 0 0 4vw #000000;
+//     transition: all 0.5s ease-in-out;
+//     .image {
+//       height: 100%;
+//       position: relative;
+//       .shadow {
+//         box-shadow: inset 0px -104px 74px -11px rgba(0,0,0,0.75);
+//         position: absolute;
+//         height: 100%;
+//         width: 100%;
+//         top: 0;
+//         left: 0;
+//       }
+//       .name {
+//         position: absolute;
+//         bottom: 0;
+//         right: 0;
+//         margin: 2vw 2vw 1vw;
+//         font-size: 1.6vw;
+//       }
+//     }
+//     &:hover {
+//       transform: scale(1.05);
+//     }
+//   }
+//   .cities {
+//     padding-left: 8vw;
+//     grid-row: 2;
+//     grid-column: 1 / 3;
+//     display: grid;
+//     grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+//     grid-auto-flow: column;
+//     grid-gap: 2.2vw;
+//     height: 16vw;
+//     .city {
+//       font: var(--font-roboto-black);
+//       position: relative;
+//       transition: all 0.5s ease-in-out;
+//       .image {
+//         height: 100%;
+//         position: relative;
+//         z-index: 1;
+//         padding: 2vw;
+//         .name {
+//           position: absolute;
+//           bottom: 0;
+//           opacity: 0;
+//           font-size: 1.6vw;
+//           transition: opacity 1s;
+//         }
+//         .name-mobile {
+//           position: absolute;
+//           bottom: 0;
+//           display: none;
+//           opacity: 0;
+//           transition: opacity 1s;
+//         }
+//         .native-language-name {
+//           position: absolute;
+//           bottom: 0;
+//           opacity: 1;
+//           font-size: 1.6vw;
+//           transition: opacity 1s;
+//           pointer-events: none;
+//         }
+//         .native-language-name-mobile {
+//           position: absolute;
+//           bottom: 0;
+//           display: none;
+//           opacity: 1;
+//           transition: opacity 1s;
+//           pointer-events: none;
+//         }
+//         .shadow {
+//           box-shadow: inset 0px -104px 74px -11px rgba(0,0,0,0.75);
+//           position: absolute;
+//           height: 100%;
+//           width: 100%;
+//           top: 0;
+//           left: 0;
+//         }
+//       }
+//       &:hover {
+//         transform: scale(1.05);
+//         .name {
+//           opacity: 1;
+//         }
+//         .native-language-name {
+//           opacity: 0;
+//         }
+//       }
+//     }
+//   }
+//   .red-bar-container {
+//     // position: fixed;
+//     z-index: 3;
+//     top: 0;
+//     position: absolute;
+//     top: -5vw;
+//     right: 0vw;
+//     .red-bar {
+//       position: relative;
+//       pointer-events: none;
+//       z-index: 3;
+//       background-color: #D0021B;
+//       opacity: .8;
+//       width: 6vw;
+//       height: 30vw;
+//     }
+//   }
+//   @media (max-width: 1023px) {
+//     grid-template-columns: unset;
+//     padding: 0;
+//     .text-container {
+//       grid-row: 2;
+//       grid-column: unset;
+//       padding-left: unset;
+//       padding: 5vw;
+//       grid-template-rows: unset;
+//       .title {
+//         font-size: 10vw;
+//         line-height: 10vw;
+//       }
+//       .body {
+//         font-size: 7.3vw;
+//       }
+//       .button-container {
+//         margin-bottom: 6vw;
+//         .button {
+//           align-items: center;
+//           .label {
+//             font-size: 8vw;
+//           }
+//           .arrow {
+//             width: 14vw;
+//             margin-right: 1vw;
+//           }
+//         }
+//       }
+//     }
+//     .featured-city {
+//       grid-column: unset;
+//       height: 100vw;
+//       .image {
+//         .name {
+//           margin: 4vw;
+//           font-size: 8vw;
+//         }
+//       }
+//     }
+//     .cities {
+//       padding-left: unset;
+//       grid-row: unset;
+//       grid-column: unset;
+//       grid-template-columns: unset;
+//       grid-auto-flow: row;
+//       grid-gap: unset;
+//       height: calc(var(--window-height) - 88px);
+//       .city {
+//         .image {
+//           padding: 10vw 8vw;
+//           .name {
+//             display: none;
+//           }
+//           .name-mobile {
+//             display: unset;
+//             font-size: 8vw;
+//           }
+//           .native-language-name {
+//             display: none;
+//           }
+//           .native-language-name-mobile {
+//             display: unset;
+//             font-size: 8vw;
+//           }
+//         }
+//         &:hover {
+//           transform: unset;
+//           .name-mobile {
+//             opacity: 1;
+//           }
+//           .native-language-name-mobile {
+//             opacity: 0;
+//           }
+//         }
+//       }
+//     }
+//     .red-bar {
+//       display: none;
+//     }
+//   }
+// }
