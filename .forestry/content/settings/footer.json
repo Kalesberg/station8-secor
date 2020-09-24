@@ -113,7 +113,14 @@
     {
       "template": "footer-text-and-links",
       "items": [
-
+        {
+          "text": "© 2019 - 2020 SECOR",
+          "link": ""
+        },
+        {
+          "text": "Web design by Station8",
+          "link": "http://fireupyourbrand.com"
+        }
       ]
     }
   ]
