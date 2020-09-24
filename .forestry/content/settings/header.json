@@ -5,7 +5,39 @@
       "image": "/.forestry/content/images/secor-logo-white.svg"
     },
     {
-      "template": "header-links"
+      "template": "header-links",
+      "links": [
+        {
+          "label": "Why HDPE",
+          "page": ".forestry/content/pages/why-hdpe.json",
+          "megaMenu": false
+        },
+        {
+          "label": "Products & Equipment",
+          "page": ".forestry/content/pages/products-equipment.json",
+          "megaMenu": true
+        },
+        {
+          "label": "McElroy",
+          "page": ".forestry/content/pages/mcelroy.json",
+          "megaMenu": false
+        },
+        {
+          "label": "Get a Quote",
+          "page": ".forestry/content/pages/get-a-quote.json",
+          "megaMenu": false
+        },
+        {
+          "label": "Training",
+          "page": ".forestry/content/pages/training.json",
+          "megaMenu": false
+        },
+        {
+          "label": "About",
+          "page": ".forestry/content/pages/about.json",
+          "megaMenu": false
+        }
+      ]
     },
     {
       "template": "header-fill-space"
