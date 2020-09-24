@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import styles from './FavoritePage.module.scss'
+import styles from './favoritePage.module.scss'
 
 import { getPage, Image } from '../../../../functions'
 
