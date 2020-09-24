@@ -63,7 +63,10 @@
     {
       "template": "footer-quotes",
       "quote": [
-
+        {
+          "text": "Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.",
+          "author": "Name, Industry"
+        }
       ]
     }
   ],
