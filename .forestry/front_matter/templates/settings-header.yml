@@ -6,8 +6,13 @@ fields:
   type: blocks
   label: Blocks
   template_types:
+  - header-call-button
+  - header-contact-button
+  - header-fill-space
   - header-logo
   - header-links
+  - header-quote-menu
+  - header-user-menu
   config:
     min: 
     max: 
