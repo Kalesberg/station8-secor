@@ -95,5 +95,26 @@
   ],
   "settings": {
     "disabled": false
-  }
+  },
+  "bottomRow": [
+    {
+      "template": "footer-social-media-links",
+      "links": [
+        {
+          "icon": "/.forestry/content/images/linkedin.svg",
+          "url": "https://www.linkedin.com/company/secor-houston"
+        },
+        {
+          "icon": "/.forestry/content/images/youtube.svg",
+          "url": "https://www.youtube.com/channel/UCW-tHxgcILcdCGqAy15J45Q/feed"
+        }
+      ]
+    },
+    {
+      "template": "footer-text-and-links",
+      "items": [
+
+      ]
+    }
+  ]
 }
