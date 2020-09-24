@@ -14,6 +14,24 @@
         ".forestry/content/pages/training.json",
         ".forestry/content/pages/about.json"
       ]
+    },
+    {
+      "template": "header-fill-space"
+    },
+    {
+      "template": "header-quote-menu"
+    },
+    {
+      "template": "header-user-menu",
+      "icon": "/.forestry/content/images/placeholder.png"
+    },
+    {
+      "template": "header-contact-button",
+      "icon": "/.forestry/content/images/placeholder.png"
+    },
+    {
+      "template": "header-call-button",
+      "phone": "2815561661"
     }
   ]
 }
