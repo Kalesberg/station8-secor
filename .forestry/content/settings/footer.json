@@ -1,6 +1,89 @@
 {
   "blocks": [
     {
+      "template": "footer-links",
+      "label": "Sitemap",
+      "columns": [
+        {
+          "links": [
+            {
+              "label": "Why HDPE",
+              "page": ".forestry/content/pages/why-hdpe.json",
+              "bold": false
+            },
+            {
+              "label": "Products & Equipment",
+              "page": ".forestry/content/pages/products-equipment.json",
+              "bold": false
+            },
+            {
+              "label": "McElroy",
+              "page": ".forestry/content/pages/mcelroy.json",
+              "bold": false
+            }
+          ]
+        },
+        {
+          "links": [
+            {
+              "label": "Get a quote",
+              "page": ".forestry/content/pages/get-a-quote.json",
+              "bold": false
+            },
+            {
+              "label": "Training",
+              "page": ".forestry/content/pages/training.json",
+              "bold": false
+            },
+            {
+              "label": "About",
+              "page": ".forestry/content/pages/about.json",
+              "bold": false
+            }
+          ]
+        },
+        {
+          "links": [
+            {
+              "label": "Blog",
+              "page": ".forestry/content/pages/blog.json",
+              "bold": false
+            },
+            {
+              "label": "Careers",
+              "page": ".forestry/content/pages/careers.json",
+              "bold": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "template": "footer-links",
+      "label": "Support",
+      "columns": [
+        {
+          "links": [
+            {
+              "label": "Quick contact",
+              "page": ".forestry/content/pages/contact.json",
+              "bold": true
+            },
+            {
+              "label": "Login",
+              "page": ".forestry/content/pages/account.json",
+              "bold": false
+            },
+            {
+              "label": "Locations",
+              "page": ".forestry/content/pages/locations.json",
+              "bold": false
+            }
+          ]
+        }
+      ]
+    },
+    {
       "template": "footer-quotes",
       "quote": [
         {
