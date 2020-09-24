@@ -6,8 +6,54 @@ fields:
   type: text
   config:
     required: true
-  label: Title
-- name: link
+  label: column 1
+- name: columnOne
+  type: field_group_list
+  fields:
+  - name: page
+    type: select
+    default: []
+    config:
+      required: true
+      options: []
+      source:
+        type: pages
+        section: pages
+        file: 
+        path: 
+    label: Page
+  - name: bold
+    type: boolean
+    label: Bold
+  config:
+    min: 
+    max: 
+    labelField: page
+  label: Column 2
+  - name: columnTwo
+  type: field_group_list
+  fields:
+  - name: page
+    type: select
+    default: []
+    config:
+      required: true
+      options: []
+      source:
+        type: pages
+        section: pages
+        file: 
+        path: 
+    label: Page
+  - name: bold
+    type: boolean
+    label: Bold
+  config:
+    min: 
+    max: 
+    labelField: page
+  label: Column 3
+  - name: columnThree
   type: field_group_list
   fields:
   - name: page
