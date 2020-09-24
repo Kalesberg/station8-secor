@@ -1,4 +1,32 @@
 ---
-label: Footer Sitemap
+label: 'Footer Blocks: Sitemap'
 hide_body: true
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+- name: link
+  type: field_group_list
+  fields:
+  - name: page
+    type: select
+    default: []
+    config:
+      required: true
+      options: []
+      source:
+        type: pages
+        section: pages
+        file: 
+        path: 
+    label: Page
+  - name: bold
+    type: boolean
+    label: Bold
+  config:
+    min: 
+    max: 
+    labelField: page
+  label: Link
