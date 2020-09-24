@@ -20,15 +20,15 @@
     },
     {
       "template": "header-quote-menu",
-      "icon": "/.forestry/content/images/placeholder.png"
+      "icon": "/.forestry/content/images/quote.svg"
     },
     {
       "template": "header-user-menu",
-      "icon": "/.forestry/content/images/placeholder.png"
+      "icon": "/.forestry/content/images/user-menu.svg"
     },
     {
       "template": "header-contact-button",
-      "icon": "/.forestry/content/images/placeholder.png"
+      "icon": "/.forestry/content/images/contact.svg"
     },
     {
       "template": "header-call-button",
