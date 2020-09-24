@@ -1,6 +1,71 @@
 {
   "blocks": [
+    {
+      "template": "footer-links",
+      "title": "Sitemap",
+      "link": [
+        {
+          "page": ".forestry/content/pages/why-hdpe.json",
+          "bold": false
+        },
+        {
+          "page": ".forestry/content/pages/products-equipment.json",
+          "bold": false
+        },
+        {
+          "page": ".forestry/content/pages/mcelroy.json",
+          "bold": false
+        },
+        {
+          "page": ".forestry/content/pages/get-a-quote.json",
+          "bold": false
+        },
+        {
+          "page": ".forestry/content/pages/training.json",
+          "bold": false
+        },
+        {
+          "page": ".forestry/content/pages/about.json",
+          "bold": false
+        },
+        {
+          "page": ".forestry/content/pages/training.json",
+          "bold": false
+        },
+        {
+          "page": ".forestry/content/pages/blog.json",
+          "bold": false
+        },
+        {
+          "page": ".forestry/content/pages/careers.json",
+          "bold": false
+        }
+      ]
+    },
+    {
+      "template": "footer-links",
+      "title": "Support",
+      "link": [
+        {
+          "page": ".forestry/content/pages/contact.json",
+          "bold": true
+        },
+        {
+          "page": ".forestry/content/pages/account.json",
+          "bold": false
+        },
+        {
+          "page": ".forestry/content/pages/locations.json",
+          "bold": false
+        }
+      ]
+    },
+    {
+      "template": "footer-quotes",
+      "quote": [
 
+      ]
+    }
   ],
   "settings": {
     "disabled": false
