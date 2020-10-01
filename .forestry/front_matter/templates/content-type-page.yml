@@ -32,6 +32,7 @@ fields:
   - main-interactive-tools
   - main-locations
   - main-product-descriptions
+  - main-product-index
   config:
     min: 
     max: 
