@@ -9,7 +9,7 @@ import headerConfig from '../../../.forestry/content/settings/header.json'
 import contactInfo from '../../../.forestry/content/settings/contact.json'
 
 export default ({ images, pages, menuOpen, setMenuOpen }) => {
-  const { menu } = useContext(Context)
+  const context = useContext(Context)
   const [searchTerm, setSearchTerm] = useState('')
   const [category, setCategory] = useState(0)
   const [levelOne, setLevelOne] = useState(0)
@@ -27,11 +27,7 @@ export default ({ images, pages, menuOpen, setMenuOpen }) => {
     console.log('category', category)
   }, [category])
 
-  console.log('menu', menu[category] && menu[category].menus[levelOne] && menu[category].menus[levelOne].submenus[levelTwo] && menu[category].menus[levelOne].submenus[levelTwo].image)
-
-  // menu[category] && menu[category].menus[levelOne] && menu[category].menus[levelOne].submenus[levelTwo] && menu[category].menus[levelOne].submenus[levelTwo].image && <img src={menu[category].menus[levelOne].submenus[levelTwo].image
-
-  return (
+  return typeof window ? (
     <header className={styles.header}>
       {/* {!menuOpen && <img className={styles.menuButton} alt='Open menu' src='' onClick={() => setMenuOpen(!menuOpen)} />}
     {menuOpen && <img className={styles.menuButton + ` ${styles.closeButton}`} alt='Close menu' src='' onClick={() => setMenuOpen(!menuOpen)} />} */}
@@ -70,7 +66,7 @@ export default ({ images, pages, menuOpen, setMenuOpen }) => {
           <input className={styles.input + `${searchTerm ? ` ${styles.filled}` : ''}`} value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
         </div>
         <div className={styles.menu}>
-          {menu.map((category, i) => {
+          {context && context.menu.map((category, i) => {
             const handleSetCategory = () => {
               setCategory(i)
               setLevelOne(0)
@@ -117,11 +113,11 @@ export default ({ images, pages, menuOpen, setMenuOpen }) => {
                   </div>
                 </div>
                 <div className={styles.right}>
-                  {menu[i] && menu[i].menus[levelOne] && menu[i].menus[levelOne].submenus[levelTwo] && menu[i].menus[levelOne].submenus[levelTwo] ? (
+                  {context && context.menu[i] && context && context.menu[i].menus[levelOne] && context && context.menu[i].menus[levelOne].submenus[levelTwo] && context && context.menu[i].menus[levelOne].submenus[levelTwo] ? (
                     <>
-                      {menu[i].menus[levelOne].submenus[levelTwo].image && <div className={styles.image} style={{ backgroundImage: `url(${menu[i].menus[levelOne].submenus[levelTwo].image})` }} />}
-                      <p className={styles.description}>{menu[i].menus[levelOne].submenus[levelTwo].description}</p>
-                      <div className={styles.button}>View {menu[i] ? menu[i].name.toLowerCase() : 'products'}</div>
+                      {context && context.menu[i].menus[levelOne].submenus[levelTwo].image && <div className={styles.image} style={{ backgroundImage: `url(${context && context.menu[i].menus[levelOne].submenus[levelTwo].image})` }} />}
+                      <p className={styles.description}>{context && context.menu[i].menus[levelOne].submenus[levelTwo].description}</p>
+                      <div className={styles.button}>View {context && context.menu[i] ? context && context.menu[i].name.toLowerCase() : 'products'}</div>
                     </>
                   ) : null}
                 </div>
@@ -132,5 +128,5 @@ export default ({ images, pages, menuOpen, setMenuOpen }) => {
         <div className={styles.results} />
       </div>
     </header>
-  )
+  ) : null
 }
