@@ -1,0 +1,9 @@
+{
+  "title": "Equipment",
+  "slug": "",
+  "blocks": [
+    {
+      "template": "main-product-index"
+    }
+  ]
+}
