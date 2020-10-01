@@ -4,5 +4,10 @@
   "slug": "products-and-equipment",
   "rows": [
 
+  ],
+  "blocks": [
+    {
+      "template": "main-product-index"
+    }
   ]
 }
