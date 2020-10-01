@@ -4,8 +4,6 @@ import { Link } from 'gatsby'
 import styles from './links.module.scss'
 
 export default ({ block, pages }) => {
-  console.log('links', block)
-
   const getPage = (link, i) => {
     const page = pages.find(page => link.page.includes(page.relativePath))
     return page && page.filePath ? (

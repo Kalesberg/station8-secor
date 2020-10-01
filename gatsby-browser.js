@@ -1,12 +1,5 @@
-// Required imports
-// const { colors } = require('./.forestry/content/settings/colors.json')
-// const { fonts } = require('./.forestry/content/settings/fonts.json')
-// const slugify = require('slugify')
-// const Bowser = require('bowser')
-
-// const browser = Bowser.getParser(window.navigator.userAgent)
-
-// console.log(`The current browser name is "${browser.getBrowserName()}"`)
+const React = require('react')
+const { ContextProvider } = require('./src/components/context/context')
 
 // Shortcut to global styles
 const style = document.documentElement.style
@@ -70,3 +63,5 @@ window.addEventListener('resize', sizeListener)
 //   'font-family: Arial, Helvetica, sans-serif; font-weight: bold;',
 //   'font-family: Arial, Helvetica, sans-serif; font-weight: normal;'
 // )
+
+exports.wrapRootElement = ({ element }) => <ContextProvider>{element}</ContextProvider>

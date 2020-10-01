@@ -4,7 +4,6 @@ import styles from './quotes.module.scss'
 
 export default ({ block }) => {
   const [active, setActive] = useState(0)
-  console.log(block)
 
   return (
     <div className={styles.default}>

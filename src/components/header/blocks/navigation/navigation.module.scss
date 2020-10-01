@@ -1,5 +1,6 @@
 .default {
   height: 100%;
+  position: relative;
   .list {
     display: grid;
     gap: 2.6vw;
@@ -7,21 +8,22 @@
     height: 100%;
     .list-item {
       margin-bottom: 0;
-      .link {
+      .link, .menu {
         display: grid;
         justify-content: center;
         align-items: center;
         height: 100%;
+        cursor: pointer;
         .label {
           color: white;
           font-weight: 300;
           font-size: 1.25vw;
         }
-        &:hover {
-          color: var(--color-alizarin);
-          cursor: pointer;
-          transform: scale(1.05);
-        }
+        // &:hover {
+        //   color: var(--color-alizarin);
+        //   cursor: pointer;
+        //   transform: scale(1.05);
+        // }
         &.active {
           color: var(--color-grey);
           .label {

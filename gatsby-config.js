@@ -27,6 +27,35 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-source-airtable',
+      options: {
+        apiKey: process.env.AIRTABLE_KEY,
+        concurrency: 1,
+        tables: [
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: 'Categories'
+          },
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: 'Menus'
+          },
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: 'Submenus'
+          },
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: 'Options'
+          },
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: 'Products'
+          }
+        ]
+      }
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: config.title,

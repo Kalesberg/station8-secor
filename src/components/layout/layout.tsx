@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
@@ -10,6 +10,10 @@ import styles from './layout.module.scss'
 
 export default ({ title: siteTitle = '', images, pages, toggleForm, blocks, articles, tag }) => {
   const [menuOpen, setMenuOpen] = useState(false)
+
+  useEffect(() => {
+    console.log(menuOpen)
+  }, [menuOpen])
 
   // useEffect(() => {
   //   document.documentElement.style.setProperty('--top', '0')
@@ -45,7 +49,7 @@ export default ({ title: siteTitle = '', images, pages, toggleForm, blocks, arti
         <meta name='description' content={description} />
       </Helmet>
       <Header images={images} pages={pages} menuOpen={menuOpen} setMenuOpen={setMenuOpen} toggleForm={toggleForm} />
-      <Main blocks={blocks} images={images} menuOpen={menuOpen} articles={articles} pages={pages} tag={tag} toggleForm={toggleForm}>
+      <Main blocks={blocks} images={images} menuOpen={menuOpen} setMenuOpen={setMenuOpen} articles={articles} pages={pages} tag={tag} toggleForm={toggleForm}>
         <Footer images={images} pages={pages} toggleForm={toggleForm} />
       </Main>
     </div>
