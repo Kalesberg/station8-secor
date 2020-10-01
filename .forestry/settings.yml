@@ -29,7 +29,7 @@ sections:
   match: "**/*"
   new_doc_ext: json
   templates:
-  - page
+  - content-type-page
 - type: heading
   label: Global Settings
 - type: document
