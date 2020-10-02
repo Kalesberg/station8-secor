@@ -10,16 +10,18 @@
     grid-template-columns: auto auto 1fr auto;
   }
   .mega-menu {
+    position: relative;
     height: 41vw;
     opacity: 0;
     width: 100%;
-    background-color: palegoldenrod;
+    background-color: white;
     transition: all 0.5s;
     pointer-events: none;
     overflow: auto;
     display: grid;
     grid-template-rows: auto 1fr;
     align-items: stretch;
+    z-index: 2;
     &.open {
       opacity: 1;
       pointer-events: all;
@@ -28,6 +30,7 @@
       height: 5.2vw;
       width: 100%;
       background-color: #F6F4F4;
+      transition: all 0.5s ease-in-out;
       display: grid;
       justify-content: center;
       align-items: center;
@@ -56,12 +59,21 @@
         }
       }
     }
+    .results-container {
+      opacity: 0;
+      display: none;
+      background-color: #efefef;
+      transition: all 0.5s ease-in-out;
+    }
     .menu {
       align-self: stretch;
       display: grid;
       grid-auto-flow: column;
       grid-template-columns: 1fr 1fr;
       padding: 0;
+      opacity: 1;
+      transition: all 0.5s ease-in-out;
+      pointer-events: all;
       gap: 0.16vw;
       background-color: #979797;
       .category-container {
@@ -169,11 +181,14 @@
                   }
                 }
                 &.active {
-                  color: #D50F09;
+                  color: #D50F09 !important;
                   font-weight: 700;
+                  .name {
+                    color: #D50F09;
+                  }
                 }
                 &:hover {
-                  cursor: pointer;
+                  color: #D50F09 !important;
                 }
               }
             }
@@ -213,8 +228,103 @@
         }
       }
     }
-    .results {
-
+    &.searching {
+      height: calc(100vh - 4.2vw);
+      height: calc(var(--window-height) - 4.2vw);
+      grid-template-rows: auto 1fr 0;
+      .menu {
+        display: none;
+        opacity: 0;
+        pointer-events: none;
+        min-height: 0;
+        min-width: 0;
+        height: 0;
+      }
+      .search {
+        background-color: #fff;
+      }
+      .results-container {
+        opacity: 1;
+        height: 100%;
+        display: grid;
+        grid-template-rows: auto 1fr;
+        .results-header {
+          background-color: white;
+          display: grid;
+          justify-content: center;
+          align-items: center;
+          padding: 1.5vw 0;
+          .results-text {
+            margin-bottom: 0;
+            font-size: 1.6vw;
+          }
+        }
+        .results {
+          height: 100%;
+          overflow: auto;
+          padding: 2.5vw;
+          display: grid;
+          justify-content: center;
+          width: 100%;
+          grid-template-columns: repeat(auto-fill, 24vw);
+          gap: 1vw;
+          .product {
+            display: grid;
+            width: 20vw;
+            grid-auto-flow: column;
+            grid-template-columns: auto 1fr;
+            gap: 1.5vw;
+            .image {
+              position: relative;
+              height: 9vw;
+              width: 9vw;
+              background-color: white;
+              background-size: cover;
+              background-position: center center;
+              background-repeat: no-repeat no-repeat;
+              .add {
+                position: absolute;
+                height: 1.8vw;
+                width: 1.8vw;
+                bottom: 0.5vw;
+                right: 0.5vw;
+                background-color: white;
+                border-radius: 100%;
+                cursor: pointer;
+                transform: scale(1.0);
+                transition: all 0.5s ease-in-out;
+                &:hover {
+                  transform: scale(1.2);
+                }
+              }
+            }
+            .detail {
+              display: grid;
+              grid-template-rows: auto 1fr auto;
+              .name {
+                font-size: 1.1vw;
+                font-weight: 900;
+                margin-bottom: 0.5vw;
+              }
+              .description {
+                font-size: 0.9vw;
+                color: #9B9A9B;
+                font-weight: 700;
+                margin-bottom: 0.5vw;
+              }
+              .download {
+                color: #D50F09;
+                font-size: 0.9vw;
+                text-align: right;
+                display: block;
+                font-weight: 900;
+                padding-right: 2vw;
+                padding-bottom: 1vw;
+              }
+            }
+          }
+        }
+      }
     }
   }
   @media (max-width: 1023px) {

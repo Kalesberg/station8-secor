@@ -1,11 +1,11 @@
 import React from 'react'
 import ScrollAnimation from 'react-animate-on-scroll'
 
-import { AnimatedImage, ArticlesGrid, ArticlesSlider, Cities, CompanyMerger, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, HeroSlider, Highlights, ImageBar, Images, Infographic, KnowledgeBase, Leadership, Map, Posts, RecentArticles, RichText, Slideshow, StaticImage, Testimonial } from '../../components/main/blocks'
+import { AnimatedImage, ArticlesGrid, ArticlesSlider, Cities, CompanyMerger, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, HeroSlider, Highlights, ImageBar, Images, Infographic, KnowledgeBase, Leadership, Map, ProductIndex, Posts, RecentArticles, RichText, Slideshow, StaticImage, Testimonial } from '../../components/main/blocks'
 
 import styles from './main.module.scss'
 
-export default ({ blocks, children, images, menuOpen, setMenuOpen, scrollListener, articles, pages, tag, toggleForm }) => {
+export default ({ blocks, children, images, menuOpen, setMenuOpen, scrollListener, articles, pages, tag, toggleForm, menu, location }) => {
   const closeMenu = () => setMenuOpen(false)
 
   return (
@@ -88,6 +88,8 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, scrollListene
             <ScrollAnimation animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
               <Posts key={i} block={block} />
             </ScrollAnimation>
+          ) : block.template === 'main-product-index' ? (
+            <ProductIndex menu={menu} key={i} location={location} />
           ) : block.template === 'main-recent-articles' ? (
             <ScrollAnimation animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
               <RecentArticles key={i} block={block} />

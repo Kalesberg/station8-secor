@@ -12,7 +12,7 @@ import styles from './article.module.scss'
 import articleIndexStyles from './articles.module.scss'
 
 export default ({
-  pageContext: { images, pages, authors = [], articles },
+  pageContext: { images, pages, authors = [], articles, menu },
   data: {
     markdownRemark: {
       frontmatter: {
@@ -40,7 +40,7 @@ export default ({
   }, [search])
 
   return (
-    <Layout title={title} pages={pages} images={images} toggleForm={toggleForm}>
+    <Layout title={title} pages={pages} images={images} toggleForm={toggleForm} menu={menu}>
       <article className={styles.articleContainer}>
         <Image src={heroImage.relativePath} className={styles.hero} images={images} container='div'>
           <h1 className={styles.title}>{title}</h1>

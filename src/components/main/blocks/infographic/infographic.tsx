@@ -72,11 +72,11 @@ export default ({ block, images }) => {
     setActive(active === block.features.length - 1 ? 0 : active + 1)
   }
 
-  useEffect(() => {
-    console.log('active', active)
-  }, [active])
+  // useEffect(() => {
+  //   console.log('active', active)
+  // }, [active])
 
-  console.log(block)
+  // console.log(block)
   return (
     <section className={classNames(block, styles)}>
       <div className={styles.titleGroup}>

@@ -19,7 +19,7 @@ module.exports.onCreateNode = ({ node, actions }) => {
 }
 
 module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
-  const { data: { articles: { nodes: articles }, pages: { nodes: pages }, images: { nodes: images }, pageFiles: { nodes: pageFiles } } } = await graphql(`
+  const { data: { articles: { nodes: articles }, pages: { nodes: pages }, images: { nodes: images }, pageFiles: { nodes: pageFiles }, categories: { nodes: categories }, menus: { nodes: menus }, submenus: { nodes: submenus }, options: { nodes: options }, products: { nodes: products } } } = await graphql(`
   {
     pages: allPagesJson {
       nodes {
@@ -76,8 +76,131 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         excerpt(pruneLength: 56)
       }
     }
+    categories: allAirtable(filter: {table: {eq: "Categories"}}, sort: {fields: data___Order, order: ASC}) {
+      nodes {
+        id
+        recordId
+        data {
+          Name
+          Order
+          Image {
+            url
+          }
+        }
+      }
+    }
+    menus: allAirtable(filter: {table: {eq: "Menus"}}) {
+      nodes {
+        id
+        recordId
+        data {
+          Category
+          Name
+          Order
+          Menu_Label
+        }
+      }
+    }
+    submenus: allAirtable(filter: {table: {eq: "Submenus"}}) {
+      nodes {
+        id
+        recordId
+        data {
+          Name
+          Order
+          Menu
+          Submenu
+          Description
+          Image {
+            url
+          }
+        }
+      }
+    }
+    options: allAirtable(filter: {table: {eq: "Options"}}) {
+      nodes {
+        id
+        recordId
+        data {
+          Name
+          Label
+          Type
+          Select_Choices
+        }
+      }
+    }
+    products: allAirtable(filter: {table: {eq: "Products"}}, sort: {fields: data___Order, order: ASC}) {
+      nodes {
+        id
+        recordId
+        data {
+          Name
+          Order
+          Images {
+            url
+          }
+          Brochure_Manual {
+            url
+          }
+          Menu
+          Options
+          Short_Description
+          Description
+        }
+      }
+    }
   }
   `)
+
+  const productMenu = categories.map(category => ({
+    id: category.id,
+    recordId: category.recordId,
+    name: category.data.Name,
+    slug: slugify(category.data.Name).toLowerCase(),
+    path: '/products-and-equipment/' + slugify(category.data.Name).toLowerCase(),
+    order: category.data.Order,
+    image: category.data.Image && category.data.Image[0].url,
+    menus: menus.filter(menu => menu.data.Category[0] === category.recordId).sort((a, b) => a.data.Order < b.data.Order ? -1 : 1).map(menu => ({
+      id: menu.id,
+      recordId: menu.recordId,
+      order: menu.data.Order,
+      name: menu.data.Menu_Label,
+      slug: slugify(menu.data.Menu_Label).toLowerCase(),
+      path: '/' + slugify(category.data.Name).toLowerCase() + '/' + slugify(menu.data.Menu_Label).toLowerCase(),
+      submenus: submenus.filter(submenu => submenu.data.Menu[0] === menu.recordId).sort((a, b) => a.data.Order < b.data.Order ? -1 : 1).map(submenu => ({
+        id: submenu.id,
+        recordId: submenu.recordId,
+        order: submenu.data.Order,
+        name: submenu.data.Submenu,
+        slug: submenu.data.Submenu ? slugify(submenu.data.Submenu).toLowerCase() : '',
+        path: submenu.data.Submenu ? '/' + slugify(category.data.Name).toLowerCase() + '/' + slugify(menu.data.Menu_Label).toLowerCase() + '/' + slugify(submenu.data.Submenu).toLowerCase() : '/' + slugify(category.data.Name).toLowerCase() + '/' + slugify(menu.data.Menu_Label).toLowerCase(),
+        image: submenu.data.Image && submenu.data.Image[0].url,
+        description: submenu.data.Description,
+        products: products.filter(product => product.data.Menu[0] === submenu.recordId).sort((a, b) => a.data.Order < b.data.Order ? -1 : 1).map(product => ({
+          id: product.id,
+          recordId: product.recordId,
+          order: product.data.Order,
+          documents: product.data.Brochure_Manual && product.data.Brochure_Manual.length ? product.data.Brochure_Manual.map(document => document.url) : [],
+          images: product.data.Images && product.data.Images.length ? product.data.Images.map(image => image.url) : [],
+          name: product.data.Name,
+          slug: slugify(product.data.Name).toLowerCase(),
+          path: `/${slugify(category.data.Name).toLowerCase()}/${slugify(menu.data.Menu_Label).toLowerCase()}/${submenu.data.Submenu ? slugify(submenu.data.Submenu).toLowerCase() + '/' : ''}${slugify(product.data.Name).toLowerCase()}`,
+          description: product.data.Description,
+          summary: product.data.Short_Description,
+          options: product.data.Options && product.data.Options.length ? product.data.Options.map(option => {
+            const thisOption = options.find(thisOption => thisOption.recordId === option)
+            return {
+              id: thisOption.id,
+              recordId: thisOption.recordId,
+              name: thisOption.data.Label,
+              type: thisOption.data.Type,
+              choices: thisOption.data.Select_Choices
+            }
+          }) : []
+        }))
+      }))
+    }))
+  }))
 
   const pagesWithExtras = pages.map(page => {
     const file = pageFiles.find(file => file.childPagesJson.slug === page.slug && file.childPagesJson.title === page.title)
@@ -88,6 +211,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       filePath
     }
   })
+
   pagesWithExtras.forEach(page => {
     page.filePath !== '/demo' &&
     createPage({
@@ -97,7 +221,8 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         title: page.title,
         images,
         pages: pagesWithExtras,
-        articles
+        articles,
+        menu: productMenu
       }
     })
   })
@@ -114,8 +239,58 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         parent: article.frontmatter.parent,
         images,
         pages: pagesWithExtras,
-        articles
+        articles,
+        menu: productMenu
       }
+    })
+  })
+
+  productMenu.forEach(category => {
+    createPage({
+      component: pageTemplate,
+      path: category.path,
+      context: {
+        title: category.name,
+        images,
+        pages: pagesWithExtras,
+        articles,
+        menu: productMenu
+      }
+    })
+    category.menus.forEach(menu => {
+      createPage({
+        component: pageTemplate,
+        path: menu.path,
+        context: {
+          title: category.name,
+          images,
+          pages: pagesWithExtras,
+          articles,
+          menu: productMenu
+        }
+      })
+      menu.submenus.forEach(submenu => {
+        submenu.slug && createPage({
+          component: pageTemplate,
+          path: submenu.path,
+          context: {
+            title: category.name,
+            images,
+            pages: pagesWithExtras,
+            articles,
+            menu: productMenu
+          }
+        })
+        submenu.products.forEach(product => {
+          createPage({
+            component: productTemplate,
+            path: product.path,
+            context: {
+              menu: productMenu
+            }
+          })
+        })
+      })
     })
   })
 }

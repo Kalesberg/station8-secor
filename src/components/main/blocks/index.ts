@@ -17,13 +17,14 @@ import KnowledgeBase from './knowledgeBase/knowledgeBase'
 import Leadership from './leadership/leadership'
 import Map from './map/map'
 import Posts from './posts/posts'
+import ProductIndex from './productIndex/productIndex'
 import RecentArticles from './recentArticles/recentArticles'
 import RichText from './richText/richText'
 import Slideshow from './slideshow/slideshow'
 import StaticImage from './staticImage/staticImage'
 import Testimonial from './testimonial/testimonial'
 
-export { AnimatedImage, ArticlesGrid, ArticlesSlider, Cities, CompanyMerger, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, HeroSlider, Highlights, ImageBar, Images, Infographic, KnowledgeBase, Leadership, Map, Posts, RecentArticles, RichText, Slideshow, StaticImage, Testimonial }
+export { AnimatedImage, ArticlesGrid, ArticlesSlider, Cities, CompanyMerger, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, HeroSlider, Highlights, ImageBar, Images, Infographic, KnowledgeBase, Leadership, Map, Posts, ProductIndex, RecentArticles, RichText, Slideshow, StaticImage, Testimonial }
 
 export default {
   'main-animated-image': AnimatedImage,
@@ -45,6 +46,7 @@ export default {
   'main-leadership': Leadership,
   'main-map': Map,
   'main-posts': Posts,
+  'main-product-index': ProductIndex,
   'main-recent-articles': RecentArticles,
   'main-rich-text': RichText,
   'main-slideshow': Slideshow,
