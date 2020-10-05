@@ -282,11 +282,17 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
           }
         })
         submenu.products.forEach(product => {
+          // console.log(product)
           createPage({
             component: productTemplate,
             path: product.path,
             context: {
-              menu: productMenu
+              title: product.name,
+              menu: productMenu,
+              product,
+              images,
+              pages: pagesWithExtras,
+              articles
             }
           })
         })

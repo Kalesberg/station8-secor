@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
@@ -8,7 +8,7 @@ import './reset.scss'
 import './global.scss'
 import styles from './layout.module.scss'
 
-export default ({ title: siteTitle = '', images, pages, toggleForm, blocks, articles, tag, menu, location }) => {
+export default ({ children, title: siteTitle = '', images, pages, toggleForm, blocks, articles, tag, menu, location }) => {
   const [menuOpen, setMenuOpen] = useState(false)
 
   // useEffect(() => {
@@ -27,7 +27,7 @@ export default ({ title: siteTitle = '', images, pages, toggleForm, blocks, arti
   //   document.documentElement.style.setProperty('--floating-logo-click', e.target.scrollTop < window.innerHeight ? 'all' : 'none')
   // }
 
-  const { children, site: { siteMetadata: { config: { description, title, titleDivider } } } } = useStaticQuery(graphql`
+  const { site: { siteMetadata: { config: { description, title, titleDivider } } } } = useStaticQuery(graphql`
     {
       site {
         siteMetadata {
