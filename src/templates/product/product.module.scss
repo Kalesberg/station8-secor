@@ -3,7 +3,25 @@
   grid-auto-flow: column;
   grid-template-columns: 3.5vw 1fr;
   .aside {
-    background-color: white;
+    display: grid;
+    justify-content: center;
+    padding: 1.2vw 1.2vw;
+    align-items: flex-start;
+    position: relative;
+    .back {
+      position: fixed;
+      background-repeat: no-repeat no-repeat;
+      background-size: contain;
+      width: 1.125vw;
+      height: 1.125vw;
+      cursor: pointer;
+      transform: scale(1);
+      transition: all 0.5s;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjIwIiB2aWV3Qm94PSIwIDAgMjAgMjAiIHdpZHRoPSIyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBzdHlsZT0iZmlsbDojZDUwZjA5O3N0cm9rZTojZDUwZjA5O3N0cm9rZS13aWR0aDoyO2ZpbGwtcnVsZTpldmVub2RkO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZCI+PHBhdGggZD0ibTEgMWg3djdoLTd6Ii8+PHBhdGggZD0ibTEyIDFoN3Y3aC03eiIvPjxwYXRoIGQ9Im0xMiAxMmg3djdoLTd6Ii8+PHBhdGggZD0ibTEgMTJoN3Y3aC03eiIvPjwvZz48L3N2Zz4=);
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
   }
   .content {
     background-color: #F5F5F5;
@@ -77,6 +95,36 @@
                 background-color: khaki;
               }
              }
+          }
+        }
+        .add-to-quote {
+          margin-top: 4vw;
+          border: none;
+          background-color: #D50F09;
+          display: grid;
+          grid-auto-flow: column;
+          justify-content: stretch;
+          align-items: center;
+          border-radius: 2vw;
+          padding: 0;
+          .plus {
+            margin-bottom: 0;
+            font-size: 2vw;
+            text-align: center;
+            margin: 0;
+            padding: 0 0.25vw 0 0.5vw;
+            color: #D50F09;
+            border: 0.25vw solid #D50F09;
+            background-color: white;
+            border-radius: 2vw 0 0 2vw;
+            font-weight: 700;
+          }
+          .text {
+            color: white;
+            font-weight: 700;
+            font-size: 1vw;
+            padding: 0 3vw 0 1.5vw;
+            background-color: #D50F09;
           }
         }
       }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'gatsby'
+import { Link, navigate } from 'gatsby'
 import queryString from 'query-string'
 import marked from 'marked'
 import parse from 'html-react-parser'
@@ -23,11 +23,13 @@ export default ({ location, pageContext: { menu, product, title, images, article
     tag.tag ? setTag(tag.tag.toString()) : setTag('')
   }, [location])
 
+  const handleGoBack = () => navigate(location.pathname.split('/').slice(0, -1).join('/'))
+
   return (
     <Layout title={title} pages={pages} images={images} toggleForm={toggleForm} blocks={[]} articles={articles} tag={tag} menu={menu} location={location}>
       <section className={styles.section}>
         <aside className={styles.aside}>
-          {/*  */}
+          <div className={styles.back} onClick={handleGoBack} />
         </aside>
         <div className={styles.content}>
           <div className={styles.product}>
@@ -53,6 +55,11 @@ export default ({ location, pageContext: { menu, product, title, images, article
             <div className={styles.details}>
               {product.name && <p className={styles.name}>{product.name}</p>}
               {product.description && <div className={styles.description}>{parse(marked(product.description))}</div>}
+              <button className={styles.addToQuote}>
+                <div className={styles.plus}>+</div>
+                <div className={styles.text}>Add to quote</div>
+                <div className={styles.fill} />
+              </button>
             </div>
           </div>
           <div className={styles.quoteBuilder}>
