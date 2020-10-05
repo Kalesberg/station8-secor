@@ -8,7 +8,7 @@ import styles from './header.module.scss'
 import headerConfig from '../../../.forestry/content/settings/header.json'
 import contactInfo from '../../../.forestry/content/settings/contact.json'
 
-export default ({ images, pages, menuOpen, setMenuOpen, menu }) => {
+export default ({ images, pages, menuOpen, setMenuOpen, menu, location }) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [levelOne, setLevelOne] = useState(0)
   const [levelTwo, setLevelTwo] = useState(0)
@@ -48,7 +48,7 @@ export default ({ images, pages, menuOpen, setMenuOpen, menu }) => {
           ) : block.template === 'header-logo' ? (
             <Logo key={i} block={block} images={images} />
           ) : block.template === 'header-links' ? (
-            <Navigation key={i} block={block} pages={pages} setMenuOpen={setMenuOpen} />
+            <Navigation key={i} block={block} pages={pages} setMenuOpen={setMenuOpen} location={location} />
           ) : block.template === 'header-search' ? (
             <Search key={i} block={block} images={images} />
           ) : block.template === 'header-quote-menu' ? (

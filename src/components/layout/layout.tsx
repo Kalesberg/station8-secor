@@ -48,7 +48,7 @@ export default ({ children, title: siteTitle = '', images, pages, toggleForm, bl
         <title>{siteTitle + titleDivider + `${title || '404: Page Not Found'}`}</title>
         <meta name='description' content={description} />
       </Helmet>
-      <Header images={images} pages={pages} menuOpen={menuOpen} setMenuOpen={setMenuOpen} menu={menu} />
+      <Header images={images} pages={pages} menuOpen={menuOpen} setMenuOpen={setMenuOpen} menu={menu} location={location} />
       <Main blocks={blocks} images={images} menuOpen={menuOpen} setMenuOpen={setMenuOpen} articles={articles} pages={pages} tag={tag} toggleForm={toggleForm} menu={menu} location={location}>
         {children}
         <Footer images={images} pages={pages} toggleForm={toggleForm} />
