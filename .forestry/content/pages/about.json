@@ -16,5 +16,10 @@
         }
       ]
     }
+  ],
+  "blocks": [
+    {
+      "template": "main-blank"
+    }
   ]
 }
