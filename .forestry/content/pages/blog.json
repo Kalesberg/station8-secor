@@ -4,5 +4,10 @@
   "slug": "",
   "rows": [
 
+  ],
+  "blocks": [
+    {
+      "template": "main-blank"
+    }
   ]
 }
