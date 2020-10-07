@@ -6,6 +6,8 @@
 
   ],
   "blocks": [
-
+    {
+      "template": "main-blank"
+    }
   ]
 }
