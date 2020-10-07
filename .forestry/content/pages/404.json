@@ -10,5 +10,10 @@
 
     ]
   },
-  "slug": "404"
+  "slug": "404",
+  "blocks": [
+    {
+      "template": "main-blank"
+    }
+  ]
 }
