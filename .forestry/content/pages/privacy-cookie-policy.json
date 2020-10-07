@@ -4,5 +4,10 @@
   "slug": "privacy-policy",
   "rows": [
 
+  ],
+  "blocks": [
+    {
+      "template": "main-blank"
+    }
   ]
 }
