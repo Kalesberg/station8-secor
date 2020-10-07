@@ -25,5 +25,10 @@
 
     ]
   },
-  "slug": ""
+  "slug": "",
+  "blocks": [
+    {
+      "template": "main-blank"
+    }
+  ]
 }
