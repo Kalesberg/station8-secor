@@ -21,7 +21,7 @@
     {
       "template": "main-hero",
       "image": "/.forestry/content/images/about.png",
-      "button": false,
+      "button": true,
       "buttonLink": [
 
       ],
@@ -31,7 +31,7 @@
           "text": "A FUSION OF QUALITY AND KNOW-HOW"
         }
       ],
-      "buttonText": "\"\"",
+      "buttonText": "none",
       "video": "",
       "buttonIcon": ""
     },
