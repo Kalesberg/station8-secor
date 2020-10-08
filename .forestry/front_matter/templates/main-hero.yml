@@ -69,3 +69,8 @@ fields:
   showOnly:
     field: button
     value: true
+- name: buttonIcon
+  type: file
+  config:
+    maxSize: 64
+  label: Button Icon
