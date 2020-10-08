@@ -21,19 +21,17 @@
     {
       "template": "main-hero",
       "image": "/.forestry/content/images/about.png",
-      "button": false,
-      "buttonLink": [
-
-      ],
+      "button": true,
+      "buttonLink": ".forestry/content/pages/get-a-quote.json",
       "text": [
         {
           "element": "Heading 1",
           "text": "A FUSION OF QUALITY AND KNOW-HOW"
         }
       ],
-      "buttonText": "none",
+      "buttonText": "Get a quote",
       "video": "",
-      "buttonIcon": ""
+      "buttonIcon": "/.forestry/content/images/arrow-right.svg"
     },
     {
       "template": "main-blank"
