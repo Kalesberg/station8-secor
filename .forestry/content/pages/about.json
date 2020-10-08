@@ -21,7 +21,7 @@
     {
       "template": "main-hero",
       "image": "/.forestry/content/images/about.png",
-      "button": true,
+      "button": false,
       "buttonLink": [
 
       ],
