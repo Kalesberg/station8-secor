@@ -19,6 +19,21 @@
   ],
   "blocks": [
     {
+      "template": "main-hero",
+      "image": "/.forestry/content/images/placeholder.png",
+      "button": false,
+      "buttonLink": [
+
+      ],
+      "text": [
+        {
+          "element": "Heading 1",
+          "text": "A FUSION OF QUALITY AND KNOW-HOW"
+        }
+      ],
+      "buttonText": "\"\""
+    },
+    {
       "template": "main-blank"
     }
   ]
