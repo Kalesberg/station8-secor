@@ -34,6 +34,14 @@ query ($title: String!) {
     type
     blocks {
       template
+      image
+      video
+      text {
+        text
+      }
+      buttonText
+      buttonLink
+      buttonIcon
     }
   }
 }

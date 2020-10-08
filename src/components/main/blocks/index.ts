@@ -9,6 +9,7 @@ import ContentTabs from './contentTabs/contentTabs'
 import FeaturedArticles from './featuredArticles/featuredArticles'
 import FilteredImagesSlider from './filteredImagesSlider/filteredImagesSlider'
 import Gallery from './gallery/gallery'
+import Hero from './hero/hero'
 import HeroSlider from './heroSlider/heroSlider'
 import Highlights from './highlights/highlights'
 import ImageBar from './imageBar/imageBar'
@@ -26,4 +27,4 @@ import Slideshow from './slideshow/slideshow'
 import StaticImage from './staticImage/staticImage'
 import Testimonial from './testimonial/testimonial'
 
-export { AnimatedImage, ArticlesGrid, ArticlesSlider, Blank, Cities, CompanyMerger, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, HeroSlider, Highlights, ImageBar, Images, Infographic, KnowledgeBase, Leadership, Map, Posts, ProductIndex, Quote, RecentArticles, RichText, Slideshow, StaticImage, Testimonial }
+export { AnimatedImage, ArticlesGrid, ArticlesSlider, Blank, Cities, CompanyMerger, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, Infographic, KnowledgeBase, Leadership, Map, Posts, ProductIndex, Quote, RecentArticles, RichText, Slideshow, StaticImage, Testimonial }
