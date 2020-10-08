@@ -98,7 +98,7 @@
   "blocks": [
     {
       "template": "main-hero",
-      "image": "/.forestry/content/images/home.png",
+      "image": "",
       "button": true,
       "buttonLink": ".forestry/content/pages/get-a-quote.json",
       "buttonText": "Get a quote",
@@ -115,7 +115,8 @@
           "element": "Paragraph",
           "text": "HDPE PIPE, FITTINGS, AND EQUIPMENT"
         }
-      ]
+      ],
+      "video": ""
     },
     {
       "template": "main-product-descriptions"
