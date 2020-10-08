@@ -1,7 +1,7 @@
 import React from 'react'
 import ScrollAnimation from 'react-animate-on-scroll'
 
-import { AnimatedImage, ArticlesGrid, ArticlesSlider, Cities, CompanyMerger, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, HeroSlider, Highlights, ImageBar, Images, Infographic, KnowledgeBase, Leadership, Map, ProductIndex, Posts, RecentArticles, RichText, Slideshow, StaticImage, Testimonial } from '../../components/main/blocks'
+import { AnimatedImage, ArticlesGrid, ArticlesSlider, Blank, Cities, CompanyMerger, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, HeroSlider, Highlights, ImageBar, Images, Infographic, KnowledgeBase, Leadership, Map, ProductIndex, Posts, Quote, RecentArticles, RichText, Slideshow, StaticImage, Testimonial } from '../../components/main/blocks'
 
 import styles from './main.module.scss'
 
@@ -25,6 +25,8 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, scrollListene
               <ScrollAnimation animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
                 <ArticlesSlider key={i} block={block} />
               </ScrollAnimation>
+            ) : block.template === 'main-blank' ? (
+              <Blank key={i} />
             ) : block.template === 'main-cities' ? (
               <ScrollAnimation animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
                 <Cities key={i} block={block} images={images} toggleForm={toggleForm} />
@@ -91,6 +93,8 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, scrollListene
               </ScrollAnimation>
             ) : block.template === 'main-product-index' ? (
               <ProductIndex menu={menu} key={i} location={location} />
+            ) : block.template === 'main-quote' ? (
+              <Quote key={i} />
             ) : block.template === 'main-recent-articles' ? (
               <ScrollAnimation animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
                 <RecentArticles key={i} block={block} />
@@ -111,7 +115,7 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, scrollListene
               <ScrollAnimation animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
                 <Testimonial key={i} block={block} images={images} />
               </ScrollAnimation>
-            ) : <p key={i}>{block.template} not defined</p>
+            ) : <h1 key={i} className={styles.title}>{block.template} under development</h1>
           })}
         </div>
       )

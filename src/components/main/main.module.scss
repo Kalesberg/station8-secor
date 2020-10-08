@@ -3,6 +3,9 @@
   min-height: 21vw;
   display: grid;
   grid-template-rows: 1fr auto;
+  .title {
+    font-size: 2vw;
+  }
 }
 // .main {
 //   position: relative;

@@ -192,7 +192,8 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
             return {
               id: thisOption.id,
               recordId: thisOption.recordId,
-              name: thisOption.data.Label,
+              name: thisOption.data.Name,
+              label: thisOption.data.Label,
               type: thisOption.data.Type,
               choices: thisOption.data.Select_Choices
             }
@@ -292,7 +293,8 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
               product,
               images,
               pages: pagesWithExtras,
-              articles
+              articles,
+              options
             }
           })
         })
