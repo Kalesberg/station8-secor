@@ -1,6 +1,39 @@
 .section {
-  padding: 2vw;
-  .title {
-    font-size: 2vw;
+  display: grid;
+  grid-auto-flow: column;
+  .customer-info, .products-table {
+    .label {
+    background-color: #F5F5F5;
+    padding: 1vw;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 33vw 1fr;
+    }
+  }
+  .products-table {
+    .labels {
+      display: grid;
+      grid-auto-flow: column;
+      grid-template-columns: 30vw 1fr;
+      p {
+        font-weight: 700;
+        color: #525252;
+        font-size: 0.9vw;
+      }
+    }
+    .products {
+      .product {
+        .product-details {
+          .product-image {
+
+          }
+          .product-description {
+            .name {
+
+            }
+          }
+        }
+      }
+    }
   }
 }

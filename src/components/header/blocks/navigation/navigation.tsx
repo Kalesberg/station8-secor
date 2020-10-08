@@ -23,7 +23,7 @@ export default ({ block, pages, setMenuOpen, location }) => {
         {block.links.map((item, i) => (
           <li key={i} className={styles.listItem}>
             {!item.megaMenu ? getPage(item.page) : (
-              <div className={styles.menu + `${location.pathname.split('/')[1] === 'equipment' || location.pathname.split('/')[1] === 'products' ? ` ${styles.active}` : ''}`} onMouseOver={openMenu}>
+              <div className={styles.menu + `${location && (location.pathname.split('/')[1] === 'equipment' || location.pathname.split('/')[1] === 'products') ? ` ${styles.active}` : ''}`} onMouseOver={openMenu}>
                 <p className={styles.label}>{item.label}</p>
                 <span className={styles.underline} />
               </div>
