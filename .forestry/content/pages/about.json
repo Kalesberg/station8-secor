@@ -20,7 +20,7 @@
   "blocks": [
     {
       "template": "main-hero",
-      "image": "/.forestry/content/images/placeholder.png",
+      "image": "/.forestry/content/images/about.png",
       "button": false,
       "buttonLink": [
 
@@ -31,7 +31,9 @@
           "text": "A FUSION OF QUALITY AND KNOW-HOW"
         }
       ],
-      "buttonText": "\"\""
+      "buttonText": "\"\"",
+      "video": "",
+      "buttonIcon": ""
     },
     {
       "template": "main-blank"
