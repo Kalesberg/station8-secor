@@ -19,6 +19,18 @@
   ],
   "blocks": [
     {
+      "template": "main-hero",
+      "image": "/.forestry/content/images/placeholder.png",
+      "button": true,
+      "buttonLink": [
+
+      ],
+      "buttonText": "Get a quote",
+      "text": [
+
+      ]
+    },
+    {
       "template": "main-blank"
     }
   ]
