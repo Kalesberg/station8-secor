@@ -98,7 +98,7 @@
   "blocks": [
     {
       "template": "main-hero",
-      "image": "/.forestry/content/images/placeholder.png",
+      "image": "/.forestry/content/images/home.png",
       "button": true,
       "buttonLink": ".forestry/content/pages/get-a-quote.json",
       "buttonText": "Get a quote",
