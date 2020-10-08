@@ -20,15 +20,18 @@
   "blocks": [
     {
       "template": "main-hero",
-      "image": "/.forestry/content/images/placeholder.png",
+      "image": "/.forestry/content/images/mcelroy.png",
       "button": true,
-      "buttonLink": [
-
-      ],
+      "buttonLink": ".forestry/content/pages/get-a-quote.json",
       "buttonText": "Get a quote",
       "text": [
-
-      ]
+        {
+          "element": "Heading 1",
+          "text": "THE NATIONS NUMBER 1 McELROY DISTRIBUTOR"
+        }
+      ],
+      "video": "",
+      "buttonIcon": "/.forestry/content/images/arrow-right.svg"
     },
     {
       "template": "main-blank"
