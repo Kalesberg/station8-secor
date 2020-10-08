@@ -7,6 +7,21 @@
   ],
   "blocks": [
     {
+      "template": "main-hero",
+      "image": "/.forestry/content/images/capabilities.png",
+      "button": true,
+      "buttonLink": ".forestry/content/pages/get-a-quote.json",
+      "text": [
+        {
+          "element": "Heading 1",
+          "text": "BELOW GROUND ABOVE EXPECTATIONS."
+        }
+      ],
+      "buttonText": "Get a quote",
+      "buttonIcon": "/.forestry/content/images/arrow-right.svg",
+      "video": ""
+    },
+    {
       "template": "main-blank"
     }
   ]
