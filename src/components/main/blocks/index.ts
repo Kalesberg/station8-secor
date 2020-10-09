@@ -19,6 +19,7 @@ import KnowledgeBase from './knowledgeBase/knowledgeBase'
 import Leadership from './leadership/leadership'
 import Map from './map/map'
 import Posts from './posts/posts'
+import ProductDescrip from './productDescrip/productDescrip'
 import ProductIndex from './productIndex/productIndex'
 import Quote from './quote/quote'
 import RecentArticles from './recentArticles/recentArticles'
@@ -27,4 +28,4 @@ import Slideshow from './slideshow/slideshow'
 import StaticImage from './staticImage/staticImage'
 import Testimonial from './testimonial/testimonial'
 
-export { AnimatedImage, ArticlesGrid, ArticlesSlider, Blank, Cities, CompanyMerger, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, Infographic, KnowledgeBase, Leadership, Map, Posts, ProductIndex, Quote, RecentArticles, RichText, Slideshow, StaticImage, Testimonial }
+export { AnimatedImage, ArticlesGrid, ArticlesSlider, Blank, Cities, CompanyMerger, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, Infographic, KnowledgeBase, Leadership, Map, Posts, ProductDescrip, ProductIndex, Quote, RecentArticles, RichText, Slideshow, StaticImage, Testimonial }

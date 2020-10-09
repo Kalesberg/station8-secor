@@ -44,9 +44,8 @@
       font-weight: 700;
       background-color: transparent;
       border: .3vw solid #D50F09;
-      padding: .5vw .5vw .5vw 1.2vw;
+      padding: .5vw 5vw .5vw 1.2vw;
       height: 4vw;
-      width: 16vw;
       margin-top: 3vw;
       text-align: left;
       position: relative;
@@ -87,7 +86,7 @@
     }
     .textContainer {
       position: absolute;
-      bottom: 16vw;
+      bottom: 10vw;
       left: 0vw;
       width: 100%;
       padding: 5vw;
@@ -97,13 +96,13 @@
       }
       .heroText0 {
         font-style: italic;
-        font-size: 18vw;
-        line-height: 22vw;
+        font-size: 15vw;
+        line-height: 13vw;
         font-weight: 900;
       }
       .heroText1 {
         font-style: italic;
-        font-size: 13vw;
+        font-size: 10vw;
         font-weight: 900;
       }
       .heroText2 {
@@ -112,18 +111,18 @@
         font-weight: 700;
       }
       .heroTextMedium {
-        font-size: 9vw;
+        font-size: 8vw;
         font-weight: 900;
       }
       button {
         border-radius: 10vw;
-        font-size: 3.4vw;
+        font-size: 2.55vw;
         font-weight: 700;
         background-color: transparent;
-        border: .6vw solid #D50F09;
-        padding: 1vw 1vw 1vw 2.4vw;
-        height: 8vw;
-        width: 32vw;
+        border: .45vw solid #D50F09;
+        padding: .75vw 7.5vw .75vw 1.8vw;
+        height: 6vw;
+        width: 24vw;
         margin-top: 6vw;
         text-align: left;
         position: relative;
@@ -133,16 +132,16 @@
           border-radius: 100%;
           background-color: #D50F09;
           position: absolute;
-          top: -.6vw;
-          right: -.6vw;
-          width: 8vw;
-          height: 8vw;
+          top: -.45vw;
+          right: -.45vw;
+          width: 6vw;
+          height: 6vw;
           display: grid;
           align-items: center;
           justify-content: center;
           .icon {
-            height: 4vw;
-            width: 4vw;
+            height: 3vw;
+            width: 3vw;
             margin: 0;
   
           }
