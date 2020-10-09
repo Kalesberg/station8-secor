@@ -123,7 +123,12 @@
       "template": "main-product-descriptions",
       "heading": "Below ground. Above expectations.",
       "product": [
-
+        {
+          "category": "HDPE pipe",
+          "heading": "Gas, water, and chemical distribution",
+          "description": "",
+          "image": ""
+        }
       ],
       "showButton": true,
       "buttonText": "",
