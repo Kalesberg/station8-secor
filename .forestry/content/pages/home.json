@@ -120,7 +120,15 @@
       "buttonIcon": "/.forestry/content/images/arrow-right.svg"
     },
     {
-      "template": "main-product-descriptions"
+      "template": "main-product-descriptions",
+      "heading": "Below ground. Above expectations.",
+      "product": [
+
+      ],
+      "showButton": false,
+      "buttonText": "",
+      "buttonLink": "",
+      "buttonIcon": ""
     },
     {
       "template": "main-fabrication-animation"
