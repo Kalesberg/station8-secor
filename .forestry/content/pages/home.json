@@ -136,10 +136,10 @@
         "buttonOneLink": ".forestry/content/pages/products.json"
       },
       "buttonTwo": {
-        "showButtonTwo": false,
-        "button_two_text": "",
-        "buttonTwoIcon": "",
-        "buttonTwoLink": ""
+        "showButtonTwo": true,
+        "button_two_text": "Get a quote",
+        "buttonTwoIcon": "/.forestry/content/images/arrow-right.svg",
+        "buttonTwoLink": ".forestry/content/pages/get-a-quote.json"
       }
     },
     {
