@@ -33,15 +33,37 @@ query ($title: String!) {
     title
     type
     blocks {
-      template
-      image
       video
       text {
         text
+        element
+      }
+      template
+      product {
+        category
+        description
+        heading
+        image
+      }
+      button
+      buttonIcon
+      buttonLink
+      buttonOne {
+        buttonOneIcon
+        buttonOneLink
+        buttonOneText
+        showButtonOne
       }
       buttonText
-      buttonLink
-      buttonIcon
+      buttonTwo {
+        buttonTwoIcon
+        buttonTwoLink
+        button_two_text
+        showButtonTwo
+      }
+      heading
+      image
+      showButton
     }
   }
 }

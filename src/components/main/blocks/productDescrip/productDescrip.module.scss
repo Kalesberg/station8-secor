@@ -1,0 +1,163 @@
+.container {
+  position: relative;
+  width: 100vw;
+  padding: 7vw;
+  margin-bottom: 3vw;
+  h2 {
+    font-size: 2.8vw;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 4vw;
+  }
+  .products {
+    display: grid;
+    grid-template-columns: 32% 68%;
+    grid-template-rows: auto;
+    grid-column-gap: 2vw;
+    .scroll {
+      background-color: red;
+      height: 2vw;
+      width: 1vw;
+      border-radius: 10vw;
+      position: absolute;
+      left: 13vw;
+      top: 16.2vw;
+      transition: all .5s;
+    }
+    .categories  {
+      padding-left: 8vw;
+      .category {
+        font-family: 'Roboto', sans-serif;
+        color: #A4A4A4;
+        font-weight: 700;
+        font-size: 1.3vw;
+        margin: 2.2vw;
+        line-height: 1.9vw;
+        transition: all .8s;
+        cursor: pointer;
+      }
+      .category:hover {
+        color: black;
+      }
+      .categorySelected {
+        color: #D50F09;
+      }
+    }
+    .infoContainer {
+      position: relative;
+      .info {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        display: grid;
+        grid-template-columns: 60% 40%;
+        grid-column-gap: 4vw;
+        transition: all .8s;
+        padding-right: 15vw;
+        .imgContainer {
+          .image {
+            height: 34vw;
+            width: 34vw;
+            object-fit: cover;
+          }
+        }
+        .descripContainer {
+          font-family: 'Roboto', sans-serif;
+          .categoryHeading {
+            color: #D50F09;
+            font-size: 2.2vw;
+            font-weight: 800;
+            margin: 2.2vw 0 2.2vw 0;
+          }
+          .heading {
+            font-weight: 700;
+            font-size: 1.3vw;
+            margin: 2.2vw 0 4vw 0;
+          }
+          .description {
+            font-size: 1vw;
+          }
+        }
+      }
+      .infoShow {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+}
+@media (max-width: 1023px) {
+  .container {
+    position: relative;
+    width: 100vw;
+    padding: 7vw;
+    margin-bottom: 3vw;
+    h2 {
+      font-size: 4.2vw;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 4vw;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: 45% 55%;
+      grid-template-rows: auto;
+      grid-column-gap: 2vw;
+      .scroll {
+        top: 17.7vw;
+      }
+      .categories  {
+        padding-left: 8vw;
+        div {
+          font-family: 'Roboto', sans-serif;
+          color: #A4A4A4;
+          font-weight: 700;
+          font-size: 1.95vw;
+          margin: 2.2vw;
+          line-height: 2.85vw;
+        }
+      }
+      .infoContainer {
+        position: relative;
+        .info {
+          position: absolute;
+          visibility: hidden;
+          opacity: 0;
+          display: grid;
+          grid-template-columns: auto;
+          grid-column-gap: 4vw;
+          transition: all .8s;
+          padding-right: 15vw;
+          .imgContainer {
+            .image {
+              height: 40vw;
+              width: 40vw;
+              object-fit: cover;
+            }
+          }
+          .descripContainer {
+            font-family: 'Roboto', sans-serif;
+            .categoryHeading {
+              color: #D50F09;
+              font-size: 3.3vw;
+              font-weight: 800;
+              margin: 2.2vw 0 2.2vw 0;
+            }
+            .heading {
+              font-weight: 700;
+              font-size: 1.95vw;
+              margin: 2.2vw 0 4vw 0;
+            }
+            .description {
+              font-size: 1.5vw;
+            }
+          }
+        }
+        .infoShow {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
