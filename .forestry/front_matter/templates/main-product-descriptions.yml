@@ -21,9 +21,13 @@ fields:
       required: false
     label: Heading
   - name: description
-    type: text
+    type: textarea
+    default: ''
     config:
       required: false
+      wysiwyg: false
+      schema:
+        format: markdown
     label: Description
   - name: image
     type: file
