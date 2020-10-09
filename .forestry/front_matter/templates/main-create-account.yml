@@ -1,9 +1,0 @@
----
-label: 'Main Block: Create Account'
-hide_body: true
-fields:
-- name: form
-  type: include
-  config: {}
-  template: template-form
-  label: Form
