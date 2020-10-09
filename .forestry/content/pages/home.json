@@ -125,9 +125,9 @@
       "product": [
 
       ],
-      "showButton": false,
-      "buttonText": "",
-      "buttonLink": "",
+      "showButton": true,
+      "buttonText": "All products",
+      "buttonLink": ".forestry/content/pages/products.json",
       "buttonIcon": ""
     },
     {
