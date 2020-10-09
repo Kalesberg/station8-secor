@@ -1,4 +1,68 @@
 ---
 label: 'Main Block: Product Descriptions'
 hide_body: true
-fields: []
+fields:
+- name: heading
+  type: text
+  config:
+    required: false
+  label: Heading
+- name: product
+  type: field_group_list
+  fields:
+  - name: category
+    type: text
+    config:
+      required: false
+    label: Category
+  - name: heading
+    type: text
+    config:
+      required: false
+    label: Heading
+  - name: description
+    type: text
+    config:
+      required: false
+    label: Description
+  - name: image
+    type: file
+    config:
+      maxSize: 64
+    label: Image
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Product
+- name: buttonOne
+  type: field_group
+  config: {}
+  fields:
+  - name: buttonText
+    type: text
+    config:
+      required: false
+    label: Button Text
+  - name: showButton
+    type: boolean
+    label: Show Button
+  - name: buttonIcon
+    type: file
+    config:
+      maxSize: 64
+    label: Button Icon
+  label: Button One
+- name: buttonTwo
+  type: field_group
+  config: {}
+  fields:
+  - name: buttonText
+    type: text
+    config:
+      required: false
+    label: Button Text
+  - name: showButton
+    type: boolean
+    label: Show Button
+  label: Button Two
