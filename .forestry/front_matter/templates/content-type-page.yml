@@ -23,9 +23,9 @@ fields:
   type: blocks
   label: Blocks
   template_types:
+  - main-account
   - main-basic-contact-form
   - main-blank
-  - main-conditional-content
   - main-contact-form
   - main-fabrication-animation
   - main-hero
