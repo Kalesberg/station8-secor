@@ -126,9 +126,9 @@
 
       ],
       "showButton": true,
-      "buttonText": "All products",
+      "buttonText": "",
       "buttonLink": ".forestry/content/pages/products.json",
-      "buttonIcon": ""
+      "buttonIcon": "/.forestry/content/images/arrow-right.svg"
     },
     {
       "template": "main-fabrication-animation"
