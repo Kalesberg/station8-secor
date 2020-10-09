@@ -107,6 +107,9 @@
           ]
         }
       ]
+    },
+    {
+      "template": "main-account"
     }
   ]
 }
