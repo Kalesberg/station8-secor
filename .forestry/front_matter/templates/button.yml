@@ -1,4 +1,9 @@
 ---
 label: Button
 hide_body: false
-fields: []
+fields:
+- name: buttonText
+  type: text
+  config:
+    required: false
+  label: Button Text
