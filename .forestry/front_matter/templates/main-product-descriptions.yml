@@ -56,6 +56,9 @@ fields:
     config:
       maxSize: 64
     label: Button One Icon
+    showOnly:
+      field: showButtonOne
+      value: true
   - name: buttonOneLink
     type: select
     default: []
@@ -93,6 +96,9 @@ fields:
     config:
       maxSize: 64
     label: Button Two Icon
+    showOnly:
+      field: showButtonTwo
+      value: true
   - name: buttonTwoLink
     type: select
     default: []
@@ -105,4 +111,7 @@ fields:
         file: 
         path: 
     label: Button Two Link
+    showOnly:
+      field: showButtonTwo
+      value: true
   label: Button Two
