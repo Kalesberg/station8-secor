@@ -36,33 +36,12 @@ fields:
     labelField: 
   label: Product
 - name: buttonOne
-  type: field_group
+  type: include
   config: {}
-  fields:
-  - name: buttonText
-    type: text
-    config:
-      required: false
-    label: Button Text
-  - name: showButton
-    type: boolean
-    label: Show Button
-  - name: buttonIcon
-    type: file
-    config:
-      maxSize: 64
-    label: Button Icon
+  template: button
   label: Button One
 - name: buttonTwo
-  type: field_group
+  type: include
   config: {}
-  fields:
-  - name: buttonText
-    type: text
-    config:
-      required: false
-    label: Button Text
-  - name: showButton
-    type: boolean
-    label: Show Button
+  template: button
   label: Button Two
