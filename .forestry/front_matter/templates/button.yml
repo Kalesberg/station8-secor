@@ -2,8 +2,38 @@
 label: Button
 hide_body: false
 fields:
+- name: showButton
+  type: boolean
+  label: Show Button
+  default: true
 - name: buttonText
   type: text
   config:
     required: false
   label: Button Text
+  showOnly:
+    field: showButton
+    value: true
+- name: buttonLink
+  type: select
+  default: []
+  config:
+    required: false
+    options: []
+    source:
+      type: pages
+      section: pages
+      file: 
+      path: 
+  label: Button Link
+  showOnly:
+    field: showButton
+    value: true
+- name: buttonIcon
+  type: file
+  config:
+    maxSize: 64
+  label: Button Icon
+  showOnly:
+    field: showButton
+    value: true
