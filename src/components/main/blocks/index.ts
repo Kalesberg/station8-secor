@@ -1,3 +1,4 @@
+import Account from './account/account'
 import AnimatedImage from './animatedImage/animatedImage'
 import ArticlesGrid from './articlesGrid/articlesGrid'
 import ArticlesSlider from './articlesSlider/articlesSlider'
@@ -27,4 +28,4 @@ import Slideshow from './slideshow/slideshow'
 import StaticImage from './staticImage/staticImage'
 import Testimonial from './testimonial/testimonial'
 
-export { AnimatedImage, ArticlesGrid, ArticlesSlider, Blank, Cities, CompanyMerger, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, Infographic, KnowledgeBase, Leadership, Map, Posts, ProductIndex, Quote, RecentArticles, RichText, Slideshow, StaticImage, Testimonial }
+export { Account, AnimatedImage, ArticlesGrid, ArticlesSlider, Blank, Cities, CompanyMerger, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, Infographic, KnowledgeBase, Leadership, Map, Posts, ProductIndex, Quote, RecentArticles, RichText, Slideshow, StaticImage, Testimonial }

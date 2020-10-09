@@ -6,22 +6,6 @@ const ContextProvider = ({ children }) => {
   const [quote, setQuote] = useState([])
   const [quantity, setQuantity] = useState(0)
 
-  useEffect(() => {
-    window.fetch('/.netlify/functions/hello-world', {
-      method: 'POST',
-      body: JSON.stringify({
-        name: 'Matt'
-      })
-    }).then(async res => {
-      if (res.ok) {
-        const body = await res.json()
-        console.log('this', body)
-      } else {
-        console.log('error')
-      }
-    })
-  }, [])
-
   const updateQuantity = () => {
     let quantity = 0
     quote.forEach(item => {
