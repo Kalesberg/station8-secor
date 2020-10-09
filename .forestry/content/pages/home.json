@@ -128,7 +128,19 @@
       "showButton": true,
       "buttonText": "",
       "buttonLink": ".forestry/content/pages/products.json",
-      "buttonIcon": "/.forestry/content/images/arrow-right.svg"
+      "buttonIcon": "/.forestry/content/images/arrow-right.svg",
+      "buttonOne": {
+        "showButtonOne": true,
+        "buttonOneText": "All products",
+        "buttonOneIcon": "/.forestry/content/images/arrow-right.svg",
+        "buttonOneLink": ".forestry/content/pages/products.json"
+      },
+      "buttonTwo": {
+        "showButtonTwo": false,
+        "button_two_text": "",
+        "buttonTwoIcon": "",
+        "buttonTwoLink": ""
+      }
     },
     {
       "template": "main-fabrication-animation"
