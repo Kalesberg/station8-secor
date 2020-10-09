@@ -36,12 +36,73 @@ fields:
     labelField: 
   label: Product
 - name: buttonOne
-  type: include
+  type: field_group
   config: {}
-  template: button
+  fields:
+  - name: showButtonOne
+    type: boolean
+    label: Show Button One
+    default: true
+  - name: buttonOneText
+    type: text
+    config:
+      required: false
+    label: Button One Text
+    showOnly:
+      field: showButtonOne
+      value: true
+  - name: buttonOneIcon
+    type: file
+    config:
+      maxSize: 64
+    label: Button One Icon
+  - name: buttonOneLink
+    type: select
+    default: []
+    config:
+      required: false
+      options: []
+      source:
+        type: pages
+        section: pages
+        file: 
+        path: 
+    label: Button One Link
+    showOnly:
+      field: showButtonOne
+      value: true
   label: Button One
 - name: buttonTwo
-  type: include
+  type: field_group
   config: {}
-  template: button
+  fields:
+  - name: showButtonTwo
+    type: boolean
+    label: Show Button Two
+    default: true
+  - name: button_two_text
+    type: text
+    config:
+      required: false
+    label: Button Two Text
+    showOnly:
+      field: showButtonTwo
+      value: true
+  - name: buttonTwoIcon
+    type: file
+    config:
+      maxSize: 64
+    label: Button Two Icon
+  - name: buttonTwoLink
+    type: select
+    default: []
+    config:
+      required: false
+      options: []
+      source:
+        type: pages
+        section: pages
+        file: 
+        path: 
+    label: Button Two Link
   label: Button Two
