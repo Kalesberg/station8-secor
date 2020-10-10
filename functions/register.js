@@ -1,11 +1,28 @@
 const bcrypt = require('bcryptjs')
-const { customers } = require('../src/functions/airtable.ts')
-const { createJwtCookie } = require('../src/functions/jwt.ts')
+const Airtable = require('airtable')
+const jwt = require('jsonwebtoken')
+const cookie = require('cookie')
 
 exports.handler = async (event, context, callback) => {
-  const users = await customers()
+  const base = await new Airtable({ apiKey: process.env.AIRTABLE_KEY }).base(process.env.AIRTABLE_BASE_ID)
+  const users = await base('Customers')
   const body = await JSON.parse(event.body)
   const password = await bcrypt.hash(body.password, 10)
+
+  const createJwtCookie = (userId, email) => {
+    const secretKey = '-----BEGIN RSA PRIVATE KEY-----\n' + process.env.JWT_SECRET_KEY + '\n-----END RSA PRIVATE KEY-----'
+
+    const token = jwt.sign({ userId, email }, secretKey, {
+      algorithm: 'RS256',
+      expiresIn: '100 days'
+    })
+
+    return cookie.serialize('jwt', token, {
+      secure: process.env.NETLIFY_DEV !== 'true',
+      httpOnly: true,
+      path: '/'
+    })
+  }
 
   await users.select({
     maxRecords: 1,
