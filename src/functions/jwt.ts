@@ -16,4 +16,8 @@ const createJwtCookie = (userId, email) => {
   })
 }
 
-module.exports = { createJwtCookie }
+const clearCookie = () => {
+  return 'jwt=deleted; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT'
+}
+
+module.exports = { clearCookie, createJwtCookie }

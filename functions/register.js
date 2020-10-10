@@ -1,20 +1,18 @@
-
-const Airtable = require('airtable')
 const bcrypt = require('bcryptjs')
-const { createJwtCookie } = require('../src/functions/createJwtCookie.ts')
+const { customers } = require('../src/functions/airtable.ts')
+const { createJwtCookie } = require('../src/functions/jwt.ts')
 
-exports.handler = async function (event, context, callback) {
-  const base = await new Airtable({ apiKey: process.env.AIRTABLE_KEY }).base(process.env.AIRTABLE_BASE_ID)
-  const customers = await base('Customers')
+exports.handler = async (event, context, callback) => {
+  const users = await customers()
   const body = await JSON.parse(event.body)
   const password = await bcrypt.hash(body.password, 10)
 
-  await customers.select({
+  await users.select({
     maxRecords: 1,
     filterByFormula: `Email='${body.email.trim().toLowerCase()}'`
   }).eachPage(async records => {
     if (!records.length) {
-      const user = await customers.create([
+      const user = await users.create([
         {
           fields: {
             'First Name': body.firstName,

@@ -52,6 +52,31 @@ export default () => {
     }
   }
 
+  const handleLogin = async e => {
+    e.preventDefault()
+    const res = await window.fetch('/.netlify/functions/login', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: registrationData.email,
+        password: registrationData.password
+      })
+    })
+    if (res.status === 401) {
+      console.log('login failed')
+    }
+    const data = await res.json()
+    console.log(data)
+  }
+
+  const handleLogout = async e => {
+    e.preventDefault()
+    const res = await window.fetch('/.netlify/functions/logout', {
+      method: 'GET'
+    })
+    const data = await res.json()
+    console.log(data)
+  }
+
   const handleRegistrationEdit = e => {
     const newRegistrationData = { ...registrationData }
     newRegistrationData[e.target.id] = e.target.value
@@ -124,6 +149,27 @@ export default () => {
         </div>
         <div className={styles.buttonContainer}>
           <button className={styles.button} onClick={handleRegistration}>{!emailRegistered ? 'Create account' : 'Email already registered!'}</button>
+        </div>
+      </form>
+      <form className={styles.register}>
+        <h1 className={styles.title}>Login</h1>
+        <div className={styles.registrationForm} onSubmit={handleLogin}>
+          <div className={styles.column}>
+            <div className={styles.field}>
+              <label htmlFor='email'>Email<span className={styles.required}>*</span></label>
+              <input type='email' id='email' style={{ backgroundImage: `url(${null})` }} onChange={handleRegistrationEdit} required />
+            </div>
+            <div className={styles.field}>
+              <label htmlFor='password'>Password<span className={styles.required}>*</span></label>
+              <input type='password' id='password' style={{ backgroundImage: `url(${null})` }} onChange={handleRegistrationEdit} required />
+            </div>
+          </div>
+        </div>
+        <div className={styles.buttonContainer}>
+          <button className={styles.button} onClick={handleLogin}>Login</button>
+        </div>
+        <div className={styles.buttonContainer}>
+          <button className={styles.button} onClick={handleLogout}>Logout</button>
         </div>
       </form>
     </section>
