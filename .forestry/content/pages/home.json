@@ -173,7 +173,21 @@
       }
     },
     {
-      "template": "main-fabrication-animation"
+      "template": "main-fabrication-animation",
+      "image": "",
+      "heading": "FABRICATED FITTINGS DOWN TO A TEE.",
+      "subHeading": "With our expert custom fabrication capabilities, you get exactly what you need for precision performance. Our fittings are made in the U.S.A. for exceptional quality.",
+      "fittings": [
+        {
+          "fittingHeading": "Up to 48 inches in diameter",
+          "fittingSubHeading": "Fabricated fittings are typically used in 12” and larger applications where molded fittings are not available.",
+          "descriptions": [
+            "Customized to your needs",
+            "Accommodates non-traditional angles",
+            "Fully pressure-rated, piggable fittings"
+          ]
+        }
+      ]
     },
     {
       "template": "main-interactive-tools"
