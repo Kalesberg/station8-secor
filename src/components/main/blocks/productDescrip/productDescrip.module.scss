@@ -2,7 +2,8 @@
   position: relative;
   width: 100vw;
   padding: 7vw;
-  margin-bottom: 3vw;
+  margin-bottom: 100vh;
+  height: auto;
   h2 {
     font-size: 2.8vw;
     width: 100%;
@@ -41,6 +42,43 @@
       }
       .categorySelected {
         color: #D50F09;
+      }
+      .button {
+        border-radius: 5vw;
+        font-size: 1.2vw;
+        font-weight: 700;
+        padding: .5vw 5vw .5vw 3vw;
+        height: 4vw;
+        border: none;
+        background-color: transparent;
+        margin-top: 3vw;
+        text-align: left;
+        position: relative;
+        transition: all .5s;
+        cursor: pointer;
+        span {
+          border-radius: 100%;
+          background-color: #D50F09;
+          position: absolute;
+          top: .4vw;
+          right: .3vw;
+          width: 3vw;
+          height: 3vw;
+          display: grid;
+          align-items: center;
+          justify-content: center;
+          transition: all .5s;
+          .icon {
+            height: 2vw;
+            width: 2vw;
+            margin: 0;
+          }
+        }
+      }
+      .button:hover {
+        span {
+          background-color: black;
+        }
       }
     }
     .infoContainer {
@@ -83,6 +121,48 @@
         visibility: visible;
         opacity: 1;
       }
+      .buttonContainer {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        .buttonTwo {
+          border-radius: 5vw;
+          font-size: 1.2vw;
+          font-weight: 700;
+          padding: .5vw 5vw .5vw 3vw;
+          height: 4vw;
+          border: none;
+          background-color: transparent;
+          margin-top: 3vw;
+          text-align: left;
+          position: relative;
+          transition: all .5s;
+          cursor: pointer;
+          span {
+            border-radius: 100%;
+            background-color: #D50F09;
+            position: absolute;
+            top: .4vw;
+            right: .3vw;
+            width: 3vw;
+            height: 3vw;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            transition: all .5s;
+            .icon {
+              height: 2vw;
+              width: 2vw;
+              margin: 0;
+            }
+          }  
+        }    
+        .buttonTwo:hover {
+          span {
+            background-color: black;
+          }
+        }    
+      }
     }
   }
 }
@@ -91,16 +171,16 @@
     position: relative;
     width: 100vw;
     padding: 7vw;
-    margin-bottom: 3vw;
+    margin-bottom: 100vh;
     h2 {
-      font-size: 4.2vw;
+      font-size: 5vw;
       width: 100%;
       text-align: center;
       margin-bottom: 4vw;
     }
     .products {
       display: grid;
-      grid-template-columns: 45% 55%;
+      grid-template-columns: auto;
       grid-template-rows: auto;
       grid-column-gap: 2vw;
       .scroll {
@@ -108,16 +188,54 @@
       }
       .categories  {
         padding-left: 8vw;
-        div {
+        .category {
           font-family: 'Roboto', sans-serif;
           color: #A4A4A4;
           font-weight: 700;
-          font-size: 1.95vw;
+          font-size: 2.6vw;
           margin: 2.2vw;
           line-height: 2.85vw;
         }
+        .button {
+          border-radius: 5vw;
+          font-size: 1.2vw;
+          font-weight: 700;
+          padding: .5vw 5vw .5vw 3vw;
+          height: 4vw;
+          border: none;
+          background-color: transparent;
+          margin-top: 3vw;
+          text-align: left;
+          position: relative;
+          transition: all .5s;
+          cursor: pointer;
+          span {
+            border-radius: 100%;
+            background-color: #D50F09;
+            position: absolute;
+            top: .4vw;
+            right: .3vw;
+            width: 3vw;
+            height: 3vw;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            transition: all .5s;
+            .icon {
+              height: 2vw;
+              width: 2vw;
+              margin: 0;
+            }
+          }
+        }
+        .button:hover {
+          span {
+            background-color: black;
+          }
+        }
       }
       .infoContainer {
+        height: 80vw;
         position: relative;
         .info {
           position: absolute;
@@ -139,13 +257,13 @@
             font-family: 'Roboto', sans-serif;
             .categoryHeading {
               color: #D50F09;
-              font-size: 3.3vw;
+              font-size: 4.4vw;
               font-weight: 800;
               margin: 2.2vw 0 2.2vw 0;
             }
             .heading {
               font-weight: 700;
-              font-size: 1.95vw;
+              font-size: 2.6vw;
               margin: 2.2vw 0 4vw 0;
             }
             .description {
@@ -156,6 +274,9 @@
         .infoShow {
           visibility: visible;
           opacity: 1;
+        }
+        .buttonContainer {
+          left: 10%
         }
       }
     }

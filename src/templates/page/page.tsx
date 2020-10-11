@@ -58,7 +58,7 @@ query ($title: String!) {
       buttonTwo {
         buttonTwoIcon
         buttonTwoLink
-        button_two_text
+        buttonTwoText
         showButtonTwo
       }
       heading

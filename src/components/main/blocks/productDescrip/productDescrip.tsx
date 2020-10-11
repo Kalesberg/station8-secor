@@ -11,6 +11,8 @@ export default ({ block, images }) => {
   const container = useRef(null);
   const [highlightTop, setHighlightTop] = useState(null)
   const [highlightBottom, setHighlightBottom] = useState(null)
+  const pageLinkOne = block.buttonOne ? link(block.buttonOne.buttonOneLink) : null;
+  const pageLinkTwo = block.buttonTwo ? link(block.buttonTwo.buttonTwoLink) : null;
 
   const handleClick = (e) => {
     setSelected(e.target.innerText);
@@ -58,6 +60,14 @@ export default ({ block, images }) => {
                 onClick={handleClick}>{prod.category && prod.category}</div>
             )
           })}
+          {block.buttonOne && pageLinkOne &&
+          <Link to={pageLinkOne}>
+            <button className={styles.button}>{block.buttonOne.buttonOneText}
+              <span>
+                {block.buttonOne.buttonOneIcon && <Image className={styles.icon} src={block.buttonOne.buttonOneIcon} images={images} />}
+              </span>
+            </button>
+          </Link>}
         </div>
         <div className={styles.infoContainer}>
           {block.product && block.product.length > 0 && block.product.map((prod, i) => {
@@ -72,6 +82,14 @@ export default ({ block, images }) => {
               </div>  
             )
             })}
+            {block.buttonTwo && pageLinkTwo && 
+              <Link className={styles.buttonContainer} to={pageLinkTwo}>
+                <button className={styles.buttonTwo}>{block.buttonTwo.buttonTwoText}
+                  <span>
+                    {block.buttonTwo.buttonTwoIcon && <Image className={styles.icon} src={block.buttonTwo.buttonTwoIcon} images={images} />}
+                  </span>
+                </button>
+              </Link>}
         </div>
       </div>
     </div>
