@@ -172,7 +172,48 @@
       }
     },
     {
-      "template": "main-fabrication-animation"
+      "template": "main-fabrication-animation",
+      "image": "",
+      "heading": "FABRICATED FITTINGS DOWN TO A TEE.",
+      "subHeading": "With our expert custom fabrication capabilities, you get exactly what you need for precision performance. Our fittings are made in the U.S.A. for exceptional quality.",
+      "fittings": [
+        {
+          "fittingHeading": "Up to 48 inches in diameter",
+          "fittingSubHeading": "Fabricated fittings are typically used in 12” and larger applications where molded fittings are not available.",
+          "descriptions": [
+            "Customized to your needs",
+            "Accommodates non-traditional angles",
+            "Fully pressure-rated, piggable fittings"
+          ]
+        },
+        {
+          "fittingHeading": "Fusion-bonded joints",
+          "fittingSubHeading": "All fabricated fittings’ fusion-beads are stamped with the date of fabrication and the SECOR fabrication technician’s name; ensuring uncompromising quality and accountability.",
+          "descriptions": [
+            "Leak free",
+            "Durable",
+            "Safe"
+          ]
+        },
+        {
+          "fittingHeading": "FM approved",
+          "descriptions": [
+            "Certified for Class 150 and Class 200 FM fittings",
+            "Fabricated FM fittings available form 4\"-24\"",
+            "FM-approved pressure classes"
+          ],
+          "fittingSubHeading": "For fire water applications, our fabricated fittings are produced under an audited system and inspected by Factory Mutual (FM) personnel."
+        },
+        {
+          "fittingHeading": "Zero environmental leakage",
+          "descriptions": [
+            "Protects against leaking and waste",
+            "Maintains water purity",
+            "Lasting performance and lifespan"
+          ],
+          "fittingSubHeading": "We're passionate about helping create a more responsible infrastructure for a cleaner America."
+        }
+      ]
     },
     {
       "template": "main-interactive-tools"

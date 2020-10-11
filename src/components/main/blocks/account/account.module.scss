@@ -1,59 +1,17 @@
 .section {
-  .register {
+  .button-container {
+    margin-top: 4vw;
     display: grid;
     justify-content: center;
-    .title {
-      text-align: center;
-    }
-    .registration-form {
-      display: grid;
-      width: 40vw;
-      grid-template-rows: repeat(auto-fit, auto);
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      justify-content: stretch;
-      gap: 2vw;
-      .column {
-        .field, .fields > .field {
-          label {
-            font-size: 1vw;
-            color: #212121;
-            padding-bottom: 0.5vw;
-            .required {
-              color: #D50F09;
-              font-weight: 700;
-              margin-left: 0.25vw;
-            }
-          }
-          input {
-            margin-top: 0.5vw;
-            width: 100%;
-            background-color: #efefef;
-            border: none;
-            border-radius: 1.5vw;
-            font-size: 1.2vw;
-            padding: 0.5vw;
-          }
-        }
-        .fields {
-          display: grid;
-          grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-          gap: 2vw;
-        }
-      }
-    }
-    .button-container {
-      margin-top: 4vw;
-      display: grid;
-      justify-content: center;
-      .button {
-        background-color: #D50F09;
-        color: white;
-        font-size: 1vw;
-        font-weight: 700;
-        border: none;
-        border-radius: 1.5vw;
-        padding: 0.75vw 1.5vw;
-      }
+    .button {
+      cursor: pointer;
+      background-color: #D50F09;
+      color: white;
+      font-size: 1vw;
+      font-weight: 700;
+      border: none;
+      border-radius: 1.5vw;
+      padding: 0.75vw 1.5vw;
     }
   }
 }

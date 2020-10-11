@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
+import { Context } from '../context/context'
 import { Footer, Header, Main } from '../'
 
 import './reset.scss'
@@ -9,23 +10,8 @@ import './global.scss'
 import styles from './layout.module.scss'
 
 export default ({ children, title: siteTitle = '', images, pages, toggleForm, blocks, articles, tag, menu, location }) => {
+  const context = useContext(Context)
   const [menuOpen, setMenuOpen] = useState(false)
-
-  // useEffect(() => {
-  //   console.log(menuOpen)
-  // }, [menuOpen])
-
-  // useEffect(() => {
-  //   document.documentElement.style.setProperty('--top', '0')
-  //   document.documentElement.style.setProperty('--floating-logo-opacity', '1')
-  //   document.documentElement.style.setProperty('--floating-logo-click', 'all')
-  // }, [])
-
-  // const scrollListener = e => {
-  //   document.documentElement.style.setProperty('--top', e.target.scrollTop)
-  //   document.documentElement.style.setProperty('--floating-logo-opacity', e.target.scrollTop < window.innerHeight ? '' + (window.innerHeight - e.target.scrollTop) / window.innerHeight : '0')
-  //   document.documentElement.style.setProperty('--floating-logo-click', e.target.scrollTop < window.innerHeight ? 'all' : 'none')
-  // }
 
   const { site: { siteMetadata: { config: { description, title, titleDivider } } } } = useStaticQuery(graphql`
     {
@@ -41,7 +27,7 @@ export default ({ children, title: siteTitle = '', images, pages, toggleForm, bl
     }
   `)
 
-  return (
+  return context ? (
     <div className={styles.layout}>
       <Helmet>
         <html lang='en' />
@@ -54,5 +40,5 @@ export default ({ children, title: siteTitle = '', images, pages, toggleForm, bl
         <Footer images={images} pages={pages} toggleForm={toggleForm} />
       </Main>
     </div>
-  )
+  ) : null
 }
