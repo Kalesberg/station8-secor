@@ -184,7 +184,8 @@
             "Customized to your needs",
             "Accommodates non-traditional angles",
             "Fully pressure-rated, piggable fittings"
-          ]
+          ],
+          "icon": "/.forestry/content/images/gauge.svg"
         },
         {
           "fittingHeading": "Fusion-bonded joints",
@@ -193,7 +194,8 @@
             "Leak free",
             "Durable",
             "Safe"
-          ]
+          ],
+          "icon": ""
         },
         {
           "fittingHeading": "FM approved",
@@ -202,7 +204,8 @@
             "Fabricated FM fittings available form 4\"-24\"",
             "FM-approved pressure classes"
           ],
-          "fittingSubHeading": "For fire water applications, our fabricated fittings are produced under an audited system and inspected by Factory Mutual (FM) personnel."
+          "fittingSubHeading": "For fire water applications, our fabricated fittings are produced under an audited system and inspected by Factory Mutual (FM) personnel.",
+          "icon": ""
         },
         {
           "fittingHeading": "Zero environmental leakage",
@@ -211,7 +214,8 @@
             "Maintains water purity",
             "Lasting performance and lifespan"
           ],
-          "fittingSubHeading": "We're passionate about helping create a more responsible infrastructure for a cleaner America."
+          "fittingSubHeading": "We're passionate about helping create a more responsible infrastructure for a cleaner America.",
+          "icon": ""
         }
       ]
     },
