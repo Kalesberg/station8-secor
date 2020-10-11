@@ -13,10 +13,14 @@ fields:
     required: false
   label: Heading
 - name: subHeading
-  type: text
+  type: textarea
+  default: ''
   config:
     required: false
-  label: Sub-heading
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Sub Heading
 - name: fittings
   type: field_group_list
   fields:
@@ -25,11 +29,6 @@ fields:
     config:
       required: false
     label: Fitting Heading
-  - name: fittingSubHeading
-    type: text
-    config:
-      required: false
-    label: Fitting Sub-heading
   - name: descriptions
     type: list
     config:
@@ -37,6 +36,15 @@ fields:
       min: 
       max: 
     label: Descriptions
+  - name: fittingSubHeading
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: Fitting Sub Heading
   config:
     min: 
     max: 
