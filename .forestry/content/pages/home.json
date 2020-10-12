@@ -231,28 +231,36 @@
           "largeImage": "/.forestry/content/images/5e1a2048.jpg",
           "buttonText": "See all McElroy equipment",
           "category": "MCELROY",
-          "buttonTextTwo": ""
+          "buttonTextTwo": "",
+          "buttonLink": "/products/?category_name=mcelroy",
+          "buttonLinkTwo": ""
         },
         {
           "category": "ELECTROFUSION",
           "smallImage": "/.forestry/content/images/215.jpg",
           "largeImage": "/.forestry/content/images/225.jpg",
           "buttonText": "See all electrofusion equipment",
-          "buttonTextTwo": ""
+          "buttonTextTwo": "",
+          "buttonLink": "",
+          "buttonLinkTwo": ""
         },
         {
           "smallImage": "/.forestry/content/images/tool_accessories_squeeze_tools_mustang.jpg",
           "largeImage": "/.forestry/content/images/5e1a2410-2.jpg",
           "buttonText": "See all Regent Steel Squeeze tools",
           "category": "SQUEEZE TOOLS",
-          "buttonTextTwo": "See all Mustang HDPE Squeeze tools"
+          "buttonTextTwo": "See all Mustang HDPE Squeeze tools",
+          "buttonLink": "",
+          "buttonLinkTwo": ""
         },
         {
           "smallImage": "/.forestry/content/images/248.jpg",
           "largeImage": "/.forestry/content/images/5e1a1265-1024x683.jpg",
           "buttonText": "See all supplies",
           "buttonTextTwo": "",
-          "category": "SUPPLIES"
+          "category": "SUPPLIES",
+          "buttonLink": "",
+          "buttonLinkTwo": ""
         }
       ]
     },
