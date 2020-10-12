@@ -33,6 +33,10 @@ fields:
     - name: bold
       type: boolean
       label: Bold
+    - name: replaceLabel
+      type: boolean
+      label: Replace Label
+      description: Will replace the label depending on logged in status.
     config:
       min: 
       max: 

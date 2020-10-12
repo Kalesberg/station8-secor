@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { Context } from '../../../../context/context'
 
 import styles from './register.module.scss'
 
 export default () => {
+  const context = useContext(Context)
   const [emailRegistered, setEmailRegistered] = useState(false)
   const [passwordFail, setPasswordFail] = useState(false)
   const [registrationStatus, setRegistrationStatus] = useState('')
@@ -55,6 +57,7 @@ export default () => {
         }
         const data = await res.json()
         console.log(data)
+        context.handleValidateUser()
       }
     }
   }
