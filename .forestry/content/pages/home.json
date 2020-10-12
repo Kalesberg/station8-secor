@@ -231,6 +231,12 @@
           "largeImage": "/.forestry/content/images/5e1a2048.jpg",
           "buttonText": "See all McElroy equipment",
           "category": "MCELROY"
+        },
+        {
+          "category": "ELECTROFUSION",
+          "smallImage": "/.forestry/content/images/215.jpg",
+          "largeImage": "/.forestry/content/images/225.jpg",
+          "buttonText": "See all electrofusion equipment"
         }
       ]
     },
