@@ -3,11 +3,10 @@ import { Link } from 'gatsby'
 
 import { Context } from '../../../../context/context'
 
-import styles from './login.module.scss'
+import styles from './loggedOut.module.scss'
 
 export default () => {
   const context = useContext(Context)
-
   const [loginData, setLoginData] = useState({
     user: '',
     pass: ''
@@ -39,7 +38,6 @@ export default () => {
 
   return (
     <form className={styles.login}>
-      <h1 className={styles.title}>Login</h1>
       <div className={styles.loginForm} onSubmit={handleLogin}>
         <div className={styles.column}>
           <div className={styles.field}>

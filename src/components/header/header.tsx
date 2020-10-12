@@ -8,12 +8,16 @@ import styles from './header.module.scss'
 import headerConfig from '../../../.forestry/content/settings/header.json'
 import contactInfo from '../../../.forestry/content/settings/contact.json'
 
-export default ({ images, pages, menuOpen, setMenuOpen, menu, location }) => {
+export default ({ images, pages, menuOpen, setMenuOpen, menu, location, userMenuOpen, setUserMenuOpen }) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [levelOne, setLevelOne] = useState(0)
   const [levelTwo, setLevelTwo] = useState(0)
   const [activeSubcategory, setActiveSubcategory] = useState(undefined)
   const [searchResults, setSearchResults] = useState([])
+
+  const handleSetSearchTeam = e => {
+    setSearchTerm(e.target.value)
+  }
 
   useEffect(() => {
     if (searchTerm) {
@@ -27,14 +31,19 @@ export default ({ images, pages, menuOpen, setMenuOpen, menu, location }) => {
     }
   }, [searchTerm])
 
+  const handleCloseMenus = () => {
+    setMenuOpen(false)
+    setUserMenuOpen(false)
+  }
+
   return (
     <header className={styles.header}>
       <div className={styles.menu + `${menuOpen ? ` ${styles.active}` : ''}`}>
         {headerConfig.blocks.map((block, i: number) => {
           return block.template === 'header-call-button' ? (
-            <CallButton key={i} block={block} />
+            <CallButton key={i} block={block} handleCloseMenus={handleCloseMenus} />
           ) : block.template === 'header-contact-button' ? (
-            <ContactButton key={i} block={block} images={images} />
+            <ContactButton key={i} block={block} images={images} handleCloseMenus={handleCloseMenus} />
           ) : block.template === 'header-contact-form-with-video-background' ? (
             <ContactFormWithVideoBackground key={i} block={block} images={images} menuOpen={menuOpen} />
           ) : block.template === 'header-contact-info' ? (
@@ -44,7 +53,7 @@ export default ({ images, pages, menuOpen, setMenuOpen, menu, location }) => {
           ) : block.template === 'header-featured-page' ? (
             <FeaturedPage key={i} block={block} pages={pages} />
           ) : block.template === 'header-fill-space' ? (
-            <FillSpace key={i} />
+            <FillSpace key={i} handleCloseMenus={handleCloseMenus} />
           ) : block.template === 'header-logo' ? (
             <Logo key={i} block={block} images={images} />
           ) : block.template === 'header-links' ? (
@@ -52,16 +61,16 @@ export default ({ images, pages, menuOpen, setMenuOpen, menu, location }) => {
           ) : block.template === 'header-search' ? (
             <Search key={i} block={block} images={images} />
           ) : block.template === 'header-quote-menu' ? (
-            <QuoteMenu key={i} block={block} images={images} />
+            <QuoteMenu key={i} block={block} images={images} handleCloseMenus={handleCloseMenus} />
           ) : block.template === 'header-user-menu' ? (
-            <UserMenu key={i} block={block} images={images} />
+            <UserMenu key={i} block={block} images={images} userMenuOpen={userMenuOpen} setUserMenuOpen={setUserMenuOpen} location={location} />
           ) : <p key={i}>{block.template} not defined</p>
         })}
       </div>
       <div className={styles.megaMenu + `${menuOpen ? ` ${styles.open}` : ''}` + `${searchTerm ? ` ${styles.searching}` : ''}`}>
         <div className={styles.search}>
           <p className={styles.label}>Know exactly what you're looking for?</p>
-          <input className={styles.input + `${searchTerm ? ` ${styles.filled}` : ''}`} value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+          <input className={styles.input + `${searchTerm ? ` ${styles.filled}` : ''}`} value={searchTerm} onChange={handleSetSearchTeam} />
         </div>
         <div className={styles.resultsContainer}>
           {searchTerm && (

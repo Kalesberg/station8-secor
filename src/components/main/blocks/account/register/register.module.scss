@@ -1,8 +1,10 @@
 .register {
   display: grid;
   justify-content: center;
+  margin-top: 4vw;
   .title {
     text-align: center;
+    font-size: 3vw;
   }
   .registration-form {
     display: grid;
@@ -29,8 +31,12 @@
           background-color: #efefef;
           border: none;
           border-radius: 1.5vw;
-          font-size: 1.2vw;
-          padding: 0.5vw;
+          font-size: 1.1vw;
+          padding: 0.5vw 0.5vw 0.5vw 3vw;
+          font-weight: bold;
+          background-repeat: no-repeat no-repeat;
+          background-position: 0.8vw;
+          background-size: 1.2vw;
         }
       }
       .fields {
@@ -53,6 +59,17 @@
       border: none;
       border-radius: 1.5vw;
       padding: 0.75vw 1.5vw;
+    }
+  }
+  .links {
+    margin-top: 1vw;
+    display: grid;
+    justify-content: center;
+    gap: 0.5vw;
+    .link {
+      grid-row: 1;
+      font-size: 0.75vw;
+      font-weight: 600;
     }
   }
 }

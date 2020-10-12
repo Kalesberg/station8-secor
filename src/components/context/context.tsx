@@ -6,6 +6,7 @@ const ContextProvider = ({ children }) => {
   const [quote, setQuote] = useState([])
   const [quantity, setQuantity] = useState(0)
   const [user, setUser] = useState(undefined)
+  const [userFetched, setUserFetched] = useState(false)
 
   const auth = el => user && user.id ? el : null
 
@@ -54,6 +55,7 @@ const ContextProvider = ({ children }) => {
   }
 
   const handleValidateUser = async () => {
+    setUserFetched(false)
     const res = await window.fetch('/.netlify/functions/authenticate')
     if (res.ok) {
       const body = await res.json()
@@ -74,6 +76,7 @@ const ContextProvider = ({ children }) => {
     } else {
       setUser(undefined)
     }
+    setUserFetched(true)
   }
 
   useEffect(() => {
@@ -87,7 +90,7 @@ const ContextProvider = ({ children }) => {
   }, [quote])
 
   return (
-    <Context.Provider value={{ auth, handleLogoutUser, handleValidateUser, user, quantity, quote, setQuote, handleAddQuoteItem, handleRemoveQuoteItem, handleUpdateQuoteItem }}>
+    <Context.Provider value={{ auth, handleLogoutUser, handleValidateUser, user, userFetched, quantity, quote, setQuote, handleAddQuoteItem, handleRemoveQuoteItem, handleUpdateQuoteItem }}>
       {children}
     </Context.Provider>)
 }
