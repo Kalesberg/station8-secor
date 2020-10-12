@@ -1,4 +1,56 @@
 ---
 label: 'Main Block: Interactive Tools'
 hide_body: true
-fields: []
+fields:
+- name: heading
+  type: text
+  config:
+    required: false
+  label: Heading
+- name: subHeading
+  type: text
+  config:
+    required: false
+  label: Sub Heading
+- name: paragraph
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Paragraph
+- name: buttonText
+  type: text
+  config:
+    required: false
+  label: Button Text
+- name: buttonIcon
+  type: file
+  config:
+    maxSize: 64
+  label: Button Icon
+- name: tools
+  type: field_group_list
+  fields:
+  - name: category
+    type: text
+    config:
+      required: false
+    label: Category
+  - name: smallImage
+    type: file
+    config:
+      maxSize: 64
+    label: Small Image
+  - name: largeImage
+    type: file
+    config:
+      maxSize: 64
+    label: Large Image
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Tools
