@@ -9,17 +9,20 @@
             {
               "label": "Why HDPE",
               "page": ".forestry/content/pages/why-hdpe.json",
-              "bold": false
+              "bold": false,
+              "replaceLabel": false
             },
             {
               "label": "Resources",
               "page": ".forestry/content/pages/resources.json",
-              "bold": false
+              "bold": false,
+              "replaceLabel": false
             },
             {
               "label": "McElroy",
               "page": ".forestry/content/pages/mcelroy.json",
-              "bold": false
+              "bold": false,
+              "replaceLabel": false
             }
           ]
         },
@@ -28,17 +31,20 @@
             {
               "label": "Get a quote",
               "page": ".forestry/content/pages/get-a-quote.json",
-              "bold": false
+              "bold": false,
+              "replaceLabel": false
             },
             {
               "label": "Training",
               "page": ".forestry/content/pages/training.json",
-              "bold": false
+              "bold": false,
+              "replaceLabel": false
             },
             {
               "label": "About",
               "page": ".forestry/content/pages/about.json",
-              "bold": false
+              "bold": false,
+              "replaceLabel": false
             }
           ]
         },
@@ -47,12 +53,14 @@
             {
               "label": "Blog",
               "page": ".forestry/content/pages/blog.json",
-              "bold": false
+              "bold": false,
+              "replaceLabel": false
             },
             {
               "label": "Careers",
               "page": ".forestry/content/pages/careers.json",
-              "bold": false
+              "bold": false,
+              "replaceLabel": false
             }
           ]
         }
@@ -67,17 +75,20 @@
             {
               "label": "Quick contact",
               "page": ".forestry/content/pages/contact.json",
-              "bold": true
+              "bold": true,
+              "replaceLabel": false
             },
             {
               "label": "Login",
               "page": ".forestry/content/pages/account.json",
-              "bold": false
+              "bold": false,
+              "replaceLabel": true
             },
             {
               "label": "Locations",
               "page": ".forestry/content/pages/locations.json",
-              "bold": false
+              "bold": false,
+              "replaceLabel": false
             }
           ]
         }
