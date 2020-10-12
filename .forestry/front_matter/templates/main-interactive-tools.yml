@@ -49,6 +49,11 @@ fields:
     config:
       required: false
     label: Button Text
+  - name: buttonTextTwo
+    type: text
+    config:
+      required: false
+    label: Button Text Two
   config:
     min: 
     max: 
