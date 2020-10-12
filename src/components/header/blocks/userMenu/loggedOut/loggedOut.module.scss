@@ -1,24 +1,22 @@
 .login {
+  margin-top: 2vw;
   display: grid;
   justify-content: center;
-  margin-top: 4vw;
-  .title {
-    text-align: center;
-    font-size: 3vw;
-  }
   .login-form {
     display: grid;
-    width: 20vw;
     grid-template-rows: repeat(auto-fit, auto);
     grid-template-columns: minmax(0, 1fr);
-    justify-content: stretch;
-    gap: 2vw;
+    justify-content: center;
     .column {
-      .field, .fields > .field {
+      display: grid;
+      gap: 2vw;
+      .field {
+        padding: 0 2vw;
         label {
-          font-size: 1vw;
+          font-size: 0.9vw;
           color: #212121;
           padding-bottom: 0.5vw;
+          line-height: 3;
           .required {
             color: #D50F09;
             font-weight: 700;
@@ -26,7 +24,6 @@
           }
         }
         input {
-          margin-top: 0.5vw;
           width: 100%;
           background-color: #efefef;
           border: none;
@@ -39,15 +36,10 @@
           background-size: 1.2vw;
         }
       }
-      .fields {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        gap: 2vw;
-      }
     }
   }
   .button-container {
-    margin-top: 4vw;
+    margin-top: 3vw;
     display: grid;
     justify-content: center;
     .button {
@@ -58,7 +50,7 @@
       font-weight: 700;
       border: none;
       border-radius: 1.5vw;
-      padding: 0.75vw 1.5vw;
+      padding: 0.6vw 3vw;
     }
   }
   .links {

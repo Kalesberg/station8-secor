@@ -2,4 +2,4 @@ import React from 'react'
 
 import styles from './fillSpace.module.scss'
 
-export default () => <span className={styles.default} />
+export default ({ handleCloseMenus }) => <span className={styles.default} onMouseOver={handleCloseMenus} />

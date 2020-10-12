@@ -5,8 +5,11 @@ import { Account, AnimatedImage, ArticlesGrid, ArticlesSlider, Blank, Cities, Co
 
 import styles from './main.module.scss'
 
-export default ({ blocks, children, images, menuOpen, setMenuOpen, scrollListener, articles, pages, tag, toggleForm, menu, location }) => {
-  const closeMenu = () => setMenuOpen(false)
+export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOpen, scrollListener, articles, pages, tag, toggleForm, menu, location }) => {
+  const closeMenu = () => {
+    setMenuOpen(false)
+    setUserMenuOpen(false)
+  }
 
   return (
     <main onScroll={scrollListener} onMouseOver={closeMenu} className={styles.main + `${menuOpen ? ` ${styles.hidden}` : ''}`} id='main'>
@@ -14,7 +17,7 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, scrollListene
         <div className={styles.blocks}>
           {blocks && blocks.map((block, i) => {
             return block.template === 'main-account' ? (
-              <Account key={i} />
+              <Account key={i} location={location} />
             ) : block.template === 'main-animated-image' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
                 <AnimatedImage block={block} images={images} />
@@ -99,7 +102,7 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, scrollListene
               </ScrollAnimation>
             ) : block.template === 'main-fabrication-animation' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
-                <FabAnimation block={block} images={images}/>
+                <FabAnimation block={block} images={images} />
               </ScrollAnimation>
             ) : block.template === 'main-interactive-tools' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>

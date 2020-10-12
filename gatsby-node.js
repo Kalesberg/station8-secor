@@ -226,6 +226,20 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         menu: productMenu
       }
     })
+
+    if (page.filePath === '/account') {
+      ['info', 'quotes', 'forms', 'login', 'register', 'recover'].forEach(view => createPage({
+        component: pageTemplate,
+        path: page.filePath + '/' + view,
+        context: {
+          title: page.title,
+          images,
+          pages: pagesWithExtras,
+          articles,
+          menu: productMenu
+        }
+      }))
+    }
   })
 
   articles.forEach(article => {
