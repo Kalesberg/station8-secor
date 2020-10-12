@@ -40,11 +40,11 @@ export default ({ block, images }) => {
     }  
   }
 
-  useEffect(() => {
-    window.addEventListener('resize', () => {
+  // useEffect(() => {
+  //   window.addEventListener('resize', () => {
 
-    })
-  })
+  //   })
+  // })
 
   return (
     <div className={styles.container} ref={container}>

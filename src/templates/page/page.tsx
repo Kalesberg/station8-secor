@@ -62,8 +62,15 @@ query ($title: String!) {
         showButtonTwo
       }
       heading
+      subHeading
       image
       showButton
+      fittings {
+        descriptions
+        fittingHeading
+        fittingSubHeading
+        icon
+      }
     }
   }
 }

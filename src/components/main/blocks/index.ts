@@ -7,6 +7,7 @@ import Cities from './cities/cities'
 import CompanyMerger from './companyMerger/companyMerger'
 import ContentColumns from './contentColumns/contentColumns'
 import ContentTabs from './contentTabs/contentTabs'
+import FabAnimation from './fabAnimation/fabAnimation'
 import FeaturedArticles from './featuredArticles/featuredArticles'
 import FilteredImagesSlider from './filteredImagesSlider/filteredImagesSlider'
 import Gallery from './gallery/gallery'
@@ -29,4 +30,4 @@ import Slideshow from './slideshow/slideshow'
 import StaticImage from './staticImage/staticImage'
 import Testimonial from './testimonial/testimonial'
 
-export { Account, AnimatedImage, ArticlesGrid, ArticlesSlider, Blank, Cities, CompanyMerger, ContentColumns, ContentTabs, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, Infographic, KnowledgeBase, Leadership, Map, Posts, ProductDescrip, ProductIndex, Quote, RecentArticles, RichText, Slideshow, StaticImage, Testimonial }
+export { Account, AnimatedImage, ArticlesGrid, ArticlesSlider, Blank, Cities, CompanyMerger, ContentColumns, ContentTabs, FabAnimation, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, Infographic, KnowledgeBase, Leadership, Map, Posts, ProductDescrip, ProductIndex, Quote, RecentArticles, RichText, Slideshow, StaticImage, Testimonial }

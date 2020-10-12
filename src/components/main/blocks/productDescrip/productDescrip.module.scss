@@ -2,7 +2,7 @@
   position: relative;
   width: 100vw;
   padding: 7vw;
-  margin-bottom: 100vh;
+  margin-bottom: 1vw;
   height: auto;
   h2 {
     font-size: 2.8vw;
@@ -171,7 +171,6 @@
     position: relative;
     width: 100vw;
     padding: 7vw;
-    margin-bottom: 100vh;
     h2 {
       font-size: 5vw;
       width: 100%;
@@ -205,6 +204,7 @@
           border: none;
           background-color: transparent;
           margin-top: 3vw;
+          margin-bottom: 3vw;
           text-align: left;
           position: relative;
           transition: all .5s;
