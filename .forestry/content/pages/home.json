@@ -250,8 +250,8 @@
           "buttonText": "See all Regent Steel Squeeze tools",
           "category": "SQUEEZE TOOLS",
           "buttonTextTwo": "See all Mustang HDPE Squeeze tools",
-          "buttonLink": "",
-          "buttonLinkTwo": ""
+          "buttonLink": "/products/?category_name=squeeze-tools",
+          "buttonLinkTwo": "/products/?category_name=hdpe-squeeze-tools%20"
         },
         {
           "smallImage": "/.forestry/content/images/248.jpg",
