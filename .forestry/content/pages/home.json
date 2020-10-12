@@ -220,7 +220,19 @@
       ]
     },
     {
-      "template": "main-interactive-tools"
+      "template": "main-interactive-tools",
+      "heading": "THE RIGHT TOOLS",
+      "subHeading": "WHERE AND WHEN YOU NEED THEM.",
+      "paragraph": "From McElroy Fusion Machines to electrofusion equipment and squeeze tools, we provide the best, most advanced rental equipment for all your HDPE piping needs.",
+      "buttonIcon": "/.forestry/content/images/arrow-right.svg",
+      "tools": [
+        {
+          "smallImage": "/.forestry/content/images/screen-shot-2019-07-15-at-10-15-26-am.png",
+          "largeImage": "/.forestry/content/images/5e1a2048.jpg",
+          "buttonText": "See all McElroy equipment",
+          "category": "MCELROY"
+        }
+      ]
     },
     {
       "template": "main-basic-contact-form"
