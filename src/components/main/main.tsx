@@ -98,8 +98,8 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, scrollListene
                 <Posts block={block} />
               </ScrollAnimation>
             ) : block.template === 'main-product-descriptions' ? (
-              <ScrollAnimation animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
-                <ProductDescrip key={i} block={block} images={images} />
+              <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
+                <ProductDescrip block={block} images={images} />
               </ScrollAnimation>
             ) : block.template === 'main-product-index' ? (
               <ProductIndex menu={menu} key={i} location={location} />
