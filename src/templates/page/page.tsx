@@ -71,6 +71,16 @@ query ($title: String!) {
         fittingSubHeading
         icon
       }
+      paragraph
+      tools {
+        category
+        smallImage
+        largeImage
+        buttonText
+        buttonTextTwo
+        buttonLink
+        buttonLinkTwo
+      }
     }
   }
 }

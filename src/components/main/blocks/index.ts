@@ -16,6 +16,7 @@ import HeroSlider from './heroSlider/heroSlider'
 import Highlights from './highlights/highlights'
 import ImageBar from './imageBar/imageBar'
 import Images from './images/images'
+import InteractiveTools from './interactiveTools/interactiveTools'
 import Infographic from './infographic/infographic'
 import KnowledgeBase from './knowledgeBase/knowledgeBase'
 import Leadership from './leadership/leadership'
@@ -30,4 +31,4 @@ import Slideshow from './slideshow/slideshow'
 import StaticImage from './staticImage/staticImage'
 import Testimonial from './testimonial/testimonial'
 
-export { Account, AnimatedImage, ArticlesGrid, ArticlesSlider, Blank, Cities, CompanyMerger, ContentColumns, ContentTabs, FabAnimation, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, Infographic, KnowledgeBase, Leadership, Map, Posts, ProductDescrip, ProductIndex, Quote, RecentArticles, RichText, Slideshow, StaticImage, Testimonial }
+export { Account, AnimatedImage, ArticlesGrid, ArticlesSlider, Blank, Cities, CompanyMerger, ContentColumns, ContentTabs, FabAnimation, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, Infographic, InteractiveTools, KnowledgeBase, Leadership, Map, Posts, ProductDescrip, ProductIndex, Quote, RecentArticles, RichText, Slideshow, StaticImage, Testimonial }

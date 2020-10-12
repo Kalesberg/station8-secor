@@ -1,0 +1,124 @@
+.section {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  .background {
+    width: 100vw;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    img {
+      object-fit: cover;
+      height: 100vh;
+      width: 100vw;
+      filter: brightness(50%);
+    }
+  }
+  .backgroundShow {
+    opacity: 1;
+    visibility: visible;
+  }
+  .headingContainer {
+    width: 100%;
+    position: absolute;
+    top: 5vw;
+    padding: 2vw;
+    text-align: center;
+    color: white;
+    .heading {
+      font-size: 6vw;
+      line-height: 6vw;
+      font-weight: 900;
+      font-family: 'Roboto', sans-serif;
+      letter-spacing: .01vw;
+      margin: 0;
+      padding: 0;
+    }
+    .subHeading {
+      font-weight: 900;
+      font-family: 'Roboto', sans-serif;
+    }
+    .paragraph {
+      width: 40%;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1vw;
+      font-weight: 400;
+    }
+    .buttonContainer {
+      width: 100vw;
+      .buttons {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-column-gap: 2vw;
+        justify-content: center;
+        .button {
+          border-radius: 5vw;
+          font-size: 1.2vw;
+          font-weight: 700;
+          padding: .5vw 5vw .5vw 3vw;
+          height: 4vw;
+          border: none;
+          background-color: transparent;
+          margin-top: 3vw;
+          text-align: left;
+          position: relative;
+          transition: all .5s;
+          cursor: pointer;
+          span {
+            border-radius: 100%;
+            background-color: #D50F09;
+            position: absolute;
+            top: .4vw;
+            right: .3vw;
+            width: 3vw;
+            height: 3vw;
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            transition: all .5s;
+            .icon {
+              height: 2vw;
+              width: 2vw;
+              margin: 0;
+            }
+          }
+        }
+        .button:hover {
+          span {
+            background-color: rgb(95, 27, 27);
+          }
+        }
+      }
+    }
+  }
+  .selectContainer {
+      width: 100vw;
+      height: 15vw;
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      bottom: 0;
+      padding: 0;
+    .selectBoxes {
+      display: grid;
+      grid-template-columns: 20vw 20vw 20vw 20vw;
+      grid-column-gap: 0vw;
+      margin: 0;
+      padding: 0;
+      .selectBox {
+        .smallImage {
+          height: 15vw;
+          width: 20vw;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

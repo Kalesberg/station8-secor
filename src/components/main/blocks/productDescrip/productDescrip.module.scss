@@ -9,6 +9,10 @@
     width: 100%;
     text-align: center;
     margin-bottom: 4vw;
+    font-style: italic;
+    color: #D50F09;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
   }
   .products {
     display: grid;
@@ -77,7 +81,7 @@
       }
       .button:hover {
         span {
-          background-color: black;
+          background-color: rgb(95, 27, 27);
         }
       }
     }
@@ -162,7 +166,7 @@
         }    
         .buttonTwo:hover {
           span {
-            background-color: black;
+            background-color: rgb(95, 27, 27);
           }
         }    
       }

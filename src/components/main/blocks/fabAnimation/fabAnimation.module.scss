@@ -8,6 +8,9 @@ img {
     width: 100%;
     text-align: center;
     margin-bottom: 3vw;
+    font-family: 'Roboto', sans-serif;
+    color: #d50f09;
+    font-weight: 900;
   }
   .subHeading {
     font-size: 1vw;
@@ -116,6 +119,10 @@ img {
         transition: all .7s;
         h3 {
           font-size: 2vw;
+          font-family: 'Roboto', sans-serif;
+          color: #d50f09;
+          font-weight: 900;
+          font-style: italic;
         }
         p {
           font-size: 1vw;
@@ -197,6 +204,7 @@ img {
 }
 @media (max-width: 1023px) {
   .section {
+    margin-bottom: 9vw;
     .heading {
       font-size: 4.2vw;
     }

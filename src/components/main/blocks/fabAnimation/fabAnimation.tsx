@@ -11,8 +11,7 @@ export default ({ block, images }) => {
   const handleClick = (e) => {
     e.target.classList.add("active");
   }
- console.log(start);
- console.log(end);
+ 
   return (
     <section className={styles.section}>
       <h2 className={styles.heading}>{block.heading && block.heading}</h2>
@@ -40,7 +39,7 @@ export default ({ block, images }) => {
         <div className={styles.buttons}>
           {block.fittings && block.fittings.map((fitting, i) => {
             return (
-              <div onClick={() => {
+              <div key={i} onClick={() => {
                   setSelected(fitting.fittingHeading);
                   setTiming(Math.abs(i - end) * .6);
                   const temp = end;

@@ -13,7 +13,7 @@ export default ({ block, images }) => {
   const [highlightBottom, setHighlightBottom] = useState(null)
   const pageLinkOne = block.buttonOne ? link(block.buttonOne.buttonOneLink) : null;
   const pageLinkTwo = block.buttonTwo ? link(block.buttonTwo.buttonTwoLink) : null;
-
+  
   const handleClick = (e) => {
     setSelected(e.target.innerText);
     const targetHeight = e.target.offsetHeight;
