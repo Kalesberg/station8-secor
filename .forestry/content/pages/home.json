@@ -230,19 +230,22 @@
           "smallImage": "/.forestry/content/images/screen-shot-2019-07-15-at-10-15-26-am.png",
           "largeImage": "/.forestry/content/images/5e1a2048.jpg",
           "buttonText": "See all McElroy equipment",
-          "category": "MCELROY"
+          "category": "MCELROY",
+          "buttonTextTwo": ""
         },
         {
           "category": "ELECTROFUSION",
           "smallImage": "/.forestry/content/images/215.jpg",
           "largeImage": "/.forestry/content/images/225.jpg",
-          "buttonText": "See all electrofusion equipment"
+          "buttonText": "See all electrofusion equipment",
+          "buttonTextTwo": ""
         },
         {
           "smallImage": "/.forestry/content/images/tool_accessories_squeeze_tools_mustang.jpg",
           "largeImage": "/.forestry/content/images/5e1a2410-2.jpg",
           "buttonText": "See all Regent Steel Squeeze tools",
-          "category": "SQUEEZE TOOLS"
+          "category": "SQUEEZE TOOLS",
+          "buttonTextTwo": "See all Mustang HDPE Squeeze tools"
         }
       ]
     },
