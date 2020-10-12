@@ -21,11 +21,6 @@ fields:
     schema:
       format: markdown
   label: Paragraph
-- name: buttonText
-  type: text
-  config:
-    required: false
-  label: Button Text
 - name: buttonIcon
   type: file
   config:
@@ -49,6 +44,11 @@ fields:
     config:
       maxSize: 64
     label: Large Image
+  - name: buttonText
+    type: text
+    config:
+      required: false
+    label: Button Text
   config:
     min: 
     max: 
