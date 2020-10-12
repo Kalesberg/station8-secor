@@ -93,6 +93,9 @@
         transition: all .8s;
         padding-right: 15vw;
         .imgContainer {
+          img {
+            max-width: 100%;
+          }
           .image {
             height: 34vw;
             width: 34vw;
