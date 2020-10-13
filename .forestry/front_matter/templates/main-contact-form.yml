@@ -7,6 +7,11 @@ fields:
   config:
     required: false
   label: Heading
+- name: image
+  type: file
+  config:
+    maxSize: 64
+  label: Image
 - name: inputs
   type: field_group_list
   fields:
