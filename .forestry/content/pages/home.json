@@ -315,6 +315,10 @@
         {
           "label": "Email",
           "icon": "/.forestry/content/images/mail-dark.svg"
+        },
+        {
+          "icon": "/.forestry/content/images/phone-1.svg",
+          "label": "Phone"
         }
       ],
       "buttonText": "Send"
