@@ -265,7 +265,11 @@
       ]
     },
     {
-      "template": "main-basic-contact-form"
+      "template": "main-basic-contact-form",
+      "heading": "Expert training that keeps you working like a pro.",
+      "paragraph": "",
+      "buttonText": "",
+      "placeholderText": ""
     },
     {
       "template": "main-interactive-markets"
