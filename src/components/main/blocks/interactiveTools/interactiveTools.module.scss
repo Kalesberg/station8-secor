@@ -42,10 +42,15 @@
         letter-spacing: .01vw;
         margin: 0;
         padding: 0;
+        color: white;
+        font-style: normal;
+        text-decoration: none;
       }
       .subHeading {
         font-weight: 900;
         font-family: 'Roboto', sans-serif;
+        color: white;
+        font-style: normal;
       }
       .paragraph {
         width: 40%;
@@ -139,6 +144,7 @@
           grid-template-columns: auto;
           grid-template-rows: auto auto;
           grid-row-gap: 0;
+          cursor: pointer;
           .smallImage {
             height: 15vw;
             width: 20vw;

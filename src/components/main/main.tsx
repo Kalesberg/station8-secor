@@ -1,7 +1,7 @@
 import React from 'react'
 import ScrollAnimation from 'react-animate-on-scroll'
 
-import { Account, AnimatedImage, ArticlesGrid, ArticlesSlider, Blank, Cities, CompanyMerger, ContentColumns, ContentTabs, FabAnimation, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, Infographic, InteractiveTools, KnowledgeBase, Leadership, Map, ProductDescrip, ProductIndex, Posts, Quote, RecentArticles, RichText, Slideshow, StaticImage, Testimonial } from '../../components/main/blocks'
+import { Account, AnimatedImage, ArticlesGrid, ArticlesSlider, BasicContactForm, Blank, Cities, CompanyMerger, ContentColumns, ContentTabs, FabAnimation, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, Infographic, InteractiveTools, KnowledgeBase, Leadership, Map, ProductDescrip, ProductIndex, Posts, Quote, RecentArticles, RichText, Slideshow, StaticImage, Testimonial } from '../../components/main/blocks'
 
 import styles from './main.module.scss'
 
@@ -29,6 +29,10 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOp
             ) : block.template === 'main-articles-slider' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
                 <ArticlesSlider block={block} />
+              </ScrollAnimation>
+            ) : block.template === 'main-basic-contact-form' ? (
+              <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
+                <BasicContactForm block={block} images={images}/>
               </ScrollAnimation>
             ) : block.template === 'main-blank' ? (
               <Blank key={i} />

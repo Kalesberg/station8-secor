@@ -1,0 +1,111 @@
+.section {
+  width: 100vw;
+  margin-bottom: 8vw;
+  padding: 5vw;
+  h2 {
+    color: #d50f09;
+    font-size: 3vw;
+    width: 100%;
+    padding: 0 20% 0 20%;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    margin-bottom: 4vw;
+  }
+  p {
+    font-size: 1vw;
+    width: 100%;
+    padding: 0 20% 0 20%;
+    text-align: center;
+    margin-bottom: 4vw;
+  }
+  .form {
+    height: 3vw;
+    display: flex;
+    justify-content: center;
+    form {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-column-gap: 0vw;
+      width: 36vw;
+      margin: 0;
+      height: 3vw;
+      .iconContainer {
+        width: 3vw;
+        margin: 0;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        background-color: #E3E3E3;
+        border-radius: 5vw 0 0 5vw;
+        img {
+          height: .8vw;
+          margin: 0;
+          padding: 0;
+        }
+      }
+      .input {
+        width: 24vw;
+        border: none;
+        background-color: #E3E3E3;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1vw;
+        margin: 0;
+      }
+      .input:focus {
+        outline-width: 0;
+      }
+      .button {
+        width: 9vw;
+        margin: 0;
+        border-radius: 0 5vw 5vw 0;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1vw;
+        background-color: #d50f09;
+        color: white;
+        border-style: none;
+        font-weight: 900;
+        transition: all .6s;
+        cursor: pointer;
+      }
+      .button:hover {
+        background-color: rgb(95, 27, 27);
+      }
+    }
+  }
+}
+@media (max-width: 1023px) {
+  .section {
+    h2 {
+      font-size: 4.5vw;
+    }
+    p {
+      font-size: 1.5vw;
+    }
+    .form {
+      height: 4.5vw;
+      form {
+        width: 54vw;
+        height: 4.5vw;
+        .iconContainer {
+          width: 4.5vw;
+          img {
+            height: 1.2vw;
+            margin: 0;
+            padding: 0;
+          }
+        }
+        .input {
+          width: 36vw;
+          font-size: 1.5vw;
+        }
+        .button {
+          width: 13.5vw;
+          font-size: 1.5vw;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

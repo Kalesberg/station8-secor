@@ -81,6 +81,8 @@ query ($title: String!) {
         buttonLink
         buttonLinkTwo
       }
+      icon
+      placeholderText
     }
   }
 }

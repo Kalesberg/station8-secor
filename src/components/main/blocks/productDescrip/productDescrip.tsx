@@ -44,12 +44,13 @@ export default ({ block, images }) => {
   useEffect(() => {
     window.addEventListener('resize', () => {
       setSelected(block.product && block.product.length > 0 ? block.product[0].category : "");
-      console.log(highlighter.current)
-      if (window.innerWidth <= 1023)
-        highlighter.current.style.top = '19vw';
-      else {
-        highlighter.current.style.top = '16.2vw';
-        highlighter.current.style.transform = 'translateY(0px)';
+      if (highlighter.current) {
+        if (window.innerWidth <= 1023)
+          highlighter.current.style.top = '19vw';
+        else {
+          highlighter.current.style.top = '16.2vw';
+          highlighter.current.style.transform = 'translateY(0px)';
+        }
       }
     })
   },[selected])
