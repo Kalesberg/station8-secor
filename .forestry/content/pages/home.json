@@ -278,7 +278,8 @@
 
       ],
       "buttonText": "See all markets",
-      "buttonLink": "/why-hdpe#markets"
+      "buttonLink": "/why-hdpe#markets",
+      "icon": "/.forestry/content/images/arrow-right.svg"
     },
     {
       "template": "main-contact-form"
