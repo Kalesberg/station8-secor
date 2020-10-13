@@ -275,7 +275,11 @@
     {
       "template": "main-interactive-markets",
       "markets": [
-
+        {
+          "market": "ENERGY",
+          "image": "",
+          "description": ""
+        }
       ],
       "buttonText": "See all markets",
       "buttonLink": "/why-hdpe#markets",
