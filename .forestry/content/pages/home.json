@@ -259,7 +259,7 @@
           "buttonText": "See all supplies",
           "buttonTextTwo": "",
           "category": "SUPPLIES",
-          "buttonLink": "/products/?category_name=pipeline-supplies",
+          "buttonLink": "/equipment/pipeline-supplies/casing-spaces-and-gaskets",
           "buttonLinkTwo": ""
         }
       ]
