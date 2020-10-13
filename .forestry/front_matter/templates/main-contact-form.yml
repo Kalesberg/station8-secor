@@ -1,4 +1,32 @@
 ---
 label: 'Main Block: Contact Form'
 hide_body: true
-fields: []
+fields:
+- name: heading
+  type: text
+  config:
+    required: false
+  label: Heading
+- name: inputs
+  type: field_group_list
+  fields:
+  - name: label
+    type: text
+    config:
+      required: false
+    label: Label
+  - name: icon
+    type: file
+    config:
+      maxSize: 64
+    label: Icon
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Inputs
+- name: buttonText
+  type: text
+  config:
+    required: false
+  label: Button Text
