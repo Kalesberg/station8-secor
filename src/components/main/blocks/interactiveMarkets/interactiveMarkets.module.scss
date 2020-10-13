@@ -1,6 +1,6 @@
 .section {
   position: relative;
-  margin-bottom: 9vw;
+  margin: 0;
   overflow: visible;
   padding: 0;
   height: 95vh;
@@ -145,6 +145,7 @@
       }
     }
     .selectorContainer {
+      top: 40%;
       .selectors {
         grid-column-gap: 4.5vw;
         height: 7.5vw;
@@ -160,6 +161,7 @@
       }
     }
     .descriptionsContainer {
+      margin-bottom: 6vw;
       .descriptions {
         .description {
           font-size: 1.8vw;

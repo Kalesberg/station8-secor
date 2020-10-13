@@ -88,6 +88,10 @@ query ($title: String!) {
         image
         description
       }
+      inputs {
+        label
+        icon
+      }
     }
   }
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import ScrollAnimation from 'react-animate-on-scroll'
 
-import { Account, AnimatedImage, ArticlesGrid, ArticlesSlider, BasicContactForm, Blank, Cities, CompanyMerger, ContentColumns, ContentTabs, FabAnimation, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, Infographic, InteractiveMarkets, InteractiveTools, KnowledgeBase, Leadership, Map, ProductDescrip, ProductIndex, Posts, Quote, RecentArticles, RichText, Slideshow, StaticImage, Testimonial } from '../../components/main/blocks'
+import { Account, AnimatedImage, ArticlesGrid, ArticlesSlider, BasicContactForm, Blank, Cities, CompanyMerger, ContactForm, ContentColumns, ContentTabs, FabAnimation, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, Infographic, InteractiveMarkets, InteractiveTools, KnowledgeBase, Leadership, Map, ProductDescrip, ProductIndex, Posts, Quote, RecentArticles, RichText, Slideshow, StaticImage, Testimonial } from '../../components/main/blocks'
 
 import styles from './main.module.scss'
 
@@ -36,6 +36,8 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOp
               </ScrollAnimation>
             ) : block.template === 'main-blank' ? (
               <Blank key={i} />
+            ) : block.template === 'main-contact-form' ? (
+              <ContactForm key={i} block={block} images={images}/>
             ) : block.template === 'main-cities' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
                 <Cities block={block} images={images} toggleForm={toggleForm} />
