@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Link, navigate } from 'gatsby'
 
 import { Context } from '../../../context/context'
+import Authenticated from './authenticated/authenticated'
 import Register from './register/register'
 import Login from './login/login'
 import Recover from './recover/recover'
@@ -41,18 +42,9 @@ export default ({ location }) => {
       {path[1] === 'recover' && !context.user && (
         <Recover />
       )}
-      {path[1] === 'info' && context.user && (
-        <p>info</p>
+      {context.user && (path[1] === 'info' || path[1] === 'quotes' || path[1] === 'forms') && (
+        <Authenticated path={path[1]} user={context.user} />
       )}
-      {path[1] === 'quotes' && context.user && (
-        <p>quotes</p>
-      )}
-      {path[1] === 'forms' && context.user && (
-        <p>forms</p>
-      )}
-      <p><Link to='/account/info'>Info</Link></p>
-      <p><Link to='/account/forms'>forms</Link></p>
-      <p><Link to='/account/quotes'>quotes</Link></p>
     </section>
   ) : <div>Please wait</div>
 }
