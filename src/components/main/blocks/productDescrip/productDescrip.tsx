@@ -6,6 +6,7 @@ import productIndex from '../productIndex/productIndex'
 
 export default ({ block, images }) => {
   const [selected, setSelected] = useState(block.product && block.product.length > 0 ? block.product[0].category : "");
+  const [element, setElement] = useState(null);
   const [height, setHeight] = useState(null);
   const highlighter = useRef(null);
   const container = useRef(null);
@@ -23,7 +24,7 @@ export default ({ block, images }) => {
     
     if (highlightBoundary.bottom < selectedBoundary.bottom) {
       setHighlightTop(`${(highlightBoundary.top - containerBoundary.top) / window.innerWidth * 100}vw`);
-      setHighlightBottom('auto')
+      setHighlightBottom('auto');
       setHeight(`${(selectedBoundary.bottom - highlightBoundary.top) / window.innerWidth * 100}vw`);
       setTimeout(() => {
         setHighlightTop(`${(selectedBoundary.top - containerBoundary.top) / window.innerWidth * 100}vw`);
@@ -40,11 +41,18 @@ export default ({ block, images }) => {
     }  
   }
 
-  // useEffect(() => {
-  //   window.addEventListener('resize', () => {
-
-  //   })
-  // })
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      setSelected(block.product && block.product.length > 0 ? block.product[0].category : "");
+      console.log(highlighter.current)
+      if (window.innerWidth <= 1023)
+        highlighter.current.style.top = '19vw';
+      else {
+        highlighter.current.style.top = '16.2vw';
+        highlighter.current.style.transform = 'translateY(0px)';
+      }
+    })
+  },[selected])
 
   return (
     <div className={styles.container} ref={container}>
