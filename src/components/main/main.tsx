@@ -100,10 +100,6 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOp
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
                 <Posts block={block} />
               </ScrollAnimation>
-            ) : block.template === 'main-fabrication-animation' ? (
-              <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
-                <FabAnimation block={block} images={images} />
-              </ScrollAnimation>
             ) : block.template === 'main-interactive-tools' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
                 <InteractiveTools block={block} images={images}/>
