@@ -8,9 +8,13 @@ fields:
     required: false
   label: Heading
 - name: paragraph
-  type: text
+  type: textarea
+  default: ''
   config:
     required: false
+    wysiwyg: false
+    schema:
+      format: markdown
   label: Paragraph
 - name: buttonText
   type: text
