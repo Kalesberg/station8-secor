@@ -301,7 +301,15 @@
       "icon": "/.forestry/content/images/arrow-right.svg"
     },
     {
-      "template": "main-contact-form"
+      "template": "main-contact-form",
+      "heading": "Next generation piping for generations to come.",
+      "inputs": [
+        {
+          "label": "Contact Name",
+          "icon": "/.forestry/content/images/images.png"
+        }
+      ],
+      "buttonText": "Send"
     }
   ]
 }
