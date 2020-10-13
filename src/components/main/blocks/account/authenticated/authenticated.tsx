@@ -26,17 +26,27 @@ export default ({ path, user }) => {
           <h2 className={styles.sectionTitle}>Company</h2>
           <div className={styles.field}>
             <div className={styles.icon} />
-            <input className={styles.value} value={user.company} name='company' />
+            <p className={styles.value}>{user.company}</p>
             <label htmlFor='company' className={styles.label}>Edit</label>
           </div>
           <div className={styles.field}>
             <div className={styles.icon} />
             <p className={styles.value}>
-              {`${user.address1 ? `${user.address1}\n` : ''}` +
-              `${user.address2 ? `${user.address2}\n` : ''}` +
-              `${user.city ? `${user.city}, ` : ''}` +
-              `${user.state ? `${user.state} ` : ''}` +
-              `${user.zip ? `${user.zip}` : ''}`}
+              {user.address1 && (
+                <>
+                  <span>{user.address1}</span>
+                  <br />
+                </>
+              )}
+              {user.address2 && (
+                <>
+                  <span>{user.address2}</span>
+                  <br />
+                </>
+              )}
+              {user.city && <span>{user.city}, </span>}
+              {user.state && <span>{user.state} </span>}
+              {user.zipCode && <span>{user.zipCode}</span>}
             </p>
             <label htmlFor='company' className={styles.label} style={{ gridRow: 4 }}>Edit</label>
           </div>
