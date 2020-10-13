@@ -307,6 +307,14 @@
         {
           "label": "Contact Name",
           "icon": "/.forestry/content/images/images.png"
+        },
+        {
+          "label": "Message",
+          "icon": "/.forestry/content/images/message-537-461910.webp"
+        },
+        {
+          "label": "Email",
+          "icon": "/.forestry/content/images/mail-dark.svg"
         }
       ],
       "buttonText": "Send"
