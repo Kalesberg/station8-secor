@@ -232,7 +232,7 @@
           "buttonText": "See all McElroy equipment",
           "category": "MCELROY",
           "buttonTextTwo": "",
-          "buttonLink": "/products/?category_name=mcelroy",
+          "buttonLink": "/equipment/mcelroy/small",
           "buttonLinkTwo": ""
         },
         {
