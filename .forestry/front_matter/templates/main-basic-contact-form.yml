@@ -26,3 +26,8 @@ fields:
   config:
     required: false
   label: Placeholder Text
+- name: icon
+  type: file
+  config:
+    maxSize: 64
+  label: Icon
