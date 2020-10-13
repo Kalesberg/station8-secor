@@ -1,24 +1,4 @@
 ---
 label: 'Main Block: Contact Form'
 hide_body: true
-fields:
-- name: heading
-  type: text
-  config:
-    required: false
-  label: Heading
-- name: paragraph
-  type: text
-  config:
-    required: false
-  label: Paragraph
-- name: buttonText
-  type: text
-  config:
-    required: false
-  label: Button text
-- name: placeholderText
-  type: text
-  config:
-    required: false
-  label: Placeholder Text
+fields: []
