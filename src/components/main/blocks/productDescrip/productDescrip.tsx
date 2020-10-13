@@ -6,10 +6,10 @@ import productIndex from '../productIndex/productIndex'
 
 export default ({ block, images }) => {
   const [selected, setSelected] = useState(block.product && block.product.length > 0 ? block.product[0].category : "");
-  const [element, setElement] = useState(null);
   const [height, setHeight] = useState(null);
   const highlighter = useRef(null);
   const container = useRef(null);
+  const categories = useRef(null);
   const [highlightTop, setHighlightTop] = useState(null)
   const [highlightBottom, setHighlightBottom] = useState(null)
   const pageLinkOne = block.buttonOne ? link(block.buttonOne.buttonOneLink) : null;
@@ -50,6 +50,7 @@ export default ({ block, images }) => {
         else {
           highlighter.current.style.top = '16.2vw';
           highlighter.current.style.transform = 'translateY(0px)';
+          highlighter.current.style.height = `${categories.current.firstElementChild.offsetHeight / window.innerWidth * 100}vw`;
         }
       }
     })
@@ -59,9 +60,9 @@ export default ({ block, images }) => {
     <div className={styles.container} ref={container}>
       <h2 className={styles.heading}>{block.heading && block.heading}</h2>
       <div className={styles.products}>
-        <div className={styles.scroll} ref={highlighter} 
+        <div className={styles.highlighter} ref={highlighter} 
           style={{height: height, top: highlightTop ? highlightTop : "", bottom: highlightBottom ? highlightBottom : ""}}></div>
-        <div className={styles.categories}>
+        <div className={styles.categories} ref={categories}>
           {block.product && block.product.length > 0 && block.product.map((prod, i) => {
             return (
               <div key={i}  className={styles.category + ` ${prod.category && 

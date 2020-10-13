@@ -1,7 +1,7 @@
 import React from 'react'
 import ScrollAnimation from 'react-animate-on-scroll'
 
-import { Account, AnimatedImage, ArticlesGrid, ArticlesSlider, BasicContactForm, Blank, Cities, CompanyMerger, ContentColumns, ContentTabs, FabAnimation, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, Infographic, InteractiveTools, KnowledgeBase, Leadership, Map, ProductDescrip, ProductIndex, Posts, Quote, RecentArticles, RichText, Slideshow, StaticImage, Testimonial } from '../../components/main/blocks'
+import { Account, AnimatedImage, ArticlesGrid, ArticlesSlider, BasicContactForm, Blank, Cities, CompanyMerger, ContentColumns, ContentTabs, FabAnimation, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, Infographic, InteractiveMarkets, InteractiveTools, KnowledgeBase, Leadership, Map, ProductDescrip, ProductIndex, Posts, Quote, RecentArticles, RichText, Slideshow, StaticImage, Testimonial } from '../../components/main/blocks'
 
 import styles from './main.module.scss'
 
@@ -52,6 +52,10 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOp
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
                 <ContentTabs block={block} images={images} />
               </ScrollAnimation>
+            ) : block.template === 'main-fabrication-animation' ? (
+              <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
+                <FabAnimation block={block} images={images}/>
+              </ScrollAnimation>
             ) : block.template === 'main-featured-articles' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
                 <FeaturedArticles block={block} images={images} articles={articles} pages={pages} />
@@ -88,6 +92,14 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOp
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
                 <Infographic block={block} images={images} />
               </ScrollAnimation>
+            ) : block.template === 'main-interactive-markets' ? (
+              <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
+                <InteractiveMarkets block={block} images={images}/>
+              </ScrollAnimation>
+            ) : block.template === 'main-interactive-tools' ? (
+              <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
+                <InteractiveTools block={block} images={images}/>
+              </ScrollAnimation>
             ) : block.template === 'main-knowledge-base' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
                 <KnowledgeBase block={block} />
@@ -103,14 +115,6 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOp
             ) : block.template === 'main-posts' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
                 <Posts block={block} />
-              </ScrollAnimation>
-            ) : block.template === 'main-interactive-tools' ? (
-              <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
-                <InteractiveTools block={block} images={images}/>
-              </ScrollAnimation>
-            ) : block.template === 'main-fabrication-animation' ? (
-              <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
-                <FabAnimation block={block} images={images}/>
               </ScrollAnimation>
             ) : block.template === 'main-product-descriptions' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>

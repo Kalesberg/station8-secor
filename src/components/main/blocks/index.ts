@@ -20,6 +20,7 @@ import InteractiveTools from './interactiveTools/interactiveTools'
 import Infographic from './infographic/infographic'
 import KnowledgeBase from './knowledgeBase/knowledgeBase'
 import Leadership from './leadership/leadership'
+import InteractiveMarkets from './interactiveMarkets/interactiveMarkets'
 import Map from './map/map'
 import BasicContactForm from './basicContact/basicContact'
 import Posts from './posts/posts'
@@ -32,4 +33,4 @@ import Slideshow from './slideshow/slideshow'
 import StaticImage from './staticImage/staticImage'
 import Testimonial from './testimonial/testimonial'
 
-export { Account, AnimatedImage, ArticlesGrid, ArticlesSlider, BasicContactForm, Blank, Cities, CompanyMerger, ContentColumns, ContentTabs, FabAnimation, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, Infographic, InteractiveTools, KnowledgeBase, Leadership, Map, Posts, ProductDescrip, ProductIndex, Quote, RecentArticles, RichText, Slideshow, StaticImage, Testimonial }
+export { Account, AnimatedImage, ArticlesGrid, ArticlesSlider, BasicContactForm, Blank, Cities, CompanyMerger, ContentColumns, ContentTabs, FabAnimation, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, Infographic, InteractiveMarkets, InteractiveTools, KnowledgeBase, Leadership, Map, Posts, ProductDescrip, ProductIndex, Quote, RecentArticles, RichText, Slideshow, StaticImage, Testimonial }

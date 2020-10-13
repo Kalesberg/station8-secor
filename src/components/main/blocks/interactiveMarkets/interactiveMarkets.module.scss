@@ -1,0 +1,209 @@
+.section {
+  position: relative;
+  margin-bottom: 9vw;
+  overflow: visible;
+  padding: 0;
+  height: 95vh;
+  width: 100vw;
+  .background {
+    width: 100vw;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .7s;
+    img {
+      object-fit: cover;
+      height: 95vh;
+      width: 100vw;
+      filter: brightness(50%);
+    }
+  }
+  .backgroundShow {
+    opacity: 1;
+    visibility: visible;
+  }
+  .selectorContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    .selectors {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      grid-template-rows: auto;
+      grid-column-gap: 3vw;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      height: 5vw;
+      .market {
+        text-align: center;
+        font-size: 2vw;
+        line-height: 3vw;
+        font-weight: 900;
+        font-family: 'Roboto', sans-serif;
+        font-style: italic;
+        color: white;
+        opacity: 0.5;
+        cursor: pointer;
+        transition: all .5s;
+      }
+      .market:hover, .marketShow {
+        opacity: 1;
+      }
+      .highlighter {
+        position: absolute;
+        background-color: red;
+        height: 1vw;
+        width: 7vw;
+        border-radius: 10vw;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: all .5s;
+      }
+    }
+  }
+  .descriptionsContainer {
+    position: absolute;
+    width: 100vw;
+    bottom: 35%;
+    display: flex;
+    justify-content: center;
+    .descriptions {
+      position: relative;
+      width: 75%;
+      text-align: center;
+      .description {
+        text-align: center;
+        font-size: 1.2vw;
+        line-height: 1.8vw;
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .7s;
+        font-weight: 500;
+      }
+      .descriptionShow {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  .buttonContainer {
+    position: absolute;
+    bottom: 3vw;
+    width: 100%;
+    text-align: center;
+    .button {
+      border-radius: 5vw;
+      font-size: 1.5vw;
+      font-weight: 700;
+      padding: .5vw 5vw .5vw 3vw;
+      height: 4vw;
+      border: none;
+      background-color: transparent;
+      color: white;
+      margin-top: 3vw;
+      text-align: left;
+      position: relative;
+      transition: all .5s;
+      cursor: pointer;
+      span {
+        border-radius: 100%;
+        background-color: #D50F09;
+        position: absolute;
+        top: .4vw;
+        right: .3vw;
+        width: 3vw;
+        height: 3vw;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        transition: all .5s;
+        .icon {
+          height: 2vw;
+          width: 2vw;
+          margin: 0;
+        }
+      }
+    }
+    .button:hover {
+      span {
+        background-color:  rgb(128, 38, 38);
+      }
+    }
+  }
+}
+@media (max-width: 1023px) {
+  .section {
+    .background {
+      img {
+      }
+    }
+    .selectorContainer {
+      .selectors {
+        grid-column-gap: 4.5vw;
+        height: 7.5vw;
+        .market {
+          text-align: center;
+          font-size: 3.5vw;
+          line-height: 5.2vw;
+        }
+        .highlighter {
+          height: 1.5vw;
+          width: 10.5vw;
+        }
+      }
+    }
+    .descriptionsContainer {
+      .descriptions {
+        .description {
+          font-size: 1.8vw;
+          line-height: 2.7vw;
+        }
+      }
+    }
+    .buttonContainer {
+      margin-bottom: 8vw;
+      .button {
+        border-radius: 5vw;
+        font-size: 2.4vw;
+        font-weight: 700;
+        padding: .75vw .75vw .75vw 4.5vw;
+        height: 6vw;
+        border: none;
+        background-color: transparent;
+        color: white;
+        margin-top: 4.5vw;
+        cursor: pointer;
+        span {
+          border-radius: 100%;
+          background-color: #D50F09;
+          position: absolute;
+          top: .6vw;
+          right: -6vw;
+          width: 4.5vw;
+          height: 4.5vw;
+          display: grid;
+          align-items: center;
+          justify-content: center;
+          transition: all .5s;
+          .icon {
+            height: 2vw;
+            width: 2vw;
+            margin: 0;
+          }
+        }
+      }
+      .button:hover {
+        span {
+          background-color:  rgb(128, 38, 38);
+        }
+      }
+    }
+  }
+}
