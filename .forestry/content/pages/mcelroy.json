@@ -86,6 +86,13 @@
         }
       ],
       "icon": "/.forestry/content/images/arrow-right.svg"
+    },
+    {
+      "template": "main-block-simple-text",
+      "heading": "With over 100 McElroy products we’re confident we have what you need to complete your project on time",
+      "buttonText": "See all Mcelroy",
+      "buttonLink": "/equipment/mcelroy/small",
+      "subHeading": ""
     }
   ]
 }
