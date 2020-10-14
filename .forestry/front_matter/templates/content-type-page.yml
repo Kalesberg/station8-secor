@@ -38,6 +38,7 @@ fields:
   - main-block-accessories
   - main-block-simple-text
   - main-block-pipe-video
+  - main-block-stats
   config:
     min: 
     max: 
