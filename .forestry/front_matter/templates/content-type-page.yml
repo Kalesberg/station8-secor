@@ -36,6 +36,7 @@ fields:
   - main-product-index
   - main-quote
   - main-block-accessories
+  - main-block-simple-text
   config:
     min: 
     max: 
