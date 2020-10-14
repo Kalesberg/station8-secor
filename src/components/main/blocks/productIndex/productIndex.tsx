@@ -126,11 +126,12 @@ export default ({ location, menu }) => {
               return (
                 <div key={product.recordId} className={styles.product}>
                   <Link to={product.path} className={styles.image} style={{ backgroundImage: `url(${product.images && product.images[0]})` }}>
-                    <svg className={styles.add} viewBox='0 0 500 500' fillRule='evenodd' clipRule='evenodd' strokeLinejoin='round' strokeMiterlimit={2}>
+                    {(!product.images || !product.images[0]) && 'No image'}
+                    {/* <svg className={styles.add} viewBox='0 0 500 500' fillRule='evenodd' clipRule='evenodd' strokeLinejoin='round' strokeMiterlimit={2}>
                       <path d='M250 0c137.979 0 250 112.021 250 250 0 137.979-112.021 250-250 250C112.021 500 0 387.979 0 250 0 112.021 112.021 0 250 0zm0 33.333c119.582 0 216.667 97.085 216.667 216.667 0 119.582-97.085 216.667-216.667 216.667-119.582 0-216.667-97.085-216.667-216.667 0-119.582 97.085-216.667 216.667-216.667z' fill='#d50f0a' />
                       <path fill='#d50f0a' d='M220.5 123.5h59v253h-59z' />
                       <path fill='#d50f0a' d='M376.5 220.5v59h-253v-59z' />
-                    </svg>
+                    </svg> */}
                   </Link>
                   <div className={styles.detail}>
                     <Link className={styles.name} to={product.path}>{product.name}</Link>

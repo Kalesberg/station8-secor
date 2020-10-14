@@ -104,6 +104,11 @@
           background-size: cover;
           background-position: center center;
           background-repeat: no-repeat no-repeat;
+          display: grid;
+          justify-content: center;
+          align-items: center;
+          color: #EFEFEF;
+          font-size: 1vw;
           .add {
             position: absolute;
             height: 1.8vw;

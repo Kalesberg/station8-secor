@@ -6,6 +6,9 @@
     gap: 2.6vw;
     grid-auto-flow: column;
     height: 100%;
+    // @media (max-width: 1023px) {
+    //   grid-auto-flow: row;
+    // }
     .list-item {
       margin-bottom: 0;
       .link, .menu {
