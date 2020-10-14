@@ -37,6 +37,7 @@ fields:
   - main-quote
   - main-block-accessories
   - main-block-simple-text
+  - main-block-pipe-video
   config:
     min: 
     max: 
