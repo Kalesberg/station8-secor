@@ -29,11 +29,6 @@ fields:
     config:
       required: false
     label: Button Text
-  - name: icon
-    type: file
-    config:
-      maxSize: 64
-    label: Icon
   - name: buttonLink
     type: text
     config:
@@ -49,3 +44,8 @@ fields:
     max: 
     labelField: 
   label: Accessories
+- name: icon
+  type: file
+  config:
+    maxSize: 64
+  label: Icon
