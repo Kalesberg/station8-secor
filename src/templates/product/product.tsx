@@ -10,7 +10,7 @@ import Layout from '../../components/layout/layout'
 import styles from './product.module.scss'
 
 export default ({ location, pageContext: { menu, product, title, images, articles, pages, options: allOptions } }) => {
-  const appContext = useContext(Context)
+  const context = useContext(Context)
   const [quantity, setQuantity] = useState(1)
   const [options, setOptions] = useState({})
   const [tag, setTag] = useState('')
@@ -54,16 +54,17 @@ export default ({ location, pageContext: { menu, product, title, images, article
   const handleAddToQuote = e => {
     if (Object.entries(options).every(option => !!option[1]) && quantity) {
       e.preventDefault()
-      const newQuote = [...appContext.quote]
+      const newQuote = [...context.quote]
       newQuote.push({
         id: product.id,
         recordId: product.recordId,
         name: product.name,
         image: product.images && product.images.length && product.images[0],
         options,
+        notes: '',
         quantity
       })
-      appContext.setQuote(newQuote)
+      context.setQuote(newQuote)
       initOptions()
     }
   }
@@ -76,7 +77,7 @@ export default ({ location, pageContext: { menu, product, title, images, article
   }
   const handleQuantity = e => setQuantity(e.target.value)
 
-  return appContext && (
+  return context && (
     <Layout title={title} pages={pages} images={images} toggleForm={toggleForm} blocks={[]} articles={articles} tag={tag} menu={menu} location={location}>
       <section className={styles.section}>
         <aside className={styles.aside}>
@@ -136,16 +137,16 @@ export default ({ location, pageContext: { menu, product, title, images, article
           <div className={styles.quoteBuilder}>
             <h2 className={styles.title}>Quote builder</h2>
             <div className={styles.quoteItems}>
-              {appContext.quote.map((item, i) => {
+              {context.quote.map((item, i) => {
                 const updateQuantity = e => {
-                  const updatedQuote = [...appContext.quote]
+                  const updatedQuote = [...context.quote]
                   updatedQuote[i].quantity = e.target.value
-                  appContext.setQuote(updatedQuote)
+                  context.setQuote(updatedQuote)
                 }
                 const removeItem = () => {
-                  const updatedQuote = [...appContext.quote]
+                  const updatedQuote = [...context.quote]
                   updatedQuote.splice(i, 1)
-                  appContext.setQuote(updatedQuote)
+                  context.setQuote(updatedQuote)
                 }
                 return (
                   <div key={i} className={styles.quoteItem}>
@@ -176,7 +177,7 @@ export default ({ location, pageContext: { menu, product, title, images, article
               </Link>
             </div>
             <div className={styles.reviewOrderButtonContainer}>
-              <button className={styles.reviewOrderButton}>Review order</button>
+              <Link className={styles.reviewOrderButton} to='/get-a-quote'>Review order</Link>
             </div>
           </div>
         </div>

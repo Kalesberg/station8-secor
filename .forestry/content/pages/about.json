@@ -61,6 +61,67 @@
           "icon": "/.forestry/content/images/pipe.svg"
         }
       ]
+    },
+    {
+      "template": "main-block-history-slider",
+      "right": "/.forestry/content/images/arrow-right.svg",
+      "left": "/.forestry/content/images/secor-arrow-left.svg",
+      "histories": [
+        {
+          "year": 1989,
+          "description": "SECOR becomes an official McElroy distributor",
+          "yearText": "Nineteen Eighty-Nine",
+          "image": "/.forestry/content/images/img_3311-1-scaled.jpg"
+        },
+        {
+          "year": 1995,
+          "description": "SECOR makes its first transitional fitting",
+          "yearText": "Nineteen Ninety-Five",
+          "image": "/.forestry/content/images/y88icjxa-scaled.jpeg"
+        },
+        {
+          "year": 1996,
+          "description": "SECOR becomes a Mueller distributor",
+          "yearText": "Nineteen Ninety-Six",
+          "image": "/.forestry/content/images/258.jpg"
+        },
+        {
+          "year": 1997,
+          "description": "SECOR offers industrial fabrication",
+          "yearText": "Nineteen Ninety-Seven",
+          "image": "/.forestry/content/images/5e1a1776.jpg"
+        },
+        {
+          "year": 2001,
+          "description": "SECOR opens Albuquerque and Dallas offices",
+          "yearText": "Two Thousand One",
+          "image": "/.forestry/content/images/istock-989379882.jpg"
+        },
+        {
+          "year": 2006,
+          "description": "SECOR expands with new Gillette location",
+          "yearText": "Two Thousand Six",
+          "image": "/.forestry/content/images/5e1a1276.jpg"
+        },
+        {
+          "year": 2010,
+          "description": "SECOR earns FM approval",
+          "yearText": "Two Thousand Ten",
+          "image": "/.forestry/content/images/5e1a1599.jpg"
+        },
+        {
+          "year": 2016,
+          "description": "SECOR continues growing with new Denver office",
+          "yearText": "Two Thousand Sixteen",
+          "image": "/.forestry/content/images/istock-615730568-scaled.jpg"
+        },
+        {
+          "year": 2017,
+          "description": "SECOR expands its headquarters facility in Houston",
+          "yearText": "Two Thousand Seventeen",
+          "image": "/.forestry/content/images/5e1a2942.jpg"
+        }
+      ]
     }
   ]
 }

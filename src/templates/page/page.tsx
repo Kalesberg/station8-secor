@@ -8,7 +8,7 @@ import 'animate.css/animate.min.css'
 
 export default props => {
   // console.log('props', props)
-  const { location, data: { pagesJson: page }, pageContext: { pages, images, articles, menu } } = props
+  const { location, data: { pagesJson: page }, pageContext: { pages, images, articles, menu, options } } = props
   const [tag, setTag] = useState('')
   const [formOpen, setFormOpen] = useState(false)
 
@@ -23,7 +23,7 @@ export default props => {
   }, [location])
 
   return (
-    <Layout title={page.title} pages={pages} images={images} toggleForm={toggleForm} blocks={page.blocks} articles={articles} tag={tag} menu={menu} location={location} />
+    <Layout title={page.title} pages={pages} images={images} toggleForm={toggleForm} blocks={page.blocks} articles={articles} tag={tag} menu={menu} location={location} options={options} />
   )
 }
 

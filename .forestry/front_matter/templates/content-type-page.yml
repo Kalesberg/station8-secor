@@ -39,6 +39,7 @@ fields:
   - main-block-simple-text
   - main-block-pipe-video
   - main-block-stats
+  - main-block-history-slider
   config:
     min: 
     max: 

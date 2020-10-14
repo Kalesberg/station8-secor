@@ -8,6 +8,14 @@ const ContextProvider = ({ children }) => {
   const [user, setUser] = useState(undefined)
   const [userFetched, setUserFetched] = useState(false)
 
+  const [customerInfo, setCustomerInfo] = useState({
+    name: '',
+    company: '',
+    phone: '',
+    email: '',
+    requirements: ''
+  })
+
   const auth = el => user && user.id ? el : null
 
   const updateQuantity = () => {
@@ -90,7 +98,7 @@ const ContextProvider = ({ children }) => {
   }, [quote])
 
   return (
-    <Context.Provider value={{ auth, handleLogoutUser, handleValidateUser, user, userFetched, quantity, quote, setQuote, handleAddQuoteItem, handleRemoveQuoteItem, handleUpdateQuoteItem }}>
+    <Context.Provider value={{ auth, handleLogoutUser, handleValidateUser, user, userFetched, quantity, quote, setQuote, handleAddQuoteItem, handleRemoveQuoteItem, handleUpdateQuoteItem, customerInfo, setCustomerInfo }}>
       {children}
     </Context.Provider>)
 }

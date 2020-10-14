@@ -2,12 +2,18 @@
   position: relative;
   height: 4.2vw;
   background-color: #D50F09;
+  // @media (max-width: 1023px) {
+  //   height: 14vw;
+  // }
   .menu {
     padding: 0 0.5vw;
     display: grid;
     grid-auto-flow: column;
     height: 100%;
     grid-template-columns: auto auto 1fr auto;
+    // @media (max-width: 1023px) {
+    //   grid-auto-flow: row;
+    // }
   }
   .mega-menu {
     position: relative;

@@ -1,0 +1,47 @@
+---
+label: 'Main Block: History Slider'
+hide_body: false
+fields:
+- name: right
+  type: file
+  config:
+    maxSize: 64
+  label: Right
+- name: left
+  type: file
+  config:
+    maxSize: 64
+  label: Left
+- name: histories
+  type: field_group_list
+  fields:
+  - name: year
+    type: number
+    label: Year
+    description: ''
+    default: 0
+    required: true
+    config:
+      min: 
+      max: 
+      step: 
+  - name: description
+    type: text
+    config:
+      required: false
+    label: Description
+  - name: yearText
+    type: text
+    config:
+      required: false
+    label: Year Text
+  - name: image
+    type: file
+    config:
+      maxSize: 64
+    label: Image
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Histories
