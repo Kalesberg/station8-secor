@@ -61,6 +61,25 @@
           "icon": "/.forestry/content/images/pipe.svg"
         }
       ]
+    },
+    {
+      "template": "main-block-history-slider",
+      "right": "/.forestry/content/images/arrow-right.svg",
+      "left": "/.forestry/content/images/secor-arrow-left.svg",
+      "histories": [
+        {
+          "year": 1989,
+          "description": "SECOR becomes an official McElroy distributor",
+          "yearText": "Nineteen Eighty-Nine",
+          "image": "/.forestry/content/images/img_3311-1-scaled.jpg"
+        },
+        {
+          "year": null,
+          "description": "",
+          "yearText": "",
+          "image": ""
+        }
+      ]
     }
   ]
 }
