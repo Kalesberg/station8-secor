@@ -92,6 +92,14 @@ query ($title: String!) {
         label
         icon
       }
+      accessories {
+        heading
+        subHeading
+        description
+        buttonText
+        buttonLink
+        image
+      }
     }
   }
 }

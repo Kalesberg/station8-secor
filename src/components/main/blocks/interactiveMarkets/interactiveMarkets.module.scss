@@ -52,17 +52,6 @@
       .market:hover, .marketShow {
         opacity: 1;
       }
-      .highlighter {
-        position: absolute;
-        background-color: red;
-        height: 1vw;
-        width: 7vw;
-        border-radius: 10vw;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        transition: all .5s;
-      }
     }
   }
   .descriptionsContainer {
@@ -140,10 +129,6 @@
 }
 @media (max-width: 1023px) {
   .section {
-    .background {
-      img {
-      }
-    }
     .selectorContainer {
       top: 40%;
       .selectors {
@@ -153,10 +138,6 @@
           text-align: center;
           font-size: 3.5vw;
           line-height: 5.2vw;
-        }
-        .highlighter {
-          height: 1.5vw;
-          width: 10.5vw;
         }
       }
     }

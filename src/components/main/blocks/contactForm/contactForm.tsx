@@ -7,21 +7,17 @@ import Recaptcha from 'react-google-recaptcha'
 export default ({ block, images }) => {
   const recaptchaRef = createRef()
 
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
+  const [state, setState] = useState({})
   const [subscribe, setSubscribe] = useState(false)
   const [recaptchaValue, setRecaptchaValue] = useState('')
   // const [recaptchaValue, setRecaptchaValue] = useState(true)
   const [submitFailed, setSubmitFailed] = useState(false)
   const [submitting, setSubmitting] = useState(false)
 
-  const setNameData = e => setName(e.target.value)
-  const setEmailData = e => setEmail(e.target.value)
-  const setMessageData = e => setMessage(e.target.value)
-  const toggleSubscribe = () => setSubscribe(!subscribe)
-
   const handleCaptchaChange = value => setRecaptchaValue(value)
+  const handleChange = e => {
+    setState({ ...state, [e.target.name]: e.target.value })
+  }
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -29,20 +25,18 @@ export default ({ block, images }) => {
     setSubmitting(true)
     window.fetch('/.netlify/functions/submit', {
       method: 'POST',
-      body: JSON.stringify({ name, email, message, subscribe })
+      body: JSON.stringify({ ...state })
     }).then(async res => {
       setSubmitting(false)
       if (res.ok) {
-        setName('')
-        setEmail('')
-        setMessage('')
-        setSubscribe(false)
+        setState({});
         setRecaptchaValue('')
       } else {
         const response = await res.json()
         console.log(response.message)
       }
     })
+    console.log(state)
   }
 
   useEffect(() => {
@@ -62,18 +56,21 @@ export default ({ block, images }) => {
       <div className={styles.container}>
         <h2>{block.heading && block.heading}</h2>
         <div className={styles.form}>
-          <form>
+          <form onSubmit={handleSubmit}>
           {block.inputs && block.inputs.map((input, i) => {
             return (
               <div className={styles.input} key={i}>
                 <label className={styles.label} htmlFor={input.label}>{input.label}:</label>
                 <div className={styles.inputSpan}>
                   <div>{input.icon && <Image className={styles.icon} src={input.icon} images={images} />}</div>
-                  <input id={input.label} name={input.label}/>
+                  <input id={input.label} name={input.label} onChange={handleChange}/>
                 </div>
               </div>
             )
             })}
+            {/* <div className={styles.recaptchContainer}>
+              <Recaptcha size="compact" ref={recaptchaRef} sitekey='6LejSb8ZAAAAANY1Lq_C3JSTs_WwPBdDy5UeqC7U' onChange={handleCaptchaChange} />
+            </div> */}
             <button className={styles.button}>{block.buttonText && block.buttonText}</button>
           </form>
         </div>

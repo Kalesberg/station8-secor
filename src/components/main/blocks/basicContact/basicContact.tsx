@@ -7,19 +7,13 @@ import Recaptcha from 'react-google-recaptcha'
 export default ({ block, images }) => {
   const recaptchaRef = createRef()
 
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
-  const [subscribe, setSubscribe] = useState(false)
+  const [input, setInput] = useState('')
   const [recaptchaValue, setRecaptchaValue] = useState('')
   // const [recaptchaValue, setRecaptchaValue] = useState(true)
   const [submitFailed, setSubmitFailed] = useState(false)
   const [submitting, setSubmitting] = useState(false)
 
-  const setNameData = e => setName(e.target.value)
-  const setEmailData = e => setEmail(e.target.value)
-  const setMessageData = e => setMessage(e.target.value)
-  const toggleSubscribe = () => setSubscribe(!subscribe)
+  const setInputData = e => setInput(e.target.value)
 
   const handleCaptchaChange = value => setRecaptchaValue(value)
 
@@ -29,14 +23,11 @@ export default ({ block, images }) => {
     setSubmitting(true)
     window.fetch('/.netlify/functions/submit', {
       method: 'POST',
-      body: JSON.stringify({ name, email, message, subscribe })
+      body: JSON.stringify({ input })
     }).then(async res => {
       setSubmitting(false)
       if (res.ok) {
-        setName('')
-        setEmail('')
-        setMessage('')
-        setSubscribe(false)
+        setInput('')
         setRecaptchaValue('')
       } else {
         const response = await res.json()
@@ -56,12 +47,18 @@ export default ({ block, images }) => {
       <h2>{block.heading && block.heading}</h2>
       <p>{block.paragraph && block.paragraph}</p>
       <div className={styles.form}>
-        <form>
-          <div className={styles.iconContainer}>
-            {block.icon && <Image className={styles.icon} src={block.icon} images={images} />}
+        <form onSubmit={handleSubmit}>
+          <div className={styles.inputContainer}>
+            <div className={styles.iconContainer}>
+              {block.icon && <Image className={styles.icon} src={block.icon} images={images} />}
+            </div>
+            <input className={styles.input} name={block.heading} 
+              placeholder={block.placeholderText && block.placeholderText} onChange={setInputData}/>
+            <button className={styles.button}>{block.buttonText && block.buttonText}</button>
           </div>
-          <input className={styles.input} placeholder={block.placeholderText && block.placeholderText} />
-          <button className={styles.button}>{block.buttonText && block.buttonText}</button>
+          {/* <div className={styles.recaptchContainer}>
+            <Recaptcha className='recaptcha' ref={recaptchaRef} sitekey='6LejSb8ZAAAAANY1Lq_C3JSTs_WwPBdDy5UeqC7U' onChange={handleCaptchaChange} />
+          </div> */}
         </form>
       </div>
       <p className={styles.message}></p>

@@ -2,51 +2,28 @@ import React, { useEffect, useState, useRef } from 'react'
 import { Link, navigate } from 'gatsby'
 import { Image, link } from '../../../../functions'
 import styles from './interactiveMarkets.module.scss'
+import HorizontalHighlight from '../highlighters/horizontalHighlight'
 
 export default ({ block, images }) => {
   const [selected, setSelected] = useState(block.markets && block.markets.length > 0 ? block.markets[0].market : "")
-  const [width, setWidth] = useState(null);
-  const highlighter = useRef(null);
+  const [target, setTarget] = useState(null);
   const container = useRef(null);
-  const [highlightLeft, setHighlightLeft] = useState(null)
-  const [highlightRight, setHighlightRight] = useState(null)
   const pageLinkOne = block.buttonLink ? link(block.buttonLink) : null;
   
   const handleClick = (e) => {
     setSelected(e.target.innerText);
-    const targetWidth = e.target.offsetWidth;
-    const highlightBoundary = highlighter.current.getBoundingClientRect();
-    const selectedBoundary = e.target.getBoundingClientRect();
-    const containerBoundary = container.current.getBoundingClientRect();
-    
-    if (highlightBoundary.left < selectedBoundary.left) {
-      setHighlightLeft(`${(highlightBoundary.left - containerBoundary.left) / window.innerWidth * 100}vw`);
-      setHighlightRight('auto');
-      setWidth(`${(selectedBoundary.right - highlightBoundary.left) / window.innerWidth * 100}vw`);
-      setTimeout(() => {
-        setHighlightLeft(`${(selectedBoundary.left - containerBoundary.left) / window.innerWidth * 100}vw`);
-        setWidth(`${targetWidth / window.innerWidth * 100}vw`)
-      }, 400)  
-    } else if (highlightBoundary.left > selectedBoundary.left) {
-      setHighlightLeft('auto');
-      setHighlightRight(`${(containerBoundary.right - highlightBoundary.right) / window.innerWidth * 100}vw`);
-      setWidth(`${(highlightBoundary.right - selectedBoundary.left) / window.innerWidth * 100}vw`);
-      setTimeout(() => {
-        setHighlightRight(`${(containerBoundary.right - selectedBoundary.right) / window.innerWidth * 100}vw`);
-        setWidth(`${targetWidth / window.innerWidth * 100}vw`);
-      }, 400)
-    }  
+    setTarget(e.target);
   }
-
+  function resetHighlight() {
+    setSelected(block.markets && block.markets.length > 0 ? block.markets[0].market : "");
+    setTarget(container.current && container.current.firstElementChild);
+  }
   useEffect(() => {
-    window.addEventListener('resize', () => {
-      setSelected(block.markets && block.markets.length > 0 ? block.markets[0].market : "");
-      if (highlighter.current) {
-        highlighter.current.style.left = '0';
-        highlighter.current.style.width = `${container.current.firstElementChild.offsetWidth / window.innerWidth * 100}vw`;
-      }
-    })
-  },[selected])
+    window.addEventListener('resize', resetHighlight);
+    return () => {
+      window.removeEventListener('resize', resetHighlight)
+    }
+  },[])
 
   return (
     <section className={styles.section}>
@@ -66,8 +43,7 @@ export default ({ block, images }) => {
               <div onClick={handleClick} className={styles.market + ` ${selected === market.market ? `${styles.marketShow}` : ""}`} key={i}>{market.market}</div>
             )
           })}
-          <div className={styles.highlighter} ref={highlighter} 
-            style={{width: width, left: highlightLeft ? highlightLeft : "", right: highlightRight ? highlightRight : ""}}></div>
+          <HorizontalHighlight container={container} target={target} />
         </div>
       </div>
       <div className={styles.descriptionsContainer}>

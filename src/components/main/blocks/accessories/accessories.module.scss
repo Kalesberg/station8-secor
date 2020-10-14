@@ -1,0 +1,188 @@
+.section {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  .accessoryContainer {
+    height: 85vh;
+    position: relative;
+    width: 70vw;
+    padding: 6vw 0 6vw 0;
+    .accessory {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-column-gap: 4vw;
+      transition: all .7s;
+      .image {
+        width: 30vw;
+      }
+      .infoContainer {
+        text-align: left;
+        h1 {
+          font-size: 5vw;
+          line-height: 7.5vw;
+          font-family: 'Roboto', sans-serif;
+          margin: 0;
+        }
+        .subHeading {
+          font-size: 1vw;
+          line-height: 1.5vw;
+          font-weight: bold;
+          margin: 0 0 1vw 0;;
+          padding: 0;
+        }
+        .description {
+          font-size: 1vw;
+        }
+        .buttonContainer {
+          .button {
+            border-radius: 5vw;
+            font-size: 1.3vw;
+            font-weight: 600;
+            padding: 0 5vw 0 0;
+            height: 4vw;
+            border: none;
+            background-color: transparent;
+            text-align: left;
+            position: relative;
+            transition: all .5s;
+            color: #D50F09;
+            cursor: pointer;
+            span {
+              border-radius: 100%;
+              background-color: #D50F09;
+              position: absolute;
+              top: .6vw;
+              right: .3vw;
+              width: 2.5vw;
+              height: 2.5vw;
+              display: grid;
+              align-items: center;
+              justify-content: center;
+              transition: all .5s;
+              .icon {
+                height: 1.5vw;
+                width: 1.5vw;
+                margin: 0;
+              }
+            }
+          }
+          .button:hover {
+            span {
+              background-color:  rgb(128, 38, 38);
+            }
+          }
+        }
+      }
+    }
+    .accessoryShow {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  .selectorContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 10%;
+    .selectors {
+      display: grid;
+      grid-template-columns: auto auto auto auto auto auto;
+      grid-template-rows: auto;
+      grid-column-gap: 3vw;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      height: 5vw;
+      .heading {
+        text-align: center;
+        font-size: 2vw;
+        line-height: 3vw;
+        font-weight: 900;
+        font-family: 'Roboto', sans-serif;
+        font-style: italic;
+        text-transform: uppercase;
+        opacity: 0.5;
+        cursor: pointer;
+        transition: all .5s;
+      }
+      .heading:hover, .headingShow {
+        opacity: 1;
+      }
+    }
+  }  
+}
+@media (max-width: 1023px) {
+  .section {
+    .accessoryContainer {
+      height: 85vw;
+      width: 90vw;
+      .accessory {
+        .image {
+          width: 45vw;
+        }
+        .infoContainer {
+          h1 {
+            font-size: 6vw;
+            line-height: 10vw;
+          }
+          .subHeading {
+            font-size: 1.5vw;
+            line-height: 2.25vw;
+          }
+          .description {
+            font-size: 1.5vw;
+          }
+          .buttonContainer {
+            .button {
+              font-size: 2.4vw;
+              height: 4vw;
+              cursor: pointer;
+              span {
+                top: 0vw;
+                right: 0vw;
+                width: 3.75vw;
+                height: 3.75vw;
+                .icon {
+                  height: 2.2vw;
+                  width: 2.2vw;
+                  margin: 0;
+                }
+              }
+            }
+            .button:hover {
+              span {
+                background-color:  rgb(128, 38, 38);
+              }
+            }
+          }
+        }
+      }
+      .accessoryShow {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+    .selectorContainer {
+      bottom: 25%;
+      .selectors {
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto;
+        grid-template-rows: auto;
+        grid-column-gap: 3vw;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        height: 5vw;
+        .heading {
+          font-size: 2.5vw;
+          line-height: 3.5vw;
+          margin-bottom: .5vw;
+        }
+      }
+    }  
+  }
+}
