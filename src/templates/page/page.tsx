@@ -100,6 +100,20 @@ query ($title: String!) {
         buttonLink
         image
       }
+      largeHeading
+      stats {
+        number
+        description
+        icon
+        characters
+      }
+      left
+      right
+      histories {
+        image
+        year
+        description
+      }
     }
   }
 }

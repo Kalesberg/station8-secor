@@ -1,11 +1,11 @@
 import React from 'react'
 import ScrollAnimation from 'react-animate-on-scroll'
 
-import { Accessories, Account, AnimatedImage, ArticlesGrid, ArticlesSlider, BasicContactForm, Blank, Cities, CompanyMerger, ContactForm, ContentColumns, ContentTabs, FabAnimation, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, Infographic, InteractiveMarkets, InteractiveTools, KnowledgeBase, Leadership, Map, ProductDescrip, ProductIndex, Posts, Quote, RecentArticles, RichText, Slideshow, StaticImage, Testimonial } from '../../components/main/blocks'
+import { Accessories, Account, AnimatedImage, ArticlesGrid, ArticlesSlider, BasicContactForm, Blank, Cities, CompanyMerger, ContactForm, ContentColumns, ContentTabs, FabAnimation, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, HistorySlider, ImageBar, Images, Infographic, InteractiveMarkets, InteractiveTools, KnowledgeBase, Leadership, Map, PipeVideo, ProductDescrip, ProductIndex, Posts, Quote, RecentArticles, RichText, SimpleText, Slideshow, StaticImage, Stats, Testimonial } from '../../components/main/blocks'
 
 import styles from './main.module.scss'
 
-export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOpen, scrollListener, articles, pages, tag, toggleForm, menu, location }) => {
+export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOpen, scrollListener, scrollPosition, articles, pages, tag, toggleForm, menu, location }) => {
   const closeMenu = () => {
     setMenuOpen(false)
     setUserMenuOpen(false)
@@ -18,10 +18,6 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOp
           {blocks && blocks.map((block, i) => {
             return block.template === 'main-account' ? (
               <Account key={i} location={location} />
-            ) : block.template === 'main-block-accessories' ? (
-              <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
-                <Accessories block={block} images={images} />
-              </ScrollAnimation>
             ) : block.template === 'main-animated-image' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
                 <AnimatedImage block={block} images={images} />
@@ -37,6 +33,26 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOp
             ) : block.template === 'main-basic-contact-form' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
                 <BasicContactForm block={block} images={images}/>
+              </ScrollAnimation>
+             ) : block.template === 'main-block-accessories' ? (
+              <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
+                <Accessories block={block} images={images} />
+              </ScrollAnimation>
+             ) : block.template === 'main-block-history-slider' ? (
+              <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
+                <HistorySlider block={block} images={images} />
+              </ScrollAnimation>
+             ) : block.template === 'main-block-pipe-video' ? (
+              <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
+                <PipeVideo block={block} images={images} />
+              </ScrollAnimation>
+             ) : block.template === 'main-block-stats' ? (
+              <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
+                <Stats block={block} images={images} scrollPosition={scrollPosition}/>
+              </ScrollAnimation>
+             ) : block.template === 'main-block-simple-text' ? (
+              <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
+                <SimpleText block={block} images={images} />
               </ScrollAnimation>
             ) : block.template === 'main-blank' ? (
               <Blank key={i} />

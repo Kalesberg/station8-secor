@@ -13,7 +13,7 @@ export default ({ children, title: siteTitle = '', images, pages, toggleForm, bl
   const context = useContext(Context)
   const [menuOpen, setMenuOpen] = useState(false)
   const [userMenuOpen, setUserMenuOpen] = useState(false)
-
+  const [scrollPosition, setScrollPosition] = useState(null);
   const { site: { siteMetadata: { config: { description, title, titleDivider } } } } = useStaticQuery(graphql`
     {
       site {
@@ -27,6 +27,10 @@ export default ({ children, title: siteTitle = '', images, pages, toggleForm, bl
       }
     }
   `)
+  
+  const scrollListener = (e) => {
+    setScrollPosition(e.target.scrollTop);
+  }
 
   return context ? (
     <div className={styles.layout}>
@@ -36,7 +40,7 @@ export default ({ children, title: siteTitle = '', images, pages, toggleForm, bl
         <meta name='description' content={description} />
       </Helmet>
       <Header images={images} pages={pages} menuOpen={menuOpen} setMenuOpen={setMenuOpen} userMenuOpen={userMenuOpen} setUserMenuOpen={setUserMenuOpen} menu={menu} location={location} />
-      <Main blocks={blocks} images={images} menuOpen={menuOpen} setMenuOpen={setMenuOpen} setUserMenuOpen={setUserMenuOpen} articles={articles} pages={pages} tag={tag} toggleForm={toggleForm} menu={menu} location={location}>
+      <Main blocks={blocks} images={images} menuOpen={menuOpen} scrollListener={scrollListener} scrollPosition={scrollPosition} setMenuOpen={setMenuOpen} setUserMenuOpen={setUserMenuOpen} articles={articles} pages={pages} tag={tag} toggleForm={toggleForm} menu={menu} location={location}>
         {children}
         <Footer images={images} pages={pages} toggleForm={toggleForm} />
       </Main>

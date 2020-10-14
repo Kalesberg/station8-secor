@@ -44,24 +44,34 @@ export default ({ block, images }) => {
 
   return (
     <section className={styles.section}>
-      <h2>{block.heading && block.heading}</h2>
-      <p>{block.paragraph && block.paragraph}</p>
-      <div className={styles.form}>
-        <form onSubmit={handleSubmit}>
-          <div className={styles.inputContainer}>
-            <div className={styles.iconContainer}>
-              {block.icon && <Image className={styles.icon} src={block.icon} images={images} />}
-            </div>
-            <input className={styles.input} name={block.heading} 
-              placeholder={block.placeholderText && block.placeholderText} onChange={setInputData}/>
-            <button className={styles.button}>{block.buttonText && block.buttonText}</button>
+      {block.image &&
+        <div className={styles.backgroundContainer}>
+          <div className={styles.background}>
+            <Image className={styles.image} src={block.image && block.image} images={images} />
           </div>
-          {/* <div className={styles.recaptchContainer}>
-            <Recaptcha className='recaptcha' ref={recaptchaRef} sitekey='6LejSb8ZAAAAANY1Lq_C3JSTs_WwPBdDy5UeqC7U' onChange={handleCaptchaChange} />
-          </div> */}
-        </form>
+      </div>}
+      <div className={styles.container}>
+        {block.largeHeading &&
+        <h2 className={styles.largeHeading + ` ${block.image ? `${styles.light}` : ""}`}>{block.largeHeading}</h2>}
+        <h2 className={`${block.image && `${styles.light}`}`}>{block.heading && block.heading}</h2>
+        <p className={`${block.image && `${styles.light}`}`}>{block.paragraph && block.paragraph}</p>
+        <div className={styles.form}>
+          <form onSubmit={handleSubmit}>
+            <div className={styles.inputContainer}>
+              <div className={styles.iconContainer}>
+                {block.icon && <Image className={styles.icon} src={block.icon} images={images} />}
+              </div>
+              <input className={styles.input} name={block.heading} 
+                placeholder={block.placeholderText && block.placeholderText} onChange={setInputData}/>
+              <button className={styles.button}>{block.buttonText && block.buttonText}</button>
+            </div>
+            {/* <div className={styles.recaptchContainer}>
+              <Recaptcha className='recaptcha' ref={recaptchaRef} sitekey='6LejSb8ZAAAAANY1Lq_C3JSTs_WwPBdDy5UeqC7U' onChange={handleCaptchaChange} />
+            </div> */}
+          </form>
+        </div>
+        <p className={styles.message}></p>
       </div>
-      <p className={styles.message}></p>
     </section>
   )
 }  

@@ -1,0 +1,66 @@
+.section {
+  background-color: #222;
+  position: relative;
+  top: -1vw;
+  .container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 3vw;
+    .statContainer {
+      padding: 6vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .icon {
+        height: 7vw;
+      }
+      .number {
+        color: #D50F09;
+        font-family: 'Roboto', sans-serif;
+        font-size: 4vw;
+        font-weight: 900;
+        font-style: italic;
+      }
+      .description {
+        color: #777;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.8vw;
+        line-height: 2vw;
+        font-weight: 900;
+        font-style: italic;
+        text-align: center;
+      }
+    }
+  }
+}
+@media (max-width: 1023px) {
+  .section {
+    .container {
+      display: grid;
+      grid-template-columns: auto;
+      // grid-column-gap: 3vw;
+      .statContainer {
+        .icon {
+          height: 14vw;
+        }
+        .number {
+          color: #D50F09;
+          font-family: 'Roboto', sans-serif;
+          font-size: 8vw;
+          font-weight: 900;
+          font-style: italic;
+        }
+        .description {
+          color: #777;
+          font-family: 'Roboto', sans-serif;
+          font-size: 3.6vw;
+          line-height: 4vw;
+          font-weight: 900;
+          font-style: italic;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

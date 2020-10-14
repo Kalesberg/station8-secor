@@ -1,0 +1,22 @@
+.section {
+  .container {
+    .history {
+      .background {
+        width: 100vw;
+        transition: all .7s;
+        img {
+          object-fit: cover;
+          height: 95vh;
+          width: 100vw;
+          filter: brightness(50%);
+        }
+      }
+      h2 {
+
+      }
+      p {
+
+      }
+    }
+  }
+}
