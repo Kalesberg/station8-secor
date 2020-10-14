@@ -1,6 +1,13 @@
 .section {
+  margin: 0;
+  position: relative;
+  top: -5vw;
   .container {
+    margin: 0;
+    padding: 0;
+    top: 5vw;
     .history {
+      position: relative;
       .background {
         width: 100vw;
         transition: all .7s;
@@ -11,11 +18,34 @@
           filter: brightness(50%);
         }
       }
-      h2 {
+      .textContainer {
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        display: grid;
+        grid-template-columns: auto 50vw;
+        height: 95vh;
+        .text {
+          height: 95vh;
+          position: relative;
+          h2 {
 
-      }
-      p {
-
+          }
+          .description {
+    
+          }
+          .verticalYear {
+            position: absolute;
+            width: 15vw;
+            transform: rotate(270deg);
+            color: white;
+            margin: 0;
+            padding: 0;
+            left: -5vw;
+            bottom: 10vw;
+            // z-index: 2;
+          }
+        }
       }
     }
   }

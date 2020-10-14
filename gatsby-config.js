@@ -127,6 +127,7 @@ module.exports = {
     'gatsby-plugin-remove-console',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-offline',
-    'react-google-recaptcha'
+    'react-google-recaptcha',
+    'react-countup'
   ]
 }

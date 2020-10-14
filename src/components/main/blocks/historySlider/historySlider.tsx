@@ -15,8 +15,14 @@ export default ({ block, images }) => {
               <div key={i} className={styles.background}>
                 <Image className={styles.image} src={history.image && history.image} images={images} />
               </div>
-              <h2>{history.year && history.year}</h2>
-              <p>{history.description && history.description}</p>
+              <div className={styles.textContainer}>
+                <div></div>
+                <div className={styles.text}>
+                  <h2>{history.year && history.year}</h2>
+                  <p className={styles.description}>{history.description && history.description}</p>
+                  <p className={styles.verticalYear}>{history.year}</p>
+                </div>
+              </div>
             </div>
           )
         })}

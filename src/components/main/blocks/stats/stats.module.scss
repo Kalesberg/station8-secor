@@ -2,10 +2,14 @@
   background-color: #222;
   position: relative;
   top: -1vw;
+  margin: 0;
+  padding: 0;
   .container {
     display: grid;
-    grid-template-columns: auto auto auto;
-    grid-column-gap: 3vw;
+    grid-template-columns: 30vw 30vw 30vw;
+    grid-column-gap: 5vw;
+    margin: 0;
+    padding: 0;
     .statContainer {
       padding: 6vw;
       display: flex;
@@ -38,7 +42,7 @@
   .section {
     .container {
       display: grid;
-      grid-template-columns: auto;
+      grid-template-columns: 100vw;
       // grid-column-gap: 3vw;
       .statContainer {
         .icon {
