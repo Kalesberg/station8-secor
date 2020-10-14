@@ -7,6 +7,12 @@ fields:
   config:
     required: false
   label: Heading
+- name: headingColor
+  type: color
+  label: Heading Color
+  config:
+    required: false
+    color_format: Hex
 - name: subHeading
   type: text
   config:
