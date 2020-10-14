@@ -1,4 +1,24 @@
 ---
 label: 'Main Block: Simple Text'
 hide_body: false
-fields: []
+fields:
+- name: heading
+  type: text
+  config:
+    required: false
+  label: Heading
+- name: subHeading
+  type: text
+  config:
+    required: false
+  label: Sub Heading
+- name: buttonText
+  type: text
+  config:
+    required: false
+  label: Button Text
+- name: buttonLink
+  type: text
+  config:
+    required: false
+  label: Button Link
