@@ -51,6 +51,14 @@
           "buttonLink": "/equipment/mcelroy/medium",
           "image": "/.forestry/content/images/medium.jpg",
           "buttonText": "See Medium Diameter Machines"
+        },
+        {
+          "heading": "Large",
+          "subHeading": "Large Diameter Machines",
+          "description": "Capable of fusing pipe from 24″-60″.",
+          "buttonLink": "/equipment/mcelroy/large",
+          "image": "/.forestry/content/images/large.jpg",
+          "buttonText": "See Large Diameter Machines"
         }
       ]
     }
