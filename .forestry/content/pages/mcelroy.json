@@ -116,6 +116,14 @@
         {
           "label": "Message",
           "icon": "/.forestry/content/images/message-537-461910.webp"
+        },
+        {
+          "label": "Email",
+          "icon": "/.forestry/content/images/phone-1.svg"
+        },
+        {
+          "label": "",
+          "icon": ""
         }
       ],
       "buttonText": ""
