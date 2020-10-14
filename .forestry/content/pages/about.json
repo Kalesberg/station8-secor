@@ -53,6 +53,12 @@
           "description": "trained on fusion equipment in 2018",
           "icon": "/.forestry/content/images/worker.svg",
           "characters": ""
+        },
+        {
+          "number": 113,
+          "characters": "K+",
+          "description": "miles of HDPE pipe sold annually",
+          "icon": "/.forestry/content/images/pipe.svg"
         }
       ]
     }
