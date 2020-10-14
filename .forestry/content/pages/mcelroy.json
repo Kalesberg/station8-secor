@@ -43,6 +43,14 @@
           "buttonText": "See Small Diameter Machines",
           "buttonLink": "/equipment/mcelroy/small",
           "image": "/.forestry/content/images/small.jpg"
+        },
+        {
+          "heading": "Medium",
+          "subHeading": "Medium Diameter Machines",
+          "description": "Capable of fusing pipe from 8” to 20”.",
+          "buttonLink": "/equipment/mcelroy/medium",
+          "image": "/.forestry/content/images/medium.jpg",
+          "buttonText": "See Medium Diameter Machines"
         }
       ]
     }
