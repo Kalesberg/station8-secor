@@ -5,7 +5,7 @@ import { Accessories, Account, AnimatedImage, ArticlesGrid, ArticlesSlider, Basi
 
 import styles from './main.module.scss'
 
-export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOpen, scrollListener, articles, pages, tag, toggleForm, menu, location }) => {
+export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOpen, scrollListener, articles, pages, tag, toggleForm, menu, location, options }) => {
   const closeMenu = () => {
     setMenuOpen(false)
     setUserMenuOpen(false)
@@ -36,12 +36,12 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOp
               </ScrollAnimation>
             ) : block.template === 'main-basic-contact-form' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
-                <BasicContactForm block={block} images={images}/>
+                <BasicContactForm block={block} images={images} />
               </ScrollAnimation>
             ) : block.template === 'main-blank' ? (
               <Blank key={i} />
             ) : block.template === 'main-contact-form' ? (
-              <ContactForm key={i} block={block} images={images}/>
+              <ContactForm key={i} block={block} images={images} />
             ) : block.template === 'main-cities' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
                 <Cities block={block} images={images} toggleForm={toggleForm} />
@@ -60,7 +60,7 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOp
               </ScrollAnimation>
             ) : block.template === 'main-fabrication-animation' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
-                <FabAnimation block={block} images={images}/>
+                <FabAnimation block={block} images={images} />
               </ScrollAnimation>
             ) : block.template === 'main-featured-articles' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
@@ -100,11 +100,11 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOp
               </ScrollAnimation>
             ) : block.template === 'main-interactive-markets' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
-                <InteractiveMarkets block={block} images={images}/>
+                <InteractiveMarkets block={block} images={images} />
               </ScrollAnimation>
             ) : block.template === 'main-interactive-tools' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
-                <InteractiveTools block={block} images={images}/>
+                <InteractiveTools block={block} images={images} />
               </ScrollAnimation>
             ) : block.template === 'main-knowledge-base' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
@@ -129,7 +129,7 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOp
             ) : block.template === 'main-product-index' ? (
               <ProductIndex menu={menu} key={i} location={location} />
             ) : block.template === 'main-quote' ? (
-              <Quote key={i} />
+              <Quote key={i} options={options} />
             ) : block.template === 'main-recent-articles' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
                 <RecentArticles block={block} />
