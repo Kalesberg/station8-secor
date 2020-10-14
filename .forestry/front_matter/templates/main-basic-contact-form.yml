@@ -2,6 +2,11 @@
 label: 'Main Block: Basic Contact Form'
 hide_body: true
 fields:
+- name: largeHeading
+  type: text
+  config:
+    required: false
+  label: Large Heading
 - name: heading
   type: text
   config:
