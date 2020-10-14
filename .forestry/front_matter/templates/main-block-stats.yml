@@ -6,10 +6,20 @@ fields:
   type: field_group_list
   fields:
   - name: number
+    type: number
+    label: Number
+    description: ''
+    default: 0
+    required: true
+    config:
+      min: 
+      max: 
+      step: 
+  - name: characters
     type: text
     config:
       required: false
-    label: Number
+    label: Characters
   - name: description
     type: text
     config:
