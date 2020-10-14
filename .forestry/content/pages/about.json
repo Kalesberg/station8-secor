@@ -47,6 +47,12 @@
           "description": "fittings fabricated annually",
           "icon": "/.forestry/content/images/valve.svg",
           "characters": "K+"
+        },
+        {
+          "number": 3632,
+          "description": "trained on fusion equipment in 2018",
+          "icon": "/.forestry/content/images/worker.svg",
+          "characters": ""
         }
       ]
     }
