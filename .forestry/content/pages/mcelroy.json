@@ -59,6 +59,14 @@
           "buttonLink": "/equipment/mcelroy/large",
           "image": "/.forestry/content/images/large.jpg",
           "buttonText": "See Large Diameter Machines"
+        },
+        {
+          "heading": "Socket Fusion",
+          "subHeading": "McElroy Socket Tooling offers the perfect method for the installation of fittings on small diameter pipe.",
+          "description": "Socket fusion uses a male and female heat fusion tool to join a coupling to the pipe. Socket fusion kits from McElroy are designed to specifically meet ASTM F1056, ISO 8085-1 and ISO 4437 standards",
+          "buttonText": "Why Socket Fusion?",
+          "buttonLink": "/equipment/mcelroy/socket-fusion",
+          "image": "/.forestry/content/images/socket.jpg"
         }
       ]
     }
