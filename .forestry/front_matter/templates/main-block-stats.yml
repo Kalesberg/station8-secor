@@ -1,4 +1,27 @@
 ---
 label: 'Main Block: Stats'
 hide_body: false
-fields: []
+fields:
+- name: stats
+  type: field_group_list
+  fields:
+  - name: number
+    type: text
+    config:
+      required: false
+    label: Number
+  - name: description
+    type: text
+    config:
+      required: false
+    label: Description
+  - name: icon
+    type: file
+    config:
+      maxSize: 64
+    label: Icon
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Stats
