@@ -75,6 +75,14 @@
           "buttonText": "Learn more about Datalogger",
           "buttonLink": "/equipment/mcelroy/datalogger",
           "image": "/.forestry/content/images/datalogger6.jpg"
+        },
+        {
+          "heading": "Accessories",
+          "subHeading": "",
+          "description": "Productivity tooling from McElroy is designed to assist operators in the safe handling and improved efficiency in the joining of pipe. Pipe Support Stands, Polyhorse pipe racks and cutting and bending tools are just some of the support equipment available.",
+          "buttonText": "See All McElroy Accessories",
+          "buttonLink": "/equipment/mcelroy/accessories",
+          "image": "/.forestry/content/images/megamc-roller.jpg"
         }
       ]
     }
