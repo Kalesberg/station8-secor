@@ -32,6 +32,19 @@
       ],
       "video": "",
       "buttonIcon": "/.forestry/content/images/arrow-right.svg"
+    },
+    {
+      "template": "main-block-accessories",
+      "accessories": [
+        {
+          "heading": "Small",
+          "subHeading": "Small Diameter Machines",
+          "description": "Capable of fusing ½” to 6” pipe.",
+          "buttonText": "",
+          "buttonLink": "",
+          "image": ""
+        }
+      ]
     }
   ]
 }
