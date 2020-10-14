@@ -93,6 +93,15 @@
       "buttonText": "See all Mcelroy",
       "buttonLink": "/equipment/mcelroy/small",
       "subHeading": ""
+    },
+    {
+      "template": "main-basic-contact-form",
+      "heading": "LEARN TO USE FUSION EQUIPMENT LIKE A TOTAL PRO.",
+      "paragraph": "Work faster, smarter and safer. Sign up for one of our training courses and learn to use any of our rental equipment like a seasoned pro.",
+      "buttonText": "Request Info",
+      "icon": "/.forestry/content/images/mail-dark.svg",
+      "image": "/.forestry/content/images/cylinder-1024x768.png",
+      "placeholderText": ""
     }
   ]
 }
