@@ -119,14 +119,14 @@
         },
         {
           "label": "Email",
-          "icon": "/.forestry/content/images/phone-1.svg"
+          "icon": "/.forestry/content/images/mail-dark.svg"
         },
         {
           "label": "Phone",
           "icon": "/.forestry/content/images/phone-1.svg"
         }
       ],
-      "buttonText": ""
+      "buttonText": "Send"
     }
   ]
 }
