@@ -20,7 +20,7 @@
   "blocks": [
     {
       "template": "main-hero",
-      "image": "/.forestry/content/images/about.png",
+      "image": "/.forestry/content/images/5e1a3325.jpg",
       "button": true,
       "buttonLink": ".forestry/content/pages/get-a-quote.json",
       "text": [
@@ -32,9 +32,6 @@
       "buttonText": "Get a quote",
       "video": "",
       "buttonIcon": "/.forestry/content/images/arrow-right.svg"
-    },
-    {
-      "template": "main-blank"
     }
   ]
 }
