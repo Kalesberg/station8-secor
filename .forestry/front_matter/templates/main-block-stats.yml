@@ -1,0 +1,37 @@
+---
+label: 'Main Block: Stats'
+hide_body: false
+fields:
+- name: stats
+  type: field_group_list
+  fields:
+  - name: description
+    type: text
+    config:
+      required: false
+    label: Description
+  - name: number
+    type: number
+    label: Number
+    description: ''
+    default: 0
+    required: true
+    config:
+      min: 
+      max: 
+      step: 
+  - name: characters
+    type: text
+    config:
+      required: false
+    label: Characters
+  - name: icon
+    type: file
+    config:
+      maxSize: 64
+    label: Icon
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Stats

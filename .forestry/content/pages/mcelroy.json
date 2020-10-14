@@ -34,7 +34,99 @@
       "buttonIcon": "/.forestry/content/images/arrow-right.svg"
     },
     {
-      "template": "main-blank"
+      "template": "main-block-accessories",
+      "accessories": [
+        {
+          "heading": "Small",
+          "subHeading": "Small Diameter Machines",
+          "description": "Capable of fusing ½” to 6” pipe.",
+          "buttonText": "See Small Diameter Machines",
+          "buttonLink": "/equipment/mcelroy/small",
+          "image": "/.forestry/content/images/small.jpg"
+        },
+        {
+          "heading": "Medium",
+          "subHeading": "Medium Diameter Machines",
+          "description": "Capable of fusing pipe from 8” to 20”.",
+          "buttonLink": "/equipment/mcelroy/medium",
+          "image": "/.forestry/content/images/medium.jpg",
+          "buttonText": "See Medium Diameter Machines"
+        },
+        {
+          "heading": "Large",
+          "subHeading": "Large Diameter Machines",
+          "description": "Capable of fusing pipe from 24″-60″.",
+          "buttonLink": "/equipment/mcelroy/large",
+          "image": "/.forestry/content/images/large.jpg",
+          "buttonText": "See Large Diameter Machines"
+        },
+        {
+          "heading": "Socket Fusion",
+          "subHeading": "McElroy Socket Tooling offers the perfect method for the installation of fittings on small diameter pipe.",
+          "description": "Socket fusion uses a male and female heat fusion tool to join a coupling to the pipe. Socket fusion kits from McElroy are designed to specifically meet ASTM F1056, ISO 8085-1 and ISO 4437 standards",
+          "buttonText": "Why Socket Fusion?",
+          "buttonLink": "/equipment/mcelroy/socket-fusion",
+          "image": "/.forestry/content/images/socket.jpg"
+        },
+        {
+          "heading": "Datalogger",
+          "subHeading": "Fusion joint verification and documentation ",
+          "description": "The Datalogger® 6 captures the most important data from your fusion jobsite to ensure that a joint was fused with the correct pressure and times according to supported standards.",
+          "buttonText": "Learn more about Datalogger",
+          "buttonLink": "/equipment/mcelroy/datalogger",
+          "image": "/.forestry/content/images/datalogger6.jpg"
+        },
+        {
+          "heading": "Accessories",
+          "subHeading": "",
+          "description": "Productivity tooling from McElroy is designed to assist operators in the safe handling and improved efficiency in the joining of pipe. Pipe Support Stands, Polyhorse pipe racks and cutting and bending tools are just some of the support equipment available.",
+          "buttonText": "See All McElroy Accessories",
+          "buttonLink": "/equipment/mcelroy/accessories",
+          "image": "/.forestry/content/images/megamc-roller.jpg"
+        }
+      ],
+      "icon": "/.forestry/content/images/arrow-right.svg"
+    },
+    {
+      "template": "main-block-simple-text",
+      "heading": "With over 100 McElroy products we’re confident we have what you need to complete your project on time",
+      "subHeading": "",
+      "buttonText": "See all McElroy",
+      "buttonLink": "/equipment/mcelroy/small"
+    },
+    {
+      "template": "main-basic-contact-form",
+      "heading": "",
+      "paragraph": "Work faster, smarter and safer. Sign up for one of our training courses and learn to use any of our rental equipment like a seasoned pro.",
+      "buttonText": "Request Info",
+      "icon": "/.forestry/content/images/mail-dark.svg",
+      "image": "/.forestry/content/images/cylinder-1024x768.png",
+      "placeholderText": "",
+      "largeHeading": "LEARN TO USE FUSION EQUIPMENT LIKE A TOTAL PRO."
+    },
+    {
+      "template": "main-contact-form",
+      "heading": "Next generation piping for generations to come.",
+      "image": "/.forestry/content/images/91daf1d2-0777-49b0-befb-36869af2aa91-1024x768.png",
+      "inputs": [
+        {
+          "label": "Contact Name",
+          "icon": "/.forestry/content/images/images.png"
+        },
+        {
+          "label": "Message",
+          "icon": "/.forestry/content/images/message-537-461910.webp"
+        },
+        {
+          "label": "Email",
+          "icon": "/.forestry/content/images/mail-dark.svg"
+        },
+        {
+          "label": "Phone",
+          "icon": "/.forestry/content/images/phone-1.svg"
+        }
+      ],
+      "buttonText": "Send"
     }
   ]
 }

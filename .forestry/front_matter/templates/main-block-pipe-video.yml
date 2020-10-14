@@ -1,0 +1,27 @@
+---
+label: 'Main Block: Pipe Video'
+hide_body: false
+fields:
+- name: video
+  type: file
+  config:
+    maxSize: 64
+  label: Video
+- name: heading
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Heading
+- name: paragraph
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Paragraph

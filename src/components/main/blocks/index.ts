@@ -1,3 +1,4 @@
+import Accessories from './accessories/accessories'
 import Account from './account/account'
 import AnimatedImage from './animatedImage/animatedImage'
 import ArticlesGrid from './articlesGrid/articlesGrid'
@@ -5,6 +6,7 @@ import ArticlesSlider from './articlesSlider/articlesSlider'
 import Blank from './blank/blank'
 import Cities from './cities/cities'
 import CompanyMerger from './companyMerger/companyMerger'
+import ContactForm from './contactForm/contactForm'
 import ContentColumns from './contentColumns/contentColumns'
 import ContentTabs from './contentTabs/contentTabs'
 import FabAnimation from './fabAnimation/fabAnimation'
@@ -33,4 +35,4 @@ import Slideshow from './slideshow/slideshow'
 import StaticImage from './staticImage/staticImage'
 import Testimonial from './testimonial/testimonial'
 
-export { Account, AnimatedImage, ArticlesGrid, ArticlesSlider, BasicContactForm, Blank, Cities, CompanyMerger, ContentColumns, ContentTabs, FabAnimation, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, Infographic, InteractiveMarkets, InteractiveTools, KnowledgeBase, Leadership, Map, Posts, ProductDescrip, ProductIndex, Quote, RecentArticles, RichText, Slideshow, StaticImage, Testimonial }
+export { Accessories, Account, AnimatedImage, ArticlesGrid, ArticlesSlider, BasicContactForm, Blank, Cities, CompanyMerger, ContactForm, ContentColumns, ContentTabs, FabAnimation, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, ImageBar, Images, Infographic, InteractiveMarkets, InteractiveTools, KnowledgeBase, Leadership, Map, Posts, ProductDescrip, ProductIndex, Quote, RecentArticles, RichText, Slideshow, StaticImage, Testimonial }

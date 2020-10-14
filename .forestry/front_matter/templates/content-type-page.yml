@@ -35,6 +35,10 @@ fields:
   - main-product-descriptions
   - main-product-index
   - main-quote
+  - main-block-accessories
+  - main-block-simple-text
+  - main-block-pipe-video
+  - main-block-stats
   config:
     min: 
     max: 

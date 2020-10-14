@@ -1,0 +1,192 @@
+.section {
+  height: 85vh;
+  width: 100vw;
+  position: relative;
+  .backgroundContainer {
+    height: 85vh;
+    .background {
+      height: 85vh;
+      width: 100vw;
+      background-color: #d50f09;
+      img {
+        object-fit: cover;
+        height: 85vh;
+        width: 100vw;
+        opacity: .07;
+        filter: brightness(140%);
+      }
+    }
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    h2 {
+      width: 100%;
+      text-align: center;
+      color: white;
+      font-size: 3vw;
+      margin-bottom: 4vw;
+    }
+    .form {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      form {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-column-gap: 4vw;
+        grid-row-gap: 3vw;
+      }
+      .input {
+        .label {
+          color: white; 
+          font-size: 1vw;
+          line-height: 2vw;
+        }
+        .inputSpan {
+          position: relative;
+          display: grid;
+          grid-template-columns: auto auto;
+          input {
+            width: 20vw;
+            height: 2.5vw;
+            border-radius: 5vw;
+            border: none;
+            padding-left: 5vw;
+            font-size: 1vw;
+          }
+          .icon {
+            height: 1.3vw;
+            width: 1.3vw;
+            position: absolute;
+            left: 1vw;
+            top: 0.6vw;
+            filter: grayscale(1);
+            opacity: .7
+          }
+        }
+      }
+      .button {
+        margin-top: 3vw;
+        width: 20vw;
+        position: relative;
+        left: 12vw;
+        width: 20vw;
+        height: 2.5vw;
+        border-radius: 5vw;
+        border: none;
+        color: white;
+        background-color: black;
+      }
+      .button:hover {
+        background-color: rgb(51, 47, 47);
+      }
+    }
+  }
+}
+@media (max-width: 1023px) {
+  .section {
+    height: 85vh;
+    width: 100vw;
+    position: relative;
+    .backgroundContainer {
+      height: 85vh;
+      .background {
+        height: 85vh;
+        width: 100vw;
+        background-color: #d50f09;
+        img {
+          object-fit: cover;
+          height: 85vh;
+          width: 100vw;
+          opacity: .07;
+          filter: brightness(140%);
+        }
+      }
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      h2 {
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-size: 4.5vw;
+        margin-bottom: 4vw;
+      }
+      .form {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        form {
+          display: grid;
+          grid-template-columns: auto auto;
+          grid-column-gap: 4vw;
+          grid-row-gap: 3vw;
+        }
+        .input {
+          .label {
+            color: white; 
+            font-size: 1.5vw;
+            line-height: 3vw;
+          }
+          .inputSpan {
+            position: relative;
+            display: grid;
+            grid-template-columns: auto auto;
+            input {
+              width: 30vw;
+              height: 3.75vw;
+              border-radius: 5vw;
+              border: none;
+            }
+            .icon {
+              height: 2.45vw;
+              width: 2.45vw;
+              position: absolute;
+              left: 1vw;
+              top: 0.6vw;
+              filter: grayscale(1);
+              opacity: .7
+            }
+          }
+        }
+        .recaptchContainer {
+          height: 3vw;
+          .recaptcha {
+            width: 20vw;
+          }
+        }
+        .button {
+          margin-top: 3vw;
+          width: 30vw;
+          position: relative;
+          left: 22vw;
+          width: 20vw;
+          height: 3.75vw;
+          border-radius: 5vw;
+          border: none;
+          color: white;
+          background-color: black;
+          font-size: 1vw;
+          font-weight: bold;
+        }
+        .button:hover {
+          background-color: rgb(51, 47, 47);
+        }
+      }
+    }
+  }
+}
