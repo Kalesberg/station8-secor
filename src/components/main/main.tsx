@@ -5,11 +5,8 @@ import { Accessories, Account, AnimatedImage, ArticlesGrid, ArticlesSlider, Basi
 
 import styles from './main.module.scss'
 
-<<<<<<< HEAD
-export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOpen, scrollListener, scrollPosition, articles, pages, tag, toggleForm, menu, location }) => {
-=======
-export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOpen, scrollListener, articles, pages, tag, toggleForm, menu, location, options }) => {
->>>>>>> b11cbaae288d8d267069ebb72a446fb4c7bf94fb
+export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOpen, scrollListener, scrollPosition, articles, pages, tag, toggleForm, menu, location, options }) => {
+
   const closeMenu = () => {
     setMenuOpen(false)
     setUserMenuOpen(false)
