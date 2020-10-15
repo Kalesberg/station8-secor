@@ -18,7 +18,7 @@ export default ({ block, images }) => {
               <div className={styles.textContainer}>
                 <div></div>
                 <div className={styles.text}>
-                  <h2>{history.year && history.year}</h2>
+                  <h2>{history.yearText && history.Text}</h2>
                   <p className={styles.description}>{history.description && history.description}</p>
                   <p className={styles.verticalYear}>{history.year}</p>
                 </div>
