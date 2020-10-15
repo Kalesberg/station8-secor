@@ -2,15 +2,75 @@
   margin: 0;
   position: relative;
   top: -5vw;
+  height: 95vh;
+  width: 100vw;
   .container {
+    height: 95vh;
     margin: 0;
     padding: 0;
     top: 5vw;
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    position: relative;
+    top: -1vw;
+    .right{
+      position: absolute;
+      color: white;
+      background-color: #D50F09;
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: 50% 50%;
+      height: 95vh;
+      width: 50px;
+      right: 0;
+      bottom: 0;
+      overflow: visible;
+      padding: 2vw;
+      .icon {
+        position: absolute;
+        top: 2vw;
+        left: 30%;
+      }
+      .year {
+        position: relative;
+        text-align: right;
+        .rotate {
+          transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+          position: absolute;
+          top: 25%;
+          left: 50%;
+          width: 75px;
+          font-size: 30px;
+          line-height: 3vw;
+          font-weight: 700;
+          font-family: 'Roboto', sans-serif;
+          font-style: normal;
+        }
+      }
+      .text {
+        position: relative;
+        height: 100%;
+        .rotate {
+          transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 300px;
+          font-size: 20px;
+          line-height: 30px;
+          font-weight: 700;
+          font-family: 'Roboto', sans-serif;
+        }
+      }
+    }
     .history {
       position: relative;
       .background {
         width: 100vw;
         transition: all .7s;
+        height: 95vh;
         img {
           object-fit: cover;
           height: 95vh;
@@ -25,25 +85,39 @@
         display: grid;
         grid-template-columns: auto 50vw;
         height: 95vh;
+        text-align: left;
         .text {
           height: 95vh;
           position: relative;
+          padding: 8vw 0 0 2vw;
           h2 {
-
+            color: white;
+            text-align: left;
+            font-size: 6vw;
+            line-height: 3vw;
+            font-weight: 700;
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
           }
           .description {
-    
+            text-align: left;
+            font-size: 1.3vw;
+            line-height: 3vw;
+            font-weight: 600;
+            font-family: 'Roboto', sans-serif;
+            color: white;
           }
           .verticalYear {
             position: absolute;
-            width: 15vw;
-            transform: rotate(270deg);
+            width: 300px;
+            transform: translateX(-50%) translateY(-50%) rotate(-90deg);
             color: white;
             margin: 0;
             padding: 0;
-            left: -5vw;
-            bottom: 10vw;
-            // z-index: 2;
+            left: 0;
+            bottom: 150px;
+            font-size: 20px;
+            font-family: 'Roboto', sans-serif;
           }
         }
       }
