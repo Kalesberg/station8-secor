@@ -1,14 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;">
-    <g transform="matrix(1,0,0,1,4,3)">
-        <g id="Symbols">
-            <g id="Header-1-">
-                <g id="users">
-                    <path id="Shape" d="M16,18L16,16C16,13.791 14.209,12 12,12L4,12C1.791,12 0,13.791 0,16L0,18" style="fill:none;stroke:white;stroke-width:2px;"/>
-                    <circle id="Oval" cx="8" cy="4" r="4" style="fill:none;stroke:white;stroke-width:2px;"/>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg clip-rule="evenodd" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#fff" stroke-width="2" transform="translate(4 3)"><path d="m16 18v-2c0-2.209-1.791-4-4-4h-8c-2.209 0-4 1.791-4 4v2"/><circle cx="8" cy="4" r="4"/></g></svg>
