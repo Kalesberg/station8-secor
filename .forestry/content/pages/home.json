@@ -238,7 +238,7 @@
         {
           "category": "ELECTROFUSION",
           "smallImage": "/.forestry/content/images/215.jpg",
-          "largeImage": "/.forestry/content/images/225.jpg",
+          "largeImage": "/.forestry/content/images/225-1.jpg",
           "buttonText": "See all electrofusion equipment",
           "buttonTextTwo": "",
           "buttonLink": "/equipment/electrofusion/processors",
@@ -270,7 +270,9 @@
       "paragraph": "We know safety and performance matter to you. That’s why SECOR provides a complete range of hands-on training courses to meet ASTM-F2620 standards. Whether you train at our modern facilities or our certified trainers come to your worksite, you’ll walk away with in-depth knowledge, correct safety practices and complete confidence. We also offer customized training and kick-off orientation programs to fit your company’s needs.",
       "buttonText": "Request info",
       "placeholderText": "Phone or Email",
-      "icon": "/.forestry/content/images/mail-dark.svg"
+      "icon": "/.forestry/content/images/mail-dark.svg",
+      "largeHeading": "",
+      "image": ""
     },
     {
       "template": "main-interactive-markets",
