@@ -41,6 +41,7 @@ fields:
   - main-block-stats
   - main-block-history-slider
   - main-block-join-our-team
+  - main-block-training
   config:
     min: 
     max: 
