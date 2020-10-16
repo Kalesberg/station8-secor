@@ -49,7 +49,8 @@
       "description": "We understand your drive to get it done and do it right. Our training and certification courses give you the very latest, relevant information and know-how you need to get ahead and perform your best with confidence. Each course is facilitated by a knowledgeable professional with years of hands-on experience.",
       "buttonText": "Get info on training",
       "buttonLink": "/#resourceCTA",
-      "image": "/.forestry/content/images/screen-shot-2019-07-15-at-10-15-26-am.png"
+      "image": "/.forestry/content/images/screen-shot-2019-07-15-at-10-15-26-am.png",
+      "icon": "/.forestry/content/images/secor-arrow-left.svg"
     },
     {
       "template": "main-basic-contact-form",
