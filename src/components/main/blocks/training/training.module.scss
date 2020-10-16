@@ -1,0 +1,36 @@
+.section {
+  position: relative;
+  height: 95vh;
+  .categoryContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    padding-top: 3vw;
+    .categories {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-template-rows: auto;
+      grid-column-gap: 10vw;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      height: 5vw;
+      .category {
+        text-align: center;
+        font-size: 1.7vw;
+        line-height: 3vw;
+        font-weight: 900;
+        font-family: 'Roboto', sans-serif;
+        color: black;
+        opacity: 0.5;
+        cursor: pointer;
+        transition: all .5s;
+        text-transform: uppercase;
+      }
+      .category:hover, .categoryShow {
+        opacity: 1;
+      }
+    }
+  }
+}

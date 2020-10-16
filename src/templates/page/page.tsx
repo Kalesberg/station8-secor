@@ -118,6 +118,9 @@ query ($title: String!) {
       images {
         image
       }
+      categories {
+        category
+      }
     }
   }
 }

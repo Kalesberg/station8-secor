@@ -1,7 +1,7 @@
 import React from 'react'
 import ScrollAnimation from 'react-animate-on-scroll'
 
-import { Accessories, Account, AnimatedImage, ArticlesGrid, ArticlesSlider, BasicContactForm, Blank, Cities, CompanyMerger, ContactForm, ContentColumns, ContentTabs, FabAnimation, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, HistorySlider, ImageBar, Images, Infographic, InteractiveMarkets, InteractiveTools, JoinTeam, KnowledgeBase, Leadership, Map, PipeVideo, ProductDescrip, ProductIndex, Posts, Quote, RecentArticles, RichText, SimpleText, Slideshow, StaticImage, Stats, Testimonial } from '../../components/main/blocks'
+import { Accessories, Account, AnimatedImage, ArticlesGrid, ArticlesSlider, BasicContactForm, Blank, Cities, CompanyMerger, ContactForm, ContentColumns, ContentTabs, FabAnimation, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, HistorySlider, ImageBar, Images, Infographic, InteractiveMarkets, InteractiveTools, JoinTeam, KnowledgeBase, Leadership, Map, PipeVideo, ProductDescrip, ProductIndex, Posts, Quote, RecentArticles, RichText, SimpleText, Slideshow, StaticImage, Stats, Testimonial, Training } from '../../components/main/blocks'
 
 import styles from './main.module.scss'
 
@@ -57,6 +57,10 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOp
              ) : block.template === 'main-block-simple-text' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
                 <SimpleText block={block} images={images} />
+              </ScrollAnimation>
+             ) : block.template === 'main-block-training' ? (
+              <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
+                <Training block={block} images={images} />
               </ScrollAnimation>
             ) : block.template === 'main-blank' ? (
               <Blank key={i} />
