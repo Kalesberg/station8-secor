@@ -93,7 +93,6 @@
                 content: ' ';
                 height: 1vw;
                 width: 1vw;
-                background-color: khaki;
               }
              }
           }
@@ -200,6 +199,9 @@
               font-size: 1.3vw;
               font-weight: 700;
               margin-bottom: 0;
+              &:hover {
+                color: #D50F09;
+              }
             }
             .specs {
               color: #9B9B9B;

@@ -79,7 +79,8 @@ const ContextProvider = ({ children }) => {
         address2: body.user['Address Line 2'],
         city: body.user.City,
         state: body.user.State,
-        zipCode: body.user.ZIP
+        zipCode: body.user.ZIP,
+        quotes: JSON.parse(body.user.QuoteArray)
       })
     } else {
       setUser(undefined)

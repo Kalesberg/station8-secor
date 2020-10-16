@@ -102,4 +102,37 @@
       }
     }
   }
+  .quotes {
+    padding: 2vw 5vw;
+    display: grid;
+    gap: 4vw;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(auto-fit, 15.2vw);
+    // grid-auto-flow: column;
+    .quote {
+      background-size: cover;
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      padding: 5vw 0;
+      border-radius: 0.5vw;
+      h1 {
+        font-size: 2.5vw;
+        margin-bottom: 0;
+        text-align: center;
+        color: white;
+        font-style: normal;
+      }
+      p {
+        margin-bottom: 0;
+        text-align: center;
+        color: white;
+        font-size: 1vw;
+        font-weight: 700;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
 }

@@ -62,6 +62,7 @@ export default ({ location, pageContext: { menu, product, title, images, article
         image: product.images && product.images.length && product.images[0],
         options,
         notes: '',
+        path: product.path,
         quantity
       })
       context.setQuote(newQuote)
@@ -150,9 +151,13 @@ export default ({ location, pageContext: { menu, product, title, images, article
                 }
                 return (
                   <div key={i} className={styles.quoteItem}>
-                    <div className={styles.image} style={{ background: `url(${item.image})` }} />
+                    <Link to={item.path}>
+                      <div className={styles.image} style={{ background: `url(${item.image})` }} />
+                    </Link>
                     <div className={styles.details}>
-                      <p className={styles.title}>{item.name}</p>
+                      <Link to={item.path}>
+                        <p className={styles.title}>{item.name}</p>
+                      </Link>
                       {Object.entries(item.options).map((option, i) => {
                         const optionLabel = allOptions.find(allOption => camelcase(allOption.data.Name) === option[0]).data.Label
                         return (

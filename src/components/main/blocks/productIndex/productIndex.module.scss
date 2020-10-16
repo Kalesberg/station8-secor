@@ -97,6 +97,7 @@
         grid-template-columns: auto 1fr;
         gap: 1.5vw;
         .image {
+          z-index: 1;
           position: relative;
           height: 9vw;
           width: 9vw;
@@ -110,6 +111,7 @@
           color: #EFEFEF;
           font-size: 1vw;
           .add {
+            z-index: 2;
             position: absolute;
             height: 1.8vw;
             width: 1.8vw;

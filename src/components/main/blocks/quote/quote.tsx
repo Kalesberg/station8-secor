@@ -1,31 +1,71 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { Link } from 'gatsby'
 import camelcase from 'camelcase'
 
 import { Context } from '../../../context/context'
 
 import styles from './quote.module.scss'
 
-export default ({ options }) => {
+export default ({ options, menu }) => {
   const context = useContext(Context)
-  const [customerInfo, setCustomerInfo] = useState({ name: '', company: '', phone: '', email: '', requirements: '', attachment: undefined })
+  const [customerInfo, setCustomerInfo] = useState({ name: '', company: '', phone: '', email: '', requirements: '' })
   const [editing, setEditing] = useState(undefined)
+  const [attachment, setAttachment] = useState(undefined)
+  const [dropzoneClasses, setDropzoneClasses] = useState([styles.dropzone])
+  const [searchTerm, setSearchTerm] = useState('')
+  const [searchResults, setSearchResults] = useState([])
+  const [markdown, setMarkdown] = useState('')
+
+  const handleSetSearchTerm = e => {
+    setSearchTerm(e.target.value)
+  }
 
   useEffect(() => {
-    console.log('info', customerInfo)
-  }, [customerInfo])
+    const products = context.quote
+    const markdown = ['# Products']
+    products.forEach((product, i) => {
+      markdown.push(`\n## ${i + 1}. ${product.name}`)
+      markdown.push(`### Quantity: ${product.quantity}`)
+      if (product.options && Object.keys(product.options).length) {
+        markdown.push('### Options:')
+        Object.keys(product.options).forEach(option => {
+          markdown.push(`- **${option}:** ${product.options[option]}`)
+        })
+      }
+      product.notes && markdown.push(`### Notes:\n\`\`\`${product.notes}\`\`\``)
+    })
+    setMarkdown(markdown.join('\n'))
+  }, [context])
+
+  useEffect(() => {
+    if (searchTerm) {
+      const results = []
+      menu.forEach(category => category.menus.forEach(menu => menu.submenus.forEach(submenu => submenu.products.forEach(product => {
+        if (product.name.replace(/\W/g, '').toLowerCase().includes(searchTerm.replace(/\W/g, '').toLowerCase())) {
+          results.push(product)
+        }
+      }))))
+      setSearchResults(results)
+    }
+  }, [searchTerm])
 
   const handleSubmitQuote = async e => {
-    if (customerInfo.name && customerInfo.company && customerInfo.phone && customerInfo.email) {
+    if (typeof window !== 'undefined' && customerInfo.name && customerInfo.company && customerInfo.phone && customerInfo.email) {
       e.preventDefault()
       const res = await window.fetch('/.netlify/functions/quote', {
         method: 'POST',
         body: JSON.stringify({
           customer: customerInfo,
-          user: (context && context.user && context.user.id) || ''
+          user: (context && context.user && context.user.id) || '',
+          quote: context.quote,
+          markdown,
+          attachment
         })
       })
-      const data = await res.json()
-      console.log(data)
+      if (res.ok) {
+        // const data = await res.json()
+        context.setQuote([])
+      }
     }
   }
 
@@ -50,65 +90,47 @@ export default ({ options }) => {
 
   const handleFileChange = e => {
     if (e.target.files.length) {
-      console.log(e.target.files[0])
-      const file = e.target.files[0]
-      const reader = new FileReader()
-
-      reader.addEventListener('load', () => {
-        setCustomerInfo({ ...customerInfo, attachment: reader.result })
-      }, false)
-
-      if (file) {
-        reader.readAsDataURL(file)
-      }
-      // const data = new FormData()
-      // data.append('file', e.target.files[0])
-      // data.append('upload_preset', 'upnivf46')
-      // const xhr = new XMLHttpRequest()
-      // xhr.withCredentials = false
-      // xhr.addEventListener('readystatechange', function () {
-      //   if (this.readyState === this.DONE) {
-      //     const res = JSON.parse(this.responseText)
-      //     console.log(res)
-      //   }
-      // })
-      // const url = 'https://api.cloudinary.com/v1_1/dn0q8cpnx'
-      // xhr.open('POST', url)
-      // xhr.send(data)
+      handleFiles(e.target.files[0])
     }
-
-    // const newCustomerInfo = { ...customerInfo }
-    // newCustomerInfo[e.target.id] = e.target.value
-    // setCustomerInfo(newCustomerInfo)
   }
 
-  // const handleFileChange = e => {
-  //   console.log(e.target.files)
-  //   if (e && e.target && e.target.value) {
-  //     // setWait(true)
-  //     // setTimeout(() => {
-  //     //   setWait(false)
-  //     // }, 5000)
-  //     const data = new FormData()
-  //     data.append('file', document.getElementById('attachments').files[0])
-  //     const xhr = new XMLHttpRequest()
-  //     xhr.withCredentials = false
-  //     xhr.addEventListener('readystatechange', function () {
-  //       if (this.readyState === this.DONE) {
-  //         const res = JSON.parse(this.responseText)
-  //         setCustomerInfo({ ...customerInfo, attachments: res.link })
-  //       }
-  //     })
-  //     xhr.open('POST', 'https://file.io/?expires=1y')
-  //     xhr.send(data)
-  //   } else {
-  //     setBudgetProposal('')
-  //     setBudgetProposalLink('')
-  //   }
-  // }
+  const preventDefaults = e => {
+    e.preventDefault()
+    e.stopPropagation()
+  }
+  const highlight = () => setDropzoneClasses([styles.dropzone, styles.highlight])
+  const unhighlight = () => setDropzoneClasses([styles.dropzone])
+  const handleDragEnter = e => {
+    preventDefaults(e)
+    highlight()
+  }
+  const handleDragOver = e => {
+    preventDefaults(e)
+    highlight()
+  }
+  const handleDragLeave = e => {
+    preventDefaults(e)
+    unhighlight()
+  }
+  const handleDrop = e => {
+    preventDefaults(e)
+    unhighlight()
+    handleFiles(e.dataTransfer.files[0])
+  }
 
-  console.log(context.quote)
-  console.log('options', options)
+  const handleFiles = async file => {
+    const url = 'https://api.cloudinary.com/v1_1/dn0q8cpnx/upload'
+    const data = new FormData()
+    data.append('file', file)
+    data.append('upload_preset', 'upnivf46')
+    const res = await window.fetch(url, {
+      method: 'POST',
+      body: data,
+      mode: 'cors'
+    })
+    const json = await res.json()
+    setAttachment({ url: json.url })
+  }
   return context && (
     <section className={styles.section}>
       <div className={styles.header}>
@@ -135,104 +157,170 @@ export default ({ options }) => {
           </div>
           <div className={styles.field}>
             <label htmlFor='requirements'>Special requirements</label>
-            <textarea value={customerInfo.requirements} onChange={handleChange} id='requirements' rows={6} />
+            <textarea value={customerInfo.requirements} onChange={handleChange} style={{ backgroundImage: 'url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+Cjxzdmcgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDI0IDI0IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zOnNlcmlmPSJodHRwOi8vd3d3LnNlcmlmLmNvbS8iIHN0eWxlPSJmaWxsLXJ1bGU6ZXZlbm9kZDtjbGlwLXJ1bGU6ZXZlbm9kZDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7Ij4KICAgIDxwYXRoIGQ9Ik0xMSw0TDQsNEMyLjkwMyw0IDIsNC45MDMgMiw2TDIsMjBDMiwyMS4wOTcgMi45MDMsMjIgNCwyMkwxOCwyMkMxOS4wOTcsMjIgMjAsMjEuMDk3IDIwLDIwTDIwLDEzIiBzdHlsZT0iZmlsbDpub25lO2ZpbGwtcnVsZTpub256ZXJvO3N0cm9rZTpyZ2IoMTU1LDE1NSwxNTUpO3N0cm9rZS13aWR0aDoycHg7Ii8+CiAgICA8cGF0aCBkPSJNMTguNSwyLjVDMTguODk4LDIuMTAyIDE5LjQzOCwxLjg3OSAyMCwxLjg3OUMyMS4xNjQsMS44NzkgMjIuMTIxLDIuODM2IDIyLjEyMSw0QzIyLjEyMSw0LjU2MiAyMS44OTgsNS4xMDIgMjEuNSw1LjVMMTIsMTVMOCwxNkw5LDEyTDE4LjUsMi41WiIgc3R5bGU9ImZpbGw6bm9uZTtmaWxsLXJ1bGU6bm9uemVybztzdHJva2U6cmdiKDE1NSwxNTUsMTU1KTtzdHJva2Utd2lkdGg6MnB4OyIvPgo8L3N2Zz4K")' }} id='requirements' rows={6} />
           </div>
           <div className={styles.field}>
-            <label htmlFor='attachments'>Attachments</label>
+            <label htmlFor='attachments'>Attachment</label>
             <input type='file' id='attachments' onChange={handleFileChange} />
+            <div className={dropzoneClasses.join(' ')} onDragEnter={handleDragEnter} onDragLeave={handleDragLeave} onDragOver={handleDragOver} onDrop={handleDrop} style={{ backgroundImage: 'url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjJweCIgaGVpZ2h0PSIyM3B4IiB2aWV3Qm94PSIwIDAgMjIgMjMiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+QjdCRkIxNDMtQzRENy00MTdCLThFNzgtNzg5ODhBQkRGQkYzPC90aXRsZT4KICAgIDxnIGlkPSJ1cGRhdGVzIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgICAgIDxnIGlkPSJDdXJyZW50LVF1b3RlLUNvcHkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0zOTkuMDAwMDAwLCAtNDc0LjAwMDAwMCkiIHN0cm9rZT0iIzlCOUI5QiIgc3Ryb2tlLXdpZHRoPSIyIj4KICAgICAgICAgICAgPGcgaWQ9InBhcGVyY2xpcCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDAwLjAwMDAwMCwgNDc1LjAwMDAwMCkiPgogICAgICAgICAgICAgICAgPHBhdGggZD0iTTE5LjQ0LDEwLjA1IEwxMC4yNSwxOS4yNCBDNy45MDU1NTEyNCwyMS41ODQ0NDg4IDQuMTA0NDQ4NzYsMjEuNTg0NDQ4OCAxLjc2LDE5LjI0IEMtMC41ODQ0NDg3NjMsMTYuODk1NTUxMiAtMC41ODQ0NDg3NjMsMTMuMDk0NDQ4OCAxLjc2LDEwLjc1IEwxMC45NSwxLjU2IEMxMi41MTI5NjU4LC0wLjAwMjk2NTgwMjI2IDE1LjA0NzAzNDEsLTAuMDAyOTY1NzgzMzggMTYuNjEsMS41NjAwMDAwNCBDMTguMTcyOTY1OCwzLjEyMjk2NTg3IDE4LjE3Mjk2NTgsNS42NTcwMzQxNSAxNi42MSw3LjIyIEw3LjQxLDE2LjQxIEM2LjYyODUxNzA4LDE3LjE5MTQ4MjkgNS4zNjE0ODI5MiwxNy4xOTE0ODI5IDQuNTgsMTYuNDEgQzMuNzk4NTE3MDgsMTUuNjI4NTE3MSAzLjc5ODUxNzA4LDE0LjM2MTQ4MjkgNC41OCwxMy41OCBMMTMuMDcsNS4xIiBpZD0iU2hhcGUiPjwvcGF0aD4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+")' }}><label htmlFor='attachments' className={styles.text}>{attachment ? 'File attached' : 'Drag attachment here or click to browse'}</label></div>
           </div>
         </div>
       </div>
       <div className={styles.quoteBuilder}>
-        <div className={styles.labels}>
-          <p>Product</p>
-          <p>Notes/Specifications</p>
-          <p>Quantity</p>
-        </div>
-        <div className={styles.products}>
-          {context.quote.map((product, i) => {
-            const handleQuantity = e => {
-              const quote = [...context.quote]
-              quote[i].quantity = parseInt(e.target.value)
-              context.setQuote(quote)
-            }
-            const handleNotes = e => {
-              const quote = [...context.quote]
-              quote[i].notes = e.target.value
-              context.setQuote(quote)
-            }
-            const removeItem = () => {
-              const quote = [...context.quote]
-              quote.splice(i, 1)
-              context.setQuote(quote)
-            }
-            const handleSetOptions = e => {
-              const quote = [...context.quote]
-              quote[i].options[camelcase(e.target.name)] = e.target.value
-              context.setQuote(quote)
-            }
-            const edit = () => setEditing(editing === i ? undefined : i)
+        {context.quote.length ? (
+          <>
+            <div className={styles.labels}>
+              <p>Product</p>
+              <p>Notes/Specifications</p>
+              <p>Quantity</p>
+            </div>
+            <div className={styles.products}>
+              {context.quote.map((product, i) => {
+                const productMissingInfo = () => !!Object.keys(product.options).find(key => !product.options[key])
+                const handleQuantity = e => {
+                  const quote = [...context.quote]
+                  quote[i].quantity = parseInt(e.target.value)
+                  context.setQuote(quote)
+                }
+                const handleNotes = e => {
+                  const quote = [...context.quote]
+                  quote[i].notes = e.target.value
+                  context.setQuote(quote)
+                }
+                const removeItem = () => {
+                  const quote = [...context.quote]
+                  quote.splice(i, 1)
+                  context.setQuote(quote)
+                }
+                const handleSetOptions = e => {
+                  const quote = [...context.quote]
+                  quote[i].options[camelcase(e.target.name)] = e.target.value
+                  context.setQuote(quote)
+                }
+                const edit = () => setEditing(editing === i ? undefined : i)
+                console.log('product', product)
+                return (
+                  <div className={styles.product + `${productMissingInfo() ? ` ${styles.incomplete}` : ''}`} key={i}>
+                    <div key={i} className={styles.productDetails}>
+                      <div className={styles.productImage + `${!product.image ? ` ${styles.noImage}` : ''}`} style={{ backgroundImage: `url(${product.image})` }}>
+                        {!product.image && 'No image'}
+                      </div>
+                      <div className={styles.productDescription}>
+                        <Link to={product.path}>
+                          <p className={styles.productName}>{product.name}</p>
+                        </Link>
+                        <div className={styles.options + `${editing === i ? ` ${styles.hidden}` : ''}`}>
+                          {Object.keys(product.options).map((option, i) => {
+                            const opt = options.find(opt => camelcase(opt.data.Name) === option)
 
-            return (
-              <div className={styles.product} key={i}>
-                <div key={i} className={styles.productDetails}>
-                  <div className={styles.productImage + `${!product.image ? ` ${styles.noImage}` : ''}`} style={{ backgroundImage: `url(${product.image})` }}>
-                    {!product.image && 'No image'}
-                  </div>
-                  <div className={styles.productDescription}>
-                    <p className={styles.productName}>{product.name}</p>
-                    <div className={styles.options + `${editing === i ? ` ${styles.hidden}` : ''}`}>
-                      {Object.keys(product.options).map((option, i) => {
-                        const opt = options.find(opt => camelcase(opt.data.Name) === option)
-
-                        return (
-                          <p key={i} className={styles.option}>
-                            {`${opt.data.Label}: ${product.options[option]}`}
-                          </p>
-                        )
-                      })}
+                            return (
+                              <p key={i} className={styles.option}>
+                                {`${opt.data.Label}: ${product.options[option]}`}
+                              </p>
+                            )
+                          })}
+                        </div>
+                      </div>
+                    </div>
+                    <div className={styles.specifications}>
+                      {Object.keys(product.options).length ? (
+                        <button className={styles.button + `${editing === i ? ` ${styles.editing}` : ''}`} onClick={edit}>
+                          {editing === i ? 'Close' : 'Edit Specs'}
+                        </button>
+                      ) : null}
+                      <input type='text' className={styles.notes + `${!Object.keys(product.options).length ? ` ${styles.long}` : ''}`} value={product.notes} onChange={handleNotes} />
+                      <div className={styles.options + `${editing === i ? '' : ` ${styles.hidden}`}`}>
+                        {Object.keys(product.options).map((option, i) => {
+                          const opt = options.find(opt => camelcase(opt.data.Name) === option)
+                          return (
+                            <div key={i} className={styles.option}>
+                              <label className={styles.label} htmlFor={camelcase(opt.data.Name)}>{opt.data.Label}</label>
+                              {opt.data.Type === 'Text' ? (
+                                <input type='text' className={styles.input} name={camelcase(opt.data.Name)} onChange={handleSetOptions} value={product.options[camelcase(opt.data.Name)]} required />
+                              ) : opt.data.Type === 'Select' ? (
+                                <select name={camelcase(opt.data.Name)} onChange={handleSetOptions} value={product.options[camelcase(opt.data.Name)]} required>
+                                  {opt.data.Select_Choices.map((choice, key) => <option key={key}>{choice}</option>)}
+                                </select>
+                              ) : opt.data.Type === 'Toggle' ? (
+                                <input className={styles.input} type='checkbox' name={camelcase(opt.data.Name)} value={product.options[camelcase(opt.data.Name)]} onChange={handleSetOptions} required />
+                              ) : null}
+                            </div>
+                          )
+                        })}
+                      </div>
+                    </div>
+                    <div className={styles.quantityContainer}>
+                      <input className={styles.quantity} type='number' value={product.quantity} min='1' onChange={handleQuantity} />
+                    </div>
+                    <div className={styles.removeContainer}>
+                      <div className={styles.remove} onClick={removeItem} />
                     </div>
                   </div>
-                </div>
-                <div className={styles.specifications}>
-                  {Object.keys(product.options).length ? (
-                    <button className={styles.button + `${editing === i ? ` ${styles.editing}` : ''}`} onClick={edit}>
-                      {editing === i ? 'Close' : 'Edit Specs'}
-                    </button>
-                  ) : null}
-                  <input type='text' className={styles.notes + `${!Object.keys(product.options).length ? ` ${styles.long}` : ''}`} value={product.notes} onChange={handleNotes} />
-                  <div className={styles.options + `${editing === i ? '' : ` ${styles.hidden}`}`}>
-                    {Object.keys(product.options).map((option, i) => {
-                      const opt = options.find(opt => camelcase(opt.data.Name) === option)
-                      return (
-                        <div key={i} className={styles.option}>
-                          <label className={styles.label} htmlFor={camelcase(opt.data.Name)}>{opt.data.Label}</label>
-                          {opt.data.Type === 'Text' ? (
-                            <input type='text' className={styles.input} name={camelcase(opt.data.Name)} onChange={handleSetOptions} value={product.options[camelcase(opt.data.Name)]} required />
-                          ) : opt.data.Type === 'Select' ? (
-                            <select name={camelcase(opt.data.Name)} onChange={handleSetOptions} value={product.options[camelcase(opt.data.Name)]} required>
-                              {opt.data.Select_Choices.map((choice, key) => <option key={key}>{choice}</option>)}
-                            </select>
-                          ) : opt.data.Type === 'Toggle' ? (
-                            <input className={styles.input} type='checkbox' name={camelcase(opt.data.Name)} value={product.options[camelcase(opt.data.Name)]} onChange={handleSetOptions} required />
-                          ) : null}
-                        </div>
-                      )
-                    })}
+                )
+              })}
+            </div>
+          </>
+        ) : (
+          <div className={styles.emptyContainer}>
+            <h1 className={styles.emptyTitle}>Below ground. Above expectations</h1>
+            <p className={styles.emptyBody}>Add items to start a new quote</p>
+          </div>
+        )}
+        <div className={styles.manageContainer}>
+          <div className={styles.search}>
+            <label className={styles.label}>To add more items, search below</label>
+            <input className={styles.input + `${searchTerm ? ` ${styles.filled}` : ''}`} value={searchTerm} onChange={handleSetSearchTerm} />
+            <div className={styles.results + `${!searchTerm ? ` ${styles.hidden}` : ''}`}>
+              <div className={styles.triangle} />
+              {searchResults.length ? searchResults.slice(0, 6).map((product, i) => {
+                const initOptions = () => {
+                  const options = {}
+                  product.options.map(option => {
+                    if (option.type === 'Text') {
+                      options[camelcase(option.name)] = ''
+                    } else if (option.type === 'Toggle') {
+                      options[camelcase(option.name)] = false
+                    } else if (option.type === 'Select' && option.choices && option.choices.length) {
+                      options[camelcase(option.name)] = option.choices[0]
+                    }
+                  })
+                  return options
+                }
+                const handleAddToQuote = () => {
+                  if (Object.entries(options).every(option => !!option[1])) {
+                    const newQuote = [...context.quote]
+                    newQuote.push({
+                      id: product.id,
+                      recordId: product.recordId,
+                      name: product.name,
+                      image: product.images && product.images.length && product.images[0],
+                      options: initOptions(),
+                      notes: '',
+                      path: product.path,
+                      quantity: 1
+                    })
+                    context.setQuote(newQuote)
+                  }
+                }
+                console.log(product)
+                return (
+
+                  <div className={styles.result} key={i}>
+                    <Link to={product.path}>
+                      <div className={styles.icon + `${!product.images.length ? ` ${styles.missing}` : ''}`} style={{ backgroundImage: `url(${product.images && product.images[0]})` }}>
+                        <p className={styles.text}>No image</p>
+                      </div>
+                    </Link>
+                    <Link to={product.path}>
+                      <p className={styles.name}>{product.name}</p>
+                    </Link>
+                    <div className={styles.addButton} onClick={handleAddToQuote} />
                   </div>
-                </div>
-                <div className={styles.quantityContainer}>
-                  <input className={styles.quantity} type='number' value={product.quantity} min='1' onChange={handleQuantity} />
-                </div>
-                <div className={styles.removeContainer}>
-                  <div className={styles.remove} onClick={removeItem} />
-                </div>
-              </div>
-            )
-          })}
-        </div>
-        <div className={styles.buttons}>
-          <button onClick={handleSubmitQuote}>Submit</button>
+                )
+              }) : <p className={styles.error}>No items found</p>}
+            </div>
+          </div>
+          <button className={styles.submit} onClick={handleSubmitQuote}>Submit Quote</button>
         </div>
       </div>
     </section>
