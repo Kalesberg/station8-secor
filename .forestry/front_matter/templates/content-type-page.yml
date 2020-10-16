@@ -42,6 +42,7 @@ fields:
   - main-block-history-slider
   - main-block-join-our-team
   - main-block-training
+  - main-block-pipe-slide
   config:
     min: 
     max: 
