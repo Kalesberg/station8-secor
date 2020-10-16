@@ -22,7 +22,27 @@
       "video": ""
     },
     {
-      "template": "main-blank"
+      "template": "main-block-pipe-slide",
+      "pipes": [
+        {
+          "pipe": "/.forestry/content/images/pipeassembly_1.png",
+          "heading": "SAFER",
+          "subHeading": "HDPE pipe transfers natural gas, water, corrosive chemicals and slurries without leaks or contamination.",
+          "description": "We’re out to make leakage, waste and contamination a thing of the past. SECOR can optimize your municipal, civil or commercial project with a forward-thinking engineered solution that will save resources over its lifespan. That is what makes HDPE piping from SECOR the efficient, smart choice."
+        },
+        {
+          "pipe": "/.forestry/content/images/pipeassembly_2.png",
+          "heading": "STRONGER",
+          "subHeading": "Pressure rated and tested. Lasting performance. Made in the U.S.A.",
+          "description": "Traditional steel, cast iron and PVC piping can not compare to the longevity, durability and quality HDPE piping and fittings from SECOR. With accurate pressure ratings and fusion-bonded joints, we have the solution for today’s projects. Five locations across America means we’re here to serve with a deep and comprehensive inventory of products."
+        },
+        {
+          "pipe": "/.forestry/content/images/pipeassembly_3.png",
+          "heading": "SECOR",
+          "subHeading": "Building a more sustainable infrastructure for America — together.",
+          "description": "We’re out to make leakage, waste and contamination a thing of the past. SECOR can optimize your municipal, civil or commercial project with a forward-thinking engineered solution that will save resources over its lifespan. That is what makes HDPE piping from SECOR the efficient, smart choice."
+        }
+      ]
     }
   ]
 }
