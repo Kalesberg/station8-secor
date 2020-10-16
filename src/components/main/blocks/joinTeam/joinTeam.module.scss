@@ -1,0 +1,106 @@
+.section {
+  width: 100vw;
+  height: 95vh;
+  background-color: #EFEFEF;
+  text-align: center;
+  position: relative;
+  top: -5vw;
+  .backgroundContainer {
+    opacity: 0;
+    visibility: hidden;
+    transition: all .7s;
+    .background {
+      width: 100vw;
+      position: absolute;
+      img {
+        object-fit: cover;
+        height: 95vh;
+        width: 100vw;
+        filter: brightness(65%);
+      }
+    }
+  }
+  .backgroundShow {
+    opacity: 1;
+    visibility: visible;
+  }
+  .container {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    .heading {
+      text-align: center;
+      font-size: 6vw;
+      line-height: 6vw;
+      font-weight: 900;
+      font-family: 'Roboto', sans-serif;
+      font-style: italic;
+      color: white;
+      width: 60%;
+    }
+    .subHeading {
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      font-size: 3vw;
+      line-height: 3.5vw;
+      font-weight: 900;
+      color: white;
+    }
+    .button {
+      font-family: 'Roboto', sans-serif;
+      border-radius: 5vw;
+      font-size: 1.2vw;
+      font-weight: 900;
+      background-color: #D50F09;
+      border: none;
+      padding: .5vw 2.5vw .5vw 2.5vw;
+      height: 3vw;
+      text-align: center;
+      position: relative;
+      transition: all .5s;
+      color: white;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: rgb(95, 27, 27);
+    }
+  }
+}
+@media (max-width: 1023px) {
+  .section {
+    .container {
+      .heading {
+        text-align: center;
+        font-size: 9vw;
+        line-height: 9vw;
+        width: 80%;
+      }
+      .subHeading {
+        font-size: 4.5vw;
+        font-family: 'Roboto', sans-serif;
+      }
+      .button {
+        font-family: 'Roboto', sans-serif;
+        border-radius: 5vw;
+        font-size: 1.8vw;
+        font-weight: 900;
+        background-color: #D50F09;
+        border: none;
+        padding: .5vw 2.5vw .5vw 2.5vw;
+        height: 4.5vw;
+        text-align: center;
+        position: relative;
+        transition: all .5s;
+        color: white;
+        cursor: pointer;
+      }
+      .button:hover {
+        background-color: rgb(95, 27, 27);
+      }
+    }
+  }
+}

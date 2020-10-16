@@ -40,6 +40,8 @@ fields:
   - main-block-pipe-video
   - main-block-stats
   - main-block-history-slider
+  - main-block-join-our-team
+  - main-block-training
   config:
     min: 
     max: 
