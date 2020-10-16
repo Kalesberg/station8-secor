@@ -1,11 +1,11 @@
 .section {
-  height: 90vh;
+  height: 95vh;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   .container {
-    height: 90vh;
+    height: 95vh;
     width: 100vw;
     position: relative;
     display: flex;
@@ -17,9 +17,11 @@
         width: 100vw;
         transition: all .7s;
         height: 95vh;
+        overflow: visible;
         img {
           object-fit: cover;
           width: 100vw;
+          overflow: visible;
         }
       }
       .textContainer {
@@ -69,6 +71,7 @@
     display: flex;
     justify-content: center;
     height: 5vh;
+    background: transparent;
     .selectors {
       display: grid;
       grid-template-columns: auto auto auto;
@@ -78,6 +81,7 @@
       justify-content: center;
       position: relative;
       height: 5vw;
+      background: transparent;
       .selector {
         text-align: center;
         font-size: 1.7vw;
@@ -89,6 +93,7 @@
         cursor: pointer;
         transition: all .5s;
         text-transform: uppercase;
+        background: transparent;
       }
       .selector:hover, .selectorShow {
         opacity: 1;
@@ -100,6 +105,11 @@
   .section {
     .container {
       .imageContainer {
+        .background {
+          img {
+            object-fit: cover;
+          }
+        }
         .textContainer {
           position: absolute;
           top: 0;
@@ -114,7 +124,7 @@
           transition: all .5s .5s;
           .text {
             position: relative;
-            padding: 5.5vw 5vw 0 0;
+            padding: 8vw 5vw 0 0;
             .heading {
                 padding-top: 5vh;
                 text-align: left;
@@ -196,6 +206,24 @@
             .description {
               font-size: 3vw;
             }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1200px) and (max-height: 800px) {
+  .section {
+    .container {
+      .imageContainer {
+        .background {
+          width: 100vw;
+          transition: all .7s;
+          height: 95vh;
+          img {
+            object-fit: fill;
+            width: 100vw;
+            height: 95vh;
           }
         }
       }
