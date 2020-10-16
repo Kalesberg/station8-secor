@@ -13,7 +13,7 @@ sections:
   match: "**/*"
   new_doc_ext: md
   templates:
-  - article
+  - content-type-article
 - type: directory
   path: ".forestry/content/careers"
   label: Careers
