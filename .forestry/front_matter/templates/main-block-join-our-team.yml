@@ -12,11 +12,6 @@ fields:
   config:
     required: false
   label: Sub Heading
-- name: image
-  type: file
-  config:
-    maxSize: 64
-  label: Image
 - name: buttonText
   type: text
   config:
