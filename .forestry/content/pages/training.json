@@ -53,13 +53,13 @@
     },
     {
       "template": "main-basic-contact-form",
-      "largeHeading": "",
+      "largeHeading": "LEARN TO USE FUSION EQUIPMENT LIKE A TOTAL PRO.",
       "heading": "",
-      "paragraph": "",
-      "buttonText": "",
-      "placeholderText": "",
-      "icon": "",
-      "image": ""
+      "paragraph": "Work faster, smarter and safer. Sign up for one of our training courses and learn to use any of our rental equipment like a seasoned pro.",
+      "buttonText": "Request info",
+      "placeholderText": "Phone or Email",
+      "icon": "/.forestry/content/images/mail-dark.svg",
+      "image": "/.forestry/content/images/mcelroy.png"
     }
   ]
 }
