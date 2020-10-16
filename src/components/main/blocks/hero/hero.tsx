@@ -1,23 +1,31 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
-import ReactPlayer from "react-player"
 import styles from './hero.module.scss'
 import { Image, link } from '../../../../functions'
 
 export default ({ block, images }) => {
-  let source;
-  if (block && block.video)
-    source = block.video;
-  else if (block && block.image) 
-    source = block.image;
+  let source
+  if (block && block.video) {
+    source = block.video
+  } else if (block && block.image) {
+    source = block.image
+  }
 
-  const media = images.find(image => image.relativePath === 'images/' + source.split('/').pop());
-  const pageLink = block.buttonLink ? link(block.buttonLink) : null;
- 
+  const media = images.find(image => image.relativePath === 'images/' + source.split('/').pop())
+  const pageLink = block.buttonLink ? link(block.buttonLink) : null
+
+  const scrollDown = () => {
+    document.getElementById('main').scroll({
+      left: 0,
+      top: window.innerHeight,
+      behavior: 'smooth'
+    })
+  }
+
   return (
     <div className={styles.container}>
       {block.video && (
-        <div className={styles.hero}><video className={styles.video} playsInline autoPlay muted loop src={media.publicURL} /></div> )}
+        <div className={styles.hero}><video className={styles.video} poster='/video-frame.jpg' playsInline autoPlay muted loop src={media.publicURL} /></div>)}
       {block.image && (
         <div className={styles.hero}><img src={media.publicURL} alt='' /></div>)}
       <div className={styles.textContainer}>
@@ -40,6 +48,10 @@ export default ({ block, images }) => {
             </button>
           </Link>}
       </div>
+      <div className={styles.scrollContainer} onClick={scrollDown}>
+        <p className={styles.label}>Scroll</p>
+        <div className={styles.scroll} />
+      </div>
     </div>
   )
-}  
+}
