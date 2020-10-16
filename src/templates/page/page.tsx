@@ -121,6 +121,7 @@ query ($title: String!) {
       categories {
         category
       }
+      description
     }
   }
 }
