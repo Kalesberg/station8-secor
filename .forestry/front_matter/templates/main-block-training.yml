@@ -1,4 +1,17 @@
 ---
 label: 'Main Block: Training'
 hide_body: false
-fields: []
+fields:
+- name: categories
+  type: field_group_list
+  fields:
+  - name: category
+    type: text
+    config:
+      required: false
+    label: Category
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Categories
