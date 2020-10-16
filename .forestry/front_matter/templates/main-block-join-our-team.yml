@@ -1,4 +1,29 @@
 ---
 label: 'Main Block: Join Our Team'
 hide_body: false
-fields: []
+fields:
+- name: heading
+  type: text
+  config:
+    required: false
+  label: Heading
+- name: subHeading
+  type: text
+  config:
+    required: false
+  label: Sub Heading
+- name: image
+  type: file
+  config:
+    maxSize: 64
+  label: Image
+- name: buttonText
+  type: text
+  config:
+    required: false
+  label: Button Text
+- name: buttonLink
+  type: text
+  config:
+    required: false
+  label: Button Link
