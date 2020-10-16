@@ -59,4 +59,5 @@ fields:
   hidden: true
   default: article
 pages:
+- ".forestry/content/articles/article-two.md"
 - ".forestry/content/articles/featured-article.md"
