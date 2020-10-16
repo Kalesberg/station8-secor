@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, navigate } from 'gatsby'
+import camelcase from 'camelcase'
+
+import { Context } from '../../../context/context'
 
 import styles from './productIndex.module.scss'
 
 export default ({ location, menu }) => {
+  const context = useContext(Context)
   const [path] = useState(location.pathname.slice(1).split('/'))
   const [productMenu, setProductMenu] = useState(undefined)
   const [submenu, setSubmenu] = useState(undefined)
@@ -91,7 +95,7 @@ export default ({ location, menu }) => {
   //   console.log('menu', productMenu)
   // }, [productMenu])
 
-  return (
+  return context && (
     <section className={styles.section}>
       <div className={styles.sidebar}>
         {menu.map(category => (
@@ -122,16 +126,43 @@ export default ({ location, menu }) => {
           </div>
           <div className={styles.products}>
             {submenu.products.map(product => {
-              // console.log('product', product)
+              const initOptions = () => {
+                const options = {}
+                product.options.map(option => {
+                  if (option.type === 'Text') {
+                    options[camelcase(option.name)] = ''
+                  } else if (option.type === 'Toggle') {
+                    options[camelcase(option.name)] = false
+                  } else if (option.type === 'Select' && option.choices && option.choices.length) {
+                    options[camelcase(option.name)] = option.choices[0]
+                  }
+                })
+                return options
+              }
+              const handleAddToQuote = e => {
+                e.preventDefault()
+                const newQuote = [...context.quote]
+                newQuote.push({
+                  id: product.id,
+                  recordId: product.recordId,
+                  name: product.name,
+                  image: product.images && product.images.length && product.images[0],
+                  options: initOptions(),
+                  notes: '',
+                  path: product.path,
+                  quantity: 1
+                })
+                context.setQuote(newQuote)
+              }
               return (
                 <div key={product.recordId} className={styles.product}>
                   <Link to={product.path} className={styles.image} style={{ backgroundImage: `url(${product.images && product.images[0]})` }}>
                     {(!product.images || !product.images[0]) && 'No image'}
-                    {/* <svg className={styles.add} viewBox='0 0 500 500' fillRule='evenodd' clipRule='evenodd' strokeLinejoin='round' strokeMiterlimit={2}>
+                    <svg className={styles.add} viewBox='0 0 500 500' fillRule='evenodd' clipRule='evenodd' strokeLinejoin='round' strokeMiterlimit={2} onClick={handleAddToQuote}>
                       <path d='M250 0c137.979 0 250 112.021 250 250 0 137.979-112.021 250-250 250C112.021 500 0 387.979 0 250 0 112.021 112.021 0 250 0zm0 33.333c119.582 0 216.667 97.085 216.667 216.667 0 119.582-97.085 216.667-216.667 216.667-119.582 0-216.667-97.085-216.667-216.667 0-119.582 97.085-216.667 216.667-216.667z' fill='#d50f0a' />
                       <path fill='#d50f0a' d='M220.5 123.5h59v253h-59z' />
                       <path fill='#d50f0a' d='M376.5 220.5v59h-253v-59z' />
-                    </svg> */}
+                    </svg>
                   </Link>
                   <div className={styles.detail}>
                     <Link className={styles.name} to={product.path}>{product.name}</Link>

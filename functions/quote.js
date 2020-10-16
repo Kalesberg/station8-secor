@@ -4,7 +4,7 @@ exports.handler = async (event, context, callback) => {
   const base = await new Airtable({ apiKey: process.env.AIRTABLE_KEY }).base(process.env.AIRTABLE_BASE_ID)
   const quotes = await base('Quotes')
   const body = await JSON.parse(event.body)
-  console.log(body)
+  console.log(body.attachment)
 
   const quote = await quotes.create([
     {
@@ -16,7 +16,9 @@ exports.handler = async (event, context, callback) => {
         Company: body.customer.company,
         'Phone Number': body.customer.phone,
         'Special Requirements': body.customer.requirements,
-        Attachments: [{ url: body.customer.attachments }]
+        Attachments: body.attachment ? [body.attachment] : null,
+        'Quote JSON': JSON.stringify(body.quote),
+        Items: body.markdown
       }
     }
   ])

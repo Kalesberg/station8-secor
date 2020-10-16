@@ -34,27 +34,26 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOp
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
                 <BasicContactForm block={block} images={images} />
               </ScrollAnimation>
-             ) : block.template === 'main-block-accessories' ? (
+            ) : block.template === 'main-block-accessories' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
                 <Accessories block={block} images={images} />
               </ScrollAnimation>
-             ) : block.template === 'main-block-history-slider' ? (
+            ) : block.template === 'main-block-history-slider' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
                 <HistorySlider block={block} images={images} />
               </ScrollAnimation>
-             ) : block.template === 'main-block-join-our-team' ? (
+            ) : block.template === 'main-block-join-our-team' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
                 <JoinTeam block={block} images={images} />
               </ScrollAnimation>
-             ) : block.template === 'main-block-pipe-video' ? (
+            ) : block.template === 'main-block-pipe-video' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
                 <PipeVideo block={block} images={images} />
               </ScrollAnimation>
-             ) : block.template === 'main-block-stats' ? (
+            ) : block.template === 'main-block-stats' ? (
               // <ScrollAnimation key={i} animateIn='animate__fadeInDown' animateOnce scrollableParentSelector='#main' offset={150}>
-                <Stats key={i} block={block} images={images} scrollPosition={scrollPosition}/>
-            
-             ) : block.template === 'main-block-simple-text' ? (
+              <Stats key={i} block={block} images={images} scrollPosition={scrollPosition} />
+            ) : block.template === 'main-block-simple-text' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
                 <SimpleText block={block} images={images} />
               </ScrollAnimation>
@@ -153,7 +152,7 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOp
             ) : block.template === 'main-product-index' ? (
               <ProductIndex menu={menu} key={i} location={location} />
             ) : block.template === 'main-quote' ? (
-              <Quote key={i} options={options} />
+              <Quote key={i} options={options} menu={menu} />
             ) : block.template === 'main-recent-articles' ? (
               <ScrollAnimation key={i} animateIn='animate__fadeInUp' animateOnce scrollableParentSelector='#main' offset={150}>
                 <RecentArticles block={block} />

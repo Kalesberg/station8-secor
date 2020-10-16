@@ -15,7 +15,7 @@ export default ({ images, pages, menuOpen, setMenuOpen, menu, location, userMenu
   const [activeSubcategory, setActiveSubcategory] = useState(undefined)
   const [searchResults, setSearchResults] = useState([])
 
-  const handleSetSearchTeam = e => {
+  const handleSetSearchTerm = e => {
     setSearchTerm(e.target.value)
   }
 
@@ -70,7 +70,7 @@ export default ({ images, pages, menuOpen, setMenuOpen, menu, location, userMenu
       <div className={styles.megaMenu + `${menuOpen ? ` ${styles.open}` : ''}` + `${searchTerm ? ` ${styles.searching}` : ''}`}>
         <div className={styles.search}>
           <p className={styles.label}>Know exactly what you're looking for?</p>
-          <input className={styles.input + `${searchTerm ? ` ${styles.filled}` : ''}`} value={searchTerm} onChange={handleSetSearchTeam} />
+          <input className={styles.input + `${searchTerm ? ` ${styles.filled}` : ''}`} value={searchTerm} onChange={handleSetSearchTerm} />
         </div>
         <div className={styles.resultsContainer}>
           {searchTerm && (
