@@ -1,4 +1,36 @@
 ---
 label: 'Main Block: Pipe Slide'
 hide_body: false
-fields: []
+fields:
+- name: pipes
+  type: field_group_list
+  fields:
+  - name: pipe
+    type: file
+    config:
+      maxSize: 64
+    label: Pipe
+  - name: heading
+    type: text
+    config:
+      required: false
+    label: Heading
+  - name: subHeading
+    type: text
+    config:
+      required: false
+    label: Sub Heading
+  - name: description
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: false
+      schema:
+        format: markdown
+    label: Description
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Pipes
