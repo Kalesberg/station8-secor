@@ -27,6 +27,7 @@ import Leadership from './leadership/leadership'
 import InteractiveMarkets from './interactiveMarkets/interactiveMarkets'
 import Map from './map/map'
 import BasicContactForm from './basicContact/basicContact'
+import PipeSlider from './pipeSlider/pipeSlider'
 import PipeVideo from './pipeVideo/pipeVideo'
 import Posts from './posts/posts'
 import ProductDescrip from './productDescrip/productDescrip'
@@ -41,4 +42,4 @@ import Stats from './stats/stats'
 import Testimonial from './testimonial/testimonial'
 import Training from './training/training'
 
-export { Accessories, Account, AnimatedImage, ArticlesGrid, ArticlesSlider, BasicContactForm, Blank, Cities, CompanyMerger, ContactForm, ContentColumns, ContentTabs, FabAnimation, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, HistorySlider, ImageBar, Images, Infographic, InteractiveMarkets, InteractiveTools, JoinTeam, KnowledgeBase, Leadership, Map, PipeVideo, Posts, ProductDescrip, ProductIndex, Quote, RecentArticles, RichText, SimpleText, Slideshow, StaticImage, Stats, Testimonial, Training }
+export { Accessories, Account, AnimatedImage, ArticlesGrid, ArticlesSlider, BasicContactForm, Blank, Cities, CompanyMerger, ContactForm, ContentColumns, ContentTabs, FabAnimation, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, HistorySlider, ImageBar, Images, Infographic, InteractiveMarkets, InteractiveTools, JoinTeam, KnowledgeBase, Leadership, Map, PipeSlider, PipeVideo, Posts, ProductDescrip, ProductIndex, Quote, RecentArticles, RichText, SimpleText, Slideshow, StaticImage, Stats, Testimonial, Training }

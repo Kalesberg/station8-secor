@@ -122,6 +122,12 @@ query ($title: String!) {
         category
       }
       description
+      pipes {
+        pipe
+        heading
+        subHeading
+        description
+      }
     }
   }
 }
