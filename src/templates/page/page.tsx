@@ -115,6 +115,9 @@ query ($title: String!) {
         description
         yearText
       }
+      images {
+        image
+      }
     }
   }
 }
