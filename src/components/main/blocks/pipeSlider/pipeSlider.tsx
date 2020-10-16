@@ -5,7 +5,8 @@ import styles from './pipeSlider.module.scss'
 import HorizontalHighlight from '../highlighters/horizontalHighlight'
 
 export default ({ block, images }) => {
-  const [selected, setSelected] = useState(0);
+  const [selected, setSelected] = useState(block.pipes && block.pipes.length > 0 ? block.pipes[0].heading : "");
+  const [index, setIndex] = useState(0);
   const ref = useRef(null);
   const [target, setTarget] = useState(null);
   const container = useRef(null);
@@ -13,34 +14,18 @@ export default ({ block, images }) => {
   const handleClick = (e) => {
     setSelected(e.target.innerText);
     setTarget(e.target);
+    block.pipes.map((p, i) => {
+      if (p.heading === e.target.innerText && ref.current)
+        ref.current.scrollLeft = i * ref.current.offsetWidth;
+    })
   }
-  function resetHighlight() {
-    setSelected(block.categories && block.categories.length > 0 ? block.categories[0].category : "");
-    setTarget(container.current && container.current.firstElementChild);
-  }
-  useEffect(() => {
-    window.addEventListener('resize', resetHighlight);
-    return () => {
-      window.removeEventListener('resize', resetHighlight)
-    }
-  },[])
-  const moveRight = (e) => {
-    if (ref.current) {
-      ref.current.scrollLeft = ref.current.scrollLeft + ref.current.offsetWidth;
-      setSelected(selected + 1);
-    }  
-  }
-  const moveLeft = (e) => {
-    if (ref.current) {
-      ref.current.scrollLeft = ref.current.scrollLeft - ref.current.offsetWidth;
-      setSelected(selected - 1);
-    }  
-  }
+
   useEffect(() => {
     window.addEventListener('resize', () => {
       if (ref.current) {
         ref.current.scrollLeft = 0;
-        setSelected(0);
+        setSelected(block.pipes && block.pipes.length > 0 ? block.pipes[0].heading : "");
+        setTarget(container.current && container.current.firstElementChild);
       }
     })
   },[])
@@ -50,11 +35,11 @@ export default ({ block, images }) => {
       <div className={styles.container} ref={ref}>
         {block.pipes && block.pipes.map((pipe, i) => {
           return (
-            <div key={i}className={styles.pipeContainer}>
+            <div key={i}className={styles.imageContainer}>
               <div key={i} className={styles.background}>
                 <Image className={styles.image} src={pipe.pipe && pipe.pipe} images={images} />
               </div>
-              <div className={styles.textContainer}>
+              <div className={styles.textContainer + ` ${selected === pipe.heading ? `${styles.textContainerShow}`: ""}`}>
                 <div></div>
                 <div className={styles.text}>
                     <h2 className={styles.heading}>{pipe.heading && pipe.heading}</h2>
@@ -66,11 +51,11 @@ export default ({ block, images }) => {
           )
         })}
       </div>
-      <div className={styles.categoryContainer}>
-        <div className={styles.categories} ref={container}>
+      <div className={styles.selectorContainer}>
+        <div className={styles.selectors} ref={container}>
           {block.pipes && block.pipes.map((pipe, i) => {
             return (
-              <div key={i} onClick={handleClick} className={styles.category + ` ${selected === i ? `${styles.categoryShow}` : ""}`}>
+              <div key={i} onClick={handleClick} className={styles.selector + ` ${selected === pipe.heading ? `${styles.selectorShow}` : ""}`}>
                 {pipe.heading}
               </div>
             )
