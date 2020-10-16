@@ -29,7 +29,7 @@ fields:
   config:
     required: true
   label: Summary
-  description: Describe this career in 1-2 sentences
+  description: Brief article summary
 - name: date
   type: datetime
   label: Date
@@ -59,4 +59,5 @@ fields:
   hidden: true
   default: article
 pages:
+- ".forestry/content/articles/article-two.md"
 - ".forestry/content/articles/featured-article.md"

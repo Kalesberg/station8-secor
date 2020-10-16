@@ -1,13 +1,14 @@
 ---
 parent: ".forestry/content/pages/blog.json"
-date: 2020-09-22T14:30:12.000+00:00
-heroImage: "/.forestry/content/images/istock-989379882.jpg"
+date: 2020-10-16T14:30:12Z
+heroImage: "/.forestry/content/images/istock-615730568-scaled.jpg"
 tags:
 - hdpe
 - fittings
 - municipal
+- training
 type: article
-title: Featured article
+title: Article Two
 summary: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
   tempor.
 
