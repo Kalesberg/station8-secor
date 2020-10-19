@@ -24,7 +24,7 @@ fields:
   label: Blocks
   template_types:
   - main-account
-  - main-article-index
+  - main-articles-grid
   - main-basic-contact-form
   - main-blank
   - main-contact-form

@@ -7,7 +7,7 @@
   ],
   "blocks": [
     {
-      "template": "main-blank"
+      "template": "main-articles-grid"
     }
   ]
 }
