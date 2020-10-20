@@ -1,0 +1,16 @@
+---
+label: 'Main Block: Articles Grid'
+hide_body: true
+fields:
+- name: featuredArticle
+  type: select
+  default: []
+  config:
+    required: false
+    options: []
+    source:
+      type: pages
+      section: articles
+      file: 
+      path: 
+  label: Featured Article

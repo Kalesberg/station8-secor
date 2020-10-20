@@ -5,7 +5,7 @@ heroImage: "/.forestry/content/images/istock-615730568-scaled.jpg"
 tags:
 - news
 type: article
-title: Article Two
+title: Blog article title here limit to 50 characters
 summary: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
   tempor.
 

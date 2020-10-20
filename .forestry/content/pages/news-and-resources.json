@@ -1,0 +1,14 @@
+{
+  "title": "News and Resources",
+  "type": "page",
+  "slug": "",
+  "rows": [
+
+  ],
+  "blocks": [
+    {
+      "template": "main-articles-grid",
+      "featuredArticle": ".forestry/content/articles/featured-article.md"
+    }
+  ]
+}
