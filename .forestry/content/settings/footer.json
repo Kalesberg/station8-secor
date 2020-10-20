@@ -7,14 +7,14 @@
         {
           "links": [
             {
-              "label": "Why HDPE",
-              "page": ".forestry/content/pages/why-hdpe.json",
+              "label": "About",
+              "page": ".forestry/content/pages/about.json",
               "bold": false,
               "replaceLabel": false
             },
             {
-              "label": "Resources",
-              "page": ".forestry/content/pages/resources.json",
+              "label": "Why HDPE",
+              "page": ".forestry/content/pages/why-hdpe.json",
               "bold": false,
               "replaceLabel": false
             },
@@ -41,8 +41,8 @@
               "replaceLabel": false
             },
             {
-              "label": "About",
-              "page": ".forestry/content/pages/about.json",
+              "label": "Careers",
+              "page": ".forestry/content/pages/careers.json",
               "bold": false,
               "replaceLabel": false
             }
@@ -51,7 +51,7 @@
         {
           "links": [
             {
-              "label": "Blog",
+              "label": "News and Resources",
               "page": ".forestry/content/pages/blog.json",
               "bold": false,
               "replaceLabel": false
