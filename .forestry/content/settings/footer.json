@@ -52,7 +52,7 @@
           "links": [
             {
               "label": "News and Resources",
-              "page": ".forestry/content/pages/blog.json",
+              "page": ".forestry/content/pages/news-and-resources.json",
               "bold": false,
               "replaceLabel": false
             },
