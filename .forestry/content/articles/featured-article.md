@@ -1,7 +1,7 @@
 ---
 parent: ".forestry/content/pages/blog.json"
 date: 2020-09-22T14:30:12.000+00:00
-heroImage: "/.forestry/content/images/istock-989379882.jpg"
+heroImage: "/.forestry/content/images/54fb3890-11a0-4433-aace-d7aae872bdbe.png"
 tags:
 - hdpe
 - fittings
