@@ -22,8 +22,9 @@
       .icon {
         position: absolute;
         top: 2vw;
-        left: 1.5vw;
+        left: 1.8vw;
         height: 1.4vw;
+        width: 1.3vw;
       }
       .year {
         position: relative;
@@ -212,6 +213,15 @@
     }
     .right {
       right: 0;
+    }
+    .right, .left {
+      .clickContainer {
+        .icon {
+          left: 2.8vw;
+          height: 1.4vw;
+          width: 1.9vw;
+        }
+      }  
     }
     .container {
       height: 95vh;
