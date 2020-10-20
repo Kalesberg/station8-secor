@@ -1,5 +1,5 @@
 ---
-parent: ".forestry/content/pages/blog.json"
+parent: ".forestry/content/pages/news-and-resources.json"
 date: 2020-09-22T14:30:12.000+00:00
 heroImage: "/.forestry/content/images/54fb3890-11a0-4433-aace-d7aae872bdbe.png"
 tags:
