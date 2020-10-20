@@ -7,7 +7,8 @@
   ],
   "blocks": [
     {
-      "template": "main-articles-grid"
+      "template": "main-articles-grid",
+      "featuredArticle": ".forestry/content/articles/featured-article.md"
     }
   ]
 }
