@@ -86,13 +86,13 @@ fields:
 - name: openings
   type: number
   label: Openings
-  description: Set to 0 to hide position
   default: 0
   required: true
   config:
     min: 
     max: 
     step: 
+  description: If set to '0', the position will not display.
 pages:
 - ".forestry/content/careers/position-title.json"
 - ".forestry/content/careers/test.json"
