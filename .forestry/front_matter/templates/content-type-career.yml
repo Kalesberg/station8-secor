@@ -61,3 +61,4 @@ fields:
   default: career
 pages:
 - ".forestry/content/careers/position-title.json"
+- ".forestry/content/careers/test.json"

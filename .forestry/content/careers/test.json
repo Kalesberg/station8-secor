@@ -1,0 +1,13 @@
+{
+  "type": "career",
+  "title": "Test",
+  "slug": "",
+  "location": "Test",
+  "description": "Test",
+  "body": [
+    {
+      "heading": "Test",
+      "text": "<p>Test</p>"
+    }
+  ]
+}
