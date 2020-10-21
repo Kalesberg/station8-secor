@@ -40,6 +40,7 @@ export default ({ images, pages, menuOpen, setMenuOpen, menu, location, userMenu
     <header className={styles.header}>
       <div className={styles.menu + `${menuOpen ? ` ${styles.active}` : ''}`}>
         {headerConfig.blocks.map((block, i: number) => {
+          console.log('location', location)
           return block.template === 'header-call-button' ? (
             <CallButton key={i} block={block} handleCloseMenus={handleCloseMenus} />
           ) : block.template === 'header-contact-button' ? (

@@ -65,6 +65,7 @@ query ($title: String!) {
       subHeading
       image
       showButton
+      featuredArticle
       fittings {
         descriptions
         fittingHeading

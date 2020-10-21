@@ -13,7 +13,7 @@ export default ({ children, title: siteTitle = '', images, pages, toggleForm, bl
   const context = useContext(Context)
   const [menuOpen, setMenuOpen] = useState(false)
   const [userMenuOpen, setUserMenuOpen] = useState(false)
-  const [scrollPosition, setScrollPosition] = useState(null);
+  const [scrollPosition, setScrollPosition] = useState(null)
   const { site: { siteMetadata: { config: { description, title, titleDivider } } } } = useStaticQuery(graphql`
     {
       site {
@@ -27,9 +27,9 @@ export default ({ children, title: siteTitle = '', images, pages, toggleForm, bl
       }
     }
   `)
-  
+
   const scrollListener = (e) => {
-    setScrollPosition(e.target.scrollTop);
+    setScrollPosition(e.target.scrollTop)
   }
 
   return context ? (
