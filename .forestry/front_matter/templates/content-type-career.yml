@@ -16,10 +16,34 @@ fields:
   description: This is the text after the domain + '/careers' a user would enter to
     navigate to this page. If nothing is entered here, the slug will become a slug-ified
     version of the page title.
-- name: location
-  type: text
+- name: department
+  type: select
+  default: []
   config:
-    required: true
+    required: false
+    options:
+    - Sales
+    - Manufacturing
+    - Customer Support
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Department
+- name: location
+  type: select
+  default: []
+  config:
+    required: false
+    options:
+    - Houston TX
+    - Tulsa OK
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
   label: Location
 - name: description
   type: textarea
