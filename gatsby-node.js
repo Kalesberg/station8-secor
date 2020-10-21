@@ -19,7 +19,7 @@ module.exports.onCreateNode = ({ node, actions }) => {
 }
 
 module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
-  const { data: { articles: { nodes: articles }, pages: { nodes: pages }, images: { nodes: images }, pageFiles: { nodes: pageFiles }, categories: { nodes: categories }, menus: { nodes: menus }, submenus: { nodes: submenus }, options: { nodes: options }, products: { nodes: products } } } = await graphql(`
+  const { data: { articles: { nodes: articles }, careers: { nodes: careers }, pages: { nodes: pages }, images: { nodes: images }, pageFiles: { nodes: pageFiles }, categories: { nodes: categories }, menus: { nodes: menus }, submenus: { nodes: submenus }, options: { nodes: options }, products: { nodes: products } } } = await graphql(`
   {
     pages: allPagesJson {
       nodes {
@@ -76,6 +76,22 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         fileAbsolutePath
         excerpt
         html
+      }
+    }
+    careers: allCareersJson {
+      nodes {
+        type
+        title
+        slug
+        location
+        description
+        id
+        body {
+          heading
+          text
+        }
+        department
+        openings
       }
     }
     categories: allAirtable(filter: {table: {eq: "Categories"}}, sort: {fields: data___Order, order: ASC}) {
@@ -231,7 +247,8 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         pages: pagesWithExtras,
         articles: articlesWithExtras,
         menu: productMenu,
-        options
+        options,
+        careers
       }
     })
 
@@ -248,6 +265,13 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         }
       }))
     }
+  })
+
+  careers.forEach(career => {
+    createPage({
+      component: careerTemplate,
+      path: `/careers/${career.slug || slugify(career.title).toLowerCase()}`
+    })
   })
 
   articles.forEach(article => {
