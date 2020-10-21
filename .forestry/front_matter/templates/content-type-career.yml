@@ -62,7 +62,7 @@ fields:
 - name: openings
   type: number
   label: Openings
-  description: Set openings to 0 to hide position
+  description: Set to 0 to hide position
   default: 0
   required: true
   config:
