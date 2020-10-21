@@ -13,12 +13,6 @@ export default ({ block, search, limit = undefined, slug = '', articles, images,
   const [userSearch, setUserSearch] = useState('')
   const [featuredArticle, setFeaturedArticle] = useState(undefined)
 
-  console.log(block.featuredArticle, articles, userSearch)
-
-  useEffect(() => {
-    console.log('category', category)
-  }, [category])
-
   useEffect(() => {
     const query = queryString.parse(search)
     query.category ? setCategory(query.category.toString()) : setCategory('All')
