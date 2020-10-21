@@ -63,7 +63,7 @@ export default ({ careers, search }) => {
         <div className={styles.careers}>
           {filteredCareers.map(career => {
             return (
-              <Link key={career.id} to={`/careers/${career.slug || slugify(career.title).toLowerCase()}`} className={styles.career}>
+              <Link key={career.id} to={`/careers/${career.slug || slugify(career.title).toLowerCase()}-${slugify(career.location).toLowerCase()}`} className={styles.career}>
                 <div className={styles.bar} />
                 <p className={styles.department}>{career.department}</p>
                 <p className={styles.title}>{career.title}.</p>

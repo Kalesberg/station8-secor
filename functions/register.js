@@ -2,6 +2,7 @@ const bcrypt = require('bcryptjs')
 const Airtable = require('airtable')
 const jwt = require('jsonwebtoken')
 const cookie = require('cookie')
+const sgMail = require('@sendgrid/mail')
 
 exports.handler = async (event, context, callback) => {
   const base = await new Airtable({ apiKey: process.env.AIRTABLE_KEY }).base(process.env.AIRTABLE_BASE_ID)
@@ -46,6 +47,22 @@ exports.handler = async (event, context, callback) => {
           }
         }
       ])
+      sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+      const msg = {
+        to: body.email.trim().toLowerCase(),
+        from: 'info@secoronline.com',
+        subject: 'Registration Complete',
+        text: 'This is just a placeholder to test email functionality.',
+        html: '<strong>This is just a placeholder to test email functionality.</strong>'
+      }
+      sgMail
+        .send(msg)
+        .then(() => {
+          console.log('Email sent')
+        })
+        .catch((error) => {
+          console.error(error)
+        })
       callback(null, {
         statusCode: 200,
         headers: {

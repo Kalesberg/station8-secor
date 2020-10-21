@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { graphql, Link } from 'gatsby'
 import Moment from 'react-moment'
-import queryString from 'query-string'
 
 import { Image } from '../../functions'
 
@@ -9,17 +8,15 @@ import { Layout } from '../../components'
 import { ArticlesGrid } from '../../components/main/blocks'
 
 import styles from './article.module.scss'
-import articleIndexStyles from './articles.module.scss'
 
 export default ({
-  pageContext: { images, pages, authors = [], articles, menu, slug },
+  pageContext: { images, pages, articles, menu, slug },
   data: {
     markdownRemark: {
       frontmatter: {
         date,
         heroImage,
         title,
-        tags,
         summary
       },
       html
@@ -27,18 +24,12 @@ export default ({
   },
   location
 }) => {
-  // const [tag, setTag] = useState('')
   const [formOpen, setFormOpen] = useState(false)
 
   const toggleForm = e => {
     e.preventDefault()
     setFormOpen(!formOpen)
   }
-
-  // useEffect(() => {
-  //   const tag = queryString.parse(location.search)
-  //   tag.tag ? setTag(tag.tag.toString()) : setTag('')
-  // }, [location])
 
   return (
     <Layout title={title} pages={pages} images={images} toggleForm={toggleForm} menu={menu} location={location}>

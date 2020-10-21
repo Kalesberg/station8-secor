@@ -268,9 +268,18 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
   })
 
   careers.forEach(career => {
+    const slug = career.slug || slugify(career.title).toLowerCase()
     createPage({
       component: careerTemplate,
-      path: `/careers/${career.slug || slugify(career.title).toLowerCase()}`
+      path: `/careers/${slug}-${slugify(career.location).toLowerCase()}`,
+      context: {
+        slug,
+        images,
+        pages: pagesWithExtras,
+        articles: articlesWithExtras,
+        menu: productMenu,
+        career: career
+      }
     })
   })
 
