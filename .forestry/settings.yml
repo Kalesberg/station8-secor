@@ -21,7 +21,7 @@ sections:
   match: "**/*"
   new_doc_ext: json
   templates:
-  - career
+  - content-type-career
 - type: directory
   path: ".forestry/content/pages"
   label: Pages
