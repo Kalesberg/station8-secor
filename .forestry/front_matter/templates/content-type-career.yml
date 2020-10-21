@@ -52,5 +52,12 @@ fields:
     max: 
     labelField: 
   label: Body
+- name: type
+  type: text
+  config:
+    required: false
+  label: Type
+  hidden: true
+  default: career
 pages:
 - ".forestry/content/careers/position-title.json"
