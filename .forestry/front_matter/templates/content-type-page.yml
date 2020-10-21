@@ -23,27 +23,28 @@ fields:
   type: blocks
   label: Blocks
   template_types:
+  - main-block-accessories
   - main-account
   - main-articles-grid
   - main-basic-contact-form
   - main-blank
+  - main-careers-grid
   - main-contact-form
   - main-fabrication-animation
   - main-hero
+  - main-block-history-slider
   - main-interactive-markets
   - main-interactive-tools
+  - main-block-join-our-team
   - main-locations
+  - main-block-pipe-slide
+  - main-block-pipe-video
   - main-product-descriptions
   - main-product-index
   - main-quote
-  - main-block-accessories
   - main-block-simple-text
-  - main-block-pipe-video
   - main-block-stats
-  - main-block-history-slider
-  - main-block-join-our-team
   - main-block-training
-  - main-block-pipe-slide
   config:
     min: 
     max: 
