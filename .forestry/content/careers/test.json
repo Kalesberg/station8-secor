@@ -2,7 +2,7 @@
   "type": "career",
   "title": "Test",
   "slug": "",
-  "location": "Test",
+  "location": "Houston TX",
   "description": "Test",
   "body": [
     {
@@ -10,5 +10,6 @@
       "text": "<p>Test</p>"
     }
   ],
-  "openings": 1
+  "openings": 1,
+  "department": "Sales"
 }
