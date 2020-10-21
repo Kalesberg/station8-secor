@@ -59,6 +59,16 @@ fields:
   label: Type
   hidden: true
   default: career
+- name: openings
+  type: number
+  label: Openings
+  description: Set openings to 0 to hide position
+  default: 0
+  required: true
+  config:
+    min: 
+    max: 
+    step: 
 pages:
 - ".forestry/content/careers/position-title.json"
 - ".forestry/content/careers/test.json"
