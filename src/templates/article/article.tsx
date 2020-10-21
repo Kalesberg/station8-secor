@@ -12,21 +12,22 @@ import styles from './article.module.scss'
 import articleIndexStyles from './articles.module.scss'
 
 export default ({
-  pageContext: { images, pages, authors = [], articles, menu },
+  pageContext: { images, pages, authors = [], articles, menu, slug },
   data: {
     markdownRemark: {
       frontmatter: {
         date,
         heroImage,
         title,
-        tags
+        tags,
+        summary
       },
       html
     }
   },
-  location: { search }
+  location
 }) => {
-  const [tag, setTag] = useState('')
+  // const [tag, setTag] = useState('')
   const [formOpen, setFormOpen] = useState(false)
 
   const toggleForm = e => {
@@ -34,22 +35,30 @@ export default ({
     setFormOpen(!formOpen)
   }
 
-  useEffect(() => {
-    const tag = queryString.parse(search)
-    tag.tag ? setTag(tag.tag.toString()) : setTag('')
-  }, [search])
+  // useEffect(() => {
+  //   const tag = queryString.parse(location.search)
+  //   tag.tag ? setTag(tag.tag.toString()) : setTag('')
+  // }, [location])
 
   return (
-    <Layout title={title} pages={pages} images={images} toggleForm={toggleForm} menu={menu}>
+    <Layout title={title} pages={pages} images={images} toggleForm={toggleForm} menu={menu} location={location}>
       <article className={styles.articleContainer}>
         <Image src={heroImage.relativePath} className={styles.hero} images={images} container='div'>
-          <h1 className={styles.title}>{title}</h1>
+          <div className={styles.text}>
+            <p className={styles.date}>
+              <span>Posted&nbsp;
+                <Moment date={date} format='MM/DD' />
+              </span>
+            </p>
+            <h1 className={styles.title}>{title}</h1>
+            <p className={styles.excerpt}>{summary}</p>
+          </div>
         </Image>
         <section className={styles.article}>
           <Link className={styles.back} to='/press' />
           <div className={styles.container}>
             <div className={styles.body} dangerouslySetInnerHTML={{ __html: html }} />
-            <p className={styles.info}>
+            {/* <p className={styles.info}>
               {date && <span className={styles.date}><Moment date={date} format='MM/DD/YY' /></span>}
               <span className={styles.divider}> // </span>
               <span className={styles.authors}>
@@ -67,8 +76,8 @@ export default ({
                   )
                 })}
               </span>
-            </p>
-            <p className={styles.tags}>
+            </p> */}
+            {/* <p className={styles.tags}>
               <span className={styles.in}>in </span>
               {tags.map((tag, i) => (
                 i > 0 ? (
@@ -84,11 +93,11 @@ export default ({
                   </Link>
                 )
               ))}
-            </p>
+            </p> */}
           </div>
           <div className={styles.fillSpace} />
         </section>
-        <ArticlesGrid block={{}} styles={articleIndexStyles} images={images} pages={pages} articles={articles} tag={tag} limit={5} />
+        <ArticlesGrid block={{}} images={images} articles={articles} limit={3} root={`/news-and-resources/${slug}`} search={location.search} />
       </article>
     </Layout>
   )
@@ -104,6 +113,7 @@ query ($slug: String!) {
       heroImage {
         relativePath
       }
+      summary
       tags
     }
     html

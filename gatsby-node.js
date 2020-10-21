@@ -71,9 +71,11 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
           title
           tags
           date
+          summary
         }
         fileAbsolutePath
-        excerpt(pruneLength: 56)
+        excerpt
+        html
       }
     }
     categories: allAirtable(filter: {table: {eq: "Categories"}}, sort: {fields: data___Order, order: ASC}) {
@@ -203,6 +205,11 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
     }))
   }))
 
+  const articlesWithExtras = articles.map(article => ({
+    ...article,
+    path: `/news-and-resources/${article.fileAbsolutePath.split('/').pop().replace('.md', '')}`
+  }))
+
   const pagesWithExtras = pages.map(page => {
     const file = pageFiles.find(file => file.childPagesJson.slug === page.slug && file.childPagesJson.title === page.title)
     const filePath = `/${page.slug === '/' ? '' : page.slug || slugify(page.title).toLowerCase()}`
@@ -222,7 +229,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         title: page.title,
         images,
         pages: pagesWithExtras,
-        articles,
+        articles: articlesWithExtras,
         menu: productMenu,
         options
       }
@@ -236,7 +243,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
           title: page.title,
           images,
           pages: pagesWithExtras,
-          articles,
+          articles: articlesWithExtras,
           menu: productMenu
         }
       }))
@@ -255,7 +262,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         parent: article.frontmatter.parent,
         images,
         pages: pagesWithExtras,
-        articles,
+        articles: articlesWithExtras,
         menu: productMenu
       }
     })
@@ -269,7 +276,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         title: category.name,
         images,
         pages: pagesWithExtras,
-        articles,
+        articles: articlesWithExtras,
         menu: productMenu
       }
     })
@@ -281,7 +288,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
           title: category.name,
           images,
           pages: pagesWithExtras,
-          articles,
+          articles: articlesWithExtras,
           menu: productMenu
         }
       })
@@ -293,7 +300,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
             title: category.name,
             images,
             pages: pagesWithExtras,
-            articles,
+            articles: articlesWithExtras,
             menu: productMenu
           }
         })
@@ -308,7 +315,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
               product,
               images,
               pages: pagesWithExtras,
-              articles,
+              articles: articlesWithExtras,
               options
             }
           })
