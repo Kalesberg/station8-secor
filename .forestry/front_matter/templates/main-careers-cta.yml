@@ -12,7 +12,7 @@ fields:
   config:
     required: true
   label: Text
-- name: button
+- name: buttonType
   type: select
   default: []
   config:
