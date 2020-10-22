@@ -1,4 +1,33 @@
 ---
-label: Main Careers CTA
+label: 'Main Block: Careers CTA'
 hide_body: true
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+- name: text
+  type: text
+  config:
+    required: true
+  label: Text
+- name: button
+  type: select
+  default: []
+  config:
+    required: true
+    options:
+    - Contact
+    - Careers
+    source:
+      type: simple
+      section: 
+      file: 
+      path: 
+  label: Button
+- name: background
+  type: file
+  config:
+    maxSize: 64
+  label: Background Image
