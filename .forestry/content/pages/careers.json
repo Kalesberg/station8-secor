@@ -19,30 +19,6 @@
       "buttonType": "Contact",
       "ctaTitle": "Can't find the position you're looking for?",
       "cfBackground": "/.forestry/content/images/91daf1d2-0777-49b0-befb-36869af2aa91-1024x768.png"
-    },
-    {
-      "template": "main-contact-form",
-      "heading": "Next generation piping for generations to come.",
-      "inputs": [
-        {
-          "label": "Contact Name",
-          "icon": "/.forestry/content/images/images.png"
-        },
-        {
-          "label": "Message",
-          "icon": "/.forestry/content/images/message-537-461910.webp"
-        },
-        {
-          "label": "Email",
-          "icon": "/.forestry/content/images/mail-dark.svg"
-        },
-        {
-          "icon": "/.forestry/content/images/phone-1.svg",
-          "label": "Phone"
-        }
-      ],
-      "buttonText": "Send",
-      "image": "/.forestry/content/images/91daf1d2-0777-49b0-befb-36869af2aa91-1024x768.png"
     }
   ]
 }
