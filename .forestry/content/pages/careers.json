@@ -17,19 +17,8 @@
       "background": "/.forestry/content/images/324cc978-c02c-45f1-98b0-7d7cc2e374c1.png",
       "ctaText": "Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.",
       "buttonType": "Contact",
-      "ctaTitle": "Can't find the position you're looking for?"
-    },
-    {
-      "template": "main-block-join-our-team",
-      "heading": "Can't find the position you're looking for?",
-      "subHeading": "Donec nec justo eget felis facilisis fermentum. Aliquam porttutor maurits sit amet orci. Aenean dignissim pellentesque felis",
-      "buttonText": "General Inquiry",
-      "images": [
-        {
-          "image": "/.forestry/content/images/324cc978-c02c-45f1-98b0-7d7cc2e374c1.png"
-        }
-      ],
-      "buttonLink": ""
+      "ctaTitle": "Can't find the position you're looking for?",
+      "cfBackground": "/.forestry/content/images/91daf1d2-0777-49b0-befb-36869af2aa91-1024x768.png"
     },
     {
       "template": "main-contact-form",
