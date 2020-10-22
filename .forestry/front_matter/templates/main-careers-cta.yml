@@ -35,4 +35,4 @@ fields:
   type: file
   config:
     maxSize: 64
-  label: Contact Form Background
+  label: Contact Form Background Image
