@@ -14,7 +14,8 @@
       "button": "Contact",
       "title": "Can't find the position you're looking for?",
       "text": "Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.",
-      "background": "/.forestry/content/images/324cc978-c02c-45f1-98b0-7d7cc2e374c1.png"
+      "background": "/.forestry/content/images/324cc978-c02c-45f1-98b0-7d7cc2e374c1.png",
+      "ctaText": "Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis."
     },
     {
       "template": "main-block-join-our-team",
