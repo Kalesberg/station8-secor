@@ -9,19 +9,21 @@ type imageProps = {
   style?: any,
   children?: React.ReactNode,
   onClick?: any,
-  images: any
+  images: any,
+  gradient: string,
+  id: any
 }
 
 const handleDoNothing = () => null
 
-export default ({ className, container, src, alt = '', title = '', style, children, images, onClick }: imageProps) => {
+export default ({ className, container, src, alt = '', title = '', style, children, images, onClick, gradient = '', id = Math.random() }: imageProps) => {
   const image = images.find(image => image.relativePath === 'images/' + src.split('/').pop())
 
   return image ? (
     !container ? (
-      <img onClick={onClick || handleDoNothing} className={className} style={{ backgroundSize: 'cover', ...style }} src={image.publicURL} alt={alt || title} title={title || alt} />
+      <img id={id} onClick={onClick || handleDoNothing} className={className} style={{ backgroundSize: 'cover', ...style }} src={image.publicURL} alt={alt || title} title={title || alt} />
     ) : (
-      <div onClick={onClick || handleDoNothing} className={className} style={{ backgroundSize: 'cover', backgroundPosition: 'center center', ...style, backgroundImage: `url("${image.publicURL}")` }}>{children}</div>
+      <div id={id} onClick={onClick || handleDoNothing} className={className} style={{ backgroundSize: 'cover', backgroundPosition: 'center center', ...style, backgroundImage: `${gradient ? `${gradient}, ` : ''}url("${image.publicURL}")` }}>{children}</div>
     )
   ) : null
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import ScrollAnimation from 'react-animate-on-scroll'
 
-import { Accessories, Account, AnimatedImage, ArticlesGrid, ArticlesSlider, BasicContactForm, Blank, CareersGrid, Cities, CompanyMerger, ContactForm, ContentColumns, ContentTabs, FabAnimation, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, HistorySlider, ImageBar, Images, Infographic, InteractiveMarkets, InteractiveTools, JoinTeam, KnowledgeBase, Leadership, Map, PipeSlider, PipeVideo, ProductDescrip, ProductIndex, Posts, Quote, RecentArticles, RichText, SimpleText, Slideshow, StaticImage, Stats, Testimonial, Training } from '../../components/main/blocks'
+import { Accessories, Account, AnimatedImage, ArticlesGrid, ArticlesSlider, BasicContactForm, Blank, CareersCTA, CareersGrid, Cities, CompanyMerger, ContactForm, ContentColumns, ContentTabs, FabAnimation, FeaturedArticles, FilteredImagesSlider, Gallery, Hero, HeroSlider, Highlights, HistorySlider, ImageBar, Images, Infographic, InteractiveMarkets, InteractiveTools, JoinTeam, KnowledgeBase, Leadership, Map, PipeSlider, PipeVideo, ProductDescrip, ProductIndex, Posts, Quote, RecentArticles, RichText, SimpleText, Slideshow, StaticImage, Stats, Testimonial, Training } from '../../components/main/blocks'
 
 import styles from './main.module.scss'
 
@@ -69,6 +69,10 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOp
               <Blank key={i} />
             ) : block.template === 'main-contact-form' ? (
               <ContactForm key={i} block={block} images={images} />
+            ) : block.template === 'main-careers-cta' ? (
+              <ScrollAnimation key={i} animateIn='animate__zoomIn' animateOnce scrollableParentSelector='#main' offset={150}>
+                <CareersCTA block={block} images={images} careers={careers} />
+              </ScrollAnimation>
             ) : block.template === 'main-careers-grid' ? (
               <ScrollAnimation key={i} animateIn='animate__zoomIn' animateOnce scrollableParentSelector='#main' offset={150}>
                 <CareersGrid careers={careers} search={location.search} />

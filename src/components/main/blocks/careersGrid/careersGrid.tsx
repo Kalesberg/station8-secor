@@ -5,6 +5,9 @@ import slugify from 'slugify'
 
 import styles from './careersGrid.module.scss'
 
+import background from '../../../../../.forestry/content/images/careers.png'
+import arrow from '../../../../../.forestry/content/images/arrow-right.svg'
+
 export default ({ careers, search }) => {
   const [locations, setLocations] = useState([])
   const [location, setLocation] = useState('All')
@@ -39,8 +42,24 @@ export default ({ careers, search }) => {
     query.search ? setUserSearch(query.search.toString()) : setUserSearch('')
   }, [search])
 
+  const scrollDown = () => {
+    document.getElementById('cfform').scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
     <section className={styles.section}>
+      <div className={styles.hero} style={{ backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url(${background})` }}>
+        <div className={styles.text}>
+          <h1 className={styles.title}>Help keep America flowing.</h1>
+          <p className={styles.excerpt}>Join our growing team.</p>
+        </div>
+        <div className={styles.buttonContainer}>
+          <div className={styles.button} onClick={scrollDown}>
+            <p className={styles.label}>Apply now</p>
+            <div className={styles.arrow} style={{ backgroundImage: `url(${arrow})` }} />
+          </div>
+        </div>
+      </div>
       <div className={styles.header}>
         <div className={styles.categories}>
           {locations.map((locationItem, i) => {

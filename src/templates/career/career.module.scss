@@ -39,6 +39,7 @@
       justify-content: flex-start;
       grid-row: 3;
       .button {
+        cursor: pointer;
         display: grid;
         grid-auto-flow: column;
         gap: 3vw;

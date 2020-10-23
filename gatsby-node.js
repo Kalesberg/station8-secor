@@ -278,7 +278,8 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         pages: pagesWithExtras,
         articles: articlesWithExtras,
         menu: productMenu,
-        career: career
+        career,
+        careers
       }
     })
   })

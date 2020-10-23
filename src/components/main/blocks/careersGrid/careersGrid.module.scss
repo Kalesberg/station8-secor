@@ -1,4 +1,59 @@
 .section {
+  .hero {
+    min-height: 38vw;
+    padding: 0 10vw;
+    display: grid;
+    align-items: center;
+    background-repeat: no-repeat no-repeat;
+    background-position: center center;
+    background-size: cover;
+    grid-template-rows: 8.3vw auto 10vw;
+    .text {
+      grid-row: 2;
+      .title {
+        font-size: 6vw;
+        margin-bottom: 2vw;
+        color: white;
+        padding-right: 25vw;
+        text-transform: uppercase;
+        font-weight: 900;
+        // @media (max-width: 767px) {
+        //   font-size: 2.5rem;
+        // }
+      }
+      .excerpt {
+        font-size: 1.3vw;
+        color: white;
+      }
+    }
+    .button-container {
+      display: grid;
+      justify-content: flex-start;
+      grid-row: 3;
+      .button {
+        cursor: pointer;
+        display: grid;
+        grid-auto-flow: column;
+        gap: 3vw;
+        align-items: center;
+        .label {
+          margin-bottom: 0;
+          color: white;
+          font-weight: 700;
+          font-size: 1.6vw;
+        }
+        .arrow {
+          background-color: #C5202F;
+          border-radius: 100%;
+          height: 3vw;
+          width: 3vw;
+          background-repeat: no-repeat no-repeat;
+          background-position: center center;
+          background-size: 1vw;
+        }
+      }
+    }
+  }
   .header {
     width: 100%;
     display: grid;

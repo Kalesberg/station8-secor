@@ -34,10 +34,10 @@ query ($title: String!) {
     type
     blocks {
       video
-      text {
-        text
-        element
-      }
+      #text {
+      #  text
+      #  element
+      #}
       template
       product {
         category
@@ -45,7 +45,12 @@ query ($title: String!) {
         heading
         image
       }
-      button
+      #button
+      ctaText
+      buttonType
+      background
+      ctaTitle
+      cfBackground
       buttonIcon
       buttonLink
       buttonOne {

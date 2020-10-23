@@ -3,15 +3,19 @@ import { Link } from 'gatsby'
 import parse from 'html-react-parser'
 
 import { Layout } from '../../components'
+import { CareersCTA } from '../../components/main/blocks'
 
 import styles from './career.module.scss'
 
 import background from '../../../.forestry/content/images/careers.png'
 import arrow from '../../../.forestry/content/images/arrow-right.svg'
 
-export default ({ pageContext: { images, career, menu, pages }, location }) => {
+export default ({ pageContext: { images, career, menu, pages, careers }, location }) => {
   const [formOpen, setFormOpen] = useState(false)
-  console.log(career)
+
+  const scrollDown = () => {
+    document.getElementById('cfform').scrollIntoView({ behavior: 'smooth' })
+  }
 
   const toggleForm = e => {
     e.preventDefault()
@@ -28,7 +32,7 @@ export default ({ pageContext: { images, career, menu, pages }, location }) => {
             <p className={styles.excerpt}>{career.description}</p>
           </div>
           <div className={styles.buttonContainer}>
-            <div className={styles.button}>
+            <div className={styles.button} onClick={scrollDown}>
               <p className={styles.label}>Apply now</p>
               <div className={styles.arrow} style={{ backgroundImage: `url(${arrow})` }} />
             </div>
@@ -50,6 +54,7 @@ export default ({ pageContext: { images, career, menu, pages }, location }) => {
           </div>
           <div className={styles.fillSpace} />
         </section>
+        <CareersCTA images={images} careers={careers} position={career.title} />
       </article>
     </Layout>
   )
