@@ -1,5 +1,5 @@
 ---
-label: Settings Career
+label: 'Global Settings: Career'
 hide_body: true
 fields:
 - name: ctaTitle
