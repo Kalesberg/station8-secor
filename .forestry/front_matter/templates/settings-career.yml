@@ -1,4 +1,24 @@
 ---
 label: Settings Career
 hide_body: true
-fields: []
+fields:
+- name: ctaTitle
+  type: text
+  config:
+    required: true
+  label: CTA Title
+- name: background
+  type: file
+  config:
+    maxSize: 64
+  label: Background
+- name: cfBackground
+  type: file
+  config:
+    maxSize: 64
+  label: Contact Form Background
+- name: ctaText
+  type: text
+  config:
+    required: true
+  label: CTA Text
