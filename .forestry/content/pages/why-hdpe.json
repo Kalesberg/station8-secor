@@ -43,6 +43,51 @@
           "description": "We’re out to make leakage, waste and contamination a thing of the past. SECOR can optimize your municipal, civil or commercial project with a forward-thinking engineered solution that will save resources over its lifespan. That is what makes HDPE piping from SECOR the efficient, smart choice."
         }
       ]
+    },
+    {
+      "template": "main-block-full-interactive-markets",
+      "market": [
+        {
+          "title": "Energy",
+          "image": "/.forestry/content/images/istock-530268699-1024x683.jpg",
+          "description": "SECOR’s HDPE piping is the proven choice for energy applications. SECOR understands the strict regulatory requirements associated with the transportation of corrosive liquids, brine, produced water, natural gas, and crude oil. Polyethylene pipe offers high levels of impact and corrosion resistance while remaining simple to install and leak-free, making polyethylene pipe the ideal solution for the challenges of complex energy applications."
+        },
+        {
+          "title": "Industrial",
+          "description": "You can count on the HDPE experts at SECOR to fulfill your needs for chemical waste piping, dewatering, cooling lines, and firewater lines for all industrial applications. Polyethylene pipe’s versatility makes it the perfect material for use in power plants, LNG facilities, petrochemical plants and refineries. From specific fabrications, to training or installation, SECOR offers an unparalleled turnkey HDPE solution for industrial applications.",
+          "image": "/.forestry/content/images/039f7221-4c1b-4ff4-ad44-7b1d1ccebf2a-1024x683.png"
+        },
+        {
+          "title": "Municipal",
+          "description": "When it comes to safely transporting America’s water supply, HDPE piping from SECOR is the superior choice. Aging, conventional water lines leak up to 30% of the water they transport and introduce lead and other contaminants. That’s why SECOR is working with municipalities around the nation to build a stronger, more sustainable infrastructure with environmentally responsible HDPE piping.",
+          "image": "/.forestry/content/images/san-antonio-hdd-pipe-small-1024x756.jpg"
+        },
+        {
+          "title": "Gas Distribution",
+          "description": "For safety and dependability, nothing beats the leak-free performance of polyethylene pipe. For over 40 years, SECOR has worked with utilities, municipalities and contractors around the country to provide the training, pipe, fittings, and McElroy fusion equipment they need.",
+          "image": "/.forestry/content/images/istock-951687646-1024x683.jpg"
+        },
+        {
+          "title": "Mining",
+          "description": "HDPE piping is resistant to abrasion, impact, corrosion and leakage, and it’s easier to install than heavier conventional piping — making it the smart choice for today’s mining applications. We can help design a solution that will deliver cost-effective and long-lasting performance.",
+          "image": "/.forestry/content/images/istock-518121064.jpg"
+        },
+        {
+          "title": "Dredging",
+          "description": "Corrosion resistant HDPE piping from SECOR is ideally suited for dredging and other applications with long-time exposure to water. Lighter and more flexible than conventional steel piping, it also delivers easier installation.",
+          "image": "/.forestry/content/images/istock-1148208257.jpg"
+        },
+        {
+          "title": "Landfill",
+          "description": "HDPE pipe is perfect for the challenging elements found in landfills due to HDPE’s resistant and durable characteristics. We work with landfills around the country and can bring our expertise to your criticall landfill projects too.",
+          "image": "/.forestry/content/images/istock-1146393898.jpg"
+        },
+        {
+          "title": "Irrigation",
+          "description": "From golf courses to ranches and farms, SECOR’s polyethylene piping products provide UV-resistance, durability, and leak-free dependability unmatched by other piping materials. SECOR provides the training, equipment and materials needed to offer a complete, reliable, and superior HDPE irrigation package.",
+          "image": "/.forestry/content/images/istock-960670954.jpg"
+        }
+      ]
     }
   ]
 }
