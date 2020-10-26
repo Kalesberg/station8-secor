@@ -212,7 +212,37 @@
     }
   }
 }
-@media (min-width: 1200px) and (max-height: 800px) {
+@media (max-height: 400px) {
+  .section {
+    .container {
+      .imageContainer {
+        .textContainer {
+          .heading {
+            padding-top: 5vh;
+            text-align: left;
+            font-size: 3vw;
+            line-height: 6vw;
+            font-weight: 900;
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+        }
+        .subHeading {
+              text-align: left;
+              font-size: 1.5vw;
+              font-family: 'Roboto', sans-serif;
+        }
+        .description {
+            text-align: left;
+            font-size: 1.5vw;
+            font-weight: 600;
+            font-family: 'Roboto', sans-serif;
+        }
+        }
+      }
+    }
+  }        
+}
+@media (min-width: 1360px) and (max-height: 799px) {
   .section {
     .container {
       .imageContainer {
@@ -223,7 +253,25 @@
           img {
             object-fit: fill;
             width: 100vw;
-            height: 95vh;
+            height: 100vh;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1200px) and (min-height: 800px) {
+  .section {
+    .container {
+      .imageContainer {
+        .background {
+          width: 100vw;
+          transition: all .7s;
+          height: 95vh;
+          img {
+            object-fit: fill;
+            width: 100vw;
+            height: 100vh;
           }
         }
       }

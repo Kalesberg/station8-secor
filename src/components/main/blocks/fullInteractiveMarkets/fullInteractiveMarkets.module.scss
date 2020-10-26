@@ -1,0 +1,25 @@
+.section {
+  position: relative;
+  margin: 0;
+  overflow: visible;
+  padding: 0;
+  height: 95vh;
+  width: 100vw;
+  .background {
+    width: 100vw;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .7s;
+    img {
+      object-fit: cover;
+      height: 95vh;
+      width: 100vw;
+      filter: brightness(50%);
+    }
+  }
+  .backgroundShow {
+    opacity: 1;
+    visibility: visible;
+  }
+}  
