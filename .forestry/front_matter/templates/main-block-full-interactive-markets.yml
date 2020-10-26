@@ -29,3 +29,13 @@ fields:
     max: 
     labelField: 
   label: Market
+- name: left
+  type: file
+  config:
+    maxSize: 64
+  label: Left
+- name: right
+  type: file
+  config:
+    maxSize: 64
+  label: Right
