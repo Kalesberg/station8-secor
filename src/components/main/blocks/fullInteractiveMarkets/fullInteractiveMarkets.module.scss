@@ -22,4 +22,125 @@
     opacity: 1;
     visibility: visible;
   }
+  .descriptionsContainer {
+    position: absolute;
+    width: 100vw;
+    bottom: 40%;
+    display: flex;
+    justify-content: center;
+    .descriptions {
+      position: relative;
+      width: 65%;
+      text-align: center;
+      .description {
+        text-align: center;
+        font-size: 1.2vw;
+        line-height: 1.8vw;
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .7s;
+        font-weight: 500;
+      }
+      .descriptionShow {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  .selectorContainer {
+    position: absolute;
+    bottom: 15%;
+    color: white;
+    padding: 0 16% 0 18%;
+    width: 98vw;
+    .scrollContainer {
+      // overflow: hidden;
+      .selectors {
+        // overflow-x: hidden;
+        // overflow-y: hidden;
+        // scroll-behavior: smooth;
+        // overflow: hidden;
+        width: 100%;
+        // white-space: nowrap;
+        position: relative;
+        transition: all 1s;
+        .selector {
+          position: absolute;
+          text-align: center;
+          font-size: 2vw;
+          line-height: 3vw;
+          font-weight: 900;
+          font-family: 'Roboto', sans-serif;
+          font-style: italic;
+          color: white;
+          opacity: 0.5;
+          cursor: pointer;
+          transition: all 1s;
+          width: 21vw;
+          top: 0;
+          left: 20px;
+        }  
+        .selected {
+          opacity: 1;
+        }
+      }
+    }
+    
+  }
+  .button {
+    border-radius: 5vw;
+    font-size: 1.3vw;
+    font-weight: 600;
+    padding: 0 5vw 0 0;
+    height: 4vw;
+    border: none;
+    background-color: transparent;
+    text-align: left;
+    position: relative;
+    transition: all .5s;
+    color: #D50F09;
+    cursor: pointer;
+    span {
+      border-radius: 100%;
+      background-color: #D50F09;
+      position: absolute;
+      top: .6vw;
+      right: .3vw;
+      width: 2.5vw;
+      height: 2.5vw;
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      transition: all .5s;
+      .right, .left {
+        height: .8vw;
+        width: .8vw;
+        margin: 0;
+      }
+      .left {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .button:hover {
+    span {
+      background-color:  rgb(128, 38, 38);
+    }
+  }
+  .button:focus {
+    outline: 0;
+  }
+  .buttonLeftContainer {
+    position: absolute;
+    top: -15%;
+    left: 11%;
+  }
+  .buttonRightContainer {
+    position: absolute;
+    top: -15%;
+    right: 11%;
+  }
 }  

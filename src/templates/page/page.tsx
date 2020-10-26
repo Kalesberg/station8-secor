@@ -89,6 +89,11 @@ query ($title: String!) {
       }
       icon
       placeholderText
+      market {
+        title
+        image
+        description
+      }
       markets {
         market
         image

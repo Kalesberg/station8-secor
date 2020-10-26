@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 5vw;
   .container {
     height: 95vh;
     width: 100vw;
@@ -212,31 +213,34 @@
     }
   }
 }
-@media (max-height: 400px) {
+@media (max-height: 400px) and (max-width: 600px) {
   .section {
     .container {
       .imageContainer {
         .textContainer {
-          .heading {
-            padding-top: 5vh;
-            text-align: left;
-            font-size: 3vw;
-            line-height: 6vw;
-            font-weight: 900;
-            font-family: 'Roboto', sans-serif;
-            font-style: normal;
-        }
-        .subHeading {
-              text-align: left;
-              font-size: 1.5vw;
-              font-family: 'Roboto', sans-serif;
-        }
-        .description {
-            text-align: left;
-            font-size: 1.5vw;
-            font-weight: 600;
-            font-family: 'Roboto', sans-serif;
-        }
+          grid-template-columns: 50% 50%;
+          .text {
+            .heading {
+                padding-top: 5vh;
+                text-align: left;
+                font-size: 2vw;
+                line-height: 6vw;
+                font-weight: 900;
+                font-family: 'Roboto', sans-serif;
+                font-style: normal;
+              }
+              .subHeading {
+                text-align: left;
+                font-size: 1.5vw;
+                font-family: 'Roboto', sans-serif;
+              }
+              .description {
+                text-align: left;
+                font-size: 1.5vw;
+                font-weight: 600;
+                font-family: 'Roboto', sans-serif;
+              }
+          }
         }
       }
     }
