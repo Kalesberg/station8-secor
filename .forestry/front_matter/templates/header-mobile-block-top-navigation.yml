@@ -1,0 +1,32 @@
+---
+label: 'Header Mobile Block: Top Navigation'
+hide_body: false
+fields:
+- name: links
+  type: field_group_list
+  fields:
+  - name: label
+    type: text
+    config:
+      required: false
+    label: Label
+  - name: page
+    type: select
+    default: []
+    config:
+      required: false
+      options: []
+      source:
+        type: simple
+        section: 
+        file: 
+        path: 
+    label: Page
+  - name: megaMenu
+    type: boolean
+    label: Mega Menu
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Links
