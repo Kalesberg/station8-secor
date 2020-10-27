@@ -1,17 +1,19 @@
 .container {
-  height: 100%;
+  // height: 100%;
   display: grid;
   justify-content: center;
   align-items: center;
   padding: 0 0.4vw;
   display: grid;
   grid-auto-flow: column;
+  align-items: center;
+  justify-content: center;
   gap: 0.5vw;
   position: relative;
-  display: none;
+  // display: none;
   .icon {
-    height: 1.75vw;
-    width: 1.75vw;
+    height: 7vw;
+    width: 7vw;
     margin-bottom: 0;
     padding: 0.25vw;
   }
@@ -27,16 +29,16 @@
     align-items: center;
     justify-content: center;
     right: 0;
-    top: 1vw;
+    top: 5vw;
     background: black;
     border-radius: 1.5vw;
-    min-width: 1vw;
-    height: 1vw;
+    min-width: 4vw;
+    height: 4vw;
     text-align: center;
     padding: 0 0.25vw;
     .quantity {
       color: white;
-      font-size: 0.7vw;
+      font-size: 3vw;
       font-weight: 700;
       margin-bottom: 0;
     }

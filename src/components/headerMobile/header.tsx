@@ -42,8 +42,6 @@ export default ({ images, pages, menuOpen, setMenuOpen, menu, location, userMenu
         {headerConfig.blocks.map((block, i: number) => {
           return block.template === 'header-call-button' ? (
             <CallButton key={i} block={block} handleCloseMenus={handleCloseMenus} />
-          ) : block.template === 'header-contact-button' ? (
-            <ContactButton key={i} block={block} images={images} handleCloseMenus={handleCloseMenus} />
           ) : block.template === 'header-contact-form-with-video-background' ? (
             <ContactFormWithVideoBackground key={i} block={block} images={images} menuOpen={menuOpen} />
           ) : block.template === 'header-contact-info' ? (
@@ -60,12 +58,21 @@ export default ({ images, pages, menuOpen, setMenuOpen, menu, location, userMenu
             <Navigation key={i} block={block} pages={pages} setMenuOpen={setMenuOpen} location={location} />
           ) : block.template === 'header-search' ? (
             <Search key={i} block={block} images={images} />
-          ) : block.template === 'header-quote-menu' ? (
-            <QuoteMenu key={i} block={block} images={images} handleCloseMenus={handleCloseMenus} />
-          ) : block.template === 'header-user-menu' ? (
-            <UserMenu key={i} block={block} images={images} userMenuOpen={userMenuOpen} setUserMenuOpen={setUserMenuOpen} location={location} />
-          ) : <p key={i}>{block.template} not defined</p>
+          ) : null
         })}
+      </div>
+      <div className={styles.divider}>
+        <div className={styles.dividerLinks}>
+          {headerConfig.blocks.map((block, i: number) => {
+            return block.template === 'header-quote-menu' ? (
+              <QuoteMenu key={i} block={block} images={images} handleCloseMenus={handleCloseMenus} />
+            ) : block.template === 'header-user-menu' ? (
+              <UserMenu key={i} block={block} images={images} userMenuOpen={userMenuOpen} setUserMenuOpen={setUserMenuOpen} location={location} />
+            ) : block.template === 'header-contact-button' ? (
+              <ContactButton key={i} block={block} images={images} handleCloseMenus={handleCloseMenus} />
+            ) : null  
+          })}
+        </div>
       </div>
       <div className={styles.megaMenu + `${menuOpen ? ` ${styles.open}` : ''}` + `${searchTerm ? ` ${styles.searching}` : ''}`}>
         <div className={styles.search}>

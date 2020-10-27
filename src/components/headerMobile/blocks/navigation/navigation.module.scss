@@ -1,23 +1,21 @@
 .default {
-  // height: 100%;
+  padding: 10vw 0 0 10vw;
   position: relative;
   .list {
     display: grid;
-    gap: 2.6vw;
-    grid-auto-flow: column;
+    gap: 2vw;
     .list-item {
       margin-bottom: 0;
       .link, .menu {
         display: grid;
         position: relative;
-        justify-content: center;
+        justify-content: left;
         align-items: center;
-        // height: 100%;
         cursor: pointer;
         .label {
           color: white;
           font-weight: 300;
-          font-size: 1.25vw;
+          font-size: 5vw;
           margin-bottom: 0;
         }
         &:hover {
