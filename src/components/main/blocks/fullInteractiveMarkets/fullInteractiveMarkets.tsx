@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { Link, navigate } from 'gatsby'
-import { Image, link } from '../../../../functions'
+import { Image } from '../../../../functions'
 import styles from './fullInteractiveMarkets.module.scss'
 
 export default ({ block, images }) => {
@@ -97,11 +96,6 @@ export default ({ block, images }) => {
               <div key={i} className={styles.selector + ` ${selected === title ? `${styles.selected}` : ""}`}>{title}</div>
             )
           })}
-          {/* {titles.map((title, i) => {
-            return (
-              <div key={i} className={styles.selector + ` ${selected === title ? `${styles.selected}` : ""}`}>{title}</div>
-            )
-          })} */}
           {titles.map((title, i) => {
             return (
               <div key={i} className={styles.selector + ` ${selected === title ? `${styles.selected}` : ""}`}>{title}</div>

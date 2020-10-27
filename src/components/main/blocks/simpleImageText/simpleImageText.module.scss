@@ -1,0 +1,84 @@
+.section {
+  padding-top: 5vw;
+  text-align: center;
+  .container {
+    .heading {
+      text-align: center;
+      font-size: 3vw;
+      line-height: 3.5vw;
+      font-weight: 900;
+      font-family: 'Roboto', sans-serif;
+      font-style: italic;
+      width: 100%;
+    }
+    .backgroundContainer {
+      .background {
+        width: 100vw;
+        transition: all .7s;
+        padding: 2vw 32vw 0 32vw;;
+        img {
+          object-fit: cover;
+          width: 35vw;
+        }
+      }
+    }
+    .description {
+      font-size: 1.3vw;
+      font-family: 'Roboto', sans-serif;
+      font-weight: bold;
+      padding:  0 30vw 0 30vw;
+      text-align: center;
+    }
+    .button {
+      font-family: 'Roboto', sans-serif;
+      border-radius: 5vw;
+      font-size: 1.1vw;
+      font-weight: 900;
+      background-color: #D50F09;
+      border: none;
+      padding: .5vw 2.5vw .5vw 2.5vw;
+      height: 3vw;
+      text-align: center;
+      position: relative;
+      transition: all .5s;
+      color: white;
+      cursor: pointer;
+      margin: 2vw 0 7vw 0;
+    }
+    .button:hover {
+      background-color: rgb(95, 27, 27);
+    }
+  }
+}
+@media (max-width: 1023px) {
+  .section {
+    .container {
+      .heading {
+        font-size: 4.5vw;
+        line-height: 4.5vw;
+      }
+      .description {
+        font-size: 1.9vw;
+        padding:  0 25vw 0 25vw;
+      }
+      .button {
+        font-family: 'Roboto', sans-serif;
+        border-radius: 5vw;
+        font-size: 1.8vw;
+        font-weight: 900;
+        background-color: #D50F09;
+        border: none;
+        padding: .5vw 2.5vw .5vw 2.5vw;
+        height: 4.5vw;
+        text-align: center;
+        position: relative;
+        transition: all .5s;
+        color: white;
+        cursor: pointer;
+      }
+      .button:hover {
+        background-color: rgb(95, 27, 27);
+      }
+    }
+  }
+}
