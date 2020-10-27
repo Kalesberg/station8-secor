@@ -31,7 +31,13 @@
           "text": "BELOW GROUND ABOVE EXPECTATIONS."
         }
       ],
-      "video": ""
+      "video": "",
+      "heroText": [
+        {
+          "element": "Heading 1",
+          "text": "BELOW GROUND ABOVE EXPECTATIONS."
+        }
+      ]
     },
     {
       "template": "main-blank"
