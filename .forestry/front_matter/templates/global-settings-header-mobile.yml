@@ -1,0 +1,12 @@
+---
+label: 'Global Settings: Header Mobile'
+hide_body: false
+fields:
+- name: blocks
+  type: blocks
+  label: Blocks
+  template_types:
+  - header-mobile-block-top-navigation
+  config:
+    min: 
+    max: 
