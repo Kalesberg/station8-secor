@@ -44,7 +44,6 @@ sections:
 - type: document
   path: ".forestry/content/settings/headerMobile.json"
   label: Header Mobile
-  match: "**/*"
 - type: document
   path: ".forestry/content/settings/footer.json"
   label: Footer

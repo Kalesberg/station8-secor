@@ -1,0 +1,9 @@
+---
+label: 'Header Mobile Block: Top Navigation'
+hide_body: false
+fields:
+- name: item
+  type: text
+  config:
+    required: false
+  label: Item
