@@ -31,7 +31,13 @@
       ],
       "buttonText": "Get a quote",
       "video": "",
-      "buttonIcon": "/.forestry/content/images/arrow-right.svg"
+      "buttonIcon": "/.forestry/content/images/arrow-right.svg",
+      "heroText": [
+        {
+          "element": "Heading 1",
+          "text": "A FUSION OF QUALITY AND KNOW-HOW"
+        }
+      ]
     },
     {
       "template": "main-block-pipe-video",
