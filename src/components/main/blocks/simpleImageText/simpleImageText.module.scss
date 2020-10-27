@@ -52,6 +52,7 @@
 }
 @media (max-width: 1023px) {
   .section {
+    padding-top: 10vw;
     .container {
       .heading {
         font-size: 4.5vw;
@@ -63,21 +64,39 @@
       }
       .button {
         font-family: 'Roboto', sans-serif;
-        border-radius: 5vw;
         font-size: 1.8vw;
-        font-weight: 900;
-        background-color: #D50F09;
-        border: none;
-        padding: .5vw 2.5vw .5vw 2.5vw;
         height: 4.5vw;
-        text-align: center;
-        position: relative;
-        transition: all .5s;
-        color: white;
-        cursor: pointer;
       }
-      .button:hover {
-        background-color: rgb(95, 27, 27);
+    }
+  }
+}
+@media (max-width: 450px) {
+  .section {
+    .container {
+      .heading {
+        font-size: 9vw;
+        line-height: 9vw;
+      }
+      .backgroundContainer {
+        .background {
+          width: 100vw;
+          transition: all .7s;
+          padding: 2vw 20vw 0 20vw;;
+          img {
+            object-fit: cover;
+            width: 50vw;
+          }
+        }
+      }
+      .description {
+        font-size: 3.8vw;
+        padding:  0 10vw 0 10vw;
+      }
+      .button {
+        font-family: 'Roboto', sans-serif;
+        font-size: 3.6vw;
+        height: 9vw;
+        margin: 2vw 0 12vw 0;
       }
     }
   }
