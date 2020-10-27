@@ -90,6 +90,25 @@
       ],
       "left": "/.forestry/content/images/secor-arrow-left.svg",
       "right": "/.forestry/content/images/secor-arrow-left.svg"
+    },
+    {
+      "template": "main-block-simple-text",
+      "heading": "",
+      "subHeading": "",
+      "buttonText": "",
+      "buttonLink": ""
+    },
+    {
+      "template": "main-contact-form",
+      "heading": "Next generation piping for generations to come.",
+      "image": "/.forestry/content/images/91daf1d2-0777-49b0-befb-36869af2aa91-1024x768.png",
+      "inputs": [
+        {
+          "label": "Contact Name",
+          "icon": "/.forestry/content/images/user-menu.svg"
+        }
+      ],
+      "buttonText": ""
     }
   ]
 }
