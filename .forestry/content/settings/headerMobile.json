@@ -9,11 +9,9 @@
           "page": ".forestry/content/pages/why-hdpe.json"
         },
         {
-          "label": "",
-          "page": [
-
-          ],
-          "megaMenu": false
+          "label": "Products",
+          "page": ".forestry/content/pages/products.json",
+          "megaMenu": true
         },
         {
           "label": "",
