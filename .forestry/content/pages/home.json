@@ -117,7 +117,21 @@
         }
       ],
       "video": "/.forestry/content/images/homeversion7new.mp4",
-      "buttonIcon": "/.forestry/content/images/arrow-right.svg"
+      "buttonIcon": "/.forestry/content/images/arrow-right.svg",
+      "heroText": [
+        {
+          "element": "Heading 1",
+          "text": "QUALITY"
+        },
+        {
+          "element": "Heading 2",
+          "text": "FLOWS HERE"
+        },
+        {
+          "element": "Paragraph",
+          "text": "HDPE PIPE, FITTINGS, AND EQUIPMENT"
+        }
+      ]
     },
     {
       "template": "main-product-descriptions",
