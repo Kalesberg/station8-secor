@@ -93,10 +93,10 @@
     },
     {
       "template": "main-block-simple-text",
-      "heading": "",
-      "subHeading": "",
-      "buttonText": "",
-      "buttonLink": ""
+      "heading": "Quality flows here.",
+      "subHeading": "Fortune 500 companies around the nation count on SECOR and our 40+ years of HDPE piping experience. We can help make your project flow smoothly too.",
+      "buttonText": "See All Products",
+      "buttonLink": "/products/hdpe-pipe"
     },
     {
       "template": "main-contact-form",
