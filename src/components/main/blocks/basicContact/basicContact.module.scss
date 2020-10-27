@@ -61,7 +61,7 @@
       form {
         .inputContainer {
           display: grid;
-          grid-template-columns: auto auto auto;
+          grid-template-columns: auto auto;
           grid-column-gap: 0vw;
           width: 37vw;
           margin: 0;
@@ -88,8 +88,12 @@
             font-family: 'Roboto', sans-serif;
             font-size: 1vw;
             margin: 0;
-            -webkit-appearance: none;
-            border-radius: 0;
+            border-top-left-radius: 1.5vw;
+            border-bottom-left-radius: 1.5vw;
+            background-repeat: no-repeat no-repeat;
+            background-position: 0.8vw;
+            background-size: 1.2vw;
+            padding-left: 4vw;
           }
           .input:focus {
             outline-width: 0;
@@ -106,6 +110,8 @@
             font-weight: 900;
             transition: all .6s;
             cursor: pointer;
+            position: relative;
+            right: 3vw;
           }
           .button:hover {
             background-color: rgb(95, 27, 27);

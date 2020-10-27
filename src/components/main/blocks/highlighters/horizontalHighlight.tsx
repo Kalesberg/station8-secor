@@ -3,7 +3,7 @@ import styles from './horizontalHighlight.module.scss'
 
 export default ({ target, container }) => {
   const highlighter = useRef(null);
-  const [width, setWidth] = useState(null);
+  const [width, setWidth] = useState(container.children ? container.children[0].offsetWidth : null);
   const [highlightLeft, setHighlightLeft] = useState(null)
   const [highlightRight, setHighlightRight] = useState(null)
 
