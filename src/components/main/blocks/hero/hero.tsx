@@ -29,12 +29,12 @@ export default ({ block, images }) => {
       {block.image && (
         <div className={styles.hero}><img src={media.publicURL} alt='' /></div>)}
       <div className={styles.textContainer}>
-        {block.text && block.text.length > 1 && block.text.map((txt, i) => {
+        {block.heroText && block.heroText.length > 1 && block.heroText.map((txt, i) => {
           return (
             <div key={i} className={styles[`heroText${i}`]}>{txt.text}</div>
           )
         })}
-        {block.text && block.text.length === 1 && block.text.map((txt, i) => {
+        {block.heroText && block.heroText.length === 1 && block.heroText.map((txt, i) => {
           return (
             <div key={i} className={styles.heroTextMedium}>{txt.text}</div>
           )

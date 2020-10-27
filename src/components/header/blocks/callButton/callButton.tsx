@@ -8,6 +8,9 @@ export default ({ block, handleCloseMenus }) => {
       <span className={styles.phoneNumber}>
         {block.phone.slice(0, 3) + '-' + block.phone.slice(3, 6) + '-' + block.phone.slice(6)}
       </span>
+      <span className={styles.icon}>
+        <img className={styles.image} src='/phone-copy.svg' />
+      </span>
     </a>
   )
 }

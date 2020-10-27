@@ -8,4 +8,23 @@
     padding: 0 0.5vw 0 0.5vw;
     font-weight: 600;
   }
+  .icon {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .default {
+    position: absolute;
+    right: 3.5vw;
+    top: 3.5vw;
+    .phone-number {
+      display: none;
+    }
+    .icon {
+      display: block;
+      .image {
+        width: 5vw;
+      }
+    }
+  }
 }

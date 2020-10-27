@@ -38,6 +38,10 @@ query ($title: String!) {
       #  text
       #  element
       #}
+      heroText {
+        text
+        element
+      }
       template
       product {
         category

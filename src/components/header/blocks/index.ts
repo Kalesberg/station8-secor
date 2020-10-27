@@ -1,3 +1,4 @@
+import Burger from '../../header/blocks/burger/burger'
 import CallButton from './callButton/callButton'
 import ContactButton from './contactButton/contactButton'
 import ContactFormWithVideoBackground from './contactFormWithVideoBackground/contactFormWithVideoBackground'
@@ -11,6 +12,6 @@ import Search from './search/search'
 import QuoteMenu from './quoteMenu/quoteMenu'
 import UserMenu from './userMenu/userMenu'
 
-export { CallButton, ContactButton, ContactFormWithVideoBackground, ContactInfo, FavoritePage, FeaturedPage, FillSpace, Logo, Navigation, Search, QuoteMenu, UserMenu }
+export { Burger, CallButton, ContactButton, ContactFormWithVideoBackground, ContactInfo, FavoritePage, FeaturedPage, FillSpace, Logo, Navigation, Search, QuoteMenu, UserMenu }
 
-export default { CallButton, ContactButton, ContactFormWithVideoBackground, ContactInfo, FavoritePage, FeaturedPage, FillSpace, Logo, Navigation, Search, QuoteMenu, UserMenu }
+export default { Burger, CallButton, ContactButton, ContactFormWithVideoBackground, ContactInfo, FavoritePage, FeaturedPage, FillSpace, Logo, Navigation, Search, QuoteMenu, UserMenu }

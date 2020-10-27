@@ -1,0 +1,67 @@
+.login {
+  margin-top: 2vw;
+  display: grid;
+  justify-content: center;
+  .login-form {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, auto);
+    grid-template-columns: minmax(0, 1fr);
+    justify-content: center;
+    .column {
+      display: grid;
+      gap: 2vw;
+      .field {
+        padding: 0 2vw;
+        label {
+          font-size: 0.9vw;
+          color: #212121;
+          padding-bottom: 0.5vw;
+          line-height: 3;
+          .required {
+            color: #D50F09;
+            font-weight: 700;
+            margin-left: 0.25vw;
+          }
+        }
+        input {
+          width: 100%;
+          background-color: #efefef;
+          border: none;
+          border-radius: 1.5vw;
+          font-size: 1.1vw;
+          padding: 0.5vw 0.5vw 0.5vw 3vw;
+          font-weight: bold;
+          background-repeat: no-repeat no-repeat;
+          background-position: 0.8vw;
+          background-size: 1.2vw;
+        }
+      }
+    }
+  }
+  .button-container {
+    margin-top: 3vw;
+    display: grid;
+    justify-content: center;
+    .button {
+      cursor: pointer;
+      background-color: #D50F09;
+      color: white;
+      font-size: 1vw;
+      font-weight: 700;
+      border: none;
+      border-radius: 1.5vw;
+      padding: 0.6vw 3vw;
+    }
+  }
+  .links {
+    margin-top: 1vw;
+    display: grid;
+    justify-content: center;
+    gap: 0.5vw;
+    .link {
+      grid-row: 1;
+      font-size: 0.75vw;
+      font-weight: 600;
+    }
+  }
+}

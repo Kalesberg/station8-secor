@@ -1,0 +1,16 @@
+.button {
+  position: absolute;
+  right: 15vw;
+  top: 4.5vw;
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  .image {
+    width: 5vw;
+  }
+}
+.button:focus {
+  outline: 0;
+}

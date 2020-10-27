@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
 
-import { CallButton, ContactButton, ContactFormWithVideoBackground, ContactInfo, FavoritePage, FeaturedPage, FillSpace, Logo, Navigation, Search, QuoteMenu, UserMenu } from './blocks'
+import { Burger, CallButton, ContactButton, ContactFormWithVideoBackground, ContactInfo, FavoritePage, FeaturedPage, FillSpace, Logo, Navigation, Search, QuoteMenu, UserMenu } from './blocks'
 
 import styles from './header.module.scss'
 
@@ -38,6 +38,7 @@ export default ({ images, pages, menuOpen, setMenuOpen, menu, location, userMenu
 
   return (
     <header className={styles.header}>
+      <Burger />
       <div className={styles.menu + `${menuOpen ? ` ${styles.active}` : ''}`}>
         {headerConfig.blocks.map((block, i: number) => {
           return block.template === 'header-call-button' ? (

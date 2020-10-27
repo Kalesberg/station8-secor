@@ -1,0 +1,18 @@
+.link {
+  padding: 1vw 0;
+  margin-right: 3.5vw;
+  display: none;
+  .image {
+    font-family: inherit;
+    height: 100%;
+    width: 10vw;
+    background-size: contain !important;
+    background-repeat: no-repeat no-repeat !important;
+  }
+  // @media (max-width: 1023px) {
+  //   padding: 2vw;
+  //   .image {
+  //     width: 30vw;
+  //   }
+  // }
+}
