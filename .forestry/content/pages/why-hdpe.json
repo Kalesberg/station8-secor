@@ -90,6 +90,38 @@
       ],
       "left": "/.forestry/content/images/secor-arrow-left.svg",
       "right": "/.forestry/content/images/secor-arrow-left.svg"
+    },
+    {
+      "template": "main-block-simple-image-text",
+      "heading": "Quality flows here.",
+      "image": "/.forestry/content/images/placeholderpipe.jpg",
+      "buttonText": "See All Products",
+      "description": "Fortune 500 companies around the nation count on SECOR and our 40+ years of HDPE piping experience. We can help make your project flow smoothly too.",
+      "buttonLink": "/products/hdpe-pipe"
+    },
+    {
+      "template": "main-contact-form",
+      "heading": "Next generation piping for generations to come.",
+      "image": "/.forestry/content/images/91daf1d2-0777-49b0-befb-36869af2aa91-1024x768.png",
+      "inputs": [
+        {
+          "label": "Contact Name",
+          "icon": "/.forestry/content/images/images.png"
+        },
+        {
+          "label": "Message",
+          "icon": "/.forestry/content/images/message-537-461910.webp"
+        },
+        {
+          "label": "Email",
+          "icon": "/.forestry/content/images/mail-dark.svg"
+        },
+        {
+          "label": "Phone",
+          "icon": "/.forestry/content/images/phone-1.svg"
+        }
+      ],
+      "buttonText": "Send"
     }
   ]
 }

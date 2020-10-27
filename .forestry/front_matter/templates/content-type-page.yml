@@ -47,6 +47,7 @@ fields:
   - main-block-stats
   - main-block-training
   - main-block-full-interactive-markets
+  - main-block-simple-image-text
   config:
     min: 
     max: 
