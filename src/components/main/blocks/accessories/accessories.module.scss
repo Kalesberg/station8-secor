@@ -25,6 +25,7 @@
           line-height: 7.5vw;
           font-family: 'Roboto', sans-serif;
           margin: 0;
+          text-transform: uppercase;
         }
         .subHeading {
           font-size: 1vw;
@@ -36,44 +37,24 @@
         .description {
           font-size: 1vw;
         }
-        .buttonContainer {
-          .button {
-            border-radius: 5vw;
-            font-size: 1.3vw;
-            font-weight: 600;
-            padding: 0 5vw 0 0;
-            height: 4vw;
-            border: none;
-            background-color: transparent;
-            text-align: left;
-            position: relative;
-            transition: all .5s;
-            color: #D50F09;
-            cursor: pointer;
-            span {
-              border-radius: 100%;
-              background-color: #D50F09;
-              position: absolute;
-              top: .6vw;
-              right: .3vw;
-              width: 2.5vw;
-              height: 2.5vw;
-              display: grid;
-              align-items: center;
-              justify-content: center;
-              transition: all .5s;
-              .icon {
-                height: 1.1vw;
-                width: 1.1vw;
-                margin: 0;
-              }
-            }
-          }
-          .button:hover {
-            span {
-              background-color:  rgb(128, 38, 38);
-            }
-          }
+        .button {
+          font-family: 'Roboto', sans-serif;
+          border-radius: 5vw;
+          font-size: 1.1vw;
+          font-weight: 900;
+          background-color: #D50F09;
+          border: none;
+          padding: .5vw 2.5vw .5vw 2.5vw;
+          height: 3vw;
+          text-align: center;
+          position: relative;
+          transition: all .5s;
+          color: white;
+          cursor: pointer;
+          margin: 2vw 0 7vw 0;
+        }
+        .button:hover {
+          background-color: rgb(95, 27, 27);
         }
       }
     }

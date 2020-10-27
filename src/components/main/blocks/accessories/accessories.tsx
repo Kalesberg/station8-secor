@@ -39,9 +39,6 @@ export default ({ block, images }) => {
                   {acc.buttonText && acc.buttonLink &&
                     <Link to={acc.buttonLink}>
                       <button className={styles.button}>{acc.buttonText}
-                        <span>
-                          {block.icon && <Image className={styles.icon} src={block.icon} images={images} />}
-                        </span>
                       </button>
                     </Link>}
                 </div>

@@ -67,6 +67,8 @@
           margin: 0;
           height: 3vw;
           .iconContainer {
+            position: relative;
+            left: .5vw;
             width: 3vw;
             margin: 0;
             display: grid;
@@ -104,6 +106,8 @@
             font-weight: 900;
             transition: all .6s;
             cursor: pointer;
+            position: relative;
+            right: .5vw;
           }
           .button:hover {
             background-color: rgb(95, 27, 27);
