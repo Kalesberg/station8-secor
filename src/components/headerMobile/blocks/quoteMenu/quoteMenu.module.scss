@@ -31,16 +31,16 @@
     right: 0;
     top: 5vw;
     background: black;
-    border-radius: 1.5vw;
-    min-width: 4vw;
-    height: 4vw;
+    border-radius: 3vw;
+    min-width: 4.2vw;
+    height: 4.2vw;
     text-align: center;
-    padding: 0 0.25vw;
     .quantity {
       color: white;
       font-size: 3vw;
       font-weight: 700;
-      margin-bottom: 0;
+      margin: 0;
+      height: 100%;
     }
   }
 }

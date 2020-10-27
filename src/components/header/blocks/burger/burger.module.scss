@@ -14,3 +14,8 @@
 .button:focus {
   outline: 0;
 }
+@media (min-width: 601px) {
+  .button {
+    display: none;
+  }
+}
