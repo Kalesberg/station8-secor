@@ -19,10 +19,8 @@
           "megaMenu": false
         },
         {
-          "label": "",
-          "page": [
-
-          ],
+          "label": "About",
+          "page": ".forestry/content/pages/about.json",
           "megaMenu": false
         }
       ]
