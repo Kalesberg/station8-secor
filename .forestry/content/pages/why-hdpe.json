@@ -105,10 +105,22 @@
       "inputs": [
         {
           "label": "Contact Name",
-          "icon": "/.forestry/content/images/user-menu.svg"
+          "icon": "/.forestry/content/images/images.png"
+        },
+        {
+          "label": "Message",
+          "icon": "/.forestry/content/images/message-537-461910.webp"
+        },
+        {
+          "label": "Email",
+          "icon": "/.forestry/content/images/mail-dark.svg"
+        },
+        {
+          "label": "Phone",
+          "icon": "/.forestry/content/images/phone-1.svg"
         }
       ],
-      "buttonText": ""
+      "buttonText": "Send"
     }
   ]
 }
