@@ -1,0 +1,35 @@
+{
+  "blocks": [
+    {
+      "template": "header-mobile-block-top-navigation",
+      "links": [
+        {
+          "label": "HDPE Capabilities",
+          "megaMenu": false,
+          "page": ""
+        },
+        {
+          "label": "",
+          "page": [
+
+          ],
+          "megaMenu": false
+        },
+        {
+          "label": "",
+          "page": [
+
+          ],
+          "megaMenu": false
+        },
+        {
+          "label": "",
+          "page": [
+
+          ],
+          "megaMenu": false
+        }
+      ]
+    }
+  ]
+}
