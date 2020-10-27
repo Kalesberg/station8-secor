@@ -4,9 +4,9 @@
       "template": "header-mobile-block-top-navigation",
       "links": [
         {
-          "label": "HDPE Capabilities",
+          "label": "Why HDPE",
           "megaMenu": false,
-          "page": ".forestry/content/pages/capabilities.json"
+          "page": ".forestry/content/pages/why-hdpe.json"
         },
         {
           "label": "",
