@@ -19,7 +19,13 @@
       ],
       "buttonText": "Get a quote",
       "buttonIcon": "/.forestry/content/images/arrow-right.svg",
-      "video": ""
+      "video": "",
+      "heroText": [
+        {
+          "element": "Heading 1",
+          "text": "BELOW GROUND ABOVE EXPECTATIONS"
+        }
+      ]
     },
     {
       "template": "main-block-pipe-slide",
