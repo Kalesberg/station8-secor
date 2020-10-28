@@ -1,4 +1,29 @@
 ---
 label: 'Header Mobile Block: Bottom Navigation'
 hide_body: false
-fields: []
+fields:
+- name: links
+  type: field_group_list
+  fields:
+  - name: label
+    type: text
+    config:
+      required: false
+    label: Label
+  - name: page
+    type: select
+    default: []
+    config:
+      required: false
+      options: []
+      source:
+        type: pages
+        section: pages
+        file: 
+        path: 
+    label: Page
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Links
