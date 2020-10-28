@@ -42,16 +42,12 @@
           "page": ".forestry/content/pages/news-and-resources.json"
         },
         {
-          "label": "",
-          "page": [
-
-          ]
+          "label": "Contact",
+          "page": ".forestry/content/pages/contact.json"
         },
         {
-          "label": "",
-          "page": [
-
-          ]
+          "label": "Locations",
+          "page": ".forestry/content/pages/locations.json"
         }
       ]
     }
