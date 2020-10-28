@@ -11,7 +11,7 @@ export default ({ block, pages, setMenuOpen, location, bottom }) => {
     const page = pages.find(page => filePath.includes(page.relativePath))
     return page && page.filePath ? (
       <Link activeClassName={styles.active} className={styles.link} partiallyActive={page.filePath !== '/'} to={page.filePath} onClick={closeMenu} onMouseOver={closeMenu}>
-        <p className={styles.label + ` ${bottom ? `${styles.labelBlack}` : ""}`}>{page.title}</p>
+        <p className={styles.label + ` ${bottom ? `${styles.labelBlack}` : ""}`}>{page.title === 'Products' ? 'Products & Equipment' : page.title}</p>
       </Link>
     ) : 'Link Missing'
   }

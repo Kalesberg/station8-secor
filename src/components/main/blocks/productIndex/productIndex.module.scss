@@ -155,3 +155,15 @@
     }
   }
 }
+@media (max-width: 600px) {
+  .section {
+    grid-template-columns: auto;
+    grid-auto-flow: row;
+    .items {
+      display: none;
+    }
+    .sidebar {
+      display: none;
+    }
+  }
+}

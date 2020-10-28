@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link, navigate } from 'gatsby'
 import camelcase from 'camelcase'
-
+import ProductsMobile from './productsIndexMobile'
 import { Context } from '../../../context/context'
 
 import styles from './productIndex.module.scss'
@@ -15,7 +15,6 @@ export default ({ location, menu }) => {
   // useEffect(() => {
   //   console.log('submenu', submenu)
   // }, [submenu])
-
   useEffect(() => {
     const getCategory = () => menu.find(category => category.slug === path[0])
     const getProductMenu = category => category && menu.find(category => category.slug === path[0]).menus.find(menu => menu.slug === path[1])
@@ -175,6 +174,7 @@ export default ({ location, menu }) => {
           </div>
         </div>
       ) : null}
+      <ProductsMobile location={location} menu={menu}/>
     </section>
   )
 }
