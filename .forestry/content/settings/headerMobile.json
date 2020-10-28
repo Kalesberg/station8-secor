@@ -11,7 +11,7 @@
         {
           "label": "Products & Equipment",
           "page": ".forestry/content/pages/products.json",
-          "megaMenu": true
+          "megaMenu": false
         },
         {
           "label": "Get a quote",
