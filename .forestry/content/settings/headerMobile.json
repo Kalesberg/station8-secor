@@ -38,10 +38,8 @@
           "page": ".forestry/content/pages/careers.json"
         },
         {
-          "label": "",
-          "page": [
-
-          ]
+          "label": "News & Resources",
+          "page": ".forestry/content/pages/news-and-resources.json"
         },
         {
           "label": "",
