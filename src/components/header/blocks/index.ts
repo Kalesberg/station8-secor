@@ -1,4 +1,4 @@
-import Burger from '../../header/blocks/burger/burger'
+import Burger from './burger/burger'
 import CallButton from './callButton/callButton'
 import ContactButton from './contactButton/contactButton'
 import ContactFormWithVideoBackground from './contactFormWithVideoBackground/contactFormWithVideoBackground'

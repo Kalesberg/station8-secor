@@ -8,7 +8,7 @@ import styles from './header.module.scss'
 import headerConfig from '../../../.forestry/content/settings/header.json'
 import contactInfo from '../../../.forestry/content/settings/contact.json'
 
-export default ({ images, pages, menuOpen, setMenuOpen, menu, location, userMenuOpen, setUserMenuOpen }) => {
+export default ({ images, pages, menuOpen, setMenuOpen, menu, location, userMenuOpen, setUserMenuOpen, mobileMenuOpen, setMobileMenuOpen }) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [levelOne, setLevelOne] = useState(0)
   const [levelTwo, setLevelTwo] = useState(0)
@@ -38,7 +38,7 @@ export default ({ images, pages, menuOpen, setMenuOpen, menu, location, userMenu
 
   return (
     <header className={styles.header}>
-      {/* <Burger /> */}
+      <Burger mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
       <div className={styles.menu + `${menuOpen ? ` ${styles.active}` : ''}`}>
         {headerConfig.blocks.map((block, i: number) => {
           return block.template === 'header-call-button' ? (

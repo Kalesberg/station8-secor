@@ -4,12 +4,25 @@
   grid-auto-flow: column;
   justify-content: left;
   align-items: center;
-  gap: 1vw;
+  gap: 2vw;
   .link {
     width: 1.5vw;
     .icon {
       height: 1.5vw;
       width: 1.5vw;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .links {
+    padding-left: 9.5vw;
+    margin-top: 2vw;
+    .link {
+      width: 8vw;
+      .icon {
+        height: 8vw;
+        width: 8vw;
+      }
     }
   }
 }

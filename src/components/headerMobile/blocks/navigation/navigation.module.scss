@@ -1,5 +1,5 @@
 .default {
-  padding: 5vw 0 0 10vw;
+  padding: 7vw 0 0 10vw;
   position: relative;
   .list {
     display: grid;
@@ -15,15 +15,26 @@
         .label {
           color: white;
           font-weight: 300;
-          font-size: 5vw;
+          font-size: 6vw;
           margin-bottom: 0;
         }
-        &:hover {
+        .label:hover {
+          font-weight: 600;
+        }
+        .label-black:hover {
+          font-weight: 800;
+        }
+        .label-black {
+          color: black;
+          font-weight: 400
         }
         &.active {
           color: var(--color-grey);
           .label {
-            color: white;
+            font-weight: 600;
+          }
+          .label-black {
+            font-weight: 800;
           }
         }
       }

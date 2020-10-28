@@ -1,11 +1,16 @@
 .header {
-  position: relative;
+  position: fixed;
   height: 95vh;
   padding: 0 0 5vw 0;
   background-color: #D50F09;
   // @media (max-width: 1023px) {
   //   height: 14vw;
   // }
+  top: 12vw;
+  width: 100vw;
+  transition: all .7s;
+  transform: translateX(-150%);
+  z-index: 10;
   .menu {
     padding: 0 0.5vw;
     display: grid;
@@ -18,7 +23,7 @@
   }
   .divider {
     background-color: #BB0500;
-    height: 20vw;
+    height: 12%;
     width: 100%;
     padding-left: 6vw;
     .dividerLinks {
@@ -27,6 +32,10 @@
       grid-template-columns: 15% 15% 15% 45%;
       height: 100%;
     } 
+  }
+  .bottomMenu {
+    background-color: white;
+    height: 48%;
   }
   .mega-menu {
     position: relative;
@@ -350,6 +359,9 @@
   @media (max-width: 1023px) {
     font-family: inherit;
   }
+}
+.headerOpen {
+  transform: translateX(0);
 }
 @media (min-width: 601px) {
   .header {

@@ -2,13 +2,15 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
 
 import { CallButton, ContactButton, ContactFormWithVideoBackground, ContactInfo, FavoritePage, FeaturedPage, FillSpace, Logo, Navigation, Search, QuoteMenu, UserMenu } from './blocks'
-
+import SocialMediaLinks from '../footer/blocks/socialMediaLinks/socialMediaLinks'
 import styles from './header.module.scss'
 
+import footerConfig from '../../../.forestry/content/settings/footer.json'
 import headerConfig from '../../../.forestry/content/settings/header.json'
+import headerMobileConfig from '../../../.forestry/content/settings/headerMobile.json'
 import contactInfo from '../../../.forestry/content/settings/contact.json'
 
-export default ({ images, pages, menuOpen, setMenuOpen, menu, location, userMenuOpen, setUserMenuOpen }) => {
+export default ({ images, pages, menuOpen, setMenuOpen, menu, location, userMenuOpen, setUserMenuOpen, mobileMenuOpen }) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [levelOne, setLevelOne] = useState(0)
   const [levelTwo, setLevelTwo] = useState(0)
@@ -37,7 +39,7 @@ export default ({ images, pages, menuOpen, setMenuOpen, menu, location, userMenu
   }
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header + ` ${mobileMenuOpen ? `${styles.headerOpen}` : ""}`}>
       <div className={styles.menu + `${menuOpen ? ` ${styles.active}` : ''}`}>
         {headerConfig.blocks.map((block, i: number) => {
           return block.template === 'header-call-button' ? (
@@ -54,10 +56,13 @@ export default ({ images, pages, menuOpen, setMenuOpen, menu, location, userMenu
             <FillSpace key={i} handleCloseMenus={handleCloseMenus} />
           ) : block.template === 'header-logo' ? (
             <Logo key={i} block={block} images={images} />
-          ) : block.template === 'header-links' ? (
-            <Navigation key={i} block={block} pages={pages} setMenuOpen={setMenuOpen} location={location} />
           ) : block.template === 'header-search' ? (
             <Search key={i} block={block} images={images} />
+          ) : null
+        })}
+        {headerMobileConfig.blocks.map((block, i: number) => {
+          return block.template === 'header-mobile-block-top-navigation' ? (
+            <Navigation key={i} block={block} pages={pages} setMenuOpen={setMenuOpen} location={location} bottom={false}/>
           ) : null
         })}
       </div>
@@ -74,7 +79,19 @@ export default ({ images, pages, menuOpen, setMenuOpen, menu, location, userMenu
           })}
         </div>
       </div>
-      <div className={styles.megaMenu + `${menuOpen ? ` ${styles.open}` : ''}` + `${searchTerm ? ` ${styles.searching}` : ''}`}>
+      <div className={styles.bottomMenu}>
+        {headerMobileConfig.blocks.map((block, i: number) => {
+          return block.template === 'header-mobile-block-bottom-navigation' ? (
+            <Navigation key={i} block={block} pages={pages} setMenuOpen={setMenuOpen} location={location} bottom={true}/>
+          ) : null
+        })}
+        {footerConfig.bottomRow.map((block, i: number) => {
+        return block.template === 'footer-social-media-links' ? (
+          <SocialMediaLinks key={i} block={block} images={images}/>
+        ) : null
+      })}
+      </div>
+      {/* <div className={styles.megaMenu + `${menuOpen ? ` ${styles.open}` : ''}` + `${searchTerm ? ` ${styles.searching}` : ''}`}>
         <div className={styles.search}>
           <p className={styles.label}>Know exactly what you're looking for?</p>
           <input className={styles.input + `${searchTerm ? ` ${styles.filled}` : ''}`} value={searchTerm} onChange={handleSetSearchTerm} />
@@ -173,7 +190,7 @@ export default ({ images, pages, menuOpen, setMenuOpen, menu, location, userMenu
             )
           })}
         </div>
-      </div>
+      </div> */}
     </header>
   )
 }

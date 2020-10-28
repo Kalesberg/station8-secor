@@ -337,6 +337,12 @@
   @media (max-width: 1023px) {
     font-family: inherit;
   }
+  @media (max-width: 601px) {
+    .mega-menu {
+      display: none;
+    }
+    
+  }
 }
 @media (max-width: 600px) {
   .header {

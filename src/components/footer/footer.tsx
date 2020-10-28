@@ -27,7 +27,7 @@ export default ({ images, pages, toggleForm }) => (
     <footer className={styles.bottomRow}>
       {footerConfig.bottomRow.map((block, i: number) => {
         return block.template === 'footer-social-media-links' ? (
-          <SocialMediaLinks key={i} block={block} images={images} />
+          <SocialMediaLinks key={i} block={block} images={images}/>
         ) : block.template === 'footer-text-and-links' ? (
           <TextAndLinks key={i} block={block} />
         ) : <p key={i}>{block.template} not defined</p>
