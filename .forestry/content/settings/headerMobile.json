@@ -19,6 +19,11 @@
           "megaMenu": false
         },
         {
+          "label": "Training",
+          "page": ".forestry/content/pages/training.json",
+          "megaMenu": false
+        },
+        {
           "label": "About",
           "page": ".forestry/content/pages/about.json",
           "megaMenu": false
