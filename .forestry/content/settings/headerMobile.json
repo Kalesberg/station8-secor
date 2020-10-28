@@ -29,6 +29,33 @@
           "megaMenu": false
         }
       ]
+    },
+    {
+      "template": "header-mobile-block-bottom-navigation",
+      "links": [
+        {
+          "label": "Careers",
+          "page": ".forestry/content/pages/careers.json"
+        },
+        {
+          "label": "",
+          "page": [
+
+          ]
+        },
+        {
+          "label": "",
+          "page": [
+
+          ]
+        },
+        {
+          "label": "",
+          "page": [
+
+          ]
+        }
+      ]
     }
   ]
 }
