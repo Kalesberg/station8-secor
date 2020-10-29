@@ -17,7 +17,7 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOp
         <div className={styles.blocks}>
           {blocks && blocks.map((block, i) => {
             return block.template === 'main-account' ? (
-              <Account key={i} location={location} />
+              <Account key={i} location={location} options={options} search={location.search} />
             ) : block.template === 'main-animated-image' ? (
               <ScrollAnimation key={i} animateIn='animate__zoomIn' animateOnce scrollableParentSelector='#main' offset={150}>
                 <AnimatedImage block={block} images={images} />
