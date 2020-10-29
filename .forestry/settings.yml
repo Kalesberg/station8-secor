@@ -8,7 +8,7 @@ sections:
   label: Content
 - type: directory
   path: ".forestry/content/articles"
-  label: News & Resources
+  label: Articles
   create: documents
   match: "**/*"
   new_doc_ext: md
