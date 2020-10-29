@@ -1,5 +1,5 @@
 .header {
-  position: fixed;
+  position: absolute;
   height: 95vh;
   padding: 0 0 5vw 0;
   background-color: #D50F09;
@@ -15,7 +15,7 @@
     padding: 0 0.5vw;
     display: grid;
     grid-auto-flow: column;
-    height: 42%;
+    height: 37vh;
     grid-template-columns: auto auto 1fr auto;
     // @media (max-width: 1023px) {
     //   grid-auto-flow: row;
@@ -23,7 +23,7 @@
   }
   .divider {
     background-color: #BB0500;
-    height: 12%;
+    height: 12vh;
     width: 100%;
     padding-left: 6vw;
     .dividerLinks {
@@ -36,7 +36,7 @@
   }
   .bottomMenu {
     background-color: white;
-    height: 48%;
+    height: 46vh;
   }
   .mega-menu {
     position: relative;
