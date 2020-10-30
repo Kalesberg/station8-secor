@@ -261,7 +261,8 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
           images,
           pages: pagesWithExtras,
           articles: articlesWithExtras,
-          menu: productMenu
+          menu: productMenu,
+          options
         }
       }))
     }

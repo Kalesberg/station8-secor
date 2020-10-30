@@ -1,19 +1,80 @@
 .section {
-  padding-top: 25vw;
-  .search {
-    height: 30vw;
+  padding-top: 17vw;
+  // position: relative;
+  .sidebar {
+    height: 100%;
     width: 100%;
-    background-color: #F6F4F4;
+    overflow: auto;
+    background-color: white;
+    z-index: 3;
+    transform: translateX(-150%);
+    transition: all .7s;
+    position: absolute;
+    .category {
+      margin-bottom: 1vw;
+      .category-name {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 900;
+        font-size: 4vw;
+        padding: 1vw 1vw 0 2vw;
+        margin-bottom: 0.5vw;
+      }
+      .menu-items {
+        .menu-item {
+          display: block;
+          font-family: 'Roboto', sans-serif;
+          font-size: 5vw;
+          padding: 0.5vw 2vw;
+          margin-bottom: 0;
+          color: #4A4A4A;
+          &.active {
+            position: relative;
+            padding: 1vw 2vw;
+            top: -0.25vw;
+            margin-bottom: -0.25vw;
+            background-color: #D50F09;
+            color: white;
+            font-weight: 700;
+          }
+        }
+        .submenus {
+          .link {
+            font-size: 2vw;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  .sidebarOpen {
+    transform: translateX(0);
+  }
+  .search {
+    height: 17vw;
+    width: 100%;
+    background-color: white;
     transition: all 0.5s ease-in-out;
     display: grid;
     justify-content: center;
-    padding-top: 5vw;
     align-items: center;
     // grid-auto-flow: column;
     gap: 2.5vw;
     position: fixed;
     top: 12vw;
     z-index: 2;
+    .closedButton {
+      position: absolute;
+      left: 5vw;
+      top: 6vw;
+      background-color: transparent;
+      border: none;
+      .menu-icon {
+        width: 5vw;
+      }
+    }
+    .closedButton:focus {
+      outline: 0;
+    }
     .label {
       font-family: 'Roboto', sans-serif;
       margin-bottom: 0;
@@ -34,14 +95,25 @@
       background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMjJweCIgaGVpZ2h0PSIyMnB4IiB2aWV3Qm94PSIwIDAgMjIgMjIiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8dGl0bGU+RDgwN0FGOEQtQUM2Ri00QzJBLTk0RUUtMzExMkMzQjlGRDFGPC90aXRsZT4KICAgIDxnIGlkPSJ1cGRhdGVzIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgICAgIDxnIGlkPSJGQVQtbmF2LW9wdGlvbi0xIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtOTk4LjAwMDAwMCwgLTEyMC4wMDAwMDApIiBzdHJva2U9IiM3ODc4NzgiIHN0cm9rZS13aWR0aD0iMyI+CiAgICAgICAgICAgIDxnIGlkPSJHcm91cCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTMyLjAwMDAwMCwgMTAyLjAwMDAwMCkiPgogICAgICAgICAgICAgICAgPGcgaWQ9Inpvb20taW4iIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQ2OC4wMDAwMDAsIDIwLjAwMDAwMCkiPgogICAgICAgICAgICAgICAgICAgIDxjaXJjbGUgaWQ9Ik92YWwiIGN4PSI4IiBjeT0iOCIgcj0iOCI+PC9jaXJjbGU+CiAgICAgICAgICAgICAgICAgICAgPGxpbmUgeDE9IjE4IiB5MT0iMTgiIHgyPSIxMy42NSIgeTI9IjEzLjY1IiBpZD0iU2hhcGUiPjwvbGluZT4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+");
       background-color: rgb(235, 229, 229);
     }
-    .category {
-      font-size: 7vw;
-    }
   }
-  .mobile {
+  .items {
     width: 100%;
+    .header {
+      display: grid;
+      width: 100%;
+      align-items: center;
+      position: fixed;
+      top: 29vw;
+      height: 12vw;
+      background-color: white;
+      padding-left: 5vw;
+      z-index: 2;
+      .title {
+        font-size: 5vw;
+      }
+    }
     .products {
-      padding: 2.5vw;
+      padding: 10vw 2.5vw 2.5vw 2.5vw;
       display: grid;
       width: 100%;
       grid-template-columns: auto;
@@ -50,7 +122,8 @@
       justify-content: center;
       .product {
         width: 100%;
-        height: 75vh;
+        // height: 80vh;
+        margin-bottom: 50vw;
         padding-top: 10vw;
         .image {
           z-index: 1;
@@ -60,7 +133,7 @@
           height: 50vw;
           background-color: white;
           background-size: cover;
-          background-position: center center;
+          background-position: center;
           background-repeat: no-repeat no-repeat;
           display: grid;
           justify-content: center;
@@ -74,12 +147,12 @@
           margin: 0;
           padding: 0;
           .name {
-            font-size: 4vw;
+            font-size: 4.5vw;
             font-weight: 900;
             margin-bottom: 5vw;
           }
           .description {
-            font-size: 3vw;
+            font-size: 3.5vw;
             color: #9B9A9B;
             font-weight: 700;
             margin-bottom: 3vw;
@@ -87,7 +160,7 @@
           }
           .download {
             color: #D50F09;
-            font-size: 3vw;
+            font-size: 3.5vw;
             text-align: left;
             display: block;
             font-weight: 900;

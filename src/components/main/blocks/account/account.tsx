@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link, navigate } from 'gatsby'
+import { navigate } from 'gatsby'
 
 import { Context } from '../../../context/context'
 import Authenticated from './authenticated/authenticated'
@@ -9,7 +9,7 @@ import Recover from './recover/recover'
 
 import styles from './account.module.scss'
 
-export default ({ location }) => {
+export default ({ location, options, search }) => {
   const context = useContext(Context)
   const [path] = useState(location.pathname.split('/').filter(i => i))
 
@@ -43,7 +43,7 @@ export default ({ location }) => {
         <Recover />
       )}
       {context.user && (path[1] === 'info' || path[1] === 'quotes' || path[1] === 'forms') && (
-        <Authenticated path={path[1]} user={context.user} />
+        <Authenticated path={path[1]} user={context.user} options={options} search={search} />
       )}
     </section>
   ) : <div>Please wait</div>

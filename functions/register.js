@@ -51,9 +51,7 @@ exports.handler = async (event, context, callback) => {
       const msg = {
         to: body.email.trim().toLowerCase(),
         from: 'info@secoronline.com',
-        subject: 'Registration Complete',
-        text: 'This is just a placeholder to test email functionality.',
-        html: '<strong>This is just a placeholder to test email functionality.</strong>'
+        template_id: 'd-f981705646e944cfbf22c1dfdd6bc2b8'
       }
       sgMail
         .send(msg)
