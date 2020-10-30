@@ -51,6 +51,10 @@
       border: none;
       border-radius: 1.5vw;
       padding: 0.6vw 3vw;
+      transition: all .5s;
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
   .links {
@@ -62,6 +66,75 @@
       grid-row: 1;
       font-size: 0.75vw;
       font-weight: 600;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .login {
+    margin-top: 8vw;
+    display: grid;
+    justify-content: center;
+    .login-form {
+      display: grid;
+      grid-template-rows: repeat(auto-fit, auto);
+      grid-template-columns: minmax(0, 1fr);
+      justify-content: center;
+      .column {
+        display: grid;
+        gap: 6vw;
+        .field {
+          padding: 0 2vw;
+          label {
+            font-size: 4vw;
+            color: #212121;
+            padding-bottom: 0.5vw;
+            line-height: 4;
+            .required {
+              color: #D50F09;
+              font-weight: 700;
+              margin-left: 0.25vw;
+            }
+          }
+          input {
+            width: 100%;
+            background-color: #efefef;
+            border: none;
+            border-radius: 6vw;
+            font-size: 4vw;
+            padding: 4vw 2vw 4vw 12vw;
+            font-weight: bold;
+            background-repeat: no-repeat no-repeat;
+            background-position: 3.2vw;
+            background-size: 6vw;
+          }
+        }
+      }
+    }
+    .button-container {
+      margin-top: 12vw;
+      display: grid;
+      justify-content: center;
+      .button {
+        cursor: pointer;
+        background-color: #D50F09;
+        color: white;
+        font-size: 4vw;
+        font-weight: 700;
+        border: none;
+        border-radius: 6vw;
+        padding: 2.4vw 12vw;
+      }
+    }
+    .links {
+      margin-top: 4vw;
+      display: grid;
+      justify-content: center;
+      gap: 2vw;
+      .link {
+        grid-row: 1;
+        font-size: 4vw;
+        font-weight: 600;
+      }
     }
   }
 }

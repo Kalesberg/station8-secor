@@ -16,6 +16,7 @@ export default ({ location, pageContext: { menu, product, title, images, article
   const [tag, setTag] = useState('')
   const [formOpen, setFormOpen] = useState(false)
   const [activeImage, setActiveImage] = useState(0)
+  const [showMessage, setShowMessage] = useState(false)
 
   const toggleForm = e => {
     e.preventDefault()
@@ -67,6 +68,7 @@ export default ({ location, pageContext: { menu, product, title, images, article
       })
       context.setQuote(newQuote)
       initOptions()
+      setShowMessage(true);
     }
   }
 
@@ -141,6 +143,8 @@ export default ({ location, pageContext: { menu, product, title, images, article
                 </svg>
                 Add to quote
               </button>
+              {showMessage &&
+              <p className={styles.success}>Added!<span className={styles.span}><Link className={styles.link} to="/get-a-quote">Go to cart</Link></span></p>}
             </form>
           </div>
           <div className={styles.quoteBuilder}>

@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { Link } from 'gatsby'
+import { Context } from '../context/context'
 
 import { CallButton, ContactButton, ContactFormWithVideoBackground, ContactInfo, FavoritePage, FeaturedPage, FillSpace, Logo, Navigation, Search, QuoteMenu, UserMenu } from './blocks'
 import SocialMediaLinks from '../footer/blocks/socialMediaLinks/socialMediaLinks'
@@ -10,12 +11,13 @@ import headerConfig from '../../../.forestry/content/settings/header.json'
 import headerMobileConfig from '../../../.forestry/content/settings/headerMobile.json'
 import contactInfo from '../../../.forestry/content/settings/contact.json'
 
-export default ({ images, pages, menuOpen, setMenuOpen, menu, location, userMenuOpen, setUserMenuOpen, mobileMenuOpen }) => {
+export default ({ images, pages, menuOpen, setMenuOpen, menu, location, userMenuOpen, setUserMenuOpen, mobileMenuOpen, setMobileMenuOpen }) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [levelOne, setLevelOne] = useState(0)
   const [levelTwo, setLevelTwo] = useState(0)
   const [activeSubcategory, setActiveSubcategory] = useState(undefined)
   const [searchResults, setSearchResults] = useState([])
+  const context = useContext(Context)
 
   const handleSetSearchTerm = e => {
     setSearchTerm(e.target.value)
@@ -36,6 +38,10 @@ export default ({ images, pages, menuOpen, setMenuOpen, menu, location, userMenu
   const handleCloseMenus = () => {
     setMenuOpen(false)
     setUserMenuOpen(false)
+  }
+
+  const handleCloseMobile = () => {
+    setMobileMenuOpen(false);
   }
 
   return (
@@ -78,6 +84,10 @@ export default ({ images, pages, menuOpen, setMenuOpen, menu, location, userMenu
                 <ContactButton key={i} block={block} images={images} handleCloseMenus={handleCloseMenus} />
               ) : null  
             })}
+            <Link className={styles.login} to="/account/login" onMouseDown={handleCloseMobile}>
+              {!context.user ? 'Login/Sign up' : 
+              (<button className={styles.logout} onClick={context.handleLogoutUser}>Logout</button>)}
+            </Link>
           </div>
         </div>
         <div className={styles.bottomMenu}>

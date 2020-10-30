@@ -73,3 +73,50 @@
     }
   }
 }
+@media (max-width: 600px) {
+  .recover {
+    margin-top: 12vw;
+    .title {
+      font-size: 6vw;
+    }
+    .login-form {
+      width: 80vw;
+      gap: 2vw;
+      .column {
+        .field, .fields > .field {
+          label {
+            font-size: 4vw;
+            line-height: 8vw;
+            .required {
+              margin-left: 1vw;
+            }
+          }
+          input {
+            margin-bottom: 5vw;
+            border-radius: 6vw;
+            font-size: 4vw;
+            padding: 4vw 2vw 4vw 12vw;
+            background-position: 3.2vw;
+            background-size: 4.8vw;
+          }
+        }
+      }
+    }
+    .button-container {
+      margin-top: 12vw;
+      .button {
+        font-size: 4vw;
+        border-radius: 6vw;
+        padding: 3vw 10vw;
+      }
+    }
+    .links {
+      margin-top: 4vw;
+      gap: 2vw;
+      .link {
+        font-size: 3.5vw;
+        font-weight: 600;
+      }
+    }
+  }
+}

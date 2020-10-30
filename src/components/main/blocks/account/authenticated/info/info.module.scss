@@ -51,3 +51,33 @@
     }
   }
 }
+@media (max-width: 600px) {
+  .info {
+    padding: 10vw 1vw 1vw 1vw;
+    display: block;
+    .column {
+      display: block;
+      margin-bottom: 8vw;
+      .section-title {
+        font-size: 5.5vw;
+        padding-left: 4.5vw;
+      }
+      .fields {
+        gap: 8vw;
+        .field {
+          grid-template-columns: 12vw 1fr;
+          .icon {
+            background-size: 5.2vw;
+            height: 9vw;
+          }
+          .value {
+            font-size: 5.5vw;
+          }
+          .edit {
+            font-size: 3.2vw;
+          }
+        }
+      }
+    }
+  }
+}

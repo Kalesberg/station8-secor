@@ -7,6 +7,9 @@
     font-size: 2vw;
   }
 }
+div[id^=__lpform_] {
+  display: none;
+}
 // .main {
 //   position: relative;
 //   grid-column: 2;
