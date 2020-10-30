@@ -7,14 +7,6 @@ sections:
 - type: heading
   label: Content
 - type: directory
-  path: ".forestry/content/articles"
-  label: Articles
-  create: documents
-  match: "**/*"
-  new_doc_ext: md
-  templates:
-  - content-type-article
-- type: directory
   path: ".forestry/content/careers"
   label: Careers
   create: documents
@@ -30,6 +22,40 @@ sections:
   new_doc_ext: json
   templates:
   - content-type-page
+- type: heading
+  label: News & Resources
+- type: directory
+  path: ".forestry/content/articles"
+  label: Blog
+  create: documents
+  match: "**/*"
+  new_doc_ext: md
+  templates:
+  - content-type-article
+- type: directory
+  path: ".forestry/content/forms"
+  label: Forms
+  create: documents
+  match: "**/*"
+  new_doc_ext: md
+  templates:
+  - content-type-form
+- type: directory
+  path: ".forestry/content/literature"
+  label: Literature
+  create: documents
+  match: "**/*"
+  new_doc_ext: md
+  templates:
+  - content-type-literature
+- type: directory
+  path: ".forestry/content/videos"
+  label: Videos
+  create: documents
+  match: "**/*"
+  new_doc_ext: md
+  templates:
+  - content-type-video
 - type: heading
   label: Global Settings
 - type: document

@@ -5,7 +5,7 @@ import { Accessories, Account, AnimatedImage, ArticlesGrid, ArticlesSlider, Basi
 
 import styles from './main.module.scss'
 
-export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOpen, scrollListener, scrollPosition, articles, pages, toggleForm, menu, location, options, careers }) => {
+export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOpen, scrollListener, scrollPosition, articles, pages, toggleForm, menu, location, options, careers, forms }) => {
   const closeMenu = () => {
     setMenuOpen(false)
     setUserMenuOpen(false)
@@ -17,7 +17,7 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOp
         <div className={styles.blocks}>
           {blocks && blocks.map((block, i) => {
             return block.template === 'main-account' ? (
-              <Account key={i} location={location} options={options} search={location.search} />
+              <Account key={i} location={location} options={options} search={location.search} forms={forms} />
             ) : block.template === 'main-animated-image' ? (
               <ScrollAnimation key={i} animateIn='animate__zoomIn' animateOnce scrollableParentSelector='#main' offset={150}>
                 <AnimatedImage block={block} images={images} />

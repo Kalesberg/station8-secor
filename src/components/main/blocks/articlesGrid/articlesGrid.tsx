@@ -71,7 +71,7 @@ export default ({ block, search, limit = undefined, slug = '', articles, images,
               }
               return (
                 <React.Fragment key={i}>
-                  {i ? <span className={styles.divider}> // </span> : null}
+                  {i ? <span className={styles.divider}> | </span> : null}
                   <p className={styles.category + `${categoryItem === category ? ` ${styles.active}` : ''}`} onClick={handleFilter}>{categoryItem}</p>
                 </React.Fragment>
               )

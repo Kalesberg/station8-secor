@@ -1,5 +1,5 @@
 ---
-label: 'Content Type: Article'
+label: 'Content Type: Video'
 hide_body: false
 fields:
 - name: parent
@@ -14,9 +14,9 @@ fields:
       file: 
       path: 
   label: Parent
-  description: Select a page to be the parent folder for this article. For instance,
+  description: Select a page to be the parent folder for this video. For instance,
     if you have a page named <strong>blog</strong> and you select it as the parent,
-    your article named <strong>article</strong> will be located at <strong>example.com/blog/article</strong>.
+    your video named <strong>video</strong> will be located at <strong>example.com/blog/video</strong>.
   hidden: true
 - type: text
   name: title
@@ -57,4 +57,4 @@ fields:
     required: false
   label: Type
   hidden: true
-  default: article
+  default: video
