@@ -9,7 +9,7 @@ import './reset.scss'
 import './global.scss'
 import styles from './layout.module.scss'
 
-export default ({ children, title: siteTitle = '', images, pages, toggleForm, blocks, articles, tag, menu, location, options, careers }) => {
+export default ({ children, title: siteTitle = '', images, pages, toggleForm, blocks, articles, tag, menu, location, options, careers, forms }) => {
   const context = useContext(Context)
   const [menuOpen, setMenuOpen] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -42,7 +42,7 @@ export default ({ children, title: siteTitle = '', images, pages, toggleForm, bl
       </Helmet>
       <Header images={images} pages={pages} mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} menuOpen={menuOpen} setMenuOpen={setMenuOpen} userMenuOpen={userMenuOpen} setUserMenuOpen={setUserMenuOpen} menu={menu} location={location} />
       <HeaderMobile images={images} pages={pages} mobileMenuOpen={mobileMenuOpen} menuOpen={menuOpen} setMenuOpen={setMenuOpen} userMenuOpen={userMenuOpen} setUserMenuOpen={setUserMenuOpen} menu={menu} location={location} />
-      <Main blocks={blocks} images={images} menuOpen={menuOpen} scrollListener={scrollListener} scrollPosition={scrollPosition} setMenuOpen={setMenuOpen} setUserMenuOpen={setUserMenuOpen} articles={articles} pages={pages} tag={tag} toggleForm={toggleForm} menu={menu} location={location} options={options} careers={careers}>
+      <Main blocks={blocks} images={images} menuOpen={menuOpen} scrollListener={scrollListener} scrollPosition={scrollPosition} setMenuOpen={setMenuOpen} setUserMenuOpen={setUserMenuOpen} articles={articles} pages={pages} toggleForm={toggleForm} menu={menu} location={location} options={options} careers={careers} forms={forms}>
         {children}
         <Footer images={images} pages={pages} toggleForm={toggleForm} />
       </Main>

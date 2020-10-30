@@ -2,6 +2,7 @@ const path = require('path')
 const slugify = require('slugify')
 
 const articleTemplate = path.resolve('./src/templates/article/article.tsx')
+const formTemplate = path.resolve('./src/templates/form/form.tsx')
 const careerTemplate = path.resolve('./src/templates/career/career.tsx')
 const pageTemplate = path.resolve('./src/templates/page/page.tsx')
 const productTemplate = path.resolve('./src/templates/product/product.tsx')
@@ -19,7 +20,7 @@ module.exports.onCreateNode = ({ node, actions }) => {
 }
 
 module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
-  const { data: { articles: { nodes: articles }, careers: { nodes: careers }, pages: { nodes: pages }, images: { nodes: images }, pageFiles: { nodes: pageFiles }, categories: { nodes: categories }, menus: { nodes: menus }, submenus: { nodes: submenus }, options: { nodes: options }, products: { nodes: products } } } = await graphql(`
+  const { data: { articles: { nodes: articles }, careers: { nodes: careers }, forms: { nodes: forms }, pages: { nodes: pages }, images: { nodes: images }, pageFiles: { nodes: pageFiles }, categories: { nodes: categories }, menus: { nodes: menus }, submenus: { nodes: submenus }, options: { nodes: options }, products: { nodes: products } } } = await graphql(`
   {
     pages: allPagesJson {
       nodes {
@@ -107,6 +108,21 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         }
       }
     }
+    forms: allMarkdownRemark(filter: {frontmatter: {type: {eq: "form"}}}, sort: {fields: frontmatter___date, order: DESC}) {
+      nodes {
+        frontmatter {
+          title
+          heroImage {
+            childImageSharp {
+              original {
+                src
+              }
+            }
+          }
+        }
+        fileAbsolutePath
+      }
+    }
     menus: allAirtable(filter: {table: {eq: "Menus"}}) {
       nodes {
         id
@@ -169,6 +185,11 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
     }
   }
   `)
+
+  const formsWithExtras = forms.map(form => ({
+    ...form,
+    path: `/news-and-resources/forms/${form.fileAbsolutePath.split('/').pop().replace('.md', '')}`
+  }))
 
   const productMenu = categories.map(category => ({
     id: category.id,
@@ -236,6 +257,21 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
     }
   })
 
+  forms.forEach(form => {
+    createPage({
+      component: formTemplate,
+      path: `/news-and-resources/forms/${form.fileAbsolutePath.split('/').pop().replace('.md', '')}`,
+      context: {
+        title: form.frontmatter.title,
+        images,
+        pages: pagesWithExtras,
+        articles: articlesWithExtras,
+        forms: forms,
+        menu: productMenu
+      }
+    })
+  })
+
   pagesWithExtras.forEach(page => {
     page.filePath !== '/demo' &&
     createPage({
@@ -246,6 +282,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         images,
         pages: pagesWithExtras,
         articles: articlesWithExtras,
+        forms: formsWithExtras,
         menu: productMenu,
         options,
         careers
@@ -261,6 +298,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
           images,
           pages: pagesWithExtras,
           articles: articlesWithExtras,
+          forms: formsWithExtras,
           menu: productMenu,
           options
         }
@@ -278,6 +316,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         images,
         pages: pagesWithExtras,
         articles: articlesWithExtras,
+        forms: formsWithExtras,
         menu: productMenu,
         career,
         careers
@@ -298,6 +337,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         images,
         pages: pagesWithExtras,
         articles: articlesWithExtras,
+        forms: formsWithExtras,
         menu: productMenu
       }
     })
@@ -312,6 +352,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         images,
         pages: pagesWithExtras,
         articles: articlesWithExtras,
+        forms: formsWithExtras,
         menu: productMenu
       }
     })
@@ -324,6 +365,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
           images,
           pages: pagesWithExtras,
           articles: articlesWithExtras,
+          forms: formsWithExtras,
           menu: productMenu
         }
       })
@@ -336,6 +378,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
             images,
             pages: pagesWithExtras,
             articles: articlesWithExtras,
+            forms: formsWithExtras,
             menu: productMenu
           }
         })
@@ -351,6 +394,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
               images,
               pages: pagesWithExtras,
               articles: articlesWithExtras,
+              forms: formsWithExtras,
               options
             }
           })
