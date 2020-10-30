@@ -176,6 +176,102 @@
   }
 }
 @media (max-width: 600px) {
+  .quote-detail {
+    padding: 0 2vw 0 2vw;
+    .header {
+      .quote-info {
+        grid-template-columns: 15% 42% 42%;
+        padding: 5vw 3vw 3vw 3vw;
+        h1 {
+          font-size: 5.5vw;
+        }
+        h2 {
+          font-size: 4vw;
+        }
+        .back {
+          height: 8vw;
+          width: 8vw;
+        }
+      }
+      .labels {
+        display: block;
+        padding: 0 0 0 1vw;
+        p {
+          padding: 0 0 1vw;
+          font-size: 4vw;
+        }
+        p:nth-child(2) {
+          text-align: center;
+        }
+        p:nth-child(3) {
+          text-align: right;
+        }
+      }
+    }
+    .quote {
+      .products {
+        .product {
+          grid-template-columns: 45% 45% 10%;
+          .product-details {
+            display: grid;
+            grid-auto-flow: column;
+            justify-content: flex-start;
+            gap: 2vw;
+            .product-image {
+              width: 16vw;
+              height: 16vw;
+            }
+            .product-description {
+              .product-name {
+                font-size: 3.5vw;
+              }
+              .options {
+                .option {
+                  font-size: 3.5vw;
+                }
+              }
+            }
+          }
+    
+          .specifications {
+            display: grid;
+            grid-auto-flow: column;
+            align-items: flex-start;
+            grid-template-columns: 1fr;
+            padding-right: 1vw;
+            .button {
+              border: 0.25vw solid #D50F09;
+              background: none;
+              font-size: 3.5vw;
+              font-weight: 700;
+              border-radius: 1.5vw;
+              padding: 0.5vw 0;
+              width: 6vw;
+              cursor: pointer;
+              &.editing {
+                background-color: #D50F09;
+                color: white;
+              }
+            }
+            .notes {
+              font-size: 3.5vw;
+              margin-bottom: 0;
+            }
+          }
+          .quantity-container {
+            display: grid;
+            align-items: flex-start;
+            .quantity {
+              width: 100%;
+              font-size: 1.1vw;
+              text-align: center;
+              font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+  }
   .quotes {
     padding: 5vw 5vw;
     gap: 4vw;
@@ -186,7 +282,7 @@
       border-radius: 2vw;
       height: 40vw;
       h1 {
-        font-size: 8vw;
+        font-size: 7vw;
       }
       p {
         font-size: 5vw;

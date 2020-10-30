@@ -44,7 +44,7 @@ export default ({ block, images }) => {
             <div key={i}className={styles.history}>
               <div key={i} className={styles.background}>
                 <Image className={styles.image} src={history.image && history.image} images={images} />
-                <div className={styles.overlay}></div>
+                {/* <div className={styles.overlay}></div> */}
               </div>
               <div className={styles.textContainer}>
                 <div></div>
