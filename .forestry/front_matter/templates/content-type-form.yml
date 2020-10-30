@@ -47,10 +47,6 @@ fields:
   label: Hero Image
   description: Enter hero image for blog post here
   default: "/.forestry/content/images/placeholder.png"
-- name: tags
-  type: tag_list
-  default: []
-  label: Tags
 - name: type
   type: text
   config:
