@@ -57,4 +57,4 @@ fields:
     required: false
   label: Type
   hidden: true
-  default: article
+  default: video
