@@ -15,6 +15,8 @@ export default ({ options, menu }) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [markdown, setMarkdown] = useState('')
+  const [active, setActive] = useState('customer')
+  const [width, setWidth] = useState(window.innerWidth);
 
   const handleSetSearchTerm = e => {
     setSearchTerm(e.target.value)
@@ -48,7 +50,17 @@ export default ({ options, menu }) => {
       setSearchResults(results)
     }
   }, [searchTerm])
+  
+  const setWindowWidth = () => {
+    setWidth(window.innerWidth)
+  }
 
+  useEffect(() => {
+    window.addEventListener('resize', setWindowWidth);
+    return (() => {
+      window.removeEventListener('resize', setWindowWidth);
+    })
+  })
   const handleSubmitQuote = async e => {
     if (typeof window !== 'undefined' && customerInfo.name && customerInfo.company && customerInfo.phone && customerInfo.email) {
       e.preventDefault()
@@ -134,10 +146,12 @@ export default ({ options, menu }) => {
   return context && (
     <section className={styles.section}>
       <div className={styles.header}>
-        <p className={styles.label}>Customer Info</p>
-        <p className={styles.label}>Quote builder</p>
+        <button className={styles.label + ` ${active === 'customer' && width <= 600 ? `${styles.active}` : ``}`} onClick={() => setActive('customer')}>
+          Customer Info<div className={styles.underline} /></button>
+        <button className={styles.label + ` ${active === 'quote' && width <= 600 ? `${styles.active}` : ``}`} onClick={() => setActive('quote')}>
+          Quote builder<div className={styles.underline} /></button>
       </div>
-      <div className={styles.customerInfo}>
+      <div className={styles.customerInfo + ` ${active === 'customer' ? `${styles.active}` : ""}`}>
         <div className={styles.fields}>
           <div className={styles.field}>
             <label htmlFor='name'>Name<span className={styles.required}>*</span></label>
@@ -166,7 +180,7 @@ export default ({ options, menu }) => {
           </div>
         </div>
       </div>
-      <div className={styles.quoteBuilder}>
+      <div className={styles.quoteBuilder + ` ${active === 'quote' ? `${styles.active}` : ""}`}>
         {context.quote.length ? (
           <>
             <div className={styles.labels}>

@@ -41,6 +41,9 @@
         font-weight: 700;
         color: #525252;
       }
+      .qty {
+        display: none;
+      }
     }
   }
   .quote {
@@ -194,7 +197,7 @@
         }
       }
       .labels {
-        display: block;
+        grid-template-columns: 45% 27% 27%;
         padding: 0 0 0 1vw;
         p {
           padding: 0 0 1vw;
@@ -203,7 +206,11 @@
         p:nth-child(2) {
           text-align: center;
         }
-        p:nth-child(3) {
+        .quantity {
+          display: none;
+        }
+        .qty {
+          display: block;
           text-align: right;
         }
       }
@@ -214,12 +221,12 @@
           grid-template-columns: 45% 45% 10%;
           .product-details {
             display: grid;
-            grid-auto-flow: column;
+            grid-auto-flow: row;
             justify-content: flex-start;
-            gap: 2vw;
+            gap: 4vw;
             .product-image {
-              width: 16vw;
-              height: 16vw;
+              width: 30vw;
+              height: 30vw;
             }
             .product-description {
               .product-name {
@@ -263,7 +270,7 @@
             align-items: flex-start;
             .quantity {
               width: 100%;
-              font-size: 1.1vw;
+              font-size: 3.5vw;
               text-align: center;
               font-weight: 700;
             }
@@ -286,7 +293,6 @@
       }
       p {
         font-size: 5vw;
-        font-weight: 700;
       }
     }
   }

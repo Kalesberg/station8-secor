@@ -77,26 +77,17 @@
   .login {
     margin-top: 12vw;
     .title {
-      // text-align: center;
       font-size: 6vw;
     }
     .login-form {
-      // display: grid;
       width: 80vw;
-      // grid-template-rows: repeat(auto-fit, auto);
-      // grid-template-columns: minmax(0, 1fr);
-      // justify-content: stretch;
       gap: 2vw;
       .column {
         .field, .fields > .field {
           label {
             font-size: 4vw;
             line-height: 8vw;
-            // color: #212121;
-            // padding-bottom: 0.5vw;
             .required {
-              // color: #D50F09;
-              // font-weight: 700;
               margin-left: 1vw;
             }
           }
