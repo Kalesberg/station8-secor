@@ -1,46 +1,88 @@
 .section {
   padding-top: 17vw;
-  // position: relative;
-  .sidebar {
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-    background-color: white;
-    z-index: 3;
+  position: relative;
+  .sidebarContainer {
+    position: fixed;
     transform: translateX(-150%);
     transition: all .7s;
-    position: absolute;
-    .category {
-      margin-bottom: 1vw;
-      .category-name {
-        font-family: 'Roboto', sans-serif;
-        font-weight: 900;
-        font-size: 4vw;
-        padding: 1vw 1vw 0 2vw;
-        margin-bottom: 0.5vw;
-      }
-      .menu-items {
-        .menu-item {
-          display: block;
+    width: 100%;
+    z-index: 3;
+    top: 12vw;
+    height: 100%;
+    overflow-y: scroll;
+    .sidebar {
+      padding-bottom: 10vw;
+      top: 17vw;
+      padding-bottom: 20vh;
+      width: 100%;
+      background-color: white;
+      position: absolute;
+      .category {
+        margin-bottom: 5vw;
+        .category-name {
           font-family: 'Roboto', sans-serif;
-          font-size: 5vw;
-          padding: 0.5vw 2vw;
-          margin-bottom: 0;
-          color: #4A4A4A;
-          &.active {
-            position: relative;
-            padding: 1vw 2vw;
-            top: -0.25vw;
-            margin-bottom: -0.25vw;
-            background-color: #D50F09;
-            color: white;
-            font-weight: 700;
-          }
+          font-weight: 900;
+          font-size: 4vw;
+          padding: 1vw 1vw 0 5vw;
+          margin-bottom: 2vw;
         }
-        .submenus {
-          .link {
-            font-size: 2vw;
+        .menu-items {
+          .dropdownContainer {
+            .dropdown {
+              background-repeat: no-repeat;
+              background-position: 90%;
+              border: none;
+              margin: 0;
+              padding: 0;
+              background-color: transparent;
+              text-align: left;
+              padding: 2vw 0 2vw 5vw;
+              height: 11vw;
+              &:focus {
+                outline: 0;
+              }
+              &:hover, &.active {
+                position: relative;
+                background-color: #D50F09;
+                color: white;
+                font-weight: 700;
+              }
+            }
+          }
+          .menu-item {
             display: block;
+            font-family: 'Roboto', sans-serif;
+            font-size: 5vw;
+            padding: 2vw 0 2vw 5vw;
+            margin: 0;
+            color: #4A4A4A;
+            width: 100%;
+            &.active, &:hover {
+              position: relative;
+              background-color: #D50F09;
+              color: white;
+              font-weight: 700;
+            }
+          }
+          .submenus {
+            padding: 2vw 0 2vw 5vw;
+            background-color: rgb(235, 229, 229);
+            margin: 0;
+            display: none;
+            .link {
+              font-size: 4vw;
+              display: block;
+              padding-left: 5vw;
+              border-left: 1vw solid transparent;
+              margin: 1.2vw 0 1.2vw 0;
+              &:hover, &.active {
+                border-color: #D50F09;
+                color: #D50F09;
+              }
+            }
+            &.active {
+              display: block;
+            }
           }
         }
       }
@@ -49,6 +91,7 @@
   .sidebarOpen {
     transform: translateX(0);
   }
+  
   .search {
     height: 17vw;
     width: 100%;
@@ -61,18 +104,23 @@
     gap: 2.5vw;
     position: fixed;
     top: 12vw;
-    z-index: 2;
-    .closedButton {
+    z-index: 4;
+    .menuButton {
       position: absolute;
       left: 5vw;
       top: 6vw;
       background-color: transparent;
       border: none;
+      transition: all .5s;
+      cursor: pointer;
       .menu-icon {
         width: 5vw;
       }
+      &:hover {
+        transform: scale(1.1);
+      }
     }
-    .closedButton:focus {
+    .menuButton:focus {
       outline: 0;
     }
     .label {
@@ -110,6 +158,9 @@
       z-index: 2;
       .title {
         font-size: 5vw;
+        .span {
+          color: black;
+        }
       }
     }
     .products {
@@ -122,7 +173,6 @@
       justify-content: center;
       .product {
         width: 100%;
-        // height: 80vh;
         margin-bottom: 50vw;
         padding-top: 10vw;
         .image {
@@ -190,7 +240,7 @@
             height: 100%;
             background-color: #ebe5e5;
             border-radius: 8vw 0 0 8vw;
-            border: 1.6vw solid #D50F09;
+            border: 1vw solid #D50F09;
             position: absolute;
             left: 0;
             top: 0;
