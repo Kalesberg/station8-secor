@@ -26,7 +26,7 @@ sections:
   label: News & Resources
 - type: directory
   path: ".forestry/content/articles"
-  label: Articles
+  label: Blog
   create: documents
   match: "**/*"
   new_doc_ext: md
