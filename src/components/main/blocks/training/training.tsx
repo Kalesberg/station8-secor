@@ -20,11 +20,13 @@ export default ({ block, images }) => {
     setTarget(container.current && container.current.firstElementChild);
   }
   useEffect(() => {
+    if (container.current)
+      setTarget(container.current.children[0]);
     window.addEventListener('resize', resetHighlight);
     return () => {
       window.removeEventListener('resize', resetHighlight)
     }
-  },[])
+  },[container])
   return (
     <section className={styles.section}>
       <div className={styles.categoryContainer}>

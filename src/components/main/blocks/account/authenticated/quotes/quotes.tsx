@@ -26,9 +26,9 @@ export default ({ options, search, user, activeQuote, setActiveQuote, handleClea
             <h2 className={styles.timestamp}>Date: {activeQuote.timestamp && <Moment date={activeQuote.timestamp} format='MM/DD/YY' />}</h2>
           </div>
           <div className={styles.labels}>
-            <p>Product</p>
-            <p>Notes</p>
-            <p>Quantity</p>
+            <p className={styles.label}>Product</p>
+            <p className={styles.label}>Notes</p>
+            <p className={styles.label}>Quantity</p>
           </div>
         </div>
         {activeQuote.JSON.map(product => {

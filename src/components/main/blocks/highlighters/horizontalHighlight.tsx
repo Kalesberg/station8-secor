@@ -9,6 +9,7 @@ export default ({ target, container }) => {
 
   useEffect(() => {
     if (target) {
+      setWidth(target.offsetWidth)
       const targetWidth = target.offsetWidth;
       const highlightBoundary = highlighter.current.getBoundingClientRect();
       const selectedBoundary = target.getBoundingClientRect();
