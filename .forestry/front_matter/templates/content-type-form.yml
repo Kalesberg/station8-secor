@@ -1,6 +1,6 @@
 ---
 label: 'Content Type: Form'
-hide_body: false
+hide_body: true
 fields:
 - name: parent
   type: select
@@ -58,6 +58,11 @@ fields:
   label: Type
   hidden: true
   default: form
+- name: form
+  type: file
+  config:
+    maxSize: 64
+  label: Form
 pages:
 - ".forestry/content/articles/article-two.md"
 - ".forestry/content/articles/featured-article.md"
