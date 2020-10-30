@@ -1,99 +1,6 @@
 {
   "title": "Home",
   "type": "page",
-  "rows": [
-    {
-      "label": "Hero Row",
-      "columns": [
-        {
-          "label": "Hero Column",
-          "blocks": [
-            {
-              "template": "main-hero"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "label": "Product Descriptions Row",
-      "columns": [
-        {
-          "label": "Product Descriptions Column",
-          "blocks": [
-            {
-              "template": "main-product-descriptions"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "label": "Fabrication Animation Row",
-      "columns": [
-        {
-          "label": "Fabrication Animation Column",
-          "blocks": [
-            {
-              "template": "main-fabrication-animation"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "label": "Interactive Tools Row",
-      "columns": [
-        {
-          "label": "Interactive Tools Column",
-          "blocks": [
-            {
-              "template": "main-interactive-tools"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "label": "Basic Contact Form Row",
-      "columns": [
-        {
-          "label": "Basic Contact Form Column",
-          "blocks": [
-            {
-              "template": "main-basic-contact-form"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "label": "Interactive Markets Row",
-      "columns": [
-        {
-          "label": "Interactive Markets Column",
-          "blocks": [
-            {
-              "template": "main-interactive-markets"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "label": "Contact Form Row",
-      "columns": [
-        {
-          "label": "Contact Form Column",
-          "blocks": [
-            {
-              "template": "main-contact-form"
-            }
-          ]
-        }
-      ]
-    }
-  ],
   "slug": "/",
   "blocks": [
     {
@@ -301,6 +208,29 @@
       "buttonText": "See all markets",
       "buttonLink": "/why-hdpe#markets",
       "icon": "/.forestry/content/images/arrow-right.svg"
+    },
+    {
+      "template": "main-block-stats",
+      "stats": [
+        {
+          "number": 115,
+          "description": "fittings fabricated annually",
+          "icon": "/.forestry/content/images/valve.svg",
+          "characters": "K+"
+        },
+        {
+          "number": 3632,
+          "description": "trained on fusion equipment in 2018",
+          "icon": "/.forestry/content/images/worker.svg",
+          "characters": ""
+        },
+        {
+          "number": 113,
+          "characters": "K+",
+          "description": "miles of HDPE pipe sold annually",
+          "icon": "/.forestry/content/images/pipe.svg"
+        }
+      ]
     },
     {
       "template": "main-contact-form",
