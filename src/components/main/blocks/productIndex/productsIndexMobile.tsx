@@ -116,7 +116,7 @@ export default ({ location, menu }) => {
   return context && (
     <section className={styles.section}>
       <div className={styles.search}>
-        <input className={styles.input + `${searchTerm ? ` ${styles.filled}` : ''}`} value={searchTerm} onChange={handleSetSearchTerm} />
+        <input className={styles.input} value={searchTerm} onChange={handleSetSearchTerm} />
         <h3 className={styles.category}>Category</h3>
       </div>
       <div className={styles.mobile}>
