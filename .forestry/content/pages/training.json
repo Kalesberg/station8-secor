@@ -37,16 +37,16 @@
       "template": "main-block-training",
       "categories": [
         {
-          "category": "Training"
+          "category": "McElroy Training"
         },
         {
-          "category": "Articles"
+          "category": "Gas Training"
         },
         {
-          "category": "Literature"
+          "category": "Other Product Training"
         }
       ],
-      "description": "We understand your drive to get it done and do it right. Our training and certification courses give you the very latest, relevant information and know-how you need to get ahead and perform your best with confidence. Each course is facilitated by a knowledgeable professional with years of hands-on experience.",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       "buttonText": "Get info on training",
       "buttonLink": "/#resourceCTA",
       "image": "/.forestry/content/images/screen-shot-2019-07-15-at-10-15-26-am.png",

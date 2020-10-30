@@ -268,7 +268,7 @@ export default ({ options, menu }) => {
         )}
         <div className={styles.manageContainer}>
           <div className={styles.search}>
-            <label className={styles.label}>To add more items, search below</label>
+            <label className={styles.label}>{`To add ${context.quote.length ? 'more ' : ''} items, search below`}</label>
             <input className={styles.input + `${searchTerm ? ` ${styles.filled}` : ''}`} value={searchTerm} onChange={handleSetSearchTerm} />
             <div className={styles.results + `${!searchTerm ? ` ${styles.hidden}` : ''}`}>
               <div className={styles.triangle} />
