@@ -154,6 +154,9 @@
             border-radius: 2vw 0 0 2vw;
           }
         }
+        .mobileButton {
+          display: none;
+        }
       }
     }
     .quote-builder {
@@ -269,12 +272,13 @@
   .section {
     display: block;
     .aside {
-      display: grid;
-      justify-content: center;
-      padding: 6vw 5vw 12vw 7vw;
+      display: block;
+      padding: 8vw 8vw;
       .back {
         width: 5vw;
         height: 5vw;
+        top: 17vw;
+        left: 7vw;
       }
     }
     .content {
@@ -332,17 +336,15 @@
           }
           .options {
             margin-top: 4vw;
-            display: grid;
-            gap: 5vw;
+            display: block;
             // width: 30vw;
             .option {
               display: block;
-              select {
+              margin-bottom: 5vw;
+              .select {
                 border: none;
-                height: 10vw;
-                width: 20vw;
-                border-radius: 5vw;
-                padding: 1vw;
+                border-radius: 3vw;
+                padding: 2.5vw 3vw 2.5vw 3vw;
               }
               .label {
                 color: #4A4A4A;
@@ -358,39 +360,40 @@
             }
           }
           .add-to-quote {
-            margin-top: 8vw;
+            display: none;
+          }
+          .mobileButton {
+            display: block;
+            width: 60vw;
+            height: 12vw;
+            margin: 7vw 0 0 3vw;
             border: none;
+            border-radius: 8vw;
+            font-family: 'Roboto', sans-serif;
+            font-size: 5vw;
+            color: white;
+            font-weight: 500;
+            transition: all .6s;
+            cursor: pointer;
+            position: relative;
+            right: 3vw;
             background-color: #D50F09;
             display: grid;
-            grid-auto-flow: column;
-            justify-content: stretch;
+            justify-content: center;
             align-items: center;
-            border-radius: 10vw;
-            padding: 0;
-            transition: all .5s;
-            cursor: pointer;
-            .plus {
-              margin-bottom: 0;
-              font-size: 8vw;
-              text-align: center;
-              margin: 0;
-              padding: 0 1vw 0 2vw;
-              color: #D50F09;
+            .add {
+              width: 12vw;
+              height: 100%;
+              background-color: #ebe5e5;
+              border-radius: 8vw 0 0 8vw;
               border: 1vw solid #D50F09;
-              background-color: white;
-              border-radius: 8vw 0 0 8vw;
-              font-weight: 700;
+              position: absolute;
+              left: 0;
+              top: 0;
             }
-            .text {
-              color: white;
-              font-weight: 700;
-              font-size: 5vw;
-              padding: 0 12vw 0 6vw;
-              border-radius: 8vw 0 0 8vw;
-            }
-            &:hover {
-              transform: scale(1.1);
-            }
+          }
+          .mobileButton:hover {
+            transform: scale(1.1);
           }
         }
       }

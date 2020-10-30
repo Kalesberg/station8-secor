@@ -38,7 +38,7 @@ export default ({ images, pages, menuOpen, setMenuOpen, menu, location, userMenu
 
   return (
     <header className={styles.header}>
-      <Burger mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
+      <Burger mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} handleCloseMenus={handleCloseMenus}/>
       <div className={styles.menu + `${menuOpen ? ` ${styles.active}` : ''}`}>
         {headerConfig.blocks.map((block, i: number) => {
           return block.template === 'header-call-button' ? (

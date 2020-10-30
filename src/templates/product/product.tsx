@@ -115,8 +115,8 @@ export default ({ location, pageContext: { menu, product, title, images, article
                     {option.type === 'Text' ? (
                       <input type='text' className={styles.input} name={camelcase(option.name)} onChange={handleSetOptions} value={options[camelcase(option.name)]} required />
                     ) : option.type === 'Select' ? (
-                      <select name={camelcase(option.name)} onChange={handleSetOptions} value={options[camelcase(option.name)]} required>
-                        {option.choices.map((choice, key) => <option key={key}>{choice}</option>)}
+                      <select className={styles.select} name={camelcase(option.name)} onChange={handleSetOptions} value={options[camelcase(option.name)]} required>
+                        {option.choices.map((choice, key) => <option className={styles.selectOption} key={key}>{choice}</option>)}
                       </select>
                     ) : option.type === 'Toggle' ? (
                       <input className={styles.input} type='checkbox' name={camelcase(option.name)} value={options[camelcase(option.name)]} onChange={handleSetOptions} required />
@@ -132,6 +132,14 @@ export default ({ location, pageContext: { menu, product, title, images, article
                 <div className={styles.plus}>+</div>
                 <div className={styles.text}>Add to quote</div>
                 <div className={styles.fill} />
+              </button>
+              <button className={styles.mobileButton} type='submit' onClick={handleAddToQuote}>
+                <svg className={styles.add} viewBox='0 0 500 500' fillRule='evenodd' clipRule='evenodd' strokeLinejoin='round' strokeMiterlimit={2} >
+                  <path d='M250 0c137.979 0 250 112.021 250 250 0 137.979-112.021 250-250 250C112.021 500 0 387.979 0 250 0 112.021 112.021 0 250 0zm0 33.333c119.582 0 216.667 97.085 216.667 216.667 0 119.582-97.085 216.667-216.667 216.667-119.582 0-216.667-97.085-216.667-216.667 0-119.582 97.085-216.667 216.667-216.667z' fill='#EBE5E5' />
+                  <path fill='#d50f0a' d='M220.5 123.5h59v253h-59z' />
+                  <path fill='#d50f0a' d='M376.5 220.5v59h-253v-59z' />
+                </svg>
+                Add to quote
               </button>
             </form>
           </div>
