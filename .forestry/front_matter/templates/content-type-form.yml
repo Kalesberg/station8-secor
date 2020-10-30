@@ -57,7 +57,7 @@ fields:
     required: false
   label: Type
   hidden: true
-  default: article
+  default: form
 pages:
 - ".forestry/content/articles/article-two.md"
 - ".forestry/content/articles/featured-article.md"
