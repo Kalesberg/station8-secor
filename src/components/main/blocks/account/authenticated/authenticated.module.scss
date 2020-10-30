@@ -49,3 +49,37 @@
     }
   }
 }
+@media (max-width: 600px) {
+  .section {
+    .navigation {
+      background-color: #F5F5F5;
+      padding: 3vw 5vw;
+      .title {
+        font-size: 5.5vw;
+      }
+      .tabs {
+        gap: 3.7vw;
+        .tab {
+          .label {
+            font-size: 4vw;
+            margin-bottom: 1vw;
+          }
+          .underline {
+            height: 1vw;
+          }
+          &:hover {
+            .underline {
+              width: 8vw;
+            }
+          }
+          &.active {
+            .underline {
+              width: 8vw;
+            }
+          }
+  
+        }
+      }
+    }
+  }
+}

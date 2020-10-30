@@ -27,6 +27,19 @@
         grid-template-columns: 15% 15% 15% 45%;
         height: 100%;
         align-items: center;
+        .login {
+          font-size: 4vw;
+          color: white;
+          margin-left: 5vw;
+          .logout {
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            &:focus {
+              outline: 0;
+            }
+          }
+        }
       } 
     }
     .bottomMenu {

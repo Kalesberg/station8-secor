@@ -175,3 +175,23 @@
     text-align: center;
   }
 }
+@media (max-width: 600px) {
+  .quotes {
+    padding: 5vw 5vw;
+    gap: 4vw;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(auto-fit, 40vw);
+    .quote {
+      padding: 5vw 0;
+      border-radius: 2vw;
+      height: 40vw;
+      h1 {
+        font-size: 8vw;
+      }
+      p {
+        font-size: 5vw;
+        font-weight: 700;
+      }
+    }
+  }
+}

@@ -6,11 +6,18 @@
   padding: 0 0.4vw;
   cursor: pointer;
   // position: relative;
-  .icon {
-    height: 7vw;
-    width: 7vw;
-    margin-bottom: 0;
-    padding: 0.25vw;
+  .link {
+    cursor: pointer;
+    padding-top: 1.5vw;
+    &:focus {
+      outline: 0;
+    }
+    .icon {
+      height: 7vw;
+      width: 7vw;
+      margin-bottom: 0;
+      padding: 0.25vw;
+    }
   }
   .user-menu {
     cursor: default;
@@ -58,3 +65,10 @@
     }
   }
 }
+@media (max-width: 600px) {
+  .container {
+    .user-menu {
+      display: none;
+    }
+  }
+} 

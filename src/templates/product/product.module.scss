@@ -157,6 +157,9 @@
         .mobileButton {
           display: none;
         }
+        .success {
+          display: none;
+        }
       }
     }
     .quote-builder {
@@ -394,6 +397,24 @@
           }
           .mobileButton:hover {
             transform: scale(1.1);
+          }
+          .success {
+            display: block;
+            margin: 5vw 0 0 3vw;
+            font-size: 4vw;
+            font-weight: 700;
+            .span {
+              .link {
+                color: #D50F09;
+                transition: all .5s;
+                font-size: 4vw;
+                font-weight: 700;
+                margin-left: 2vw;
+              }
+              &:hover {
+                text-decoration: underline;
+              }
+            }
           }
         }
       }
