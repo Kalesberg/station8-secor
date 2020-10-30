@@ -29,7 +29,6 @@ export default ({ options, search, user, activeQuote, setActiveQuote, handleClea
             <p className={styles.label}>Product</p>
             <p className={styles.label}>Notes</p>
             <p className={styles.quantity}>Quantity</p>
-            <p className={styles.qty}>QTY</p>
           </div>
         </div>
         {activeQuote.JSON.map(product => {

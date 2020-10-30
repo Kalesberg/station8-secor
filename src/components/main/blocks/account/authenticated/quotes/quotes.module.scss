@@ -41,9 +41,6 @@
         font-weight: 700;
         color: #525252;
       }
-      .qty {
-        display: none;
-      }
     }
   }
   .quote {
@@ -197,40 +194,28 @@
         }
       }
       .labels {
-        grid-template-columns: 45% 27% 27%;
-        padding: 0 0 0 1vw;
-        p {
-          padding: 0 0 1vw;
-          font-size: 4vw;
-        }
-        p:nth-child(2) {
-          text-align: center;
-        }
-        .quantity {
-          display: none;
-        }
-        .qty {
-          display: block;
-          text-align: right;
-        }
+        display: none;
       }
     }
     .quote {
       .products {
         .product {
-          grid-template-columns: 45% 45% 10%;
+          padding-top: 5vw;
+          grid-template-columns: auto;
           .product-details {
             display: grid;
-            grid-auto-flow: row;
+            grid-auto-flow: column;
             justify-content: flex-start;
             gap: 4vw;
             .product-image {
+              background-size: cover;
               width: 30vw;
-              height: 30vw;
+              height: 20vw;
             }
             .product-description {
               .product-name {
-                font-size: 3.5vw;
+                padding-top: 2vw;
+                font-size: 5.5vw;
               }
               .options {
                 .option {
@@ -241,11 +226,13 @@
           }
     
           .specifications {
-            display: grid;
+            display: block;
+            padding-top: 2vw;
             grid-auto-flow: column;
             align-items: flex-start;
             grid-template-columns: 1fr;
             padding-right: 1vw;
+            font-weight: 500;
             .button {
               border: 0.25vw solid #D50F09;
               background: none;
@@ -265,14 +252,29 @@
               margin-bottom: 0;
             }
           }
+          .specifications:before {
+            content: "notes/specifications: \A";
+            white-space: pre;
+            width: 100%;
+            line-height: 8vw;
+            color: #4A4A4A;
+            font-weight: 600;
+          }
           .quantity-container {
             display: grid;
             align-items: flex-start;
+            margin-top: 5vw;
             .quantity {
-              width: 100%;
-              font-size: 3.5vw;
+              width: 20vw;
+              font-size: 4vw;
               text-align: center;
               font-weight: 700;
+              background-color: #EFEFEF;
+              border-radius: 2vw;
+              padding: 1vw;
+            }
+            .quantity:before {
+              content: "QTY: ";
             }
           }
         }
