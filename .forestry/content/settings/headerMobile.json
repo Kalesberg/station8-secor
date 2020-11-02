@@ -14,6 +14,11 @@
           "megaMenu": false
         },
         {
+          "label": "McElroy",
+          "page": ".forestry/content/pages/mcelroy.json",
+          "megaMenu": false
+        },
+        {
           "label": "Get a quote",
           "page": ".forestry/content/pages/get-a-quote.json",
           "megaMenu": false
