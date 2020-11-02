@@ -11,12 +11,13 @@ export default ({ options, menu }) => {
   const [customerInfo, setCustomerInfo] = useState({ name: '', company: '', phone: '', email: '', requirements: '' })
   const [editing, setEditing] = useState(undefined)
   const [attachment, setAttachment] = useState(undefined)
+  const [fileName, setFileName] = useState(undefined)
   const [dropzoneClasses, setDropzoneClasses] = useState([styles.dropzone])
   const [searchTerm, setSearchTerm] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [markdown, setMarkdown] = useState('')
   const [active, setActive] = useState('customer')
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(window.innerWidth)
 
   const handleSetSearchTerm = e => {
     setSearchTerm(e.target.value)
@@ -129,7 +130,10 @@ export default ({ options, menu }) => {
     unhighlight()
     handleFiles(e.dataTransfer.files[0])
   }
-
+  const removeFile = () => {
+    setAttachment(undefined);
+    setFileName(undefined);
+  }
   const handleFiles = async file => {
     const url = 'https://api.cloudinary.com/v1_1/dn0q8cpnx/upload'
     const data = new FormData()
@@ -141,7 +145,10 @@ export default ({ options, menu }) => {
       mode: 'cors'
     })
     const json = await res.json()
-    setAttachment({ url: json.url })
+    console.log(json)
+    setResponse(res);
+    setAttachment({ url: json.url });
+    setFileName(file.name);
   }
   return context && (
     <section className={styles.section}>
@@ -284,6 +291,7 @@ export default ({ options, menu }) => {
           <div className={styles.search}>
             <label className={styles.label}>{`To add ${context.quote.length ? 'more ' : ''} items, search below`}</label>
             <input className={styles.input + `${searchTerm ? ` ${styles.filled}` : ''}`} value={searchTerm} onChange={handleSetSearchTerm} />
+            <input className={styles.mobileInput + `${searchTerm ? ` ${styles.filled}` : ''}`} placeholder="Search to add items..." value={searchTerm} onChange={handleSetSearchTerm} />
             <div className={styles.results + `${!searchTerm ? ` ${styles.hidden}` : ''}`}>
               <div className={styles.triangle} />
               {searchResults.length ? searchResults.slice(0, 6).map((product, i) => {
@@ -336,7 +344,21 @@ export default ({ options, menu }) => {
           </div>
           <button className={styles.submit} onClick={handleSubmitQuote}>Submit Quote</button>
         </div>
-      </div>
+        <button className={styles.mobileSubmit} onClick={handleSubmitQuote}>Submit Quote</button>
+        <div className={styles.mobileSpecial}>
+          <label htmlFor='requirements'>Special requirements</label>
+          <textarea value={customerInfo.requirements} onChange={handleChange} style={{ backgroundImage: 'url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+Cjxzdmcgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDI0IDI0IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zOnNlcmlmPSJodHRwOi8vd3d3LnNlcmlmLmNvbS8iIHN0eWxlPSJmaWxsLXJ1bGU6ZXZlbm9kZDtjbGlwLXJ1bGU6ZXZlbm9kZDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7Ij4KICAgIDxwYXRoIGQ9Ik0xMSw0TDQsNEMyLjkwMyw0IDIsNC45MDMgMiw2TDIsMjBDMiwyMS4wOTcgMi45MDMsMjIgNCwyMkwxOCwyMkMxOS4wOTcsMjIgMjAsMjEuMDk3IDIwLDIwTDIwLDEzIiBzdHlsZT0iZmlsbDpub25lO2ZpbGwtcnVsZTpub256ZXJvO3N0cm9rZTpyZ2IoMTU1LDE1NSwxNTUpO3N0cm9rZS13aWR0aDoycHg7Ii8+CiAgICA8cGF0aCBkPSJNMTguNSwyLjVDMTguODk4LDIuMTAyIDE5LjQzOCwxLjg3OSAyMCwxLjg3OUMyMS4xNjQsMS44NzkgMjIuMTIxLDIuODM2IDIyLjEyMSw0QzIyLjEyMSw0LjU2MiAyMS44OTgsNS4xMDIgMjEuNSw1LjVMMTIsMTVMOCwxNkw5LDEyTDE4LjUsMi41WiIgc3R5bGU9ImZpbGw6bm9uZTtmaWxsLXJ1bGU6bm9uemVybztzdHJva2U6cmdiKDE1NSwxNTUsMTU1KTtzdHJva2Utd2lkdGg6MnB4OyIvPgo8L3N2Zz4K")' }} id='requirements' rows={6} />
+        </div>
+        {!fileName &&
+        <div className={styles.lookingFor}>Can't find what you're looking for? Upload requirements here</div>}
+        {!fileName &&
+        <div className={styles.mobileAttachments}>
+          <label className={styles.attachment} htmlFor='attachments'><img src="/arrow-right.svg" alt=""/></label>
+          <input type='file' id='attachments' onChange={handleFileChange} />
+        </div>}
+        {fileName &&
+            <div className={styles.mobileFile}>{fileName}<span><button onClick={removeFile}>X</button></span></div>}
+      </div>        
     </section>
   )
 }
