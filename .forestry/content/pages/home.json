@@ -24,6 +24,9 @@
           "element": "Paragraph",
           "text": "HDPE PIPE, FITTINGS, AND EQUIPMENT"
         }
+      ],
+      "extraButtons": [
+
       ]
     },
     {
@@ -31,8 +34,8 @@
       "heading": "Below ground. Above expectations.",
       "product": [
         {
-          "category": "HDPE pipe",
-          "heading": "Gas, water, and chemical distribution",
+          "category": "HDPE Pipe",
+          "heading": "Gas, Water, and Chemical Distribution",
           "description": "Preferred for its leak-proof joints and lasting performance, HDPE piping is the new standard for safely transporting water, natural gas and chemicals. As a leading stocking distributor, SECOR can deliver the exact HDPE piping you need fast.",
           "image": "/.forestry/content/images/hdpe-pipe.jpg"
         },
@@ -49,13 +52,13 @@
           "image": "/.forestry/content/images/hdpe-mfittings-trans.jpg"
         },
         {
-          "category": "McElory rental equipment",
+          "category": "McElory Rental Equipment",
           "heading": "One of the world’s largest fleets",
           "description": "SECOR is proud to bring our customers an extensive selection of fusion machine rentals from the world leader in pipe fusion — McElroy. SECOR rents and sells quality McElroy equipment to fuse piping ranging from 1/2″ CTS to 65″ IPS.",
           "image": "/.forestry/content/images/mcelroy-equip.jpg"
         },
         {
-          "category": "Tools, equipment and accessories",
+          "category": "Tools, Equipment and Accessories",
           "heading": "Everything you need from one trusted source",
           "description": "With more than 40 years of experience supporting our customers at the job site, we have the tools and equipment to complete your project with efficiency and confidence. From Mustang Squeeze Tools to electrofusion fittings and processors, SECOR has you covered.",
           "image": "/.forestry/content/images/tools-equip-accessories.jpg"

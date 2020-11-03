@@ -31,6 +31,9 @@
           "element": "Heading 1",
           "text": "TRANSPORTING A CLEANER FUTURE."
         }
+      ],
+      "extraButtons": [
+
       ]
     },
     {
@@ -46,7 +49,7 @@
           "category": "Other Product Training"
         }
       ],
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "description": "SECOR is able to offer training at your location or ours to increase your efficiency, productivity and safety when performing all PE pipe heat procedures. Mcelroy Fusion Equipment Training course offerings are available in Small Diameter, Medium Diameter, and Large Diameter. We are also able to offer Fusion Inspector Training. ",
       "buttonText": "Get info on training",
       "buttonLink": "/#resourceCTA",
       "image": "/.forestry/content/images/screen-shot-2019-07-15-at-10-15-26-am.png",
