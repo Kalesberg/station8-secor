@@ -83,7 +83,7 @@ export default ({ block, images }) => {
           <div className={styles.selectButtons}>
             {block.product.map((prod, i) => {
               return (
-                <button onClick={handleClick} className={styles.selectButton + ` ${selected === prod.category ? `${styles.active}` : ""}`}>{prod.category}</button>
+                <button key={i} onClick={handleClick} className={styles.selectButton + ` ${selected === prod.category ? `${styles.active}` : ""}`}>{prod.category}</button>
               )
             })}
           </div>

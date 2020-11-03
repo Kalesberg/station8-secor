@@ -40,7 +40,7 @@ export default ({ block, images }) => {
         <h2 className={styles.selectTitle}>{selected}</h2>
         {block.markets.map((market, i) => {
           return (
-            <button onClick={handleClick} className={styles.selectButton + ` ${selected === market.market ? `${styles.active}` : ""}`}>{market.market}</button>
+            <button key={i} onClick={handleClick} className={styles.selectButton + ` ${selected === market.market ? `${styles.active}` : ""}`}>{market.market}</button>
           )
         })}
       </div>

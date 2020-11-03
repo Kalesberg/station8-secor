@@ -128,6 +128,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-offline',
     'react-google-recaptcha',
-    'react-countup'
+    'react-countup',
+    'react-player'
   ]
 }

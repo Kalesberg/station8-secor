@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styles from './hero.module.scss'
 import { Image, link } from '../../../../functions'
+import ReactPlayer from 'react-player/wistia'
 
 export default ({ block, images }) => {
   let source
@@ -10,7 +11,7 @@ export default ({ block, images }) => {
   } else if (block && block.image) {
     source = block.image
   }
-
+  
   const media = images.find(image => image.relativePath === 'images/' + source.split('/').pop())
   const pageLink = block.buttonLink ? link(block.buttonLink) : null
 
@@ -21,11 +22,13 @@ export default ({ block, images }) => {
       behavior: 'smooth'
     })
   }
-
+  
   return (
     <div className={styles.container}>
       {block.video && (
-        <div className={styles.hero}><video className={styles.video} poster='/video-frame.jpg' playsInline autoPlay muted loop src={media.publicURL} /></div>)}
+        // <div className={styles.hero}><video className={styles.video} poster='/video-frame.jpg' playsInline autoPlay muted loop src={media.publicURL} /></div>
+        <ReactPlayer wrapper={styles.hero} config={{wistia: {options: {endVideoBehavior: 'loop', volumeControl: false, fitStrategy: "cover"}}}} playing={true} url="https://station8branding.wistia.com/medias/lng6o2vfr1"/>
+      )}
       {block.image && (
         <div className={styles.hero}><img src={media.publicURL} alt='' /></div>)}
       <div className={styles.textContainer}>

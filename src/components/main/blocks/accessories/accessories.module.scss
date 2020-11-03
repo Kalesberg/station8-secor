@@ -176,7 +176,7 @@
     }  
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 780px) {
   .section {
     flex-direction: column;
     padding-top: 5vw;
@@ -262,7 +262,7 @@
       padding: 6vw 3vw 6vw 3vw;
       .accessory {
         display: block;
-        width: 100%;
+        width: 95%;
         .image {
           width: 100%;
         }
