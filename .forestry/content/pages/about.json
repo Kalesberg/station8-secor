@@ -20,7 +20,7 @@
       "extraButtons": [
         {
           "buttonText": "Locations",
-          "buttonLink": ".forestry/content/pages/locations.json",
+          "buttonLink": "/locations",
           "buttonIcon": "/.forestry/content/images/secor-arrow-left.svg"
         },
         {
