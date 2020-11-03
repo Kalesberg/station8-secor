@@ -70,6 +70,11 @@ query ($title: String!) {
         buttonTwoText
         showButtonTwo
       }
+      extraButtons {
+        buttonText
+        buttonLink
+        buttonIcon
+      }
       heading
       subHeading
       image

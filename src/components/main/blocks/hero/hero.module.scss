@@ -11,7 +11,7 @@
   }
   .textContainer {
     position: absolute;
-    bottom: 8vw;;
+    bottom: 12vw;;
     left: 10vw;
     width: 70%;
     .heroText0, .heroText1, .heroText2, .heroTextMedium, button {
@@ -49,6 +49,7 @@
       padding: .5vw 5vw .5vw 1.2vw;
       height: 4vw;
       margin-top: 3vw;
+      margin-right: 5vw;
       text-align: left;
       position: relative;
       transition: all .5s;
@@ -74,6 +75,9 @@
     }
     button:hover {
       background-color: #D50F09;
+    }
+    .buttonBreak {
+      display: none;
     }
   }
   .scroll-container {

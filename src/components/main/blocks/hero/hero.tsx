@@ -45,8 +45,19 @@ export default ({ block, images }) => {
               <span>
                 {block.buttonIcon && <Image className={styles.icon} src={block.buttonIcon} images={images} />}
               </span>
-            </button>
+            </button><br className={styles.buttonBreak}></br>
           </Link>}
+        {block.extraButtons && block.extraButtons.length > 0 && block.extraButtons.map((button, i) => {
+          return (
+            <Link key={i} to={button.buttonLink}>
+              <button className={styles.button}>{button.buttonText}
+                <span>
+                  {block.buttonIcon && <Image className={styles.icon} src={button.buttonIcon} images={images} />}
+                </span>
+              </button><br className={styles.buttonBreak}></br>
+            </Link> 
+          )
+        })}  
       </div>
       <div className={styles.scrollContainer} onClick={scrollDown}>
         <p className={styles.label}>Scroll</p>
