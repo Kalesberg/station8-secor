@@ -16,6 +16,18 @@
           "element": "Heading 1",
           "text": "A FUSION OF QUALITY AND KNOW-HOW"
         }
+      ],
+      "extraButtons": [
+        {
+          "buttonText": "Locations",
+          "buttonLink": ".forestry/content/pages/locations.json",
+          "buttonIcon": "/.forestry/content/images/secor-arrow-left.svg"
+        },
+        {
+          "buttonText": "Resources",
+          "buttonLink": "/news-and-resources?category=forms",
+          "buttonIcon": "/.forestry/content/images/secor-arrow-left.svg"
+        }
       ]
     },
     {
