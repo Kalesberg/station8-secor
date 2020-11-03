@@ -103,3 +103,43 @@
     }
   }
 }
+@media (max-width: 600px) {
+  .section {
+    .container {
+      .heading {
+        text-align: center;
+        font-size: 9vw;
+        line-height: 9vw;
+        width: 80%;
+      }
+      .subHeading {
+        font-size: 5vw;
+        font-family: 'Roboto', sans-serif;
+      }
+      .buttonContainer {
+        width: 100%;
+        padding: 0 5vw 0 5vw;
+        margin-top: 5vw;
+        button {
+          font-family: 'Roboto', sans-serif;
+          border-radius: 6vw;
+          font-size: 4vw;
+          font-weight: 900;
+          background-color: #D50F09;
+          border: none;
+          padding: .5vw 2.5vw .5vw 2.5vw;
+          height: 12vw;
+          text-align: center;
+          position: relative;
+          transition: all .5s;
+          color: white;
+          width: 100%;
+          cursor: pointer;
+        }
+        .button:hover {
+          background-color: rgb(95, 27, 27);
+        }
+      }
+    }
+  }
+}

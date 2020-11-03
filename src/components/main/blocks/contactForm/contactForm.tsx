@@ -63,7 +63,7 @@ export default ({ block, images }) => {
                 <label className={styles.label} htmlFor={input.label}>{input.label}:</label>
                 <div className={styles.inputSpan}>
                   <div>{input.icon && <Image className={styles.icon} src={input.icon} images={images} />}</div>
-                  <input id={input.label} name={input.label} onChange={handleChange}/>
+                  <input className={styles.field} id={input.label} name={input.label} onChange={handleChange}/>
                 </div>
               </div>
             )

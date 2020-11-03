@@ -2,6 +2,9 @@
   display: flex;
   justify-content: center;
   position: relative;
+  .dropdown {
+    display: none;
+  }
   .accessoryContainer {
     height: 85vh;
     position: relative;
@@ -89,6 +92,12 @@
         opacity: 0.5;
         cursor: pointer;
         transition: all .5s;
+        border: none;
+        background-color: transparent;
+        width: 100%;
+        &:focus {
+          outline: 0;
+        }
       }
       .heading:hover, .headingShow {
         opacity: 1;
@@ -148,6 +157,165 @@
       }
     }
     .selectorContainer {
+      bottom: 25%;
+      .selectors {
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto;
+        grid-template-rows: auto;
+        grid-column-gap: 3vw;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        height: 5vw;
+        .heading {
+          font-size: 2.5vw;
+          line-height: 3.5vw;
+          margin-bottom: .5vw;
+        }
+      }
+    }  
+  }
+}
+@media (max-width: 600px) {
+  .section {
+    flex-direction: column;
+    padding-top: 5vw;
+    .dropdown {
+      position: relative;
+      display: grid;
+      width: 100%;
+      height: 15vw;
+      padding: 0 12.5vw 0 12.5vw;
+      .dropdownSelected {
+        font-size: 7vw;
+        color: black;
+        background-color: #E8E8E8;
+        width: 60vw;
+        padding: 4.5vw 4vw 4vw 4vw;
+        text-align: center;
+        text-transform: uppercase;
+        position: relative;
+        margin: 0;
+        span {
+          position: absolute;
+          right: -15vw;
+          top: 0;
+          display: grid;
+          justify-content: center;
+          align-items: center;
+          width: 15vw;
+          height: 100%;
+          border: 1vw solid #D50F09;
+          background-color: white;
+          cursor: pointer;
+          &:hover {
+            background-color: #D50F09;
+          }
+          button {
+            border: none;
+            background-color: transparent;
+            height: 100%;
+            width: 15vw;
+            cursor: pointer;
+            &:focus {
+              outline: 0;
+            }
+            img {
+              margin: 0;
+              height: 2vw;
+            }
+          }
+        }
+      }
+      .selections {
+        width: 60vw;
+        position: absolute;
+        top: 15vw;
+        left: 12.5vw;
+        background-color: #E8E8E8;
+        padding-bottom: 5vw;
+        z-index: 2;
+        display: none;
+        .selection {  
+          text-align: center;
+          padding: 1vw 0 1vw 0;
+          font-size: 5vw;
+          border: none;
+          background-color: transparent;
+          width: 100%;
+          cursor: pointer;
+          &:focus {
+            outline: 0;
+          }
+          &:hover {
+            color: #D50F09;
+          }
+        }
+        &.active {
+          display: block;
+        }
+      }
+    }
+    .accessoryContainer {
+      height: 160vw;
+      width: 100vw;
+      padding: 6vw 3vw 6vw 3vw;
+      .accessory {
+        display: block;
+        width: 100%;
+        .image {
+          width: 100%;
+        }
+        .infoContainer {
+          text-align: left;
+          padding: 5vw 10vw 10vw 5vw;
+          h1 {
+            display: none;
+            font-size: 6vw;
+            line-height: 10vw;
+          }
+          .subHeading {
+            font-size: 3.5vw;
+            line-height: 4vw;
+            margin-bottom: 3vw;
+          }
+          .description {
+            font-size: 3.5vw;
+          }
+          .buttonContainer {
+            .button {
+              font-size: 4vw;
+              height: 12vw;
+              width: 100%;
+              border-radius: 6vw;
+              cursor: pointer;
+              span {
+                top: 0vw;
+                right: 0vw;
+                width: 3.75vw;
+                height: 3.75vw;
+                .icon {
+                  height: 1.7vw;
+                  width: 1.7vw;
+                  margin: 0;
+                }
+              }
+            }
+            .button:hover {
+              span {
+                background-color:  rgb(128, 38, 38);
+              }
+            }
+          }
+        }
+      }
+      .accessoryShow {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+    .selectorContainer {
+      display: none;
       bottom: 25%;
       .selectors {
         display: grid;

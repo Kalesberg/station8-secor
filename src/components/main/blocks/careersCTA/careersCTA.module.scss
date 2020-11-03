@@ -149,3 +149,163 @@
     }
   }
 }
+@media (max-width: 600px) {
+  .section {
+    .cta {
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      padding: 14vw 10vw 7vw;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat no-repeat;
+      .title {
+        text-transform: uppercase;
+        color: white;
+        font-size: 7vw;
+        text-align: center;
+        margin-bottom: 5vw;
+      }
+      .text {
+        color: white;
+        text-align: center;
+        padding: 0 5vw;
+        font-size: 3.5vw;
+        margin-bottom: 0;
+      }
+      .button-container {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        padding-top: 5vw;
+        margin-bottom: 5vw;
+        .button {
+          cursor: pointer;
+          color: white;
+          background-color: #d50f09;
+          font: 'Open Sans', sans-serif;
+          font-weight: 700;
+          font-size: 3.5vw;
+          padding: 3vw 6vw;
+          border-radius: 6vw;
+        }
+      }
+    }
+    .contact-form {
+      padding: 6vw 0;
+      display: grid;
+      justify-content: center;
+      .title {
+        color: white;
+        text-align: center;
+        font-size: 6vw;
+      }
+      .fields {
+        display: grid;
+        grid-template-columns: auto;
+        gap: 0.5vw 3vw;
+        padding: 0 5vw;
+        .field {
+          // display: grid;
+          position: relative;
+          margin-bottom: 5vw;
+          .label {
+            font-size: 3.5vw;
+            color: white;
+            padding-bottom: 0.5vw;
+            .required {
+              font-weight: 700;
+              margin-left: 0.25vw;
+            }
+          }
+          .input, .select-display {
+            height: 12vw;
+            margin-top: 0.5vw;
+            width: 100%;
+            background-color: #efefef;
+            border: none;
+            border-radius: 6vw;
+            font-size: 4vw;
+            padding: 2vw 1vw 2vw 10vw;
+            font-weight: bold;
+            background-repeat: no-repeat no-repeat;
+            background-position: 1.6vw;
+            background-size: 4vw;
+          }
+          .select {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 12vw;
+            margin-top: 0.5vw;
+
+            // height: 100%;
+            opacity: 0;
+          }
+          .select-display {
+            padding: 2.5vw 0.75vw 0.75vw 10vw;
+            margin: 0;
+          }
+          input[type=file] {
+            display: none;
+          }
+          .dropzone {
+            margin-top: 0.5vw;
+            // border: 0.18vw dashed #c4c4c4;
+            display: grid;
+            align-items: center;
+            justify-content: stretch;
+            padding: 1vw;
+            background-color: #efefef;
+            width: 100%;
+            border-radius: 6vw;
+            background-repeat: no-repeat no-repeat;
+            background-position: 1.6vw;
+            background-size: 4vw;
+            height: 12vw;
+            .text {
+              color: #c4c4c4;
+              text-align: center;
+              font-size: 4vw;
+              font-weight: 400;
+              margin: 0;
+              &.attached {
+                color: #212121;
+              }
+              .total {
+                display: block;
+                margin-top: 1vw;
+                font-weight: 700;
+              }
+            }
+            &.highlight {
+              background-color: white;
+              .text {
+                color: #4a4a4a;
+              }
+            }
+          }
+        }
+      }
+      .button-container {
+        margin-top: 4vw;
+        margin-bottom: 5vw;
+        display: grid;
+        justify-content: center;
+        .button {
+          cursor: pointer;
+          background-color: #000000;
+          border: none;
+          border-radius: 6vw;
+          padding: 3vw 12vw;
+          .button-label {
+            margin-bottom: 0;
+            color: white;
+            font-size: 4vw;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}

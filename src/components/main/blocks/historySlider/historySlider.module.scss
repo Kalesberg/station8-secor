@@ -309,3 +309,156 @@
     }
   }
 }
+@media (max-width: 600px) {
+  .section {
+    .right, .left { 
+      position: absolute;
+      color: white;
+      background-color: #D50F09;
+      height: 95vh;
+      width: 8vw;
+      bottom: 0;
+      overflow: visible;
+      display: grid;
+      grid-template-rows: 50% 50%;
+      z-index: 2;
+      .clickContainer {
+        cursor: pointer;
+        position: relative;
+        height: 15vw;
+        width: 100%;
+        .icon {
+          display: none;
+          position: absolute;
+          top: 2vw;
+          left: 2.2vw;
+          height: 4vw;
+        }
+        .year {
+          position: relative;
+          top: 100%;
+          text-align: right;
+          .rotate {
+            transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 15vw;
+            font-size: 6vw;
+            line-height: 3vw;
+            font-weight: 700;
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+          }
+        }
+      }
+  
+      .text {
+        position: relative;
+        height: 100%;
+        .rotate {
+          transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+          position: absolute;
+          left: 50%;
+          bottom: 50%;;
+          width: 300px;
+          font-size: 4vw;
+          line-height: 30px;
+          font-weight: 700;
+          font-family: 'Roboto', sans-serif;
+        }
+      }
+    }
+    .left {
+      left: 0;
+      .icon {
+        transform: rotate(180deg);
+      }
+    }
+    .right {
+      right: 0;
+    }
+    .right, .left {
+      .clickContainer {
+        .icon {
+          left: 2.8vw;
+          height: 1.4vw;
+          width: 1.9vw;
+        }
+      }  
+    }
+    .container {
+      height: 95vh;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+      position: relative;
+      .history {
+        position: relative;
+        height: 100%;
+        .background {
+          width: 100vw;
+          transition: all .7s;
+          height: 95vh;
+          img {
+            object-fit: cover;
+            height: 95vh;
+            width: 100vw;
+          }
+        }
+        .textContainer {
+          position: absolute;
+          top: 0;
+          width: 100vw;
+          display: grid;
+          grid-template-columns: 100%;
+          height: 95vh;
+          text-align: left;
+          padding-left: 15vw;
+          .text {
+            position: relative;
+            display: grid;
+            grid-template-rows: 50% 50%;
+            height: 95vh;
+            .top {
+              width: 80%;
+              h2 {
+                padding-top: 5vh;
+                color: white;
+                text-align: left;
+                font-size: 8vw;
+                line-height: 3vw;
+                font-weight: 700;
+                font-family: 'Roboto', sans-serif;
+                font-style: normal;
+              }
+              .description {
+                text-align: left;
+                font-size: 4vw;
+                line-height: 5vw;
+                font-weight: 600;
+                font-family: 'Roboto', sans-serif;
+                color: white;
+              }
+            }
+            .textYear {
+              position: relative;
+              display: none;
+              .rotate {
+                transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+                position: absolute;
+                left: 0;
+                bottom: 50%;
+                width: 300px;
+                font-size: 2.25vw;;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

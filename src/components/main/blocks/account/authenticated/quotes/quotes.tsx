@@ -32,7 +32,7 @@ export default ({ options, search, user, activeQuote, setActiveQuote, handleClea
           </div>
         </div>
         {activeQuote.JSON.map(product => {
-          console.log(product)
+          // console.log(product)
           return (
             <div key={product.id} className={styles.quote}>
               <>

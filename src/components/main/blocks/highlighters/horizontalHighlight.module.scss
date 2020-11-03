@@ -2,7 +2,7 @@
   position: absolute;
   background-color: red;
   height: 1vw;
-  width: 6vw;
+  // width: 6vw;
   border-radius: 10vw;
   position: absolute;
   bottom: 0;
@@ -12,6 +12,13 @@
 @media (max-width: 1023px) {
   .highlighter {
     height: 1.5vw;
-    width: 8vw;
+    bottom: -1vw;
+    // width: 8vw;
+  }
+}
+@media (max-width: 600px) {
+  .highlighter {
+    height: 2.2vw;
+    // width: 8vw;
   }
 }

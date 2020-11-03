@@ -32,7 +32,8 @@ export default ({ target, container }) => {
           setWidth(`${targetWidth / window.innerWidth * 100}vw`);
         }, 400)
       }
-    }   
+    } else if (container)
+      setWidth(container.current.children[0].offsetWidth)   
   }, [target, container, highlighter])
 
   useEffect(() => {

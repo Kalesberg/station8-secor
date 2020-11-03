@@ -36,6 +36,14 @@ export default ({ block, images }) => {
           ) 
         })}
       </div>
+      <div className={styles.selectButtons}>
+        <h2 className={styles.selectTitle}>{selected}</h2>
+        {block.markets.map((market, i) => {
+          return (
+            <button onClick={handleClick} className={styles.selectButton + ` ${selected === market.market ? `${styles.active}` : ""}`}>{market.market}</button>
+          )
+        })}
+      </div>
       <div className={styles.selectorContainer} >
         <div className={styles.selectors} ref={container}>
           {block.markets && block.markets.map((market, i) => {

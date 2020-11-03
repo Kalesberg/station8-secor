@@ -164,3 +164,69 @@
     }
   }
 }
+@media (max-width: 600px) {
+  .section {
+    height: 120vw;
+    .backgroundContainer {
+      height: 120vw;
+      .background {
+        height: 120vw;
+        img {
+          height: 120vw;
+        }
+      }
+    }
+    .container {
+      top: 10vw;
+      .largeHeading {
+        font-size: 8vw;
+      }
+      h2 {
+        font-size: 8vw;
+        padding: 2%;
+      }
+      p {
+        font-size: 3.5vw;
+        padding: 4%;
+      }
+      .form {
+        position: relative;
+        right: 0;
+        width: 100%;
+        form {
+          width: 80vw;
+          .inputContainer {
+            height: 4.5vw;
+            .iconContainer {
+              width: 4.5vw;
+              margin: 0;
+              border-radius: 5vw 0 0 5vw;
+              img {
+                height: 3.5vw;
+                margin: 0;
+                padding: 0;
+              }
+            }
+            .input {
+              width: 54vw;
+              height: 12vw;
+              border-top-left-radius: 6vw;
+              border-bottom-left-radius: 6vw;
+              font-size: 3.5vw;
+              background-position: 2vw;
+              background-size: 4vw;
+              padding-left: 8vw;
+            }
+            .button {
+              width: 30vw;
+              font-size: 3.5vw;
+              cursor: pointer;
+              border-top-right-radius: 6vw;
+              border-bottom-right-radius: 6vw;
+            }
+          }
+        }
+      }
+    }
+  }
+}

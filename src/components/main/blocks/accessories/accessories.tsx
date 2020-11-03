@@ -8,11 +8,13 @@ import HorizontalHighlight from '../highlighters/horizontalHighlight'
 export default ({ block, images }) => {
   const [selected, setSelected] = useState(block.accessories && block.accessories.length > 0 ? block.accessories[0].heading : "")
   const [target, setTarget] = useState(null);
+  const [dropdown, setDropdown] = useState(false);
   const container = useRef(null);
 
   const handleClick = (e) => {
     setSelected(e.target.innerText);
     setTarget(e.target);
+    setDropdown(false);
   }
 
   useEffect(() => {
@@ -24,6 +26,16 @@ export default ({ block, images }) => {
 
   return (
     <section className={styles.section}>
+      <div className={styles.dropdown}>
+        <h2 className={styles.dropdownSelected}>{selected}<span><button onClick={() => setDropdown(!dropdown)}><img src="/chevron-down-black.svg" alt=""/></button></span></h2>
+        <div className={styles.selections + ` ${dropdown ? `${styles.active}` : ""}`}>
+          {block.accessories && block.accessories.filter(acc => acc.heading !== selected).map((acc, i) => {
+            return (
+              <button onClick={handleClick} className={styles.selection}>{acc.heading}</button>
+            )
+          })}
+        </div>
+      </div>
       <div className={styles.accessoryContainer}>
         {block.accessories && block.accessories.map((acc, i) => {
           return (
@@ -51,7 +63,7 @@ export default ({ block, images }) => {
         <div className={styles.selectors} ref={container}>
           {block.accessories && block.accessories.map((acc, i) => {
             return (
-              <div onClick={handleClick} className={styles.heading + ` ${selected.toLowerCase() === acc.heading.toLowerCase() ? `${styles.headingShow}` : ""}`} key={i}>{acc.heading}</div>
+              <button onClick={handleClick} className={styles.heading + ` ${selected.toLowerCase() === acc.heading.toLowerCase() ? `${styles.headingShow}` : ""}`} key={i}>{acc.heading}</button>
             )
           })}
           <HorizontalHighlight container={container} target={target} />

@@ -56,6 +56,8 @@
       grid-template-areas:
        "top"
        "bottom";
+       width: 100vw;
+       overflow: hidden;
       .videoContainer {
         overflow: visible;
         height: 50vh;
@@ -72,6 +74,45 @@
         grid-area: top;
         text-align: center;
         padding: 1vw 3vw 1vw 3vw;
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .section {
+    h3 {
+      font-size: 4vw;
+      line-height: 6vw;
+      text-align: left;
+    }
+    .container {
+      margin: 0;
+      padding: 0;
+      display: grid;
+      align-items: center;
+      grid-template-columns: auto;
+      grid-template-rows: auto;
+      grid-template-areas:
+       "top"
+       "bottom";
+       width: 100vw;
+       overflow: hidden;
+      .videoContainer {
+        overflow: visible;
+        height: 50vh;
+        grid-area: bottom;
+        .video {
+          width: 125vh;
+          transform: translateX(-10%);
+          position: absolute;
+          bottom: 0;
+        }
+      }
+      p {
+        font-size: 4vw;
+        grid-area: top;
+        text-align: left;
+        padding: 1vw 3vw 1vw 7vw;
       }
     }
   }

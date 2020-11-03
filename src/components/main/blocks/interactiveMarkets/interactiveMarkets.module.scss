@@ -5,6 +5,9 @@
   padding: 0;
   height: 95vh;
   width: 100vw;
+  .selectButtons {
+    display: none;
+  }
   .background {
     width: 100vw;
     position: absolute;
@@ -182,6 +185,155 @@
           }
         }
       }
+      .button:hover {
+        span {
+          background-color:  rgb(128, 38, 38);
+        }
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .section {
+    position: relative;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+    height: 95vh;
+    width: 100vw;
+    .selectButtons {
+      display: block;
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      top: 20vw;
+      z-index: 2;
+      .selectTitle {
+        color: white;
+      }
+      .selectButton {
+        font-size: 0;
+        background-color: rgb(211, 203, 203);
+        box-shadow: 0 0 2px black;
+        opacity: .7;
+        border: none;
+        width: 12vw;
+        margin: 2vw;
+        height: 4vw;
+        border-radius: 5vw;
+        &:hover, &.active {
+          background-color: #D50F09;
+          opacity: 1;
+        }
+        &:focus {
+          outline: 0;
+        }
+      }
+    }
+    .background {
+      width: 100vw;
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
+      transition: all .7s;
+      img {
+        object-fit: cover;
+        height: 95vh;
+        width: 100vw;
+        filter: brightness(50%);
+      }
+    }
+    .backgroundShow {
+      opacity: 1;
+      visibility: visible;
+    }
+    .selectorContainer {
+      width: 100%;
+      display: none;
+      justify-content: center;
+      position: absolute;
+      top: 50%;
+      .selectors {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto;
+        grid-column-gap: 3vw;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        height: 5vw;
+        .market {
+          text-align: center;
+          font-size: 2vw;
+          line-height: 3vw;
+          font-weight: 900;
+          font-family: 'Roboto', sans-serif;
+          font-style: italic;
+          color: white;
+          opacity: 0.5;
+          cursor: pointer;
+          transition: all .5s;
+        }
+        .market:hover, .marketShow {
+          opacity: 1;
+        }
+      }
+    }
+    .descriptionsContainer {
+      position: absolute;
+      width: 100vw;
+      bottom: 50%;
+      display: flex;
+      justify-content: center;
+      .descriptions {
+        position: relative;
+        width: 75%;
+        text-align: center;
+        .description {
+          text-align: center;
+          font-size: 3.5vw;
+          line-height: 5vw;
+          font-family: 'Roboto', sans-serif;
+          color: white;
+          position: absolute;
+          opacity: 0;
+          visibility: hidden;
+          transition: all .7s;
+          font-weight: 500;
+        }
+        .descriptionShow {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+    .buttonContainer {
+      left: 0;
+      margin-bottom: 20vw;
+      .button {
+        border-radius: 5vw;
+        font-size: 5vw;
+        padding: .5vw 5vw .5vw 0vw;
+        cursor: pointer;
+        span {
+          border-radius: 100%;
+          background-color: #D50F09;
+          position: absolute;
+          top: -.8vw;
+          right: -5vw;
+          width: 8vw;
+          height: 8vw;
+          display: grid;
+          align-items: center;
+          justify-content: center;
+          transition: all .5s;
+          .icon {
+            height: 2.7vw;
+            width: 2.7vw;
+            margin: 0;
+          }
+        }
+      }  
       .button:hover {
         span {
           background-color:  rgb(128, 38, 38);

@@ -80,10 +80,19 @@ export default ({ block, images }) => {
           </Link>}
         </div>
         <div className={styles.infoContainer}>
+          <div className={styles.selectButtons}>
+            {block.product.map((prod, i) => {
+              return (
+                <button onClick={handleClick} className={styles.selectButton + ` ${selected === prod.category ? `${styles.active}` : ""}`}>{prod.category}</button>
+              )
+            })}
+          </div>
           {block.product && block.product.length > 0 && block.product.map((prod, i) => {
             return (
               <div key={i} className={styles.info + ` ${prod.category && selected === prod.category ? `${styles.infoShow}` : ""}`}>
-                <div className={styles.imgContainer}><Image className={styles.image} src={prod.image && prod.image} images={images} /></div>
+                <div className={styles.imgContainer}>
+                  <Image className={styles.image} src={prod.image && prod.image} images={images} />
+                </div>
                 <div className={styles.descripContainer}>
                   <div className={styles.categoryHeading}>{prod.category && prod.category}</div>
                   <div className={styles.heading}>{prod.heading && prod.heading}</div>

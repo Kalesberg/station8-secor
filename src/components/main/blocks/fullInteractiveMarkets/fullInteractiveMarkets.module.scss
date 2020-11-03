@@ -175,8 +175,8 @@
       bottom: 80%;
       .descriptions {
         .description {
-          font-size: 2.7vw;
-          line-height: 4vw;
+          font-size: 3.5vw;
+          line-height: 5.4vw;
         }
       }
     }
@@ -195,7 +195,7 @@
     }
     .button {
       span {
-        top: .3vw;
+        top: 1.8vw;
         right: .3vw;
         width: 7vw;
         height: 7vw;
@@ -203,19 +203,6 @@
           height: 2.4vw;
           width: 2.4vw;
           margin: 0;
-        }
-      }
-    }
-  }
-}
-@media (max-width: 450px) {
-  .section {
-    .descriptionsContainer {
-      bottom: 80%;
-      .descriptions {
-        .description {
-          font-size: 3.6vw;
-          line-height: 5.4vw;
         }
       }
     }
