@@ -8,16 +8,16 @@ export default ({ user }) => {
   const context = useContext(Context)
 
   const handleSetUpdate = () => ({
-    Company: user.company,
-    'Address Line 1': user.address1,
-    'Address Line 2': user.address2,
-    City: user.city,
-    State: user.state,
-    ZIP: user.zipCode,
-    'First Name': user.firstName,
-    'Last Name': user.lastName,
-    'Phone Number': user.phone.replace(/[^0-9]/g, ''),
-    Email: user.email,
+    Company: user.company || '',
+    'Address Line 1': user.address1 || '',
+    'Address Line 2': user.address2 || '',
+    City: user.city || '',
+    State: user.state || '',
+    ZIP: user.zipCode || '',
+    'First Name': user.firstName || '',
+    'Last Name': user.lastName || '',
+    'Phone Number': (user.phone && user.phone.replace(/[^0-9]/g, '')) || '',
+    Email: user.email || '',
     Password: '',
     passwordConfirm: ''
   })
@@ -37,12 +37,10 @@ export default ({ user }) => {
   const handleSave = async e => {
     e.preventDefault()
     console.log(editing, update)
-    if (editing === 'password' && update.Password !== update.passwordConfirm) {
-      console.log('passwords do not match')
-    }
     const res = await window.fetch('/.netlify/functions/edituserdetails', {
-      method: 'PATCH',
+      method: 'POST',
       body: JSON.stringify({
+        userId: user.id,
         editing,
         ...update
       })
@@ -54,6 +52,7 @@ export default ({ user }) => {
 
   useEffect(() => {
     console.log('user', user)
+    console.log('phone', user.phone)
   }, [user])
 
   return (
@@ -119,7 +118,9 @@ export default ({ user }) => {
             </div>
             <div className={styles.buttons}>
               <p className={styles.edit} onClick={handleBeginEdit} title='address'>Edit</p>
-              <p className={styles.save + `${!update.City || !update.State.trim() || (update['Address Line 1'].trim() === user.address1 && update['Address Line 2'].trim() === user.address2 && update.City.trim() === user.city && update.State.trim() === user.state && update.ZIP.trim() === user.zipCode) || (update.ZIP.trim().length && update.ZIP.trim().length !== 5) ? ` ${styles.error}` : ''}`} onClick={handleSave}>{!update.City.trim() ? 'City is required' : !update.State.trim() ? 'State is required' : update['Address Line 1'].trim() === user.address1 && update['Address Line 2'].trim() === user.address2 && update.City.trim() === user.city && update.State.trim() === user.state && update.ZIP.trim() === user.zipCode ? 'No changes to save' : update.ZIP.trim().length !== 5 && update.ZIP.trim().length ? 'ZIP should be five numbers long' : 'Save'}</p>
+              <p className={styles.save + `${!update.City || !update.State.trim() || (update['Address Line 1'].trim() === user.address1 && update['Address Line 2'].trim() === user.address2 && update.City.trim() === user.city && update.State.trim() === user.state && update.ZIP.trim() === user.zipCode) || (update.ZIP.trim().length && update.ZIP.trim().length !== 5) ? ` ${styles.error}` : ''}`} onClick={handleSave}>
+                {!update.City.trim() ? 'City is required' : !update.State.trim() ? 'State is required' : update['Address Line 1'].trim() === user.address1 && update['Address Line 2'].trim() === user.address2 && update.City.trim() === user.city && update.State.trim() === user.state && update.ZIP.trim() === user.zipCode ? 'No changes to save' : update.ZIP.trim().length !== 5 && update.ZIP.trim().length ? 'ZIP should be five numbers long' : 'Save'}
+              </p>
               <p className={styles.cancel} onClick={handleCancelEdit}>Cancel</p>
             </div>
           </div>
@@ -154,13 +155,13 @@ export default ({ user }) => {
           <div className={styles.field + `${editing === '' ? '' : editing === 'phone' ? ` ${styles.editing}` : ` ${styles.hide}`}`}>
             <div className={styles.icon + ` ${styles.phone}`} />
             <p className={styles.value}>
-              {user.phone && user.phone.length === 14 && (
+              {user.phone && user.phone.length === 10 && (
                 <>
-                  <span>{user.phone.substr(1, 3)}</span>
+                  <span>{user.phone.substr(0, 3)}</span>
                   <span>&nbsp;</span>
-                  <span>{user.phone.substr(5, 4)}</span>
+                  <span>{user.phone.substr(3, 3)}</span>
                   <span>&nbsp;</span>
-                  <span>{user.phone.substr(10, 4)}</span>
+                  <span>{user.phone.substr(6, 4)}</span>
                 </>
               )}
             </p>
@@ -211,7 +212,7 @@ export default ({ user }) => {
             </div>
             <div className={styles.buttons}>
               <p className={styles.edit} onClick={handleBeginEdit} title='password'>Edit</p>
-              <p className={styles.save + `${!update.Password.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,20}$/) || update.Password !== update.passwordConfirm ? ` ${styles.error}` : ''}`} onClick={handleSave}>{!update.Password ? 'Password is required' : update.Password.length < 7 ? 'Enter 7-20 characters' : !update.Password.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,20}$/) ? 'Use at least one lowercase character, one uppercase character, and one number' : update.Password !== update.passwordConfirm ? 'Confirmation password does not match' : 'Save'}</p>
+              <p className={styles.save + `${!update.Password.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,20}$/) || update.Password !== update.passwordConfirm ? ` ${styles.error}` : ''}`} onClick={handleSave}>{!update.Password ? 'Password is required' : update.Password.length < 7 || update.Password.length > 20 ? 'Enter 7-20 characters' : !update.Password.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,20}$/) ? 'Use at least one lowercase character, one uppercase character, and one number' : update.Password !== update.passwordConfirm ? 'Confirmation password does not match' : 'Save'}</p>
               <p className={styles.cancel} onClick={handleCancelEdit}>Cancel</p>
             </div>
           </div>

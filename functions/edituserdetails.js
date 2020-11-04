@@ -2,13 +2,13 @@ const bcrypt = require('bcryptjs')
 const Airtable = require('airtable')
 const jwt = require('jsonwebtoken')
 const cookie = require('cookie')
-const sgMail = require('@sendgrid/mail')
 
 exports.handler = async (event, context, callback) => {
   const base = await new Airtable({ apiKey: process.env.AIRTABLE_KEY }).base(process.env.AIRTABLE_BASE_ID)
   const users = await base('Customers')
   const body = await JSON.parse(event.body)
-  const password = await bcrypt.hash(body.password, 10)
+  const editing = await body.editing
+  const password = await bcrypt.hash(body.Password, 10)
 
   const createJwtCookie = (userId, email) => {
     const secretKey = '-----BEGIN RSA PRIVATE KEY-----\n' + process.env.JWT_SECRET_KEY + '\n-----END RSA PRIVATE KEY-----'
@@ -25,62 +25,59 @@ exports.handler = async (event, context, callback) => {
     })
   }
 
-  await users.select({
-    maxRecords: 1,
-    filterByFormula: `Email='${body.email.trim().toLowerCase()}'`
-  }).eachPage(async records => {
-    if (!records.length) {
-      const user = await users.create([
-        {
-          fields: {
-            'First Name': body.firstName,
-            'Last Name': body.lastName,
-            Company: body.company,
-            Email: body.email.trim().toLowerCase(),
-            'Phone Number': body.phone,
-            Password: password,
-            'Address Line 1': body.addressLineOne,
-            'Address Line 2': body.addressLineTwo,
-            City: body.city,
-            State: body.state,
-            ZIP: body.zip
-          }
-        }
-      ])
-      sgMail.setApiKey(process.env.SENDGRID_API_KEY)
-      const msg = {
-        to: body.email.trim().toLowerCase(),
-        from: 'info@secoronline.com',
-        template_id: 'd-f981705646e944cfbf22c1dfdd6bc2b8'
+  const fields = () => {
+    if (editing === 'company') {
+      return {
+        Company: body.Company.trim()
       }
-      sgMail
-        .send(msg)
-        .then(() => {
-          console.log('Email sent')
-        })
-        .catch((error) => {
-          console.error(error)
-        })
-      callback(null, {
-        statusCode: 200,
-        headers: {
-          'Set-Cookie': createJwtCookie(user[0].id, body.email.trim().toLowerCase()),
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          id: user[0].id,
-          email: body.email.trim().toLowerCase()
-        }),
-        ok: true
-      })
-    } else {
-      callback(null, {
-        statusCode: 201,
-        body: JSON.stringify({
-          message: 'User already exists'
-        }),
-        ok: true
-      })
     }
+    if (editing === 'address') {
+      return {
+        'Address Line 1': body['Address Line 1'].trim(),
+        'Address Line 2': body['Address Line 2'].trim(),
+        City: body.City.trim(),
+        State: body.State.trim(),
+        ZIP: body.ZIP.trim()
+      }
+    }
+    if (editing === 'name') {
+      return {
+        'First Name': body['First Name'].trim(),
+        'Last Name': body['Last Name'].trim()
+      }
+    }
+    if (editing === 'phone') {
+      return {
+        'Phone Number': body['Phone Number']
+      }
+    }
+    if (editing === 'email') {
+      return {
+        Email: body.Email.trim().toLowerCase()
+      }
+    }
+    if (editing === 'password') {
+      return {
+        Password: password
+      }
+    }
+  }
+
+  const user = await users.update([{
+    id: body.userId,
+    fields: fields()
+  }])
+
+  callback(null, {
+    statusCode: 200,
+    headers: {
+      'Set-Cookie': createJwtCookie(user[0].id, user[0].fields.Email.trim().toLowerCase()),
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      id: user[0].id,
+      email: user[0].fields.Email.trim().toLowerCase()
+    }),
+    ok: true
   })
 }

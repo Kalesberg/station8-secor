@@ -8,8 +8,6 @@ import styles from './register.module.scss'
 export default () => {
   const context = useContext(Context)
   const [emailRegistered, setEmailRegistered] = useState(false)
-  const [passwordFail, setPasswordFail] = useState(false)
-  const [registrationStatus, setRegistrationStatus] = useState('')
 
   const [registrationData, setRegistrationData] = useState({
     firstName: '',
@@ -26,39 +24,75 @@ export default () => {
     zip: ''
   })
 
+  const errorMsg = () => {
+    if (!registrationData.firstName.trim()) {
+      return 'First name required'
+    } else if (!registrationData.lastName.trim()) {
+      return 'Last name required'
+    } else if (!registrationData.email.trim()) {
+      return 'Email required'
+    } else if (!registrationData.email.match(/\S+@\S+\.\S+/)) {
+      return 'Email address invalid'
+    } else if (!registrationData.password) {
+      return 'Password required'
+    } else if (registrationData.password.length < 7 || registrationData.password.length > 20) {
+      return 'Password must be between 7-20 characters'
+    } else if (!registrationData.password.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,20}$/)) {
+      return 'Password must include at least one lowercase character, one uppercase character, and one number'
+    } else if (registrationData.password !== registrationData.confirmPassword) {
+      return 'Confirmation password does not match'
+    } else if (!registrationData.company.trim()) {
+      return 'Company name required'
+    } else if (!registrationData.phone.trim()) {
+      return 'Phone number required'
+    } else if (registrationData.phone.replace(/[^0-9]/g, '').trim().length !== 10) {
+      return 'Phone number should be 10-digits'
+    } else if (!registrationData.city.trim()) {
+      return 'City required'
+    } else if (!registrationData.state.trim()) {
+      return 'State required'
+    } else if (emailRegistered) {
+      return 'Email already registered'
+    } else return ''
+  }
+
   const handleRegistrationEdit = e => {
-    const newRegistrationData = { ...registrationData }
-    newRegistrationData[e.target.id] = e.target.value
-    setRegistrationData(newRegistrationData)
+    setRegistrationData({
+      ...registrationData,
+      [e.target.id]: e.target.value
+    })
+    setEmailRegistered(false)
+  }
+
+  const handleRegistrationPhoneEdit = e => {
+    setRegistrationData({
+      ...registrationData,
+      [e.target.id]: e.target.value.replace(/[^0-9]/g, '')
+    })
   }
 
   const handleRegistration = async e => {
     if (registrationData.firstName && registrationData.lastName && registrationData.company && registrationData.email && registrationData.phone && registrationData.password && registrationData.confirmPassword && registrationData.city && registrationData.state) {
-      if (registrationData.password !== registrationData.confirmPassword) {
-        setRegistrationStatus('Passwords do not match')
-      } else if (registrationData.password === registrationData.confirmPassword) {
-        e.preventDefault()
-        const res = await window.fetch('/.netlify/functions/register', {
-          method: 'POST',
-          body: JSON.stringify({
-            firstName: registrationData.firstName,
-            lastName: registrationData.lastName,
-            company: registrationData.company,
-            email: registrationData.email,
-            phone: registrationData.phone,
-            password: registrationData.password,
-            addressLineOne: registrationData.addressLineOne,
-            addressLineTwo: registrationData.addressLineTwo,
-            city: registrationData.city,
-            state: registrationData.state,
-            zip: registrationData.zip
-          })
+      e.preventDefault()
+      const res = await window.fetch('/.netlify/functions/register', {
+        method: 'POST',
+        body: JSON.stringify({
+          firstName: registrationData.firstName && registrationData.firstName.trim(),
+          lastName: registrationData.lastName && registrationData.lastName.trim(),
+          company: registrationData.company && registrationData.company.trim(),
+          email: registrationData.email && registrationData.email.trim(),
+          phone: registrationData.phone,
+          password: registrationData.password,
+          addressLineOne: registrationData.addressLineOne && registrationData.addressLineOne.trim(),
+          addressLineTwo: registrationData.addressLineTwo && registrationData.addressLineTwo.trim(),
+          city: registrationData.city && registrationData.city.trim(),
+          state: registrationData.state && registrationData.state.trim(),
+          zip: registrationData.zip && registrationData.zip.trim()
         })
-        if (res.status === 201) {
-          setEmailRegistered(true)
-        }
-        const data = await res.json()
-        console.log(data)
+      })
+      if (res.status === 201) {
+        setEmailRegistered(true)
+      } else {
         context.handleValidateUser()
       }
     }
@@ -97,7 +131,7 @@ export default () => {
           </div>
           <div className={styles.field}>
             <label htmlFor='phone'>Phone number<span className={styles.required}>*</span></label>
-            <input id='phone' style={{ backgroundImage: 'url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+Cjxzdmcgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDI0IDI0IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zOnNlcmlmPSJodHRwOi8vd3d3LnNlcmlmLmNvbS8iIHN0eWxlPSJmaWxsLXJ1bGU6ZXZlbm9kZDtjbGlwLXJ1bGU6ZXZlbm9kZDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7Ij4KICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMiwyKSI+CiAgICAgICAgPGcgaWQ9Il8tLVByb3RvdHlwZSIgc2VyaWY6aWQ9IuKAoi1Qcm90b3R5cGUiPgogICAgICAgICAgICA8ZyBpZD0iQ3JlYXRlLWFjY291bnQiPgogICAgICAgICAgICAgICAgPGcgaWQ9InBob25lIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBpZD0iU2hhcGUiIGQ9Ik0yMCwxNC45MkwyMCwxNy45MkMyMC4wMDIsMTguNDgzIDE5Ljc2NywxOS4wMjEgMTkuMzUyLDE5LjQwMkMxOC45MzcsMTkuNzgzIDE4LjM4MSwxOS45NzEgMTcuODIsMTkuOTJDMTQuNzQzLDE5LjU4NiAxMS43ODcsMTguNTM0IDkuMTksMTYuODVDNi43NzQsMTUuMzE1IDQuNzI1LDEzLjI2NiAzLjE5LDEwLjg1QzEuNSw4LjI0MSAwLjQ0OCw1LjI3MSAwLjEyLDIuMThDMC4wNjksMS42MjEgMC4yNTYsMS4wNjYgMC42MzUsMC42NTJDMS4wMTMsMC4yMzcgMS41NDksMC4wMDEgMi4xMSwtMEw1LjExLC0wQzYuMTE0LC0wLjAxIDYuOTcsMC43MjYgNy4xMSwxLjcyQzcuMjM3LDIuNjggNy40NzEsMy42MjMgNy44MSw0LjUzQzguMDg1LDUuMjYxIDcuOTA5LDYuMDg1IDcuMzYsNi42NEw2LjA5LDcuOTFDNy41MTQsMTAuNDE0IDkuNTg2LDEyLjQ4NiAxMi4wOSwxMy45MUwxMy4zNiwxMi42NEMxMy45MTUsMTIuMDkxIDE0LjczOSwxMS45MTUgMTUuNDcsMTIuMTlDMTYuMzc3LDEyLjUyOSAxNy4zMiwxMi43NjMgMTguMjgsMTIuODlDMTkuMjg2LDEzLjAzMiAyMC4wMjUsMTMuOTA1IDIwLDE0LjkyWiIgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6cmdiKDE1NSwxNTUsMTU1KTtzdHJva2Utd2lkdGg6MnB4OyIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K")' }} onChange={handleRegistrationEdit} required />
+            <input id='phone' value={registrationData.phone} style={{ backgroundImage: 'url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+Cjxzdmcgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDI0IDI0IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zOnNlcmlmPSJodHRwOi8vd3d3LnNlcmlmLmNvbS8iIHN0eWxlPSJmaWxsLXJ1bGU6ZXZlbm9kZDtjbGlwLXJ1bGU6ZXZlbm9kZDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7Ij4KICAgIDxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsMiwyKSI+CiAgICAgICAgPGcgaWQ9Il8tLVByb3RvdHlwZSIgc2VyaWY6aWQ9IuKAoi1Qcm90b3R5cGUiPgogICAgICAgICAgICA8ZyBpZD0iQ3JlYXRlLWFjY291bnQiPgogICAgICAgICAgICAgICAgPGcgaWQ9InBob25lIj4KICAgICAgICAgICAgICAgICAgICA8cGF0aCBpZD0iU2hhcGUiIGQ9Ik0yMCwxNC45MkwyMCwxNy45MkMyMC4wMDIsMTguNDgzIDE5Ljc2NywxOS4wMjEgMTkuMzUyLDE5LjQwMkMxOC45MzcsMTkuNzgzIDE4LjM4MSwxOS45NzEgMTcuODIsMTkuOTJDMTQuNzQzLDE5LjU4NiAxMS43ODcsMTguNTM0IDkuMTksMTYuODVDNi43NzQsMTUuMzE1IDQuNzI1LDEzLjI2NiAzLjE5LDEwLjg1QzEuNSw4LjI0MSAwLjQ0OCw1LjI3MSAwLjEyLDIuMThDMC4wNjksMS42MjEgMC4yNTYsMS4wNjYgMC42MzUsMC42NTJDMS4wMTMsMC4yMzcgMS41NDksMC4wMDEgMi4xMSwtMEw1LjExLC0wQzYuMTE0LC0wLjAxIDYuOTcsMC43MjYgNy4xMSwxLjcyQzcuMjM3LDIuNjggNy40NzEsMy42MjMgNy44MSw0LjUzQzguMDg1LDUuMjYxIDcuOTA5LDYuMDg1IDcuMzYsNi42NEw2LjA5LDcuOTFDNy41MTQsMTAuNDE0IDkuNTg2LDEyLjQ4NiAxMi4wOSwxMy45MUwxMy4zNiwxMi42NEMxMy45MTUsMTIuMDkxIDE0LjczOSwxMS45MTUgMTUuNDcsMTIuMTlDMTYuMzc3LDEyLjUyOSAxNy4zMiwxMi43NjMgMTguMjgsMTIuODlDMTkuMjg2LDEzLjAzMiAyMC4wMjUsMTMuOTA1IDIwLDE0LjkyWiIgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6cmdiKDE1NSwxNTUsMTU1KTtzdHJva2Utd2lkdGg6MnB4OyIvPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K")' }} onChange={handleRegistrationPhoneEdit} required />
           </div>
           <div className={styles.field}>
             <label htmlFor='addressLineOne'>Business address (line 1)</label>
@@ -123,8 +157,11 @@ export default () => {
           </div>
         </div>
       </div>
+      <div className={styles.errorContainer}>
+        <p className={styles.error}>{errorMsg() || <br />}</p>
+      </div>
       <div className={styles.buttonContainer}>
-        <button className={styles.button} onClick={handleRegistration}>{!emailRegistered ? 'Create account' : 'Email already registered!'}</button>
+        <button className={styles.button + `${errorMsg() || emailRegistered ? ` ${styles.error}` : ''}`} onClick={handleRegistration}>Create account</button>
       </div>
       <div className={styles.links}>
         <Link className={styles.link} to='/account/login'>Login</Link>
