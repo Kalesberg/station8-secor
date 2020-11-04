@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import { Context } from '../context/context'
 import { Footer, Header, HeaderMobile, Main } from '../'
+import Scroll from './scroll/scroll'
 
 import './reset.scss'
 import './global.scss'
@@ -46,6 +47,7 @@ export default ({ children, title: siteTitle = '', images, pages, toggleForm, bl
         {children}
         <Footer images={images} pages={pages} toggleForm={toggleForm} />
       </Main>
+      <Scroll />
     </div>
   ) : null
 }

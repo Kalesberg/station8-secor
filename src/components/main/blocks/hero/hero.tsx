@@ -11,23 +11,15 @@ export default ({ block, images }) => {
   } else if (block && block.image) {
     source = block.image
   }
-  
+
   const media = images.find(image => image.relativePath === 'images/' + source.split('/').pop())
   const pageLink = block.buttonLink ? link(block.buttonLink) : null
 
-  const scrollDown = () => {
-    document.getElementById('main').scroll({
-      left: 0,
-      top: window.innerHeight,
-      behavior: 'smooth'
-    })
-  }
-  
   return (
     <div className={styles.container}>
       {block.video && (
         // <div className={styles.hero}><video className={styles.video} poster='/video-frame.jpg' playsInline autoPlay muted loop src={media.publicURL} /></div>
-        <ReactPlayer wrapper={styles.hero} config={{wistia: {options: {endVideoBehavior: 'loop', muted: true, fitStrategy: "cover"}}}} playing={true} url="https://station8branding.wistia.com/medias/lng6o2vfr1"/>
+        <ReactPlayer wrapper={styles.hero} config={{ wistia: { options: { endVideoBehavior: 'loop', muted: true, fitStrategy: 'cover' } } }} playing url='https://station8branding.wistia.com/medias/lng6o2vfr1' />
       )}
       {block.image && (
         <div className={styles.hero}><img src={media.publicURL} alt='' /></div>)}
@@ -48,7 +40,7 @@ export default ({ block, images }) => {
               <span>
                 {block.buttonIcon && <Image className={styles.icon} src={block.buttonIcon} images={images} />}
               </span>
-            </button><br className={styles.buttonBreak}></br>
+            </button><br className={styles.buttonBreak} />
           </Link>}
         {block.extraButtons && block.extraButtons.length > 0 && block.extraButtons.map((button, i) => {
           return (
@@ -57,14 +49,10 @@ export default ({ block, images }) => {
                 <span>
                   {block.buttonIcon && <Image className={styles.icon} src={button.buttonIcon} images={images} />}
                 </span>
-              </button><br className={styles.buttonBreak}></br>
-            </Link> 
+              </button><br className={styles.buttonBreak} />
+            </Link>
           )
-        })}  
-      </div>
-      <div className={styles.scrollContainer} onClick={scrollDown}>
-        <p className={styles.label}>Scroll</p>
-        <div className={styles.scroll} />
+        })}
       </div>
     </div>
   )
