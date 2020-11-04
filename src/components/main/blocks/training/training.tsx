@@ -45,7 +45,7 @@ export default ({ block, images }) => {
       {block.categories && block.categories.map((training, i) => {
         return (
           <div className={styles.training + ` ${selected.toLowerCase() === training.category.toLowerCase() ? `${styles.trainingShow}` : ""}` }>
-            {block.image && <Image className={styles.image} src={block.image} images={images} />}
+            {training.image && <Image className={styles.image} src={training.image} images={images} />}
             <div className={styles.textContainer}>
               <p>{training.description && parse(training.description)}</p>
               {training.buttonText && training.buttonLink &&
