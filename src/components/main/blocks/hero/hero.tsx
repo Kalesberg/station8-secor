@@ -27,7 +27,7 @@ export default ({ block, images }) => {
     <div className={styles.container}>
       {block.video && (
         // <div className={styles.hero}><video className={styles.video} poster='/video-frame.jpg' playsInline autoPlay muted loop src={media.publicURL} /></div>
-        <ReactPlayer wrapper={styles.hero} config={{wistia: {options: {endVideoBehavior: 'loop', volumeControl: false, fitStrategy: "cover"}}}} playing={true} url="https://station8branding.wistia.com/medias/lng6o2vfr1"/>
+        <ReactPlayer wrapper={styles.hero} config={{wistia: {options: {endVideoBehavior: 'loop', controlsVisibileOnLoad: false, volumeControl: false, fitStrategy: "cover"}}}} playing={true} url="https://station8branding.wistia.com/medias/lng6o2vfr1"/>
       )}
       {block.image && (
         <div className={styles.hero}><img src={media.publicURL} alt='' /></div>)}
