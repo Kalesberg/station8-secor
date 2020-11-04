@@ -146,7 +146,6 @@ export default ({ options, menu }) => {
     })
     const json = await res.json()
     console.log(json)
-    setResponse(res);
     setAttachment({ url: json.url });
     setFileName(file.name);
   }
