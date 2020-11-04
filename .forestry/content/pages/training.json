@@ -49,11 +49,11 @@
         },
         {
           "category": "Gas Training",
-          "description": "SECOR offers a variety of trainings to help you stay certified and safe with your gas related tooling and equipment: -Butt Fusion Training -Sidewall Fusion Training -Electrofusion Training -Mustang Polyethylene Squeeze Tool Training -Regent Squeeze Tool Training-Mueller Equipment Training",
-          "buttonText": "",
-          "buttonLink": "",
+          "description": "<p>SECOR offers a variety of trainings to help you stay certified and safe with your gas related tooling and equipment: </p><ul><li><p>Butt Fusion Training-Sidewall Fusion Training </p></li><li><p>Electrofusion Training </p></li><li><p>Mustang Polyethylene Squeeze Tool Training </p></li><li><p>Regent Squeeze Tool Training</p></li><li><p>Mueller Equipment Training</p></li></ul>",
+          "buttonText": "Get info on training",
+          "buttonLink": "/training#get-info",
           "image": "",
-          "icon": ""
+          "icon": "/.forestry/content/images/secor-arrow-left.svg"
         },
         {
           "category": "Other Product Training",
