@@ -43,7 +43,7 @@ export default ({ block, images }) => {
   }, [submitFailed])
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="get-info">
       {block.image &&
         <div className={styles.backgroundContainer}>
           <div className={styles.background}>

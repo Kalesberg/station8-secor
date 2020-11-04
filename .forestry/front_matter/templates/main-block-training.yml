@@ -10,37 +10,37 @@ fields:
     config:
       required: false
     label: Category
+  - name: description
+    type: textarea
+    default: ''
+    config:
+      required: false
+      wysiwyg: true
+      schema:
+        format: html-blocks
+    label: Description
+  - name: buttonText
+    type: text
+    config:
+      required: false
+    label: Button Text
+  - name: buttonLink
+    type: text
+    config:
+      required: false
+    label: Button Link
+  - name: image
+    type: file
+    config:
+      maxSize: 64
+    label: Image
+  - name: icon
+    type: file
+    config:
+      maxSize: 64
+    label: Icon
   config:
     min: 
     max: 
     labelField: 
   label: Categories
-- name: description
-  type: textarea
-  default: ''
-  config:
-    required: false
-    wysiwyg: false
-    schema:
-      format: markdown
-  label: Description
-- name: buttonText
-  type: text
-  config:
-    required: false
-  label: Button Text
-- name: buttonLink
-  type: text
-  config:
-    required: false
-  label: Button Link
-- name: image
-  type: file
-  config:
-    maxSize: 64
-  label: Image
-- name: icon
-  type: file
-  config:
-    maxSize: 64
-  label: Icon

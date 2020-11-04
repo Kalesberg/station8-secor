@@ -140,6 +140,11 @@ query ($title: String!) {
       }
       categories {
         category
+        description
+        buttonText
+        buttonLink
+        image
+        icon
       }
       description
       pipes {
