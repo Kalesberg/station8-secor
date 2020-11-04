@@ -47,6 +47,13 @@
     }
     .textContainer {
       padding-right: 5vw;
+      p {
+        font-size: 1.4vw;
+      }
+      ul {
+        list-style-type: disc;
+        padding-left: 3vw;
+      }
       .button {
         border-radius: 5vw;
         font-size: 1.3vw;
