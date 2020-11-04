@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import styles from './training.module.scss'
 import { Image, link } from '../../../../functions'
 import HorizontalHighlight from '../highlighters/horizontalHighlight'
+import parse from 'html-react-parser'
 import articlesGrid from '../articlesGrid/articlesGrid'
 
 export default ({ block, images }) => {
@@ -40,26 +41,26 @@ export default ({ block, images }) => {
           })}
           <HorizontalHighlight container={container} target={target} />
         </div>
-      </div>  
-        <div className={styles.first + ` ${selected.toLowerCase() === block.categories[0].category.toLowerCase() ? `${styles.firstShow}` : ""}` }>
-          {block.image && <Image className={styles.image} src={block.image} images={images} />}
-          <div className={styles.textContainer}>
-            <p>{block.description && block.description}</p>
-            {block.buttonText && block.buttonLink &&
-            <Link to={block.buttonLink}>
-              <button className={styles.button}>{block.buttonText}
-                <span>
-                  {block.icon && <Image className={styles.icon} src={block.icon} images={images} />}
-                </span>
-              </button>
-            </Link>}
+      </div>
+      {block.categories && block.categories.map((training, i) => {
+        return (
+          <div className={styles.training + ` ${selected.toLowerCase() === training.category.toLowerCase() ? `${styles.trainingShow}` : ""}` }>
+            {block.image && <Image className={styles.image} src={block.image} images={images} />}
+            <div className={styles.textContainer}>
+              <p>{training.description && parse(training.description)}</p>
+              {training.buttonText && training.buttonLink &&
+              <Link to={training.buttonLink}>
+                <button className={styles.button}>{training.buttonText}
+                  <span>
+                    {training.icon && <Image className={styles.icon} src={training.icon} images={images} />}
+                  </span>
+                </button>
+              </Link>}
+            </div>
           </div>
-        </div>
-        {/* <div className={styles.articles + ` ${selected.toLowerCase() === 'articles' ? `${styles.articlesShow}` : ""}`}>
-          {articles.filter(article => article.tags.includes('training')).map((article, i) => {
-
-          })}
-        </div> */}
+        )
+      })}
+      
     </section>
   )
 }  

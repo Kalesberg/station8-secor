@@ -32,8 +32,9 @@
       }
     }
   }
-  .first {
+  .training {
     display: grid;
+    position: absolute;
     grid-template-columns: 50% 50%;
     padding: 4vw 5vw 3vw 4vw;
     align-items: center;
@@ -84,7 +85,7 @@
       }
     }
   }
-  .firstShow {
+  .trainingShow {
     opacity: 1;
     visibility: visible;
   }
@@ -124,7 +125,7 @@
         }
       }
     }
-    .first {
+    .training {
       display: grid;
       grid-template-columns: 50% 50%;
       padding: 4vw 5vw 3vw 4vw;
@@ -176,7 +177,7 @@
         }
       }
     }
-    .firstShow {
+    .trainingShow {
       opacity: 1;
       visibility: visible;
     }
@@ -185,7 +186,7 @@
 @media (max-width: 600px) {
   .section {
     position: relative;
-    height: 95vh;
+    height: 180vw;
     .categoryContainer {
       width: 100%;
       display: flex;
@@ -217,7 +218,7 @@
         }
       }
     }
-    .first {
+    .training {
       display: grid;
       grid-template-columns: auto;
       padding: 4vw 5vw 3vw 4vw;
@@ -267,7 +268,7 @@
         }
       }
     }
-    .firstShow {
+    .trainingShow {
       opacity: 1;
       visibility: visible;
     }
