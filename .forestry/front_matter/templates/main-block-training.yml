@@ -5,11 +5,31 @@ fields:
 - name: categories
   type: field_group_list
   fields:
-  - name: category
+  - name: description
     type: text
     config:
       required: false
-    label: Category
+    label: Description
+  - name: buttonText
+    type: text
+    config:
+      required: false
+    label: Button Text
+  - name: buttonLink
+    type: text
+    config:
+      required: false
+    label: Button Link
+  - name: image
+    type: file
+    config:
+      maxSize: 64
+    label: Image
+  - name: icon
+    type: file
+    config:
+      maxSize: 64
+    label: Icon
   config:
     min: 
     max: 
