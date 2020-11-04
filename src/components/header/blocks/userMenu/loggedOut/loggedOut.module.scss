@@ -38,8 +38,20 @@
       }
     }
   }
+  .error-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 1vw;
+    margin: 1vw 0;
+    .error {
+      text-align: center;
+      margin-bottom: 0;
+      font-size: 1vw;
+      color: #838383;
+    }
+  }
   .button-container {
-    margin-top: 3vw;
     display: grid;
     justify-content: center;
     .button {
@@ -51,6 +63,10 @@
       border: none;
       border-radius: 1.5vw;
       padding: 0.6vw 3vw;
+      &.error {
+        pointer-events: none;
+        background-color: #838383;
+      }
     }
   }
   .links {

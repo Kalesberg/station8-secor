@@ -7,11 +7,24 @@ import styles from './login.module.scss'
 
 export default () => {
   const context = useContext(Context)
+  const [error, setError] = useState('')
 
   const [loginData, setLoginData] = useState({
     user: '',
     pass: ''
   })
+
+  const errorMsg = () => {
+    if (error) {
+      return error
+    } else if (!loginData.user) {
+      return 'Email required'
+    } else if (!loginData.user.match(/\S+@\S+\.\S+/)) {
+      return 'Email invalid'
+    } else if (!loginData.pass) {
+      return 'Password required'
+    }
+  }
 
   const handleLogin = async e => {
     e.preventDefault()
@@ -23,7 +36,7 @@ export default () => {
       })
     })
     if (res.status === 401) {
-      console.log('login failed')
+      setError('Login failed')
     } else if (res.ok) {
       const data = await res.json()
       console.log(data)
@@ -35,6 +48,7 @@ export default () => {
     const newLoginData = { ...loginData }
     newLoginData[e.target.id] = e.target.value
     setLoginData(newLoginData)
+    setError('')
   }
 
   return (
@@ -52,8 +66,11 @@ export default () => {
           </div>
         </div>
       </div>
+      <div className={styles.errorContainer}>
+        <p className={styles.error}>{errorMsg() || <br />}</p>
+      </div>
       <div className={styles.buttonContainer}>
-        <button className={styles.button} onClick={handleLogin}>Login</button>
+        <button className={styles.button + `${errorMsg() ? ` ${styles.error}` : ''}`} onClick={handleLogin}>Login</button>
       </div>
       <div className={styles.links}>
         <Link className={styles.link} to='/account/recover'>Forgot password</Link>

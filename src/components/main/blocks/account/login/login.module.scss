@@ -46,8 +46,20 @@
       }
     }
   }
+  .error-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 1vw;
+    margin: 1vw 0;
+    .error {
+      text-align: center;
+      margin-bottom: 0;
+      font-size: 1vw;
+      color: #838383;
+    }
+  }
   .button-container {
-    margin-top: 4vw;
     display: grid;
     justify-content: center;
     .button {
@@ -59,6 +71,10 @@
       border: none;
       border-radius: 1.5vw;
       padding: 0.75vw 1.5vw;
+      &.error {
+        pointer-events: none;
+        background-color: #838383;
+      }
     }
   }
   .links {
@@ -102,8 +118,21 @@
         }
       }
     }
+    .error-container {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      padding: 1vw;
+      margin: 0 0 4vw;
+      width: 80vw;
+      .error {
+        text-align: center;
+        margin-bottom: 0;
+        font-size: 4vw;
+        color: #838383;
+      }
+    }
     .button-container {
-      margin-top: 12vw;
       .button {
         font-size: 4vw;
         border-radius: 6vw;
