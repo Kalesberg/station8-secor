@@ -10,6 +10,33 @@
     margin-bottom: 0;
     padding: 0.25vw;
   }
+  .underline {
+    position: absolute;
+    width: 0vw;
+    height: 0.2vw;
+    border-radius: 0.2vw;
+    bottom: 0.3vw;
+    margin-left: 0.35vw;
+    justify-self: center;
+    background-color: rgba(255, 255, 255, 0);
+    transition: all 0.5s ease-in-out;
+  }
+  &:hover {
+    .underline {
+      background-color: rgba(255, 255, 255, 0.5);
+      width: 1vw;
+    }
+  }
+  &.active {
+    color: var(--color-grey);
+    .label {
+      color: white;
+    }
+    .underline {
+      background-color: white;
+      width: 1vw;
+    }
+  }
 }
 @media (max-width: 600px) {
   .link {
