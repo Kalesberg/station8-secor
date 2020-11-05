@@ -462,8 +462,10 @@
           .buttonTwo {
             border-radius: 5vw;
             font-size: 5vw;
-            padding: .5vw 5vw .5vw 0vw;
+            padding: 0vw 5vw 1vw 0vw;
             overflow: visible;
+            height: 8vw;
+            margin: 0;
             cursor: pointer;
             span {
               border-radius: 100%;
