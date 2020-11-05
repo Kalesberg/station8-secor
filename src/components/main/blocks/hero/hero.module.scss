@@ -2,6 +2,12 @@
   position: relative;
   height: 95vh;
   width: 100vw;
+  &.video {
+    background-color: #D50F09;
+    background-image: url('/cover.png');
+    background-position: center center;
+    background-size: cover;
+  }
   .hero {
     video, img {
       object-fit: cover;

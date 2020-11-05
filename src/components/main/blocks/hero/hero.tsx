@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styles from './hero.module.scss'
 import { Image, link } from '../../../../functions'
-import ReactPlayer from 'react-player/wistia'
+import ReactPlayer from 'react-player'
 
 export default ({ block, images }) => {
   let source
@@ -16,10 +16,27 @@ export default ({ block, images }) => {
   const pageLink = block.buttonLink ? link(block.buttonLink) : null
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container + `${block.video ? ` ${styles.video}` : ''}`}>
       {block.video && (
-        // <div className={styles.hero}><video className={styles.video} poster='/video-frame.jpg' playsInline autoPlay muted loop src={media.publicURL} /></div>
-        <ReactPlayer wrapper={styles.hero} config={{ wistia: { options: { endVideoBehavior: 'loop', muted: true, fitStrategy: 'cover' } } }} playing url='https://station8branding.wistia.com/medias/lng6o2vfr1' />
+        <ReactPlayer
+          wrapper={styles.hero} config={{
+            wistia: {
+              options: {
+                endVideoBehavior: 'loop',
+                muted: true,
+                fitStrategy: 'cover'
+              }
+            },
+            file: {
+              attributes: {
+                poster: '/cover.png'
+              }
+            }
+          }}
+          playing
+          muted
+          url='https://station8branding.wistia.com/medias/lng6o2vfr1'
+        />
       )}
       {block.image && (
         <div className={styles.hero}><img src={media.publicURL} alt='' /></div>)}
