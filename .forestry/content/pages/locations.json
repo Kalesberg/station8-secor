@@ -13,31 +13,36 @@
           "city": "Houston",
           "image": "/.forestry/content/images/houston.png",
           "phone": "2815561661",
-          "address": "17321 Groeschke Road\nHouston, TX 77084"
+          "address": "17321 Groeschke Road\nHouston, TX 77084",
+          "mapImage": "/.forestry/content/images/houston-map.png"
         },
         {
           "city": "Dallas",
           "image": "/.forestry/content/images/dallas.jpg",
           "phone": "9727366435",
-          "address": "218 Monte Carlo Blvd\nPrinceton, TX 75407"
+          "address": "218 Monte Carlo Blvd\nPrinceton, TX 75407",
+          "mapImage": "/.forestry/content/images/dallas-map.png"
         },
         {
           "city": "Gillette",
           "image": "/.forestry/content/images/gillette.jpg",
           "address": "1460 Garman Court\nGillette, WY 82716",
-          "phone": "3076827307"
+          "phone": "3076827307",
+          "mapImage": "/.forestry/content/images/gillette-map.png"
         },
         {
           "city": "Albuquerque",
           "image": "/.forestry/content/images/albuquerque.png",
           "phone": "5053410777",
-          "address": "705 Rankin Road NE\nAlbuquerque, NM 87107"
+          "address": "705 Rankin Road NE\nAlbuquerque, NM 87107",
+          "mapImage": "/.forestry/content/images/albuquerque-map.png"
         },
         {
           "city": "Denver",
           "image": "/.forestry/content/images/denver-1.jpg",
           "address": "9335 W. 44th Ave.\nWheat Ridge, CO 80033",
-          "phone": "3039404749"
+          "phone": "3039404749",
+          "mapImage": "/.forestry/content/images/denver-map.png"
         }
       ]
     },
