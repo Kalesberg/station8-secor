@@ -43,6 +43,12 @@ query ($title: String!) {
         element
       }
       template
+      locations {
+        city
+        image
+        address
+        phone
+      }
       product {
         category
         description

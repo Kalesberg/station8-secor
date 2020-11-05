@@ -1,7 +1,7 @@
 import React from 'react'
 import ScrollAnimation from 'react-animate-on-scroll'
 
-import { Accessories, Account, AnimatedImage, ArticlesGrid, ArticlesSlider, BasicContactForm, Blank, CareersCTA, CareersGrid, Cities, CompanyMerger, ContactForm, ContentColumns, ContentTabs, FabAnimation, FeaturedArticles, FilteredImagesSlider, FullInteractiveMarkets, Gallery, Hero, HeroSlider, Highlights, HistorySlider, ImageBar, Images, Infographic, InteractiveMarkets, InteractiveTools, JoinTeam, KnowledgeBase, Leadership, Map, PipeSlider, PipeVideo, ProductDescrip, ProductIndex, Posts, Quote, RecentArticles, RichText, SimpleImageText, SimpleText, Slideshow, StaticImage, Stats, Testimonial, Training } from '../../components/main/blocks'
+import { Accessories, Account, AnimatedImage, ArticlesGrid, ArticlesSlider, BasicContactForm, Blank, CareersCTA, CareersGrid, Cities, CompanyMerger, ContactForm, ContentColumns, ContentTabs, FabAnimation, FeaturedArticles, FilteredImagesSlider, FullInteractiveMarkets, Gallery, Hero, HeroSlider, Highlights, HistorySlider, ImageBar, Images, Infographic, InteractiveMarkets, InteractiveTools, JoinTeam, KnowledgeBase, Leadership, Locations, Map, PipeSlider, PipeVideo, ProductDescrip, ProductIndex, Posts, Quote, RecentArticles, RichText, SimpleImageText, SimpleText, Slideshow, StaticImage, Stats, Testimonial, Training } from '../../components/main/blocks'
 
 import styles from './main.module.scss'
 
@@ -156,6 +156,10 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOp
             ) : block.template === 'main-leadership' ? (
               <ScrollAnimation key={i} animateIn='animate__zoomIn' animateOnce scrollableParentSelector='#main' offset={150}>
                 <Leadership block={block} images={images} />
+              </ScrollAnimation>
+            ) : block.template === 'main-locations' ? (
+              <ScrollAnimation key={i} animateIn='animate__zoomIn' animateOnce scrollableParentSelector='#main' offset={150}>
+                <Locations block={block} images={images} />
               </ScrollAnimation>
             ) : block.template === 'main-map' ? (
               <ScrollAnimation key={i} animateIn='animate__zoomIn' animateOnce scrollableParentSelector='#main' offset={150}>
