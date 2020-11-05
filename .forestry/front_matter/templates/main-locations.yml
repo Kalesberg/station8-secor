@@ -22,6 +22,11 @@ fields:
       maxSize: 64
     label: Map Image
     default: "/.forestry/content/images/placeholder.png"
+  - name: mapLink
+    type: text
+    config:
+      required: true
+    label: Map Link
   - name: address
     type: textarea
     default: ''
