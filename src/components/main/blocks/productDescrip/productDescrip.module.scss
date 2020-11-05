@@ -332,6 +332,7 @@
       grid-template-columns: auto;
       grid-template-rows: auto;
       grid-column-gap: 2vw;
+      overflow: visible;
       .highlighter {
         top: 19vw;
         display: none;
@@ -457,10 +458,12 @@
         .buttonContainer {
           left: 0;
           bottom: 8vw;
+          overflow: visible;
           .buttonTwo {
             border-radius: 5vw;
             font-size: 5vw;
             padding: .5vw 5vw .5vw 0vw;
+            overflow: visible;
             cursor: pointer;
             span {
               border-radius: 100%;
