@@ -14,35 +14,40 @@
           "image": "/.forestry/content/images/houston.png",
           "phone": "2815561661",
           "address": "17321 Groeschke Road\nHouston, TX 77084",
-          "mapImage": "/.forestry/content/images/houston-map.png"
+          "mapImage": "/.forestry/content/images/houston-map.png",
+          "mapLink": "https://www.google.com/maps?saddr=My+Location&daddr=17321+Groeschke+Rd,+Houston,+TX+77084"
         },
         {
           "city": "Dallas",
           "image": "/.forestry/content/images/dallas.jpg",
           "phone": "9727366435",
           "address": "218 Monte Carlo Blvd\nPrinceton, TX 75407",
-          "mapImage": "/.forestry/content/images/dallas-map.png"
+          "mapImage": "/.forestry/content/images/dallas-map.png",
+          "mapLink": "https://www.google.com/maps?saddr=My+Location&daddr=218+Monte+Carlo+Blvd,+Princeton,+TX+75407"
         },
         {
           "city": "Gillette",
           "image": "/.forestry/content/images/gillette.jpg",
           "address": "1460 Garman Court\nGillette, WY 82716",
           "phone": "3076827307",
-          "mapImage": "/.forestry/content/images/gillette-map.png"
+          "mapImage": "/.forestry/content/images/gillette-map.png",
+          "mapLink": "https://www.google.com/maps?saddr=My+Location&daddr=1460+Garman+Ct,+Gillette,+WY+82716"
         },
         {
           "city": "Albuquerque",
           "image": "/.forestry/content/images/albuquerque.png",
           "phone": "5053410777",
           "address": "705 Rankin Road NE\nAlbuquerque, NM 87107",
-          "mapImage": "/.forestry/content/images/albuquerque-map.png"
+          "mapImage": "/.forestry/content/images/albuquerque-map.png",
+          "mapLink": "https://www.google.com/maps?saddr=My+Location&daddr=705+Rankin+Rd+NE,+Albuquerque,+NM+87107"
         },
         {
           "city": "Denver",
           "image": "/.forestry/content/images/denver-1.jpg",
           "address": "9335 W. 44th Ave.\nWheat Ridge, CO 80033",
           "phone": "3039404749",
-          "mapImage": "/.forestry/content/images/denver-map.png"
+          "mapImage": "/.forestry/content/images/denver-map.png",
+          "mapLink": "https://www.google.com/maps?saddr=My+Location&daddr=9335+W+44th+Ave,+Wheat+Ridge,+CO+80033"
         }
       ]
     },
