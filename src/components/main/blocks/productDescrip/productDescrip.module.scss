@@ -332,6 +332,7 @@
       grid-template-columns: auto;
       grid-template-rows: auto;
       grid-column-gap: 2vw;
+      overflow: visible;
       .highlighter {
         top: 19vw;
         display: none;
@@ -387,8 +388,9 @@
         }
       }
       .infoContainer {
-        height: 160vw;
+        height: 170vw;
         position: relative;
+        overflow: visible;
         .selectButtons {
           display: block;
           position: absolute;
@@ -455,11 +457,15 @@
         }
         .buttonContainer {
           left: 0;
-          bottom: 5vw;
+          bottom: 8vw;
+          overflow: visible;
           .buttonTwo {
             border-radius: 5vw;
             font-size: 5vw;
-            padding: .5vw 5vw .5vw 0vw;
+            padding: 0vw 5vw 1vw 0vw;
+            overflow: visible;
+            height: 8vw;
+            margin: 0;
             cursor: pointer;
             span {
               border-radius: 100%;
