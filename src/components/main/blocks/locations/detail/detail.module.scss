@@ -4,17 +4,34 @@
   height: 56vw;
   .links {
     display: grid;
-    gap: 1vw;
+    gap: 0.25vw;
     padding: 5vw;
     align-items: flex-start;
     grid-template-rows: repeat(5, auto) 1fr;
     .link {
+      position: relative;
+      display: grid;
+      align-items: center;
+      .highlight {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: -2.5vw;
+        width: 0.5vw;
+        height: 100%;
+        background-color: #D50F09;
+        border-radius: 0.3vw;
+      }
       .title {
         color: #A7ABB0;
         font-size: 2.2vw;
         margin-bottom: 0;
+        padding: 0.25vw 0;
       }
       &.active {
+        .highlight {
+          display: unset;
+        }
         .title {
           color: #D50F09;
         }
@@ -167,5 +184,8 @@
         margin-bottom: 0;
       }
     }
+  }
+  @media (max-width: 600px) {
+    display: none;
   }
 }

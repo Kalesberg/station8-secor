@@ -4,6 +4,7 @@ import queryString from 'query-string'
 
 import Grid from './grid/grid'
 import Detail from './detail/detail'
+import Mobile from './mobile/mobile'
 
 import styles from './locations.module.scss'
 
@@ -27,6 +28,7 @@ export default ({ block, images, search }) => {
 
   return (
     <section className={styles.section}>
+      <Mobile block={block} images={images} selectedLocation={selectedLocation} />
       {!selectedLocation ? (
         <Grid block={block} images={images} />
       ) : (

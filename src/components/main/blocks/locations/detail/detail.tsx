@@ -12,6 +12,7 @@ export default ({ block, images, selectedLocation }) => (
       {block.locations.map((location, i) => {
         return (
           <Link key={i} className={styles.link + `${location.city === selectedLocation.city ? ` ${styles.active}` : ''}`} to={`/locations?city=${slugify(location.city).toLowerCase()}`}>
+            <div className={styles.highlight} />
             <h1 className={styles.title}>{location.city.toUpperCase()}</h1>
           </Link>
         )
