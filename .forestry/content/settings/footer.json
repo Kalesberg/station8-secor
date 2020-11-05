@@ -39,12 +39,6 @@
               "page": ".forestry/content/pages/training.json",
               "bold": false,
               "replaceLabel": false
-            },
-            {
-              "label": "Careers",
-              "page": ".forestry/content/pages/careers.json",
-              "bold": false,
-              "replaceLabel": false
             }
           ]
         },
