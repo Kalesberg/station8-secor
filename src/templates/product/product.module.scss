@@ -97,6 +97,22 @@
              }
           }
         }
+        .pdf-container {
+          width: 100%;
+          display: grid;
+          justify-content: flex-end;
+          .pdf {
+            color: #D50F09;
+            font-weight: 700;
+            font-size: 0.9vw;
+          }
+          @media (max-width: 600px) {
+            justify-content: flex-start;
+            .pdf {
+              font-size: 4vw;
+            }
+          }
+        }
         .options {
           margin-top: 4vw;
           display: grid;

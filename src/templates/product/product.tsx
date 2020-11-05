@@ -68,7 +68,7 @@ export default ({ location, pageContext: { menu, product, title, images, article
       })
       context.setQuote(newQuote)
       initOptions()
-      setShowMessage(true);
+      setShowMessage(true)
     }
   }
 
@@ -79,6 +79,7 @@ export default ({ location, pageContext: { menu, product, title, images, article
     })
   }
   const handleQuantity = e => setQuantity(e.target.value)
+  console.log(product)
 
   return context && (
     <Layout title={title} pages={pages} images={images} toggleForm={toggleForm} blocks={[]} articles={articles} tag={tag} menu={menu} location={location}>
@@ -110,6 +111,11 @@ export default ({ location, pageContext: { menu, product, title, images, article
             <form className={styles.details}>
               {product.name && <p className={styles.name}>{product.name}</p>}
               {product.description && <div className={styles.description}>{parse(marked(product.description))}</div>}
+              {product.documents && product.documents.length && (
+                <div className={styles.pdfContainer}>
+                  <Link className={styles.pdf} to={product.documents[0]}>PDF</Link>
+                </div>
+              )}
               <div className={styles.options}>
                 {product.options && product.options.length ? product.options.map((option, i) => (
                   <div key={i} className={styles.option}>
@@ -136,7 +142,7 @@ export default ({ location, pageContext: { menu, product, title, images, article
                 <div className={styles.fill} />
               </button>
               <button className={styles.mobileButton} type='submit' onClick={handleAddToQuote}>
-                <svg className={styles.add} viewBox='0 0 500 500' fillRule='evenodd' clipRule='evenodd' strokeLinejoin='round' strokeMiterlimit={2} >
+                <svg className={styles.add} viewBox='0 0 500 500' fillRule='evenodd' clipRule='evenodd' strokeLinejoin='round' strokeMiterlimit={2}>
                   <path d='M250 0c137.979 0 250 112.021 250 250 0 137.979-112.021 250-250 250C112.021 500 0 387.979 0 250 0 112.021 112.021 0 250 0zm0 33.333c119.582 0 216.667 97.085 216.667 216.667 0 119.582-97.085 216.667-216.667 216.667-119.582 0-216.667-97.085-216.667-216.667 0-119.582 97.085-216.667 216.667-216.667z' fill='#EBE5E5' />
                   <path fill='#d50f0a' d='M220.5 123.5h59v253h-59z' />
                   <path fill='#d50f0a' d='M376.5 220.5v59h-253v-59z' />
@@ -144,7 +150,7 @@ export default ({ location, pageContext: { menu, product, title, images, article
                 Add to quote
               </button>
               {showMessage &&
-              <p className={styles.success}>Added!<span className={styles.span}><Link className={styles.link} to="/get-a-quote">Go to cart</Link></span></p>}
+                <p className={styles.success}>Added!<span className={styles.span}><Link className={styles.link} to='/get-a-quote'>Go to cart</Link></span></p>}
             </form>
           </div>
           <div className={styles.quoteBuilder}>
