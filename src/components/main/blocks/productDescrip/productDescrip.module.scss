@@ -387,8 +387,9 @@
         }
       }
       .infoContainer {
-        height: 160vw;
+        height: 170vw;
         position: relative;
+        overflow: visible;
         .selectButtons {
           display: block;
           position: absolute;
@@ -455,7 +456,7 @@
         }
         .buttonContainer {
           left: 0;
-          bottom: 5vw;
+          bottom: 8vw;
           .buttonTwo {
             border-radius: 5vw;
             font-size: 5vw;
