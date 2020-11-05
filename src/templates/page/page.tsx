@@ -48,6 +48,8 @@ query ($title: String!) {
         image
         address
         phone
+        mapImage
+        mapLink
       }
       product {
         category

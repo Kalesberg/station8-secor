@@ -159,7 +159,7 @@ export default ({ blocks, children, images, menuOpen, setMenuOpen, setUserMenuOp
               </ScrollAnimation>
             ) : block.template === 'main-locations' ? (
               <ScrollAnimation key={i} animateIn='animate__zoomIn' animateOnce scrollableParentSelector='#main' offset={150}>
-                <Locations block={block} images={images} />
+                <Locations block={block} images={images} search={location.search} />
               </ScrollAnimation>
             ) : block.template === 'main-map' ? (
               <ScrollAnimation key={i} animateIn='animate__zoomIn' animateOnce scrollableParentSelector='#main' offset={150}>
