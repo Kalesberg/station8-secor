@@ -1,4 +1,14 @@
 ---
-label: Main Contact Full Page
+label: 'Main Block: Contact Full Page'
 hide_body: true
-fields: []
+fields:
+- name: contactFullPageHeading
+  type: text
+  config:
+    required: true
+  label: Heading
+- name: contactFullPageSubheading
+  type: text
+  config:
+    required: true
+  label: Subheading
