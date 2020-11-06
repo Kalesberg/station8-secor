@@ -219,7 +219,7 @@
           "number": 115,
           "description": "fittings fabricated annually",
           "icon": "/.forestry/content/images/valve.svg",
-          "characters": "K+"
+          "characters": ",000+"
         },
         {
           "number": 3632,
@@ -229,7 +229,7 @@
         },
         {
           "number": 113,
-          "characters": "K+",
+          "characters": ",000+",
           "description": "miles of HDPE pipe sold annually",
           "icon": "/.forestry/content/images/pipe.svg"
         }
