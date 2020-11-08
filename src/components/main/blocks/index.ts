@@ -9,6 +9,7 @@ import CareersGrid from './careersGrid/careersGrid'
 import Cities from './cities/cities'
 import CompanyMerger from './companyMerger/companyMerger'
 import ContactForm from './contactForm/contactForm'
+import ContactFullPage from './contactFullPage/contactFullPage'
 import ContentColumns from './contentColumns/contentColumns'
 import ContentTabs from './contentTabs/contentTabs'
 import FabAnimation from './fabAnimation/fabAnimation'
@@ -47,4 +48,4 @@ import Stats from './stats/stats'
 import Testimonial from './testimonial/testimonial'
 import Training from './training/training'
 
-export { Accessories, Account, AnimatedImage, ArticlesGrid, ArticlesSlider, BasicContactForm, Blank, CareersCTA, CareersGrid, Cities, CompanyMerger, ContactForm, ContentColumns, ContentTabs, FabAnimation, FeaturedArticles, FilteredImagesSlider, FullInteractiveMarkets, Gallery, Hero, HeroSlider, Highlights, HistorySlider, ImageBar, Images, Infographic, InteractiveMarkets, InteractiveTools, JoinTeam, KnowledgeBase, Leadership, Locations, Map, PipeSlider, PipeVideo, Posts, ProductDescrip, ProductIndex, Quote, RecentArticles, RichText, SimpleImageText, SimpleText, Slideshow, StaticImage, Stats, Testimonial, Training }
+export { Accessories, Account, AnimatedImage, ArticlesGrid, ArticlesSlider, BasicContactForm, Blank, CareersCTA, CareersGrid, Cities, CompanyMerger, ContactForm, ContactFullPage, ContentColumns, ContentTabs, FabAnimation, FeaturedArticles, FilteredImagesSlider, FullInteractiveMarkets, Gallery, Hero, HeroSlider, Highlights, HistorySlider, ImageBar, Images, Infographic, InteractiveMarkets, InteractiveTools, JoinTeam, KnowledgeBase, Leadership, Locations, Map, PipeSlider, PipeVideo, Posts, ProductDescrip, ProductIndex, Quote, RecentArticles, RichText, SimpleImageText, SimpleText, Slideshow, StaticImage, Stats, Testimonial, Training }

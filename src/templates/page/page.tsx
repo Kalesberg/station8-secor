@@ -33,6 +33,8 @@ query ($title: String!) {
     title
     type
     blocks {
+      contactFullPageHeading
+      contactFullPageSubheading
       video
       #text {
       #  text
