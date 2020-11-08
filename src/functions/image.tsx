@@ -10,8 +10,8 @@ type imageProps = {
   children?: React.ReactNode,
   onClick?: any,
   images: any,
-  gradient: string,
-  id: any
+  gradient?: string,
+  id?: any
 }
 
 const handleDoNothing = () => null
