@@ -1,17 +1,17 @@
 import React, { useEffect, useState, useRef } from 'react'
-import { Link, navigate } from 'gatsby'
-import { Image, link } from '../../../../functions'
+import { Link } from 'gatsby'
+import { Image } from '../../../../functions'
 import Registered from './registered'
 import styles from './accessories.module.scss'
 import HorizontalHighlight from '../highlighters/horizontalHighlight'
 
-export default ({ block, images }) => {
+export default ({ block }) => {
   const [selected, setSelected] = useState(block.accessories && block.accessories.length > 0 ? block.accessories[0].heading : '')
   const [target, setTarget] = useState(null)
   const [dropdown, setDropdown] = useState(false)
   const container = useRef(null)
 
-  const handleClick = (e) => {
+  const handleClick = e => {
     setSelected(e.target.innerText)
     setTarget(e.target)
     setDropdown(false)
@@ -40,7 +40,9 @@ export default ({ block, images }) => {
         {block.accessories && block.accessories.map((acc, i) => {
           return (
             <div key={i} className={styles.accessory + ` ${selected.toLowerCase() === acc.heading.toLowerCase() ? `${styles.accessoryShow}` : ''}`}>
-              {acc.image && <Image className={styles.image} src={acc.image} images={images} />}
+              {acc.image && (
+                <Image className={styles.image} src={acc.image} />
+              )}
               <div className={styles.infoContainer}>
                 <h1>{acc.heading && acc.heading}</h1>
                 <p className={styles.subHeading}>{acc.subHeading && acc.subHeading}</p>

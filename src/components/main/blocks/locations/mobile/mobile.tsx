@@ -6,11 +6,11 @@ import { Image } from '../../../../../functions'
 
 import styles from './mobile.module.scss'
 
-export default ({ block, images, selectedLocation }) => (
+export default ({ block, selectedLocation }) => (
   <section className={styles.grid}>
     {block.locations.map((location, i) => {
       return (
-        <Image key={i} className={styles.location + `${location.city === selectedLocation.city ? ` ${styles.active}` : ''}`} src={location.image} images={images} container='div' gradient='linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0))'>
+        <Image key={i} className={styles.location + `${location.city === selectedLocation.city ? ` ${styles.active}` : ''}`} src={location.image} container='div' gradient='linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0))'>
           <div className={styles.address}>
             {location.address.split('\n').map((line, i) => (
               <p className={styles.line} key={i}>{line}</p>
@@ -23,7 +23,7 @@ export default ({ block, images, selectedLocation }) => (
           </a>
           <h1 className={styles.title}>{location.city.toUpperCase()}</h1>
           <Link className={styles.link} to={`/locations?city=${slugify(location.city).toLowerCase()}`}>
-            <Image className={styles.map} src={location.mapImage} images={images} container='div' gradient='linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))' />
+            <Image className={styles.map} src={location.mapImage} container='div' gradient='linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))' />
           </Link>
         </Image>
       )

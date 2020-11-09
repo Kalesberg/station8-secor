@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link, navigate } from 'gatsby'
-import queryString from 'query-string'
 import marked from 'marked'
 import parse from 'html-react-parser'
 import camelcase from 'camelcase'
@@ -9,19 +8,12 @@ import { Context } from '../../components/context/context'
 import Layout from '../../components/layout/layout'
 import styles from './product.module.scss'
 
-export default ({ location, pageContext: { menu, product, title, images, articles, pages, options: allOptions } }) => {
+export default ({ location, pageContext: { menu, product, title, articles, pages, options: allOptions } }) => {
   const context = useContext(Context)
   const [quantity, setQuantity] = useState(1)
   const [options, setOptions] = useState({})
-  const [tag, setTag] = useState('')
-  const [formOpen, setFormOpen] = useState(false)
   const [activeImage, setActiveImage] = useState(0)
   const [showMessage, setShowMessage] = useState(false)
-
-  const toggleForm = e => {
-    e.preventDefault()
-    setFormOpen(!formOpen)
-  }
 
   const initOptions = () => {
     const options = {}
@@ -40,11 +32,6 @@ export default ({ location, pageContext: { menu, product, title, images, article
   useEffect(() => {
     initOptions()
   }, [product])
-
-  useEffect(() => {
-    const tag = queryString.parse(location.search)
-    tag.tag ? setTag(tag.tag.toString()) : setTag('')
-  }, [location])
 
   useEffect(() => {
     console.log('options', options)
@@ -82,7 +69,7 @@ export default ({ location, pageContext: { menu, product, title, images, article
   console.log(product)
 
   return context && (
-    <Layout title={title} pages={pages} images={images} toggleForm={toggleForm} blocks={[]} articles={articles} tag={tag} menu={menu} location={location}>
+    <Layout title={title} pages={pages} articles={articles} menu={menu} location={location}>
       <section className={styles.section}>
         <aside className={styles.aside}>
           <div className={styles.back} onClick={handleGoBack} />

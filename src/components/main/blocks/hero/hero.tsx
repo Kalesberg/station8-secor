@@ -1,23 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'gatsby'
-import styles from './hero.module.scss'
-import { Image, link } from '../../../../functions'
 import ReactPlayer from 'react-player'
 
-export default ({ block, images }) => {
-  let source
-  if (block && block.video) {
-    source = block.video
-  } else if (block && block.image) {
-    source = block.image
-  }
+import { Context } from '../../../context/context'
+import { Image, link } from '../../../../functions'
 
-  const media = images.find(image => image.relativePath === 'images/' + source.split('/').pop())
+import styles from './hero.module.scss'
+
+export default ({ block }) => {
+  const context = useContext(Context)
+  const source = block.video || block.image
+
+  const media = context.images && context.images.length && context.images.find(image => image.relativePath === 'images/' + source.split('/').pop())
   const pageLink = block.buttonLink ? link(block.buttonLink) : null
 
   return (
     <div className={styles.container + `${block.video ? ` ${styles.video}` : ''}`}>
-      {block.video && (
+      {block.video ? (
         <ReactPlayer
           wrapper={styles.hero} config={{
             wistia: {
@@ -37,9 +36,9 @@ export default ({ block, images }) => {
           muted
           url='https://station8branding.wistia.com/medias/lng6o2vfr1'
         />
+      ) : (
+        <div className={styles.hero}><img src={media.publicURL} alt='' /></div>
       )}
-      {block.image && (
-        <div className={styles.hero}><img src={media.publicURL} alt='' /></div>)}
       <div className={styles.textContainer}>
         {block.heroText && block.heroText.length > 1 && block.heroText.map((txt, i) => {
           return (
@@ -55,7 +54,9 @@ export default ({ block, images }) => {
           <Link to={pageLink}>
             <button className={styles.button}>{block.buttonText}
               <span>
-                {block.buttonIcon && <Image className={styles.icon} src={block.buttonIcon} images={images} />}
+                {block.buttonIcon && (
+                  <Image className={styles.icon} src={block.buttonIcon} />
+                )}
               </span>
             </button><br className={styles.buttonBreak} />
           </Link>}
@@ -64,7 +65,9 @@ export default ({ block, images }) => {
             <Link key={i} to={button.buttonLink}>
               <button className={styles.button}>{button.buttonText}
                 <span>
-                  {block.buttonIcon && <Image className={styles.icon} src={button.buttonIcon} images={images} />}
+                  {block.buttonIcon && (
+                    <Image className={styles.icon} src={button.buttonIcon} />
+                  )}
                 </span>
               </button><br className={styles.buttonBreak} />
             </Link>

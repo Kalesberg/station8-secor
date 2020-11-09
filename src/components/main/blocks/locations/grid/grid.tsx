@@ -6,11 +6,11 @@ import { Image } from '../../../../../functions'
 
 import styles from './grid.module.scss'
 
-export default ({ block, images }) => (
+export default ({ block }) => (
   <section className={styles.grid}>
     {block.locations.map((location, i) => {
       return (
-        <Image key={i} className={styles.location} src={location.image} images={images} container='div' gradient='linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0))'>
+        <Image key={i} className={styles.location} src={location.image} container='div' gradient='linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0))'>
           <div className={styles.address}>
             {location.address.split('\n').map((line, i) => (
               <p className={styles.line} key={i}>{line}</p>
@@ -26,7 +26,7 @@ export default ({ block, images }) => (
             <div className={styles.underline} />
           </div>
           <Link className={styles.link} to={`/locations?city=${slugify(location.city).toLowerCase()}`}>
-            <Image className={styles.map} src={location.mapImage} images={images} container='div' gradient='linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0))' />
+            <Image className={styles.map} src={location.mapImage} container='div' gradient='linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0))' />
           </Link>
         </Image>
       )

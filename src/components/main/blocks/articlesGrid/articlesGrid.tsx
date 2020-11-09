@@ -7,7 +7,7 @@ import { Image } from '../../../../functions'
 
 import styles from './articlesGrid.module.scss'
 
-export default ({ block, search, limit = undefined, slug = '', articles, images, root = '/news-and-resources' }) => {
+export default ({ block, search, limit = undefined, slug = '', articles, root = '/news-and-resources' }) => {
   const [categories, setCategories] = useState([])
   const [category, setCategory] = useState('All')
   const [userSearch, setUserSearch] = useState('')
@@ -25,10 +25,6 @@ export default ({ block, search, limit = undefined, slug = '', articles, images,
     }
   }, [block, articles])
 
-  useEffect(() => {
-    console.log(featuredArticle)
-  }, [featuredArticle])
-
   const handleSearch = e => {
     navigate(`${root}${slug ? '/' + slug : ''}${category !== 'All' || e.target.value ? '?' : ''}${category !== 'All' ? `category=${category}${e.target.value ? '&' : ''}` : ''}${e.target.value ? `search=${e.target.value}` : ''}`)
     setUserSearch(e.target.value)
@@ -38,7 +34,7 @@ export default ({ block, search, limit = undefined, slug = '', articles, images,
     const categories = []
     articles.forEach(article => article.frontmatter.tags.forEach(articleTag => categories.push(articleTag.toLowerCase())))
     categories.sort((a, b) => a.toLowerCase() > b.toLowerCase() ? 1 : -1)
-    setCategories(['All', ...new Set(categories)])
+    setCategories(['all', 'forms', ...new Set(categories)])
   }, [articles])
 
   useEffect(() => {
@@ -50,7 +46,7 @@ export default ({ block, search, limit = undefined, slug = '', articles, images,
   return (
     <section className={styles.section}>
       {featuredArticle && (
-        <Image className={styles.featured} src={featuredArticle.frontmatter.heroImage.relativePath} container='div' images={images}>
+        <Image className={styles.featured} src={featuredArticle.frontmatter.heroImage.relativePath} container='div'>
           <Link to={featuredArticle.path} className={styles.text}>
             <p className={styles.date}>
               <span>Posted&nbsp;
@@ -66,13 +62,10 @@ export default ({ block, search, limit = undefined, slug = '', articles, images,
         <div className={styles.header}>
           <div className={styles.categories}>
             {categories.map((categoryItem, i) => {
-              const handleFilter = () => {
-                navigate(`${slug}${slug ? '/' + slug : ''}${categoryItem === 'All' ? '' : `?category=${categoryItem}`}`)
-              }
               return (
                 <React.Fragment key={i}>
                   {i ? <span className={styles.divider}> | </span> : null}
-                  <p className={styles.category + `${categoryItem === category ? ` ${styles.active}` : ''}`} onClick={handleFilter}>{categoryItem}</p>
+                  <Link to={`${slug}${slug ? '/' + slug : ''}${categoryItem.toString() === 'all' ? '' : `?category=${categoryItem}`}`} className={styles.category} activeClassName={styles.active}>{categoryItem}</Link>
                 </React.Fragment>
               )
             })}
@@ -83,7 +76,7 @@ export default ({ block, search, limit = undefined, slug = '', articles, images,
         </div>
         <div className={styles.articles}>
           {articles
-            .filter(article => category === 'All' ? true : article.frontmatter.tags.find(articleCategory => articleCategory.toLowerCase() === category.toLowerCase()))
+            .filter(article => category === 'all' ? true : article.frontmatter.tags.find(articleCategory => articleCategory.toLowerCase() === category.toLowerCase()))
             .filter(article => !userSearch ? true : article.frontmatter.title.toLowerCase().replace(/\W/g, '').includes(userSearch.toLowerCase().replace(/\W/g, '')) || article.frontmatter.summary.toLowerCase().replace(/\W/g, '').includes(userSearch.toLowerCase().replace(/\W/g, '')) || article.html.toLowerCase().replace(/\W/g, '').includes(userSearch.toLowerCase().replace(/\W/g, '')))
             .slice(0, limit)
             .map(article => {
@@ -91,7 +84,7 @@ export default ({ block, search, limit = undefined, slug = '', articles, images,
               return (
                 <div key={article.path} className={styles.article}>
                   <Link to={article.path}>
-                    <Image className={styles.image} src={article.frontmatter.heroImage.relativePath} container='div' images={images} />
+                    <Image className={styles.image} src={article.frontmatter.heroImage.relativePath} container='div' />
                   </Link>
                   <Link to={article.path}>
                     <div className={styles.articleDetail}>

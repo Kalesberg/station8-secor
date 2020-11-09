@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import styles from './joinTeam.module.scss'
 import { Image } from '../../../../functions'
 
-export default ({ block, images }) => {
+export default ({ block }) => {
   const [current, setCurrent] = useState(0)
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export default ({ block, images }) => {
         return (
           <div key={i} className={styles.backgroundContainer + ` ${current === i ? `${styles.backgroundShow}` : ''}`}>
             <div className={styles.background}>
-              <Image className={styles.image} src={image.image} images={images} />
+              <Image className={styles.image} src={image.image} />
             </div>
           </div>
         )
@@ -39,7 +39,9 @@ export default ({ block, images }) => {
             <Link to={block.buttonLink}>
               <button className={styles.button}>{block.buttonText}
                 <span>
-                  {block.icon && <Image className={styles.icon} src={block.icon} images={images} />}
+                  {block.icon && (
+                    <Image className={styles.icon} src={block.icon} />
+                  )}
                 </span>
               </button>
             </Link>}

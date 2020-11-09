@@ -10,7 +10,20 @@ import './reset.scss'
 import './global.scss'
 import styles from './layout.module.scss'
 
-export default ({ children, title: siteTitle = '', images, pages, toggleForm, blocks, articles, tag, menu, location, options, careers, forms }) => {
+type layoutProps = {
+  children?: any,
+  title: string,
+  pages: [any],
+  blocks?: [any],
+  articles?: [any],
+  menu: any,
+  location: any,
+  options?: any,
+  careers?: any,
+  forms?: any
+}
+
+export default ({ children, title: siteTitle = '', pages, blocks, articles, menu, location, options, careers, forms }: layoutProps) => {
   const context = useContext(Context)
   const [menuOpen, setMenuOpen] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -41,11 +54,11 @@ export default ({ children, title: siteTitle = '', images, pages, toggleForm, bl
         <title>{siteTitle + titleDivider + `${title || '404: Page Not Found'}`}</title>
         <meta name='description' content={description} />
       </Helmet>
-      <Header images={images} pages={pages} mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} menuOpen={menuOpen} setMenuOpen={setMenuOpen} userMenuOpen={userMenuOpen} setUserMenuOpen={setUserMenuOpen} menu={menu} location={location} />
-      <HeaderMobile images={images} pages={pages} mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} menuOpen={menuOpen} setMenuOpen={setMenuOpen} userMenuOpen={userMenuOpen} setUserMenuOpen={setUserMenuOpen} menu={menu} location={location} />
-      <Main blocks={blocks} images={images} menuOpen={menuOpen} scrollListener={scrollListener} scrollPosition={scrollPosition} setMenuOpen={setMenuOpen} setUserMenuOpen={setUserMenuOpen} articles={articles} pages={pages} toggleForm={toggleForm} menu={menu} location={location} options={options} careers={careers} forms={forms}>
+      <Header pages={pages} mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} menuOpen={menuOpen} setMenuOpen={setMenuOpen} userMenuOpen={userMenuOpen} setUserMenuOpen={setUserMenuOpen} menu={menu} location={location} />
+      <HeaderMobile pages={pages} mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} menuOpen={menuOpen} setMenuOpen={setMenuOpen} userMenuOpen={userMenuOpen} setUserMenuOpen={setUserMenuOpen} location={location} />
+      <Main blocks={blocks} menuOpen={menuOpen} scrollListener={scrollListener} scrollPosition={scrollPosition} setMenuOpen={setMenuOpen} setUserMenuOpen={setUserMenuOpen} articles={articles} menu={menu} location={location} options={options} careers={careers} forms={forms}>
         {children}
-        <Footer images={images} pages={pages} toggleForm={toggleForm} />
+        <Footer pages={pages} />
       </Main>
       <Scroll />
     </div>

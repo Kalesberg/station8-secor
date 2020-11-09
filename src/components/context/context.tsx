@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
 
 const Context = createContext(null)
 
@@ -7,6 +8,24 @@ const ContextProvider = ({ children }) => {
   const [quantity, setQuantity] = useState(0)
   const [user, setUser] = useState(undefined)
   const [userFetched, setUserFetched] = useState(false)
+  const [images, setImages] = useState([])
+
+  const data = useStaticQuery(graphql`
+    {
+      allFile(filter: {relativeDirectory: {eq: "images"}}) {
+        nodes {
+          publicURL
+          relativePath
+        }
+      }
+    }
+  `)
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setImages(data.allFile.nodes)
+    }
+  }, [data])
 
   const [customerInfo, setCustomerInfo] = useState({
     name: '',
@@ -57,8 +76,8 @@ const ContextProvider = ({ children }) => {
       method: 'GET'
     })
     if (res.ok) {
-      const body = await res.json()
-      console.log(body)
+      // const body = await res.json()
+      // console.log(body)
     }
   }
 
@@ -67,7 +86,7 @@ const ContextProvider = ({ children }) => {
     const res = await window.fetch('/.netlify/functions/authenticate')
     if (res.ok) {
       const body = await res.json()
-      console.log(body)
+      // console.log(body)
       setUser({
         id: body.userId,
         firstName: body.user['First Name'],
@@ -88,18 +107,18 @@ const ContextProvider = ({ children }) => {
     setUserFetched(true)
   }
 
-  useEffect(() => {
-    console.log(user)
-  }, [user])
+  // useEffect(() => {
+  //   console.log(user)
+  // }, [user])
 
   useEffect(() => {
     window.localStorage.setItem('quote', JSON.stringify(quote))
     updateQuantity()
-    console.log(quote)
+    // console.log(quote)
   }, [quote])
 
   return (
-    <Context.Provider value={{ auth, handleLogoutUser, handleValidateUser, user, userFetched, quantity, quote, setQuote, handleAddQuoteItem, handleRemoveQuoteItem, handleUpdateQuoteItem, customerInfo, setCustomerInfo }}>
+    <Context.Provider value={{ auth, handleLogoutUser, handleValidateUser, images, user, userFetched, quantity, quote, setQuote, handleAddQuoteItem, handleRemoveQuoteItem, handleUpdateQuoteItem, customerInfo, setCustomerInfo }}>
       {children}
     </Context.Provider>)
 }

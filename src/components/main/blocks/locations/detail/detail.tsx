@@ -6,7 +6,7 @@ import { Image } from '../../../../../functions'
 
 import styles from './detail.module.scss'
 
-export default ({ block, images, selectedLocation }) => (
+export default ({ block, selectedLocation }) => (
   <section className={styles.detail}>
     <div className={styles.links}>
       {block.locations.map((location, i) => {
@@ -18,7 +18,7 @@ export default ({ block, images, selectedLocation }) => (
         )
       })}
     </div>
-    <Image className={styles.map} src={selectedLocation.mapImage} images={images} container='div' gradient='linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1))'>
+    <Image className={styles.map} src={selectedLocation.mapImage} container='div' gradient='linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1))'>
       <div className={styles.address}>
         {selectedLocation.address.split('\n').map((line, i) => (
           <p className={styles.line} key={i}>{line}</p>
@@ -30,6 +30,6 @@ export default ({ block, images, selectedLocation }) => (
         <p className={styles.text}>Get directions</p>
       </a>
     </Image>
-    <Image className={styles.location} src={selectedLocation.image} images={images} container='div' gradient='' />
+    <Image className={styles.location} src={selectedLocation.image} container='div' gradient='' />
   </section>
 )

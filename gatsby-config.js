@@ -15,18 +15,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-plugin-sharp',
-      options: {
-        defaultQuality: 100
-      }
-    },
-    {
-      resolve: 'gatsby-transformer-sharp',
-      options: {
-        checkSupportedExtensions: false
-      }
-    },
-    {
       resolve: 'gatsby-source-airtable',
       options: {
         apiKey: process.env.AIRTABLE_KEY,
@@ -98,20 +86,6 @@ module.exports = {
       options: {
         name: 'content',
         path: `${__dirname}/.forestry/content`
-      }
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'content',
-        path: `${__dirname}/.forestry/content/images`
-      }
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'content',
-        path: `${__dirname}/.forestry/content/pages`
       }
     },
     {

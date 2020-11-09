@@ -7,12 +7,12 @@ import { Image } from '../../../../functions'
 
 import styles from './quoteMenu.module.scss'
 
-export default ({ block, images, handleCloseMenus }) => {
+export default ({ block, handleCloseMenus }) => {
   const appContext = useContext(Context)
   return appContext && (
     <Link to='/get-a-quote' className={styles.container} onMouseOver={handleCloseMenus}>
       <p className={styles.label}>{block.label}</p>
-      <Image className={styles.icon} src={block.icon} images={images} />
+      <Image className={styles.icon} src={block.icon} />
       <div className={styles.quantityContainer}>
         <p className={styles.quantity}>{appContext.quantity}</p>
       </div>

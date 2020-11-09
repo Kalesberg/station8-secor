@@ -1,16 +1,12 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { graphql, navigate } from 'gatsby'
-import Moment from 'react-moment'
-
-import { Image } from '../../functions'
+import React, { useEffect, useRef } from 'react'
+import { graphql } from 'gatsby'
 
 import { Layout } from '../../components'
-import { ArticlesGrid } from '../../components/main/blocks'
 
 import styles from './form.module.scss'
 
 export default ({
-  pageContext: { images, pages, menu },
+  pageContext: { pages, menu },
   data: {
     markdownRemark: {
       frontmatter: {
@@ -23,7 +19,6 @@ export default ({
   },
   location
 }) => {
-  const [formOpen, setFormOpen] = useState(false)
   const file = useRef()
 
   useEffect(() => {
@@ -34,13 +29,8 @@ export default ({
     }
   }, [file])
 
-  const toggleForm = e => {
-    e.preventDefault()
-    setFormOpen(!formOpen)
-  }
-
   return (
-    <Layout title={title} pages={pages} images={images} toggleForm={toggleForm} menu={menu} location={location}>
+    <Layout title={title} pages={pages} menu={menu} location={location}>
       <article className={styles.article}>
         <a ref={file} className={styles.download} href={publicURL} download={title}>Click here to download <strong>{title}</strong> if it is not automatically downloaded within three seconds.</a>
       </article>
@@ -54,11 +44,7 @@ query ($title: String!) {
     frontmatter {
       title
       heroImage {
-        childImageSharp {
-          original {
-            src
-          }
-        }
+        publicURL
       }
       summary
       form {

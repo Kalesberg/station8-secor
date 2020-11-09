@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import { Image } from '../../../../functions'
 import styles from './fullInteractiveMarkets.module.scss'
 
-export default ({ block, images }) => {
+export default ({ block }) => {
   const [selected, setSelected] = useState(block.market[0].title)
   const [titles] = useState(block.market && block.market.map(market => market.title))
   const [start] = useState(window.innerWidth > 600 ? '-21vw' : '-140vw')
@@ -83,7 +83,7 @@ export default ({ block, images }) => {
         {block.market && block.market.map((market, i) => {
           return (
             <div key={i} className={styles.background + ` ${selected === market.title ? `${styles.backgroundShow}` : ''}`}>
-              <Image className={styles.image} src={market.image && market.image} images={images} />
+              <Image className={styles.image} src={market.image && market.image} />
             </div>
           )
         })}
@@ -104,7 +104,7 @@ export default ({ block, images }) => {
         <div className={styles.buttonLeftContainer}>
           <button onClick={moveLeft} className={styles.button}>{block.buttonText}
             <span>
-              {block.left && <Image className={styles.left} src={block.left} images={images} />}
+              {block.left && <Image className={styles.left} src={block.left} />}
             </span>
           </button>
         </div>
@@ -131,7 +131,7 @@ export default ({ block, images }) => {
         <div className={styles.buttonRightContainer}>
           <button onClick={moveRight} className={styles.button}>{block.buttonText}
             <span>
-              {block.right && <Image className={styles.right} src={block.right} images={images} />}
+              {block.right && <Image className={styles.right} src={block.right} />}
             </span>
           </button>
         </div>

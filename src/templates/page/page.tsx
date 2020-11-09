@@ -1,29 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
-import queryString from 'query-string'
 
 import { Layout } from '../../components'
 
 import 'animate.css/animate.min.css'
 
 export default props => {
-  // console.log('props', props)
-  const { location, data: { pagesJson: page }, pageContext: { careers, pages, images, articles, menu, options, forms } } = props
-  const [tag, setTag] = useState('')
-  const [formOpen, setFormOpen] = useState(false)
-
-  const toggleForm = e => {
-    e.preventDefault()
-    setFormOpen(!formOpen)
-  }
-
-  useEffect(() => {
-    const tag = queryString.parse(location.search)
-    tag.tag ? setTag(tag.tag.toString()) : setTag('')
-  }, [location])
+  const { location, data: { pagesJson: page }, pageContext: { careers, pages, articles, menu, options, forms } } = props
 
   return (
-    <Layout title={page.title} pages={pages} images={images} toggleForm={toggleForm} blocks={page.blocks} articles={articles} careers={careers} tag={tag} menu={menu} location={location} options={options} forms={forms} />
+    <Layout title={page.title} pages={pages} blocks={page.blocks} articles={articles} careers={careers} menu={menu} location={location} options={options} forms={forms} />
   )
 }
 

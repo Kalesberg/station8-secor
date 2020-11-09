@@ -8,7 +8,7 @@ import Mobile from './mobile/mobile'
 
 import styles from './locations.module.scss'
 
-export default ({ block, images, search }) => {
+export default ({ block, search }) => {
   const [selectedLocation, setSelectedLocation] = useState('')
 
   useEffect(() => {
@@ -28,11 +28,11 @@ export default ({ block, images, search }) => {
 
   return (
     <section className={styles.section}>
-      <Mobile block={block} images={images} selectedLocation={selectedLocation} />
+      <Mobile block={block} selectedLocation={selectedLocation} />
       {!selectedLocation ? (
-        <Grid block={block} images={images} />
+        <Grid block={block} />
       ) : (
-        <Detail block={block} images={images} selectedLocation={selectedLocation} />
+        <Detail block={block} selectedLocation={selectedLocation} />
       )}
     </section>
   )

@@ -7,7 +7,7 @@ import settings from '../../../../../.forestry/content/settings/career.json'
 
 import styles from './careersCTA.module.scss'
 
-export default ({ block = settings, images, careers, position = '' }) => {
+export default ({ block = settings, careers, position = '' }) => {
   const [attachment, setAttachment] = useState(undefined)
   const [dropzoneClasses, setDropzoneClasses] = useState([styles.dropzone])
   const [applicantInfo, setApplicantInfo] = useState({
@@ -117,7 +117,7 @@ export default ({ block = settings, images, careers, position = '' }) => {
 
   return (
     <section className={styles.section} style={{ backgroundImage: `url(${block.background})` }}>
-      <Image images={images} className={styles.cta} src={block.background} container='div' gradient='linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0))'>
+      <Image className={styles.cta} src={block.background} container='div' gradient='linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0))'>
         <h1 className={styles.title}>{block.ctaTitle}</h1>
         <p className={styles.text}>{block.ctaText}</p>
         <div className={styles.buttonContainer}>
@@ -128,7 +128,7 @@ export default ({ block = settings, images, careers, position = '' }) => {
           )}
         </div>
       </Image>
-      <Image id='cfform' images={images} className={styles.contactForm} src={block.cfBackground} container='div' gradient='linear-gradient(to top, rgba(213, 16, 9, 0.75), rgba(213, 16, 9, 0.75))'>
+      <Image id='cfform' className={styles.contactForm} src={block.cfBackground} container='div' gradient='linear-gradient(to top, rgba(213, 16, 9, 0.75), rgba(213, 16, 9, 0.75))'>
         <h1 className={styles.title}>{applied ? 'Thank you for your inquiry!' : 'Apply today!'}</h1>
         {!applied ? (
           <>

@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
 
-import { Burger, CallButton, ContactButton, ContactFormWithVideoBackground, ContactInfo, FavoritePage, FeaturedPage, FillSpace, Logo, Navigation, Search, QuoteMenu, UserMenu } from './blocks'
+import { Burger, CallButton, ContactButton, FillSpace, Logo, Navigation, QuoteMenu, UserMenu } from './blocks'
 
 import styles from './header.module.scss'
 
 import headerConfig from '../../../.forestry/content/settings/header.json'
-import contactInfo from '../../../.forestry/content/settings/contact.json'
 
-export default ({ images, pages, menuOpen, setMenuOpen, menu, location, userMenuOpen, setUserMenuOpen, mobileMenuOpen, setMobileMenuOpen }) => {
+export default ({ pages, menuOpen, setMenuOpen, menu, location, userMenuOpen, setUserMenuOpen, mobileMenuOpen, setMobileMenuOpen }) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [levelOne, setLevelOne] = useState(0)
   const [levelTwo, setLevelTwo] = useState(0)
@@ -38,33 +37,23 @@ export default ({ images, pages, menuOpen, setMenuOpen, menu, location, userMenu
 
   return (
     <header className={styles.header}>
-      <Burger mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} handleCloseMenus={handleCloseMenus}/>
+      <Burger mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} handleCloseMenus={handleCloseMenus} />
       <div className={styles.menu + `${menuOpen ? ` ${styles.active}` : ''}`}>
         {headerConfig.blocks.map((block, i: number) => {
           return block.template === 'header-call-button' ? (
             <CallButton key={i} block={block} handleCloseMenus={handleCloseMenus} />
           ) : block.template === 'header-contact-button' ? (
-            <ContactButton key={i} block={block} images={images} handleCloseMenus={handleCloseMenus} />
-          ) : block.template === 'header-contact-form-with-video-background' ? (
-            <ContactFormWithVideoBackground key={i} block={block} images={images} menuOpen={menuOpen} />
-          ) : block.template === 'header-contact-info' ? (
-            <ContactInfo key={i} contactInfo={contactInfo} />
-          ) : block.template === 'header-favorite-page' ? (
-            <FavoritePage key={i} block={block} images={images} pages={pages} />
-          ) : block.template === 'header-featured-page' ? (
-            <FeaturedPage key={i} block={block} pages={pages} />
+            <ContactButton key={i} block={block} handleCloseMenus={handleCloseMenus} />
           ) : block.template === 'header-fill-space' ? (
             <FillSpace key={i} handleCloseMenus={handleCloseMenus} />
           ) : block.template === 'header-logo' ? (
-            <Logo key={i} block={block} images={images} />
+            <Logo key={i} block={block} />
           ) : block.template === 'header-links' ? (
             <Navigation key={i} block={block} pages={pages} setMenuOpen={setMenuOpen} location={location} />
-          ) : block.template === 'header-search' ? (
-            <Search key={i} block={block} images={images} />
           ) : block.template === 'header-quote-menu' ? (
-            <QuoteMenu key={i} block={block} images={images} handleCloseMenus={handleCloseMenus} />
+            <QuoteMenu key={i} block={block} handleCloseMenus={handleCloseMenus} />
           ) : block.template === 'header-user-menu' ? (
-            <UserMenu key={i} block={block} images={images} userMenuOpen={userMenuOpen} setUserMenuOpen={setUserMenuOpen} location={location} />
+            <UserMenu key={i} block={block} userMenuOpen={userMenuOpen} setUserMenuOpen={setUserMenuOpen} location={location} />
           ) : <p key={i}>{block.template} not defined</p>
         })}
       </div>

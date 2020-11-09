@@ -20,7 +20,7 @@ module.exports.onCreateNode = ({ node, actions }) => {
 }
 
 module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
-  const { data: { articles: { nodes: articles }, careers: { nodes: careers }, forms: { nodes: forms }, pages: { nodes: pages }, images: { nodes: images }, pageFiles: { nodes: pageFiles }, categories: { nodes: categories }, menus: { nodes: menus }, submenus: { nodes: submenus }, options: { nodes: options }, products: { nodes: products } } } = await graphql(`
+  const { data: { articles: { nodes: articles }, careers: { nodes: careers }, forms: { nodes: forms }, pages: { nodes: pages }, pageFiles: { nodes: pageFiles }, categories: { nodes: categories }, menus: { nodes: menus }, submenus: { nodes: submenus }, options: { nodes: options }, products: { nodes: products } } } = await graphql(`
   {
     pages: allPagesJson {
       nodes {
@@ -34,28 +34,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         childPagesJson {
           slug
           title
-        }
-      }
-    }
-    images: allFile(filter: {relativeDirectory: {eq: "images"}}) {
-      nodes {
-        publicURL
-        relativePath
-        childImageSharp {
-          fluid(quality: 100) {
-            aspectRatio
-            base64
-            originalImg
-            originalName
-            presentationHeight
-            presentationWidth
-            sizes
-            # src
-            # srcSet
-            srcSetWebp
-            srcWebp
-            # tracedSVG
-          }
         }
       }
     }
@@ -113,11 +91,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         frontmatter {
           title
           heroImage {
-            childImageSharp {
-              original {
-                src
-              }
-            }
+            publicURL
           }
           form {
             publicURL
@@ -266,7 +240,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       path: `/news-and-resources/forms/${form.fileAbsolutePath.split('/').pop().replace('.md', '')}`,
       context: {
         title: form.frontmatter.title,
-        images,
         pages: pagesWithExtras,
         articles: articlesWithExtras,
         forms: forms,
@@ -282,7 +255,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       path: page.filePath,
       context: {
         title: page.title,
-        images,
         pages: pagesWithExtras,
         articles: articlesWithExtras,
         forms: formsWithExtras,
@@ -298,7 +270,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         path: page.filePath + '/' + view,
         context: {
           title: page.title,
-          images,
           pages: pagesWithExtras,
           articles: articlesWithExtras,
           forms: formsWithExtras,
@@ -316,7 +287,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       path: `/careers/${slug}-${slugify(career.location).toLowerCase()}`,
       context: {
         slug,
-        images,
         pages: pagesWithExtras,
         articles: articlesWithExtras,
         forms: formsWithExtras,
@@ -337,7 +307,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       context: {
         slug,
         parent: article.frontmatter.parent,
-        images,
         pages: pagesWithExtras,
         articles: articlesWithExtras,
         forms: formsWithExtras,
@@ -352,7 +321,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       path: category.path,
       context: {
         title: category.name,
-        images,
         pages: pagesWithExtras,
         articles: articlesWithExtras,
         forms: formsWithExtras,
@@ -365,7 +333,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         path: menu.path,
         context: {
           title: category.name,
-          images,
           pages: pagesWithExtras,
           articles: articlesWithExtras,
           forms: formsWithExtras,
@@ -378,7 +345,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
           path: submenu.path,
           context: {
             title: category.name,
-            images,
             pages: pagesWithExtras,
             articles: articlesWithExtras,
             forms: formsWithExtras,
@@ -394,7 +360,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
               title: product.name,
               menu: productMenu,
               product,
-              images,
               pages: pagesWithExtras,
               articles: articlesWithExtras,
               forms: formsWithExtras,

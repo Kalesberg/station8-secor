@@ -3,7 +3,7 @@ import { Image } from '../../../../functions'
 
 import styles from './fabAnimation.module.scss'
 
-export default ({ block, images }) => {
+export default ({ block }) => {
   const [selected, setSelected] = useState(block.fittings && block.fittings.length > 0 ? block.fittings[0].fittingHeading : '')
   const [start, setStart] = useState(0)
   const [end, setEnd] = useState(0)
@@ -39,7 +39,9 @@ export default ({ block, images }) => {
             }
             return (
               <div key={i} onClick={handleClick} className={styles.iconContainer + ` ${selected === fitting.fittingHeading ? `${styles.iconContainerActive}` : ''}`}>
-                {fitting.icon && <Image className={styles.icon} style={{ backgroundSize: 'contain' }} src={fitting.icon} images={images} />}
+                {fitting.icon && (
+                  <Image className={styles.icon} style={{ backgroundSize: 'contain' }} src={fitting.icon} />
+                )}
               </div>
             )
           })}

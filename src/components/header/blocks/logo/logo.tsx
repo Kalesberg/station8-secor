@@ -5,8 +5,8 @@ import { Image } from '../../../../functions'
 
 import styles from './logo.module.scss'
 
-export default ({ block, images }) => (
+export default ({ block }) => (
   <Link to='/' className={styles.link}>
-    <Image className={styles.image} src={block.image} alt={block.alt} title={block.title} images={images} container='div' />
+    <Image className={styles.image} src={block.image} alt={block.alt} title={block.title} container='div' />
   </Link>
 )
