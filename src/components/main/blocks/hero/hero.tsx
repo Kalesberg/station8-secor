@@ -17,7 +17,7 @@ export default ({ block }) => {
   return (
     <div className={styles.container + `${block.video ? ` ${styles.video}` : ''}`}>
       {block.video ? (
-        <ReactPlayer wrapper={styles.hero} config={{ wistia: { options: { endVideoBehavior: 'loop', muted: true } } }} playing muted url='https://station8branding.wistia.com/medias/lng6o2vfr1' />
+        <ReactPlayer style={{ objectFit: 'cover' }} wrapper={styles.hero} config={{ wistia: { options: { endVideoBehavior: 'loop', muted: true, fitStrategy: 'cover' } } }} playing muted url='https://station8branding.wistia.com/medias/lng6o2vfr1' />
       ) : (
         <div className={styles.hero}>
           <img src={media.publicURL} alt='' />
