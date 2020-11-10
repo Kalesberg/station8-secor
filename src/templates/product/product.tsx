@@ -98,11 +98,11 @@ export default ({ location, pageContext: { menu, product, title, articles, pages
             <form className={styles.details}>
               {product.name && <p className={styles.name}>{product.name}</p>}
               {product.description && <div className={styles.description}>{parse(marked(product.description))}</div>}
-              {product.documents && product.documents.length && (
+              {product.documents && product.documents.length ? (
                 <div className={styles.pdfContainer}>
                   <Link className={styles.pdf} to={product.documents[0]}>PDF</Link>
                 </div>
-              )}
+              ) : null}
               <div className={styles.options}>
                 {product.options && product.options.length ? product.options.map((option, i) => (
                   <div key={i} className={styles.option}>
