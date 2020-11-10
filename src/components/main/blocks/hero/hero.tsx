@@ -17,34 +17,14 @@ export default ({ block }) => {
   return (
     <div className={styles.container + `${block.video ? ` ${styles.video}` : ''}`}>
       {block.video ? (
-        <ReactPlayer
-          wrapper={styles.hero} config={{
-            wistia: {
-              options: {
-                endVideoBehavior: 'loop',
-                muted: true,
-                fitStrategy: 'cover'
-              }
-            },
-            file: {
-              attributes: {
-                poster: '/cover.png'
-              }
-            }
-          }}
-          playing
-          muted
-          url='https://station8branding.wistia.com/medias/lng6o2vfr1'
-        />
+        <ReactPlayer wrapper={styles.hero} config={{ wistia: { options: { endVideoBehavior: 'loop', muted: true } } }} playing muted url='https://station8branding.wistia.com/medias/lng6o2vfr1' />
       ) : (
-        <div className={styles.hero}><img src={media.publicURL} alt='' /></div>
+        <div className={styles.hero}>
+          <img src={media.publicURL} alt='' />
+        </div>
       )}
       <div className={styles.textContainer}>
-        {block.heroText && block.heroText.length > 1 && block.heroText.map((txt, i) => {
-          return (
-            <div key={i} className={styles[`heroText${i}`]}>{txt.text}</div>
-          )
-        })}
+        {block.heroText && block.heroText.length > 1 && block.heroText.map((txt, i) => <div key={i} className={styles[`heroText${i}`]}>{txt.text}</div>)}
         {block.heroText && block.heroText.length === 1 && block.heroText.map((txt, i) => {
           return (
             <div key={i} className={styles.heroTextMedium}>{txt.text}</div>
