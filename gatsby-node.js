@@ -163,11 +163,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
   }
   `)
 
-  const formsWithExtras = forms.map(form => ({
-    ...form,
-    path: `/news-and-resources/forms/${form.fileAbsolutePath.split('/').pop().replace('.md', '')}`
-  }))
-
   const productMenu = categories.map(category => ({
     id: category.id,
     recordId: category.recordId,
@@ -247,7 +242,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       path: page.filePath,
       context: {
         title: page.title,
-        forms: formsWithExtras,
         menu: productMenu,
         options,
         careers
@@ -260,7 +254,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         path: page.filePath + '/' + view,
         context: {
           title: page.title,
-          forms: formsWithExtras,
           menu: productMenu,
           options
         }
@@ -292,7 +285,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       context: {
         slug,
         parent: article.frontmatter.parent,
-        forms: formsWithExtras,
         menu: productMenu
       }
     })
@@ -304,7 +296,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       path: category.path,
       context: {
         title: category.name,
-        forms: formsWithExtras,
         menu: productMenu
       }
     })
@@ -314,7 +305,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         path: menu.path,
         context: {
           title: category.name,
-          forms: formsWithExtras,
           menu: productMenu
         }
       })
@@ -324,7 +314,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
           path: submenu.path,
           context: {
             title: category.name,
-            forms: formsWithExtras,
             menu: productMenu
           }
         })
@@ -336,7 +325,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
               title: product.name,
               menu: productMenu,
               product,
-              forms: formsWithExtras,
               options
             }
           })
