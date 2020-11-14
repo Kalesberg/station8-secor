@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useRef } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, navigate } from 'gatsby'
 import camelcase from 'camelcase'
 
@@ -13,25 +13,21 @@ export default ({ location, menu }) => {
   const [submenu, setSubmenu] = useState(undefined)
   const [searchResults, setSearchResults] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
-  const [all, setAll] = useState(location.pathname === '/products' ? true : false)
+  const [all, setAll] = useState(location.pathname === '/products')
   const [items, setItems] = useState([])
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [activeMenu, setActiveMenu] = useState(null);
-  const sidebar = useRef(null);
-  // useEffect(() => {
-  //   console.log('submenu', submenu)
-  // }, [submenu])
+  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [activeMenu, setActiveMenu] = useState(null)
+
   useEffect(() => {
     if (all) {
       const results = []
       menu.forEach(category => category.menus.forEach(menu => menu.submenus.forEach(submenu => submenu.products.forEach(product => {
         results.push(product)
       }))))
-      setItems(results);
+      setItems(results)
     } else if (searchResults.length > 0) {
-        setItems(searchResults)
-    }  else {
-
+      setItems(searchResults)
+    } else {
       const getCategory = () => menu.find(category => category.slug === path[0])
       const getProductMenu = category => category && menu.find(category => category.slug === path[0]).menus.find(menu => menu.slug === path[1])
       const getSubMenu = productMenu => {
@@ -112,13 +108,12 @@ export default ({ location, menu }) => {
   // useEffect(() => {
   //   console.log('menu', productMenu)
   // }, [productMenu])
- 
 
   const handleSetSearchTerm = e => {
     setSearchTerm(e.target.value)
     if (!e.target.value) {
-      setSearchResults([]);
-    }  
+      setSearchResults([])
+    }
   }
 
   const handleSideBar = () => {
@@ -127,7 +122,7 @@ export default ({ location, menu }) => {
 
   useEffect(() => {
     if (searchTerm) {
-      setAll(false);
+      setAll(false)
       const results = []
       menu.forEach(category => category.menus.forEach(menu => menu.submenus.forEach(submenu => submenu.products.forEach(product => {
         if (product.name.replace(/\W/g, '').toLowerCase().includes(searchTerm.replace(/\W/g, '').toLowerCase())) {
@@ -135,48 +130,59 @@ export default ({ location, menu }) => {
         }
       }))))
       setSearchResults(results)
-    } 
+    }
   }, [searchTerm])
 
   return context && (
     <section className={styles.section}>
-      <div className={styles.sidebarContainer + ` ${sidebarOpen ? `${styles.sidebarOpen}` : ""}`}>
-      <div className={styles.sidebar}> 
-        {menu.map(category => (
-          <div key={category.slug} className={styles.category}>
-            <p className={styles.categoryName}>{category.name}</p>
-            <div className={styles.menuItems}>
-              {category.menus.map((menu, i) => (
-                <div key={i}>
-                  {menu.submenus.length > 1 && (
-                    <div className={styles.dropdownContainer}>
-                      <button className={styles.menuItem + " " + styles.dropdown + ` ${activeMenu === menu.name || (path.length >= 2 && path[1] === menu.slug) ? `${styles.active}` : ""}`}
-                        style={{backgroundImage: 'url(/chevron-down.svg'}} onClick={() => setActiveMenu(activeMenu === menu.name ? null : menu.name)}>{menu.name}</button>
-                      <div className={styles.submenus + ` ${activeMenu === menu.name || (path.length >= 2 && path[1] === menu.slug) ? `${styles.active}` : ""}`}>
-                        {menu.submenus.map(submenu => {
-                          return <Link key={submenu.recordId} className={styles.link} 
-                            activeClassName={styles.active} to={submenu.path}>{submenu.name}</Link>
-                        })}
+      <div className={styles.sidebarContainer + ` ${sidebarOpen ? `${styles.sidebarOpen}` : ''}`}>
+        <div className={styles.sidebar}>
+          {menu.map(category => (
+            <div key={category.slug} className={styles.category}>
+              <p className={styles.categoryName}>{category.name}</p>
+              <div className={styles.menuItems}>
+                {category.menus.map((menu, i) => (
+                  <div key={i}>
+                    {menu.submenus.length > 1 && (
+                      <div className={styles.dropdownContainer}>
+                        <button
+                          className={styles.menuItem + ' ' + styles.dropdown + ` ${activeMenu === menu.name || (path.length >= 2 && path[1] === menu.slug) ? `${styles.active}` : ''}`}
+                          style={{ backgroundImage: 'url(/chevron-down.svg' }} onClick={() => setActiveMenu(activeMenu === menu.name ? null : menu.name)}
+                        >{menu.name}
+                        </button>
+                        <div className={styles.submenus + ` ${activeMenu === menu.name || (path.length >= 2 && path[1] === menu.slug) ? `${styles.active}` : ''}`}>
+                          {menu.submenus.map(submenu => {
+                            return (
+                              <Link
+                                key={submenu.recordId}
+                                className={styles.link}
+                                activeClassName={styles.active}
+                                to={submenu.path}
+                              >
+                                {submenu.name}
+                              </Link>
+                            )
+                          })}
+                        </div>
                       </div>
-                    </div>
                     )}
-                  {menu.submenus.length <= 1 &&  
-                  <Link key={menu.id} to={menu.path} className={styles.menuItem} activeClassName={styles.active} partiallyActive>
-                   {menu.name}
-                  </Link>}
-                </div>
-              ))}
+                    {menu.submenus.length <= 1 &&
+                      <Link key={menu.id} to={menu.path} className={styles.menuItem} activeClassName={styles.active} partiallyActive>
+                        {menu.name}
+                      </Link>}
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
       </div>
       <div className={styles.search}>
         <button className={styles.menuButton} onClick={handleSideBar}>
           {!sidebarOpen &&
-          <img className={styles.menuIcon} src='/grid.svg' alt=""  />}
+            <img className={styles.menuIcon} src='/grid.svg' alt='' />}
           {sidebarOpen &&
-          <img className={styles.menuIcon} src='/grid-open.svg' alt=""  />}
+            <img className={styles.menuIcon} src='/grid-open.svg' alt='' />}
         </button>
         <input className={styles.input + `${searchTerm ? ` ${styles.filled}` : ''}`} value={searchTerm} onChange={handleSetSearchTerm} />
       </div>
@@ -190,7 +196,7 @@ export default ({ location, menu }) => {
             ) : productMenu ? (
               <h1 className={styles.title}>{productMenu.name}</h1>
             ) : all ? (
-              <h1 className={styles.title}>{'All products & equipment'}</h1>
+              <h1 className={styles.title}>All products & equipment</h1>
             ) : null}
           </div>
           <div className={styles.products}>
@@ -225,7 +231,7 @@ export default ({ location, menu }) => {
               }
               return (
                 <div key={product.recordId} className={styles.product}>
-                  <div className={styles.image} style={{ backgroundImage: `url(${product.images && product.images[0]})` }}></div>
+                  <div className={styles.image} style={{ backgroundImage: `url(${product.images && product.images[0]})` }} />
                   <div className={styles.detail}>
                     <Link className={styles.name} to={product.path}>{product.name}</Link>
                     <p className={styles.description}>{product.summary}</p>
@@ -248,5 +254,3 @@ export default ({ location, menu }) => {
     </section>
   )
 }
-
-

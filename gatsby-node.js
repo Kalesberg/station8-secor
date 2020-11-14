@@ -73,19 +73,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         openings
       }
     }
-    categories: allAirtable(filter: {table: {eq: "Categories"}}, sort: {fields: data___Order, order: ASC}) {
-      nodes {
-        id
-        recordId
-        data {
-          Name
-          Order
-          Image {
-            url
-          }
-        }
-      }
-    }
     forms: allMarkdownRemark(filter: {frontmatter: {type: {eq: "form"}}}, sort: {fields: frontmatter___date, order: DESC}) {
       nodes {
         frontmatter {
@@ -98,6 +85,19 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
           }
         }
         fileAbsolutePath
+      }
+    }
+    categories: allAirtable(filter: {table: {eq: "Categories"}}, sort: {fields: data___Order, order: ASC}) {
+      nodes {
+        id
+        recordId
+        data {
+          Name
+          Order
+          Image {
+            url
+          }
+        }
       }
     }
     menus: allAirtable(filter: {table: {eq: "Menus"}}) {
@@ -128,18 +128,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         }
       }
     }
-    options: allAirtable(filter: {table: {eq: "Options"}}) {
-      nodes {
-        id
-        recordId
-        data {
-          Name
-          Label
-          Type
-          Select_Choices
-        }
-      }
-    }
     products: allAirtable(filter: {table: {eq: "Products"}}, sort: {fields: data___Order, order: ASC}) {
       nodes {
         id
@@ -157,6 +145,18 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
           Options
           Short_Description
           Description
+        }
+      }
+    }
+    options: allAirtable(filter: {table: {eq: "Options"}}) {
+      nodes {
+        id
+        recordId
+        data {
+          Name
+          Label
+          Type
+          Select_Choices
         }
       }
     }
