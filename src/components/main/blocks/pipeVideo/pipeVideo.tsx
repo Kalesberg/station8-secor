@@ -1,13 +1,22 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import parse from 'html-react-parser'
-
-import { Context } from '../../../context/context'
+import { graphql, useStaticQuery } from 'gatsby'
 
 import styles from './pipeVideo.module.scss'
 
 export default ({ block }) => {
-  const context = useContext(Context)
-  const media = context.images && context.images.length && context.images.find(image => image.relativePath === 'images/' + block.video.split('/').pop())
+  const { allFile: { nodes: images } } = useStaticQuery(graphql`
+    {
+      allFile(filter: {relativeDirectory: {eq: "images"}}) {
+        nodes {
+          publicURL
+          relativePath
+        }
+      }
+    }
+  `)
+  const media = images.length && images.find(image => image.relativePath === 'images/' + block.video.split('/').pop())
+
   return (
     <section className={styles.section}>
       <h3>{block.heading && parse(block.heading)}</h3>
