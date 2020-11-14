@@ -1,6 +1,5 @@
-import React, { useContext } from 'react'
-
-import { Context } from '../components/context/context'
+import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
 
 type imageProps = {
   className: string,
@@ -18,9 +17,18 @@ type imageProps = {
 const handleDoNothing = () => null
 
 export default ({ className, container, src, alt = '', title = '', style, children, onClick, gradient = '', id = Math.random() }: imageProps) => {
-  const context = useContext(Context)
+  const { allFile: { nodes: images } } = useStaticQuery(graphql`
+    {
+      allFile(filter: {relativeDirectory: {eq: "images"}}) {
+        nodes {
+          publicURL
+          relativePath
+        }
+      }
+    }
+  `)
 
-  const image = context.images && context.images.length && context.images.find(image => image.relativePath === 'images/' + src.split('/').pop())
+  const image = images && images.length && images.find(image => image.relativePath === 'images/' + src.split('/').pop())
 
   return image ? (
     !container ? (

@@ -14118,10 +14118,10 @@ react-moment@^1.0.0:
   resolved "https://registry.yarnpkg.com/react-moment/-/react-moment-1.0.0.tgz#aedac867cd08739065799de9452c898d954ba6d7"
   integrity sha512-J4iIiwUT4oZcL7cp2U7naQKbQtqvmzGXXBMg/DLj+Pi7n9EW0VhBRx/1aJ1Tp2poCqTCAPoadLEoUIkReGnNNg==
 
-react-player@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/react-player/-/react-player-2.5.0.tgz#7b3e3351cc3436b175b92295ac9ca4cdaeae4cab"
-  integrity sha512-wwTp6KO6uF/QRvwV2rh+jb6A7rfZLgdVPKTgidXYYvb2IkjYd3Db9BtSVGqQeLw1e9y3OSucBCrLlJtovSMuzg==
+react-player@^2.6.2:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/react-player/-/react-player-2.6.2.tgz#d41fe842f5bd6a2b1d3ce1ba9ed82c3eb26e0df4"
+  integrity sha512-Wi9DynNSVgddKxac5OzsH0Upk6VRYssvLLGgCRw6vsjzqMX6S5N26WDRNYnLaHykxFNtpPSDc53fXDe52hMaCg==
   dependencies:
     deepmerge "^4.0.0"
     load-script "^1.0.0"
