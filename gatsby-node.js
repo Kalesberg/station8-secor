@@ -219,11 +219,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
     }))
   }))
 
-  const articlesWithExtras = articles.map(article => ({
-    ...article,
-    path: `/news-and-resources/${article.fileAbsolutePath.split('/').pop().replace('.md', '')}`
-  }))
-
   const pagesWithExtras = pages.map(page => {
     const file = pageFiles.find(file => file.childPagesJson.slug === page.slug && file.childPagesJson.title === page.title)
     const filePath = `/${page.slug === '/' ? '' : page.slug || slugify(page.title).toLowerCase()}`
@@ -252,7 +247,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       path: page.filePath,
       context: {
         title: page.title,
-        articles: articlesWithExtras,
         forms: formsWithExtras,
         menu: productMenu,
         options,
@@ -266,7 +260,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         path: page.filePath + '/' + view,
         context: {
           title: page.title,
-          articles: articlesWithExtras,
           forms: formsWithExtras,
           menu: productMenu,
           options
@@ -299,7 +292,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       context: {
         slug,
         parent: article.frontmatter.parent,
-        articles: articlesWithExtras,
         forms: formsWithExtras,
         menu: productMenu
       }
@@ -312,7 +304,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       path: category.path,
       context: {
         title: category.name,
-        articles: articlesWithExtras,
         forms: formsWithExtras,
         menu: productMenu
       }
@@ -323,7 +314,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         path: menu.path,
         context: {
           title: category.name,
-          articles: articlesWithExtras,
           forms: formsWithExtras,
           menu: productMenu
         }
@@ -334,13 +324,11 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
           path: submenu.path,
           context: {
             title: category.name,
-            articles: articlesWithExtras,
             forms: formsWithExtras,
             menu: productMenu
           }
         })
         submenu.products.forEach(product => {
-          // console.log(product)
           createPage({
             component: productTemplate,
             path: product.path,
@@ -348,7 +336,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
               title: product.name,
               menu: productMenu,
               product,
-              articles: articlesWithExtras,
               forms: formsWithExtras,
               options
             }

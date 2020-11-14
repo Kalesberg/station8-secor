@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { navigate, Link } from 'gatsby'
+import { graphql, Link, navigate, useStaticQuery } from 'gatsby'
 import Moment from 'react-moment'
 import queryString from 'query-string'
 
@@ -7,11 +7,35 @@ import { Image } from '../../../../functions'
 
 import styles from './articlesGrid.module.scss'
 
-export default ({ block, search, limit = undefined, slug = '', articles, root = '/news-and-resources' }) => {
+export default ({ block, search, limit = undefined, slug = '', root = '/news-and-resources' }) => {
+  const { allMarkdownRemark: { nodes: articles } } = useStaticQuery(graphql`{
+    allMarkdownRemark(filter: {frontmatter: {type: {eq: "article"}}}, sort: {fields: frontmatter___date, order: DESC}) {
+      nodes {
+        fields {
+          slug
+        }
+        frontmatter {
+          parent
+          heroImage {
+            relativePath
+          }
+          title
+          tags
+          date
+          summary
+        }
+        fileAbsolutePath
+        excerpt
+        html
+      }
+    }
+  }`)
   const [categories, setCategories] = useState([])
   const [category, setCategory] = useState('All')
   const [userSearch, setUserSearch] = useState('')
   const [featuredArticle, setFeaturedArticle] = useState(undefined)
+
+  const getPath = article => `/news-and-resources/${article.fileAbsolutePath.split('/').pop().replace('.md', '')}`
 
   useEffect(() => {
     const query = queryString.parse(search)
@@ -47,7 +71,7 @@ export default ({ block, search, limit = undefined, slug = '', articles, root = 
     <section className={styles.section}>
       {featuredArticle && (
         <Image className={styles.featured} src={featuredArticle.frontmatter.heroImage.relativePath} container='div'>
-          <Link to={featuredArticle.path} className={styles.text}>
+          <Link to={getPath(featuredArticle)} className={styles.text}>
             <p className={styles.date}>
               <span>Posted&nbsp;
                 <Moment date={featuredArticle.frontmatter.date} format='MM/DD' />
@@ -82,11 +106,11 @@ export default ({ block, search, limit = undefined, slug = '', articles, root = 
             .map(article => {
               console.log('article', article.html)
               return (
-                <div key={article.path} className={styles.article}>
-                  <Link to={article.path}>
+                <div key={getPath(article)} className={styles.article}>
+                  <Link to={getPath(article)}>
                     <Image className={styles.image} src={article.frontmatter.heroImage.relativePath} container='div' />
                   </Link>
-                  <Link to={article.path}>
+                  <Link to={getPath(article)}>
                     <div className={styles.articleDetail}>
                       <h3 className={styles.date}>
                         {article.frontmatter.date && (

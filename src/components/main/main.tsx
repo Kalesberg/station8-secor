@@ -5,7 +5,7 @@ import { Accessories, Account, ArticlesGrid, BasicContactForm, Blank, CareersCTA
 
 import styles from './main.module.scss'
 
-export default ({ blocks, children, menuOpen, setMenuOpen, setUserMenuOpen, scrollListener, scrollPosition, articles, menu, location, options, careers, forms }) => {
+export default ({ blocks, children, menuOpen, setMenuOpen, setUserMenuOpen, scrollListener, scrollPosition, menu, location, options, careers, forms }) => {
   const closeMenu = () => {
     setMenuOpen(false)
     setUserMenuOpen(false)
@@ -22,7 +22,7 @@ export default ({ blocks, children, menuOpen, setMenuOpen, setUserMenuOpen, scro
               <Account key={i} location={location} options={options} search={location.search} forms={forms} />
             ) : block.template === 'main-articles-grid' ? (
               <ScrollAnimation key={i} animateIn={animationStyle} animateOnce scrollableParentSelector='#main' offset={150}>
-                <ArticlesGrid block={block} articles={articles} search={location.search} />
+                <ArticlesGrid block={block} search={location.search} />
               </ScrollAnimation>
             ) : block.template === 'main-basic-contact-form' ? (
               <ScrollAnimation key={i} animateIn={animationStyle} animateOnce scrollableParentSelector='#main' offset={150}>

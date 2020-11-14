@@ -14,7 +14,6 @@ type layoutProps = {
   children?: any,
   title: string,
   blocks?: [any],
-  articles?: [any],
   menu: any,
   location: any,
   options?: any,
@@ -22,7 +21,7 @@ type layoutProps = {
   forms?: any
 }
 
-export default ({ children, title: siteTitle = '', blocks, articles, menu, location, options, careers, forms }: layoutProps) => {
+export default ({ children, title: siteTitle = '', blocks, menu, location, options, careers, forms }: layoutProps) => {
   const context = useContext(Context)
   const [menuOpen, setMenuOpen] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -55,7 +54,7 @@ export default ({ children, title: siteTitle = '', blocks, articles, menu, locat
       </Helmet>
       <Header mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} menuOpen={menuOpen} setMenuOpen={setMenuOpen} userMenuOpen={userMenuOpen} setUserMenuOpen={setUserMenuOpen} menu={menu} location={location} />
       <HeaderMobile mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} menuOpen={menuOpen} setMenuOpen={setMenuOpen} userMenuOpen={userMenuOpen} setUserMenuOpen={setUserMenuOpen} location={location} />
-      <Main blocks={blocks} menuOpen={menuOpen} scrollListener={scrollListener} scrollPosition={scrollPosition} setMenuOpen={setMenuOpen} setUserMenuOpen={setUserMenuOpen} articles={articles} menu={menu} location={location} options={options} careers={careers} forms={forms}>
+      <Main blocks={blocks} menuOpen={menuOpen} scrollListener={scrollListener} scrollPosition={scrollPosition} setMenuOpen={setMenuOpen} setUserMenuOpen={setUserMenuOpen} menu={menu} location={location} options={options} careers={careers} forms={forms}>
         {children}
         <Footer />
       </Main>

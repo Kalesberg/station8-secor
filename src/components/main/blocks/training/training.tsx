@@ -4,7 +4,6 @@ import styles from './training.module.scss'
 import { Image } from '../../../../functions'
 import HorizontalHighlight from '../highlighters/horizontalHighlight'
 import parse from 'html-react-parser'
-import articlesGrid from '../articlesGrid/articlesGrid'
 
 export default ({ block }) => {
   const [selected, setSelected] = useState(block.categories && block.categories.length > 0 ? block.categories[0].category : '')

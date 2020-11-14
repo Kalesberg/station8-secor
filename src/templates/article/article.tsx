@@ -10,7 +10,7 @@ import { ArticlesGrid } from '../../components/main/blocks'
 import styles from './article.module.scss'
 
 export default ({
-  pageContext: { articles, menu, slug },
+  pageContext: { menu, slug },
   data: {
     markdownRemark: {
       frontmatter: {
@@ -44,7 +44,7 @@ export default ({
         </div>
         <div className={styles.fillSpace} />
       </section>
-      <ArticlesGrid block={{}} articles={articles} limit={3} root={`/news-and-resources/${slug}`} search={location.search} />
+      <ArticlesGrid block={{}} limit={3} root={`/news-and-resources/${slug}`} search={location.search} />
     </article>
   </Layout>
 )
