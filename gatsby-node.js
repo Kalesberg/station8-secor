@@ -214,13 +214,30 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
     }))
   }))
 
-  const pagesWithExtras = pages.map(page => {
-    const file = pageFiles.find(file => file.childPagesJson.slug === page.slug && file.childPagesJson.title === page.title)
-    const filePath = `/${page.slug === '/' ? '' : page.slug || slugify(page.title).toLowerCase()}`
-    return {
-      ...page,
-      relativePath: file.relativePath,
-      filePath
+  const getFilePath = page => `/${page.slug === '/' ? '' : page.slug || slugify(page.title).toLowerCase()}`
+
+  pages.forEach(page => {
+    createPage({
+      component: pageTemplate,
+      path: getFilePath(page),
+      context: {
+        title: page.title,
+        menu: productMenu,
+        options,
+        careers
+      }
+    })
+
+    if (getFilePath(page) === '/account') {
+      ['info', 'quotes', 'forms', 'login', 'register', 'recover'].forEach(view => createPage({
+        component: pageTemplate,
+        path: getFilePath(page) + '/' + view,
+        context: {
+          title: page.title,
+          menu: productMenu,
+          options
+        }
+      }))
     }
   })
 
@@ -233,32 +250,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         menu: productMenu
       }
     })
-  })
-
-  pagesWithExtras.forEach(page => {
-    page.filePath !== '/demo' &&
-    createPage({
-      component: pageTemplate,
-      path: page.filePath,
-      context: {
-        title: page.title,
-        menu: productMenu,
-        options,
-        careers
-      }
-    })
-
-    if (page.filePath === '/account') {
-      ['info', 'quotes', 'forms', 'login', 'register', 'recover'].forEach(view => createPage({
-        component: pageTemplate,
-        path: page.filePath + '/' + view,
-        context: {
-          title: page.title,
-          menu: productMenu,
-          options
-        }
-      }))
-    }
   })
 
   careers.forEach(career => {
