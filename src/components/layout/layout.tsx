@@ -13,7 +13,6 @@ import styles from './layout.module.scss'
 type layoutProps = {
   children?: any,
   title: string,
-  pages: [any],
   blocks?: [any],
   articles?: [any],
   menu: any,
@@ -23,7 +22,7 @@ type layoutProps = {
   forms?: any
 }
 
-export default ({ children, title: siteTitle = '', pages, blocks, articles, menu, location, options, careers, forms }: layoutProps) => {
+export default ({ children, title: siteTitle = '', blocks, articles, menu, location, options, careers, forms }: layoutProps) => {
   const context = useContext(Context)
   const [menuOpen, setMenuOpen] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -54,11 +53,11 @@ export default ({ children, title: siteTitle = '', pages, blocks, articles, menu
         <title>{siteTitle + titleDivider + `${title || '404: Page Not Found'}`}</title>
         <meta name='description' content={description} />
       </Helmet>
-      <Header pages={pages} mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} menuOpen={menuOpen} setMenuOpen={setMenuOpen} userMenuOpen={userMenuOpen} setUserMenuOpen={setUserMenuOpen} menu={menu} location={location} />
-      <HeaderMobile pages={pages} mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} menuOpen={menuOpen} setMenuOpen={setMenuOpen} userMenuOpen={userMenuOpen} setUserMenuOpen={setUserMenuOpen} location={location} />
+      <Header mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} menuOpen={menuOpen} setMenuOpen={setMenuOpen} userMenuOpen={userMenuOpen} setUserMenuOpen={setUserMenuOpen} menu={menu} location={location} />
+      <HeaderMobile mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} menuOpen={menuOpen} setMenuOpen={setMenuOpen} userMenuOpen={userMenuOpen} setUserMenuOpen={setUserMenuOpen} location={location} />
       <Main blocks={blocks} menuOpen={menuOpen} scrollListener={scrollListener} scrollPosition={scrollPosition} setMenuOpen={setMenuOpen} setUserMenuOpen={setUserMenuOpen} articles={articles} menu={menu} location={location} options={options} careers={careers} forms={forms}>
         {children}
-        <Footer pages={pages} />
+        <Footer />
       </Main>
       <Scroll />
     </div>

@@ -6,12 +6,12 @@ import styles from './footer.module.scss'
 
 import footerConfig from '../../../.forestry/content/settings/footer.json'
 
-export default ({ pages }) => (
+export default () => (
   <>
     <footer className={styles.footer}>
       {footerConfig.blocks.map((block, i: number) => {
         return block.template === 'footer-links' ? (
-          <Links key={i} block={block} pages={pages} />
+          <Links key={i} block={block} />
         ) : block.template === 'footer-quotes' ? (
           <Quotes key={i} block={block} />
         ) : <p key={i}>{block.template} not defined</p>

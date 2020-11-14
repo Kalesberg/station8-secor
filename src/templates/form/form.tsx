@@ -6,7 +6,7 @@ import { Layout } from '../../components'
 import styles from './form.module.scss'
 
 export default ({
-  pageContext: { pages, menu },
+  pageContext: { menu },
   data: {
     markdownRemark: {
       frontmatter: {
@@ -30,7 +30,7 @@ export default ({
   }, [file])
 
   return (
-    <Layout title={title} pages={pages} menu={menu} location={location}>
+    <Layout title={title} menu={menu} location={location}>
       <article className={styles.article}>
         <a ref={file} className={styles.download} href={publicURL} download={title}>Click here to download <strong>{title}</strong> if it is not automatically downloaded within three seconds.</a>
       </article>

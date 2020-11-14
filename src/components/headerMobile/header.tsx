@@ -10,7 +10,7 @@ import footerConfig from '../../../.forestry/content/settings/footer.json'
 import headerConfig from '../../../.forestry/content/settings/header.json'
 import headerMobileConfig from '../../../.forestry/content/settings/headerMobile.json'
 
-export default ({ pages, menuOpen, setMenuOpen, location, userMenuOpen, setUserMenuOpen, mobileMenuOpen, setMobileMenuOpen }) => {
+export default ({ menuOpen, setMenuOpen, location, userMenuOpen, setUserMenuOpen, mobileMenuOpen, setMobileMenuOpen }) => {
   const context = useContext(Context)
 
   const handleCloseMenus = () => {
@@ -37,7 +37,7 @@ export default ({ pages, menuOpen, setMenuOpen, location, userMenuOpen, setUserM
           })}
           {headerMobileConfig.blocks.map((block, i: number) => {
             return block.template === 'header-mobile-block-top-navigation' ? (
-              <Navigation key={i} block={block} pages={pages} setMenuOpen={setMenuOpen} location={location} bottom={false} />
+              <Navigation key={i} block={block} setMenuOpen={setMenuOpen} bottom={false} />
             ) : null
           })}
         </div>
@@ -61,7 +61,7 @@ export default ({ pages, menuOpen, setMenuOpen, location, userMenuOpen, setUserM
         <div className={styles.bottomMenu}>
           {headerMobileConfig.blocks.map((block, i: number) => {
             return block.template === 'header-mobile-block-bottom-navigation' ? (
-              <Navigation key={i} block={block} pages={pages} setMenuOpen={setMenuOpen} location={location} bottom />
+              <Navigation key={i} block={block} setMenuOpen={setMenuOpen} bottom />
             ) : null
           })}
           {footerConfig.bottomRow.map((block, i: number) => {

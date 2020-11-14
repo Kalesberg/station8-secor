@@ -1,17 +1,31 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
+import slugify from 'slugify'
 
 import styles from './navigation.module.scss'
 
-export default ({ block, pages, setMenuOpen, location }) => {
+export default ({ block, setMenuOpen, location }) => {
+  const { allFile: { nodes: pages } } = useStaticQuery(graphql`
+    {
+      allFile(filter: {relativeDirectory: {eq: "pages"}}) {
+        nodes {
+          relativePath
+          childPagesJson {
+            slug
+            title
+          }
+        }
+      }
+    }
+  `)
   const closeMenu = () => setMenuOpen(false)
   const openMenu = () => setMenuOpen(true)
 
   const getPage = filePath => {
     const page = pages.find(page => filePath.includes(page.relativePath))
-    return page && page.filePath ? (
-      <Link activeClassName={styles.active} className={styles.link} partiallyActive={page.filePath !== '/'} to={page.filePath} onClick={closeMenu} onMouseOver={closeMenu}>
-        <p className={styles.label}>{page.title}</p>
+    return page ? (
+      <Link activeClassName={styles.active} className={styles.link} partiallyActive={page.filePath !== '/'} to={page.childPagesJson.slug === '/' ? '/' : page.childPagesJson.slug ? `/${page.childPagesJson.slug}` : '/' + slugify(page.childPagesJson.title).toLowerCase()} onClick={closeMenu} onMouseOver={closeMenu}>
+        <p className={styles.label}>{page.childPagesJson.title}</p>
         <span className={styles.underline} />
       </Link>
     ) : 'Link Missing'

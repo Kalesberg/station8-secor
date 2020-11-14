@@ -5,13 +5,7 @@ import { Layout } from '../../components'
 
 import 'animate.css/animate.min.css'
 
-export default props => {
-  const { location, data: { pagesJson: page }, pageContext: { careers, pages, articles, menu, options, forms } } = props
-
-  return (
-    <Layout title={page.title} pages={pages} blocks={page.blocks} articles={articles} careers={careers} menu={menu} location={location} options={options} forms={forms} />
-  )
-}
+export default ({ location, data: { pagesJson: page }, pageContext: { careers, articles, menu, options, forms } }) => <Layout title={page.title} blocks={page.blocks} articles={articles} careers={careers} menu={menu} location={location} options={options} forms={forms} />
 
 export const pageQuery = graphql`
 query ($title: String!) {
@@ -22,10 +16,6 @@ query ($title: String!) {
       contactFullPageHeading
       contactFullPageSubheading
       video
-      #text {
-      #  text
-      #  element
-      #}
       heroText {
         text
         element
@@ -45,7 +35,6 @@ query ($title: String!) {
         heading
         image
       }
-      #button
       ctaText
       buttonType
       background

@@ -240,9 +240,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       path: `/news-and-resources/forms/${form.fileAbsolutePath.split('/').pop().replace('.md', '')}`,
       context: {
         title: form.frontmatter.title,
-        pages: pagesWithExtras,
-        articles: articlesWithExtras,
-        forms: forms,
         menu: productMenu
       }
     })
@@ -255,7 +252,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       path: page.filePath,
       context: {
         title: page.title,
-        pages: pagesWithExtras,
         articles: articlesWithExtras,
         forms: formsWithExtras,
         menu: productMenu,
@@ -270,7 +266,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         path: page.filePath + '/' + view,
         context: {
           title: page.title,
-          pages: pagesWithExtras,
           articles: articlesWithExtras,
           forms: formsWithExtras,
           menu: productMenu,
@@ -287,9 +282,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       path: `/careers/${slug}-${slugify(career.location).toLowerCase()}`,
       context: {
         slug,
-        pages: pagesWithExtras,
-        articles: articlesWithExtras,
-        forms: formsWithExtras,
         menu: productMenu,
         career,
         careers
@@ -307,7 +299,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       context: {
         slug,
         parent: article.frontmatter.parent,
-        pages: pagesWithExtras,
         articles: articlesWithExtras,
         forms: formsWithExtras,
         menu: productMenu
@@ -321,7 +312,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       path: category.path,
       context: {
         title: category.name,
-        pages: pagesWithExtras,
         articles: articlesWithExtras,
         forms: formsWithExtras,
         menu: productMenu
@@ -333,7 +323,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         path: menu.path,
         context: {
           title: category.name,
-          pages: pagesWithExtras,
           articles: articlesWithExtras,
           forms: formsWithExtras,
           menu: productMenu
@@ -345,7 +334,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
           path: submenu.path,
           context: {
             title: category.name,
-            pages: pagesWithExtras,
             articles: articlesWithExtras,
             forms: formsWithExtras,
             menu: productMenu
@@ -360,7 +348,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
               title: product.name,
               menu: productMenu,
               product,
-              pages: pagesWithExtras,
               articles: articlesWithExtras,
               forms: formsWithExtras,
               options

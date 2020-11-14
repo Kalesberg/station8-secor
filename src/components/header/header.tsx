@@ -7,7 +7,7 @@ import styles from './header.module.scss'
 
 import headerConfig from '../../../.forestry/content/settings/header.json'
 
-export default ({ pages, menuOpen, setMenuOpen, menu, location, userMenuOpen, setUserMenuOpen, mobileMenuOpen, setMobileMenuOpen }) => {
+export default ({ menuOpen, setMenuOpen, menu, location, userMenuOpen, setUserMenuOpen, mobileMenuOpen, setMobileMenuOpen }) => {
   const [searchTerm, setSearchTerm] = useState('')
   const [levelOne, setLevelOne] = useState(0)
   const [levelTwo, setLevelTwo] = useState(0)
@@ -49,7 +49,7 @@ export default ({ pages, menuOpen, setMenuOpen, menu, location, userMenuOpen, se
           ) : block.template === 'header-logo' ? (
             <Logo key={i} block={block} />
           ) : block.template === 'header-links' ? (
-            <Navigation key={i} block={block} pages={pages} setMenuOpen={setMenuOpen} location={location} />
+            <Navigation key={i} block={block} setMenuOpen={setMenuOpen} location={location} />
           ) : block.template === 'header-quote-menu' ? (
             <QuoteMenu key={i} block={block} handleCloseMenus={handleCloseMenus} />
           ) : block.template === 'header-user-menu' ? (

@@ -10,7 +10,7 @@ import { ArticlesGrid } from '../../components/main/blocks'
 import styles from './article.module.scss'
 
 export default ({
-  pageContext: { pages, articles, menu, slug },
+  pageContext: { articles, menu, slug },
   data: {
     markdownRemark: {
       frontmatter: {
@@ -24,7 +24,7 @@ export default ({
   },
   location
 }) => (
-  <Layout title={title} pages={pages} menu={menu} location={location}>
+  <Layout title={title} menu={menu} location={location}>
     <article className={styles.articleContainer}>
       <Image src={heroImage.relativePath} className={styles.hero} container='div'>
         <div className={styles.text}>

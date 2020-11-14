@@ -8,7 +8,7 @@ import { Context } from '../../components/context/context'
 import Layout from '../../components/layout/layout'
 import styles from './product.module.scss'
 
-export default ({ location, pageContext: { menu, product, title, articles, pages, options: allOptions } }) => {
+export default ({ location, pageContext: { menu, product, title, articles, options: allOptions } }) => {
   const context = useContext(Context)
   const [quantity, setQuantity] = useState(1)
   const [options, setOptions] = useState({})
@@ -32,10 +32,6 @@ export default ({ location, pageContext: { menu, product, title, articles, pages
   useEffect(() => {
     initOptions()
   }, [product])
-
-  useEffect(() => {
-    console.log('options', options)
-  }, [options])
 
   const handleGoBack = () => navigate(location.pathname.split('/').slice(0, -1).join('/'))
 
@@ -66,10 +62,9 @@ export default ({ location, pageContext: { menu, product, title, articles, pages
     })
   }
   const handleQuantity = e => setQuantity(e.target.value)
-  console.log(product)
 
   return context && (
-    <Layout title={title} pages={pages} articles={articles} menu={menu} location={location}>
+    <Layout title={title} articles={articles} menu={menu} location={location}>
       <section className={styles.section}>
         <aside className={styles.aside}>
           <div className={styles.back} onClick={handleGoBack} />

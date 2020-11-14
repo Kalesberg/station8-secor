@@ -10,13 +10,13 @@ import styles from './career.module.scss'
 import background from '../../../.forestry/content/images/careers.png'
 import arrow from '../../../.forestry/content/images/arrow-right.svg'
 
-export default ({ pageContext: { career, menu, pages, careers }, location }) => {
+export default ({ pageContext: { career, menu, careers }, location }) => {
   const scrollDown = () => {
     document.getElementById('cfform').scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
-    <Layout title={career.title} pages={pages} menu={menu} location={location}>
+    <Layout title={career.title} menu={menu} location={location}>
       <article className={styles.articleContainer}>
         <div className={styles.hero} style={{ backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url(${background})` }}>
           <div className={styles.text}>
