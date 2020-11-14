@@ -1,17 +1,12 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
 import ReactPlayer from 'react-player'
 
-import { Context } from '../../../context/context'
 import { Image, link } from '../../../../functions'
 
 import styles from './hero.module.scss'
 
 export default ({ block }) => {
-  const context = useContext(Context)
-  const source = block.video || block.image
-
-  const media = context.images && context.images.length && context.images.find(image => image.relativePath === 'images/' + source.split('/').pop())
   const pageLink = block.buttonLink ? link(block.buttonLink) : null
 
   return (
@@ -20,7 +15,7 @@ export default ({ block }) => {
         <ReactPlayer style={{ objectFit: 'cover' }} wrapper={styles.hero} config={{ wistia: { options: { endVideoBehavior: 'loop', muted: true, fitStrategy: 'cover' } } }} playing muted url='https://station8branding.wistia.com/medias/lng6o2vfr1' />
       ) : (
         <div className={styles.hero}>
-          <img src={media.publicURL} alt='' />
+          <Image className={styles.image} src={block.image} />
         </div>
       )}
       <div className={styles.textContainer}>
