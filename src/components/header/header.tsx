@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'gatsby'
 
+import { Context } from '../context/context'
 import { Burger, CallButton, ContactButton, FillSpace, Logo, Navigation, QuoteMenu, UserMenu } from './blocks'
 
 import styles from './header.module.scss'
 
 import headerConfig from '../../../.forestry/content/settings/header.json'
 
-export default ({ menuOpen, setMenuOpen, menu, location, userMenuOpen, setUserMenuOpen, mobileMenuOpen, setMobileMenuOpen }) => {
+export default ({ menuOpen, setMenuOpen, location, userMenuOpen, setUserMenuOpen, mobileMenuOpen, setMobileMenuOpen }) => {
+  const context = useContext(Context)
   const [searchTerm, setSearchTerm] = useState('')
   const [levelOne, setLevelOne] = useState(0)
   const [levelTwo, setLevelTwo] = useState(0)
@@ -19,9 +21,9 @@ export default ({ menuOpen, setMenuOpen, menu, location, userMenuOpen, setUserMe
   }
 
   useEffect(() => {
-    if (searchTerm) {
+    if (searchTerm && context && context.menu && context.menu.length) {
       const results = []
-      menu.forEach(category => category.menus.forEach(menu => menu.submenus.forEach(submenu => submenu.products.forEach(product => {
+      context.menu.forEach(category => category.menus.forEach(menu => menu.submenus.forEach(submenu => submenu.products.forEach(product => {
         if (product.name.replace(/\W/g, '').toLowerCase().includes(searchTerm.replace(/\W/g, '').toLowerCase())) {
           results.push(product)
         }
@@ -35,7 +37,7 @@ export default ({ menuOpen, setMenuOpen, menu, location, userMenuOpen, setUserMe
     setUserMenuOpen(false)
   }
 
-  return (
+  return context && context.menu && context.menu.length ? (
     <header className={styles.header}>
       <Burger mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} handleCloseMenus={handleCloseMenus} />
       <div className={styles.menu + `${menuOpen ? ` ${styles.active}` : ''}`}>
@@ -93,7 +95,7 @@ export default ({ menuOpen, setMenuOpen, menu, location, userMenuOpen, setUserMe
           )}
         </div>
         <div className={styles.menu}>
-          {menu.map((category, i) => {
+          {context.menu.map((category, i) => {
             const handleSetCategory = () => {
               setLevelOne(0)
               setLevelTwo(0)
@@ -144,11 +146,11 @@ export default ({ menuOpen, setMenuOpen, menu, location, userMenuOpen, setUserMe
                   </div>
                 </div>
                 <div className={styles.right}>
-                  {menu[i] && menu[i].menus[levelOne] && menu[i].menus[levelOne].submenus[levelTwo] && menu[i].menus[levelOne].submenus[levelTwo] && (
+                  {context.menu[i] && context.menu[i].menus[levelOne] && context.menu[i].menus[levelOne].submenus[levelTwo] && context.menu[i].menus[levelOne].submenus[levelTwo] && (
                     <>
-                      {menu[i].menus[levelOne].submenus[levelTwo].image && <div className={styles.image} style={{ backgroundImage: `url(${menu[i].menus[levelOne].submenus[levelTwo].image})` }} />}
-                      <p className={styles.description}>{menu[i].menus[levelOne].submenus[levelTwo].description}</p>
-                      {activeSubcategory && activeSubcategory.path && <Link to={activeSubcategory.path} className={styles.button}>View {menu[i] ? menu[i].name.toLowerCase() : 'products'}</Link>}
+                      {context.menu[i].menus[levelOne].submenus[levelTwo].image && <div className={styles.image} style={{ backgroundImage: `url(${context.menu[i].menus[levelOne].submenus[levelTwo].image})` }} />}
+                      <p className={styles.description}>{context.menu[i].menus[levelOne].submenus[levelTwo].description}</p>
+                      {activeSubcategory && activeSubcategory.path && <Link to={activeSubcategory.path} className={styles.button}>View {context.menu[i] ? context.menu[i].name.toLowerCase() : 'products'}</Link>}
                     </>
                   )}
                 </div>
@@ -158,5 +160,5 @@ export default ({ menuOpen, setMenuOpen, menu, location, userMenuOpen, setUserMe
         </div>
       </div>
     </header>
-  )
+  ) : null
 }
