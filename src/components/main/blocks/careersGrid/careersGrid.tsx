@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, navigate } from 'gatsby'
+import { graphql, Link, navigate, useStaticQuery } from 'gatsby'
 import queryString from 'query-string'
 import slugify from 'slugify'
 
@@ -8,7 +8,21 @@ import styles from './careersGrid.module.scss'
 import background from '../../../../../.forestry/content/images/careers.png'
 import arrow from '../../../../../.forestry/content/images/arrow-right.svg'
 
-export default ({ careers, search }) => {
+export default ({ search }) => {
+  const { allCareersJson: { nodes: careers } } = useStaticQuery(graphql`{
+    allCareersJson {
+      nodes {
+        title
+        slug
+        location
+        description
+        id
+        department
+        openings
+      }
+    }
+  }`)
+
   const [locations, setLocations] = useState([])
   const [location, setLocation] = useState('All')
   const [userSearch, setUserSearch] = useState('')

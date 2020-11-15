@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
 
 import { Image } from '../../../../functions'
 
@@ -7,7 +7,15 @@ import settings from '../../../../../.forestry/content/settings/career.json'
 
 import styles from './careersCTA.module.scss'
 
-export default ({ block = settings, careers, position = '' }) => {
+export default ({ block = settings, position = '' }) => {
+  const { allCareersJson: { nodes: careers } } = useStaticQuery(graphql`{
+    allCareersJson {
+      nodes {
+        title
+      }
+    }
+  }`)
+
   const [attachment, setAttachment] = useState(undefined)
   const [dropzoneClasses, setDropzoneClasses] = useState([styles.dropzone])
   const [applicantInfo, setApplicantInfo] = useState({

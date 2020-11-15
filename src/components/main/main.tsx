@@ -5,7 +5,7 @@ import { Accessories, Account, ArticlesGrid, BasicContactForm, Blank, CareersCTA
 
 import styles from './main.module.scss'
 
-export default ({ blocks, children, menuOpen, setMenuOpen, setUserMenuOpen, scrollListener, scrollPosition, menu, location, options, careers }) => {
+export default ({ blocks, children, menuOpen, setMenuOpen, setUserMenuOpen, scrollListener, scrollPosition, menu, location, options }) => {
   const closeMenu = () => {
     setMenuOpen(false)
     setUserMenuOpen(false)
@@ -74,11 +74,11 @@ export default ({ blocks, children, menuOpen, setMenuOpen, setUserMenuOpen, scro
               <ContactFullPage key={i} block={block} />
             ) : block.template === 'main-careers-cta' ? (
               <ScrollAnimation key={i} animateIn={animationStyle} animateOnce scrollableParentSelector='#main' offset={150}>
-                <CareersCTA block={block} careers={careers} />
+                <CareersCTA block={block} />
               </ScrollAnimation>
             ) : block.template === 'main-careers-grid' ? (
               <ScrollAnimation key={i} animateIn={animationStyle} animateOnce scrollableParentSelector='#main' offset={150}>
-                <CareersGrid careers={careers} search={location.search} />
+                <CareersGrid search={location.search} />
               </ScrollAnimation>
             ) : block.template === 'main-fabrication-animation' ? (
               <ScrollAnimation key={i} animateIn={animationStyle} animateOnce scrollableParentSelector='#main' offset={150}>

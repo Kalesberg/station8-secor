@@ -37,24 +37,14 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         }
       }
     }
-    articles: allMarkdownRemark(filter: {frontmatter: {type: {eq: "article"}}}, sort: {fields: frontmatter___date, order: DESC}) {
+    articles: allMarkdownRemark(filter: {frontmatter: {type: {eq: "article"}}}) {
       nodes {
         fields {
           slug
         }
         frontmatter {
           parent
-          heroImage {
-            relativePath
-          }
-          title
-          tags
-          date
-          summary
         }
-        fileAbsolutePath
-        excerpt
-        html
       }
     }
     careers: allCareersJson {
@@ -223,8 +213,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       context: {
         title: page.title,
         menu: productMenu,
-        options,
-        careers
+        options
       }
     })
 
@@ -260,8 +249,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       context: {
         slug,
         menu: productMenu,
-        career,
-        careers
+        career
       }
     })
   })

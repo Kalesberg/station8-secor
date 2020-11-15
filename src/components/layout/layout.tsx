@@ -16,16 +16,10 @@ type layoutProps = {
   blocks?: [any],
   menu: any,
   location: any,
-  options?: any,
-  careers?: any
+  options?: any
 }
 
-export default ({ children, title: siteTitle = '', blocks, menu, location, options, careers }: layoutProps) => {
-  const context = useContext(Context)
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [userMenuOpen, setUserMenuOpen] = useState(false)
-  const [scrollPosition, setScrollPosition] = useState(null)
+export default ({ children, title: siteTitle = '', blocks, menu, location, options }: layoutProps) => {
   const { site: { siteMetadata: { config: { description, title, titleDivider } } } } = useStaticQuery(graphql`
     {
       site {
@@ -40,6 +34,12 @@ export default ({ children, title: siteTitle = '', blocks, menu, location, optio
     }
   `)
 
+  const context = useContext(Context)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [userMenuOpen, setUserMenuOpen] = useState(false)
+  const [scrollPosition, setScrollPosition] = useState(null)
+
   const scrollListener = (e) => {
     setScrollPosition(e.target.scrollTop)
   }
@@ -53,7 +53,7 @@ export default ({ children, title: siteTitle = '', blocks, menu, location, optio
       </Helmet>
       <Header mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} menuOpen={menuOpen} setMenuOpen={setMenuOpen} userMenuOpen={userMenuOpen} setUserMenuOpen={setUserMenuOpen} menu={menu} location={location} />
       <HeaderMobile mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} menuOpen={menuOpen} setMenuOpen={setMenuOpen} userMenuOpen={userMenuOpen} setUserMenuOpen={setUserMenuOpen} location={location} />
-      <Main blocks={blocks} menuOpen={menuOpen} scrollListener={scrollListener} scrollPosition={scrollPosition} setMenuOpen={setMenuOpen} setUserMenuOpen={setUserMenuOpen} menu={menu} location={location} options={options} careers={careers}>
+      <Main blocks={blocks} menuOpen={menuOpen} scrollListener={scrollListener} scrollPosition={scrollPosition} setMenuOpen={setMenuOpen} setUserMenuOpen={setUserMenuOpen} menu={menu} location={location} options={options}>
         {children}
         <Footer />
       </Main>
