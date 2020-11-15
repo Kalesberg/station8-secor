@@ -7,6 +7,12 @@
         {
           "links": [
             {
+              "label": "Home",
+              "page": ".forestry/content/pages/home.json",
+              "bold": false,
+              "replaceLabel": false
+            },
+            {
               "label": "About",
               "page": ".forestry/content/pages/about.json",
               "bold": false,
@@ -17,17 +23,17 @@
               "page": ".forestry/content/pages/why-hdpe.json",
               "bold": false,
               "replaceLabel": false
-            },
-            {
-              "label": "McElroy",
-              "page": ".forestry/content/pages/mcelroy.json",
-              "bold": false,
-              "replaceLabel": false
             }
           ]
         },
         {
           "links": [
+            {
+              "label": "McElroy",
+              "page": ".forestry/content/pages/mcelroy.json",
+              "bold": false,
+              "replaceLabel": false
+            },
             {
               "label": "Get a quote",
               "page": ".forestry/content/pages/get-a-quote.json",
