@@ -7,7 +7,7 @@ import Quotes from './quotes/quotes'
 
 import styles from './authenticated.module.scss'
 
-export default ({ path, user, options, search }) => {
+export default ({ path, user, search }) => {
   const [activeQuote, setActiveQuote] = useState(undefined)
   const handleClearActiveQuote = () => {
     navigate('/account/quotes')
@@ -25,7 +25,7 @@ export default ({ path, user, options, search }) => {
         </div>
       </div>
       {path === 'info' && <Info user={user} />}
-      {path === 'quotes' && <Quotes options={options} user={user} search={search} activeQuote={activeQuote} setActiveQuote={setActiveQuote} handleClearActiveQuote={handleClearActiveQuote} />}
+      {path === 'quotes' && <Quotes user={user} search={search} activeQuote={activeQuote} setActiveQuote={setActiveQuote} handleClearActiveQuote={handleClearActiveQuote} />}
       {path === 'forms' && <Forms />}
     </section>
   )

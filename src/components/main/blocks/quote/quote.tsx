@@ -1,12 +1,27 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link } from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import camelcase from 'camelcase'
 
 import { Context } from '../../../context/context'
 
 import styles from './quote.module.scss'
 
-export default ({ options, menu }) => {
+export default ({ menu }) => {
+  const { allAirtable: { nodes: options } } = useStaticQuery(graphql`{
+    allAirtable(filter: {table: {eq: "Options"}}) {
+      nodes {
+        id
+        recordId
+        data {
+          Name
+          Label
+          Type
+          Select_Choices
+        }
+      }
+    }
+  }`)
+
   const context = useContext(Context)
   const [customerInfo, setCustomerInfo] = useState({ name: '', company: '', phone: '', email: '', requirements: '' })
   const [editing, setEditing] = useState(undefined)
@@ -51,16 +66,16 @@ export default ({ options, menu }) => {
       setSearchResults(results)
     }
   }, [searchTerm])
-  
+
   const setWindowWidth = () => {
     setWidth(window.innerWidth)
   }
 
   useEffect(() => {
-    window.addEventListener('resize', setWindowWidth);
-    return (() => {
-      window.removeEventListener('resize', setWindowWidth);
-    })
+    window.addEventListener('resize', setWindowWidth)
+    return () => {
+      window.removeEventListener('resize', setWindowWidth)
+    }
   })
   const handleSubmitQuote = async e => {
     if (typeof window !== 'undefined' && customerInfo.name && customerInfo.company && customerInfo.phone && customerInfo.email) {
@@ -131,8 +146,8 @@ export default ({ options, menu }) => {
     handleFiles(e.dataTransfer.files[0])
   }
   const removeFile = () => {
-    setAttachment(undefined);
-    setFileName(undefined);
+    setAttachment(undefined)
+    setFileName(undefined)
   }
   const handleFiles = async file => {
     const url = 'https://api.cloudinary.com/v1_1/dn0q8cpnx/upload'
@@ -146,18 +161,20 @@ export default ({ options, menu }) => {
     })
     const json = await res.json()
     console.log(json)
-    setAttachment({ url: json.url });
-    setFileName(file.name);
+    setAttachment({ url: json.url })
+    setFileName(file.name)
   }
   return context && (
     <section className={styles.section}>
       <div className={styles.header}>
-        <button className={styles.label + ` ${active === 'customer' && width <= 600 ? `${styles.active}` : ``}`} onClick={() => setActive('customer')}>
-          Customer Info<div className={styles.underline} /></button>
-        <button className={styles.label + ` ${active === 'quote' && width <= 600 ? `${styles.active}` : ``}`} onClick={() => setActive('quote')}>
-          Quote builder<div className={styles.underline} /></button>
+        <button className={styles.label + ` ${active === 'customer' && width <= 600 ? `${styles.active}` : ''}`} onClick={() => setActive('customer')}>
+          Customer Info<div className={styles.underline} />
+        </button>
+        <button className={styles.label + ` ${active === 'quote' && width <= 600 ? `${styles.active}` : ''}`} onClick={() => setActive('quote')}>
+          Quote builder<div className={styles.underline} />
+        </button>
       </div>
-      <div className={styles.customerInfo + ` ${active === 'customer' ? `${styles.active}` : ""}`}>
+      <div className={styles.customerInfo + ` ${active === 'customer' ? `${styles.active}` : ''}`}>
         <div className={styles.fields}>
           <div className={styles.field}>
             <label htmlFor='name'>Name<span className={styles.required}>*</span></label>
@@ -186,7 +203,7 @@ export default ({ options, menu }) => {
           </div>
         </div>
       </div>
-      <div className={styles.quoteBuilder + ` ${active === 'quote' ? `${styles.active}` : ""}`}>
+      <div className={styles.quoteBuilder + ` ${active === 'quote' ? `${styles.active}` : ''}`}>
         {context.quote.length ? (
           <>
             <div className={styles.labels}>
@@ -290,7 +307,7 @@ export default ({ options, menu }) => {
           <div className={styles.search}>
             <label className={styles.label}>{`To add ${context.quote.length ? 'more ' : ''} items, search below`}</label>
             <input className={styles.input + `${searchTerm ? ` ${styles.filled}` : ''}`} value={searchTerm} onChange={handleSetSearchTerm} />
-            <input className={styles.mobileInput + `${searchTerm ? ` ${styles.filled}` : ''}`} placeholder="Search to add items..." value={searchTerm} onChange={handleSetSearchTerm} />
+            <input className={styles.mobileInput + `${searchTerm ? ` ${styles.filled}` : ''}`} placeholder='Search to add items...' value={searchTerm} onChange={handleSetSearchTerm} />
             <div className={styles.results + `${!searchTerm ? ` ${styles.hidden}` : ''}`}>
               <div className={styles.triangle} />
               {searchResults.length ? searchResults.slice(0, 6).map((product, i) => {
@@ -349,15 +366,15 @@ export default ({ options, menu }) => {
           <textarea value={customerInfo.requirements} onChange={handleChange} style={{ backgroundImage: 'url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+Cjxzdmcgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDI0IDI0IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zOnNlcmlmPSJodHRwOi8vd3d3LnNlcmlmLmNvbS8iIHN0eWxlPSJmaWxsLXJ1bGU6ZXZlbm9kZDtjbGlwLXJ1bGU6ZXZlbm9kZDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7Ij4KICAgIDxwYXRoIGQ9Ik0xMSw0TDQsNEMyLjkwMyw0IDIsNC45MDMgMiw2TDIsMjBDMiwyMS4wOTcgMi45MDMsMjIgNCwyMkwxOCwyMkMxOS4wOTcsMjIgMjAsMjEuMDk3IDIwLDIwTDIwLDEzIiBzdHlsZT0iZmlsbDpub25lO2ZpbGwtcnVsZTpub256ZXJvO3N0cm9rZTpyZ2IoMTU1LDE1NSwxNTUpO3N0cm9rZS13aWR0aDoycHg7Ii8+CiAgICA8cGF0aCBkPSJNMTguNSwyLjVDMTguODk4LDIuMTAyIDE5LjQzOCwxLjg3OSAyMCwxLjg3OUMyMS4xNjQsMS44NzkgMjIuMTIxLDIuODM2IDIyLjEyMSw0QzIyLjEyMSw0LjU2MiAyMS44OTgsNS4xMDIgMjEuNSw1LjVMMTIsMTVMOCwxNkw5LDEyTDE4LjUsMi41WiIgc3R5bGU9ImZpbGw6bm9uZTtmaWxsLXJ1bGU6bm9uemVybztzdHJva2U6cmdiKDE1NSwxNTUsMTU1KTtzdHJva2Utd2lkdGg6MnB4OyIvPgo8L3N2Zz4K")' }} id='requirements' rows={6} />
         </div>
         {!fileName &&
-        <div className={styles.lookingFor}>Can't find what you're looking for? Upload requirements here</div>}
+          <div className={styles.lookingFor}>Can't find what you're looking for? Upload requirements here</div>}
         {!fileName &&
-        <div className={styles.mobileAttachments}>
-          <label className={styles.attachment} htmlFor='attachments'><img src="/arrow-right.svg" alt=""/></label>
-          <input type='file' id='attachments' onChange={handleFileChange} />
-        </div>}
+          <div className={styles.mobileAttachments}>
+            <label className={styles.attachment} htmlFor='attachments'><img src='/arrow-right.svg' alt='' /></label>
+            <input type='file' id='attachments' onChange={handleFileChange} />
+          </div>}
         {fileName &&
-            <div className={styles.mobileFile}>{fileName}<span><button onClick={removeFile}>X</button></span></div>}
-      </div>        
+          <div className={styles.mobileFile}>{fileName}<span><button onClick={removeFile}>X</button></span></div>}
+      </div>
     </section>
   )
 }

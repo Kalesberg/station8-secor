@@ -15,11 +15,10 @@ type layoutProps = {
   title: string,
   blocks?: [any],
   menu: any,
-  location: any,
-  options?: any
+  location: any
 }
 
-export default ({ children, title: siteTitle = '', blocks, menu, location, options }: layoutProps) => {
+export default ({ children, title: siteTitle = '', blocks, menu, location }: layoutProps) => {
   const { site: { siteMetadata: { config: { description, title, titleDivider } } } } = useStaticQuery(graphql`
     {
       site {
@@ -53,7 +52,7 @@ export default ({ children, title: siteTitle = '', blocks, menu, location, optio
       </Helmet>
       <Header mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} menuOpen={menuOpen} setMenuOpen={setMenuOpen} userMenuOpen={userMenuOpen} setUserMenuOpen={setUserMenuOpen} menu={menu} location={location} />
       <HeaderMobile mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} menuOpen={menuOpen} setMenuOpen={setMenuOpen} userMenuOpen={userMenuOpen} setUserMenuOpen={setUserMenuOpen} location={location} />
-      <Main blocks={blocks} menuOpen={menuOpen} scrollListener={scrollListener} scrollPosition={scrollPosition} setMenuOpen={setMenuOpen} setUserMenuOpen={setUserMenuOpen} menu={menu} location={location} options={options}>
+      <Main blocks={blocks} menuOpen={menuOpen} scrollListener={scrollListener} scrollPosition={scrollPosition} setMenuOpen={setMenuOpen} setUserMenuOpen={setUserMenuOpen} menu={menu} location={location}>
         {children}
         <Footer />
       </Main>

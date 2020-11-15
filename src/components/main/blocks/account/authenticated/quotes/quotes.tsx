@@ -1,12 +1,27 @@
 import React, { useEffect } from 'react'
-import { Link, navigate } from 'gatsby'
+import { graphql, Link, navigate, useStaticQuery } from 'gatsby'
 import Moment from 'react-moment'
 import queryString from 'query-string'
 import camelcase from 'camelcase'
 
 import styles from './quotes.module.scss'
 
-export default ({ options, search, user, activeQuote, setActiveQuote, handleClearActiveQuote }) => {
+export default ({ search, user, activeQuote, setActiveQuote, handleClearActiveQuote }) => {
+  const { allAirtable: { nodes: options } } = useStaticQuery(graphql`{
+    allAirtable(filter: {table: {eq: "Options"}}) {
+      nodes {
+        id
+        recordId
+        data {
+          Name
+          Label
+          Type
+          Select_Choices
+        }
+      }
+    }
+  }`)
+
   useEffect(() => {
     if (search) {
       const query = queryString.parse(search)

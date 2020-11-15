@@ -203,8 +203,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       path: getFilePath(page),
       context: {
         title: page.title,
-        menu: productMenu,
-        options
+        menu: productMenu
       }
     })
 
@@ -214,8 +213,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         path: getFilePath(page) + '/' + view,
         context: {
           title: page.title,
-          menu: productMenu,
-          options
+          menu: productMenu
         }
       }))
     }
@@ -294,8 +292,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
             context: {
               title: product.name,
               menu: productMenu,
-              product,
-              options
+              product
             }
           })
         })
