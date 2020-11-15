@@ -49,18 +49,9 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
     }
     careers: allCareersJson {
       nodes {
-        type
         title
         slug
         location
-        description
-        id
-        body {
-          heading
-          text
-        }
-        department
-        openings
       }
     }
     forms: allMarkdownRemark(filter: {frontmatter: {type: {eq: "form"}}}, sort: {fields: frontmatter___date, order: DESC}) {
@@ -247,9 +238,9 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       component: careerTemplate,
       path: `/careers/${slug}-${slugify(career.location).toLowerCase()}`,
       context: {
-        slug,
-        menu: productMenu,
-        career
+        title: career.title,
+        location: career.location,
+        menu: productMenu
       }
     })
   })

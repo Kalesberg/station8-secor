@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import parse from 'html-react-parser'
 
 import { Layout } from '../../components'
@@ -10,7 +10,7 @@ import styles from './career.module.scss'
 import background from '../../../.forestry/content/images/careers.png'
 import arrow from '../../../.forestry/content/images/arrow-right.svg'
 
-export default ({ pageContext: { career, menu }, location }) => {
+export default ({ pageContext: { menu }, location, data: { careersJson: career } }) => {
   const scrollDown = () => {
     document.getElementById('cfform').scrollIntoView({ behavior: 'smooth' })
   }
@@ -52,3 +52,21 @@ export default ({ pageContext: { career, menu }, location }) => {
     </Layout>
   )
 }
+
+export const pageQuery = graphql`
+query ($title: String!, $location: String!) {
+  careersJson(location: {eq: $location }, title: {eq: $title }) {
+    type
+    title
+    slug
+    location
+    description
+    id
+    body {
+      heading
+      text
+    }
+    department
+    openings
+  }
+}`
