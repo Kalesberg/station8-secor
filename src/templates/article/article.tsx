@@ -10,9 +10,11 @@ import { ArticlesGrid } from '../../components/main/blocks'
 import styles from './article.module.scss'
 
 export default ({
-  pageContext: { menu, slug },
   data: {
     markdownRemark: {
+      fields: {
+        slug
+      },
       frontmatter: {
         date,
         heroImage,
@@ -24,7 +26,7 @@ export default ({
   },
   location
 }) => (
-  <Layout title={title} menu={menu} location={location}>
+  <Layout title={title} location={location}>
     <article className={styles.articleContainer}>
       <Image src={heroImage.relativePath} className={styles.hero} container='div'>
         <div className={styles.text}>
@@ -52,6 +54,9 @@ export default ({
 export const pageQuery = graphql`
 query ($slug: String!) {
   markdownRemark(fields: {slug: {eq: $slug}}) {
+    fields {
+      slug
+    }
     frontmatter {
       parent
       title

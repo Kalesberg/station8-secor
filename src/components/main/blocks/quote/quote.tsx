@@ -6,7 +6,7 @@ import { Context } from '../../../context/context'
 
 import styles from './quote.module.scss'
 
-export default ({ menu }) => {
+export default () => {
   const { allAirtable: { nodes: options } } = useStaticQuery(graphql`{
     allAirtable(filter: {table: {eq: "Options"}}) {
       nodes {
@@ -56,16 +56,16 @@ export default ({ menu }) => {
   }, [context])
 
   useEffect(() => {
-    if (searchTerm) {
+    if (searchTerm && context && context.menu && context.menu.length) {
       const results = []
-      menu.forEach(category => category.menus.forEach(menu => menu.submenus.forEach(submenu => submenu.products.forEach(product => {
+      context.menu.forEach(category => category.menus.forEach(menu => menu.submenus.forEach(submenu => submenu.products.forEach(product => {
         if (product.name.replace(/\W/g, '').toLowerCase().includes(searchTerm.replace(/\W/g, '').toLowerCase())) {
           results.push(product)
         }
       }))))
       setSearchResults(results)
     }
-  }, [searchTerm])
+  }, [searchTerm, context])
 
   const setWindowWidth = () => {
     setWidth(window.innerWidth)
@@ -164,7 +164,7 @@ export default ({ menu }) => {
     setAttachment({ url: json.url })
     setFileName(file.name)
   }
-  return context && (
+  return context && context.menu && context.menu.length ? (
     <section className={styles.section}>
       <div className={styles.header}>
         <button className={styles.label + ` ${active === 'customer' && width <= 600 ? `${styles.active}` : ''}`} onClick={() => setActive('customer')}>
@@ -376,5 +376,5 @@ export default ({ menu }) => {
           <div className={styles.mobileFile}>{fileName}<span><button onClick={removeFile}>X</button></span></div>}
       </div>
     </section>
-  )
+  ) : null
 }

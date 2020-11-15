@@ -5,7 +5,7 @@ import { Layout } from '../../components'
 
 import 'animate.css/animate.min.css'
 
-export default ({ location, data: { pagesJson: page }, pageContext: { menu } }) => <Layout title={page.title} blocks={page.blocks} menu={menu} location={location} />
+export default ({ location, data: { pagesJson: page } }) => <Layout title={page.title} blocks={page.blocks} location={location} />
 
 export const pageQuery = graphql`
 query ($title: String!) {

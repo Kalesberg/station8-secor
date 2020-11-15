@@ -8,7 +8,7 @@ import { Context } from '../../components/context/context'
 import Layout from '../../components/layout/layout'
 import styles from './product.module.scss'
 
-export default ({ location, pageContext: { menu, product, title } }) => {
+export default ({ location, pageContext: { product, title } }) => {
   const { allAirtable: { nodes: allOptions } } = useStaticQuery(graphql`{
     allAirtable(filter: {table: {eq: "Options"}}) {
       nodes {
@@ -78,7 +78,7 @@ export default ({ location, pageContext: { menu, product, title } }) => {
   const handleQuantity = e => setQuantity(e.target.value)
 
   return context && (
-    <Layout title={title} menu={menu} location={location}>
+    <Layout title={title} location={location}>
       <section className={styles.section}>
         <aside className={styles.aside}>
           <div className={styles.back} onClick={handleGoBack} />

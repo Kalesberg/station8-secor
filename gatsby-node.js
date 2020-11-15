@@ -202,8 +202,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       component: pageTemplate,
       path: getFilePath(page),
       context: {
-        title: page.title,
-        menu: productMenu
+        title: page.title
       }
     })
 
@@ -212,8 +211,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         component: pageTemplate,
         path: getFilePath(page) + '/' + view,
         context: {
-          title: page.title,
-          menu: productMenu
+          title: page.title
         }
       }))
     }
@@ -224,8 +222,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       component: formTemplate,
       path: `/news-and-resources/forms/${form.fileAbsolutePath.split('/').pop().replace('.md', '')}`,
       context: {
-        title: form.frontmatter.title,
-        menu: productMenu
+        title: form.frontmatter.title
       }
     })
   })
@@ -237,8 +234,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       path: `/careers/${slug}-${slugify(career.location).toLowerCase()}`,
       context: {
         title: career.title,
-        location: career.location,
-        menu: productMenu
+        location: career.location
       }
     })
   })
@@ -252,8 +248,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       path,
       context: {
         slug,
-        parent: article.frontmatter.parent,
-        menu: productMenu
+        parent: article.frontmatter.parent
       }
     })
   })
@@ -263,8 +258,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       component: pageTemplate,
       path: category.path,
       context: {
-        title: category.name,
-        menu: productMenu
+        title: category.name
       }
     })
     category.menus.forEach(menu => {
@@ -272,8 +266,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         component: pageTemplate,
         path: menu.path,
         context: {
-          title: category.name,
-          menu: productMenu
+          title: category.name
         }
       })
       menu.submenus.forEach(submenu => {
@@ -281,8 +274,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
           component: pageTemplate,
           path: submenu.path,
           context: {
-            title: category.name,
-            menu: productMenu
+            title: category.name
           }
         })
         submenu.products.forEach(product => {
@@ -291,7 +283,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
             path: product.path,
             context: {
               title: product.name,
-              menu: productMenu,
               product
             }
           })

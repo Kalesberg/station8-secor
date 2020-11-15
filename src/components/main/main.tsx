@@ -5,7 +5,7 @@ import { Accessories, Account, ArticlesGrid, BasicContactForm, Blank, CareersCTA
 
 import styles from './main.module.scss'
 
-export default ({ blocks, children, menuOpen, setMenuOpen, setUserMenuOpen, scrollListener, scrollPosition, menu, location }) => {
+export default ({ blocks, children, menuOpen, setMenuOpen, setUserMenuOpen, scrollListener, scrollPosition, location }) => {
   const closeMenu = () => {
     setMenuOpen(false)
     setUserMenuOpen(false)
@@ -107,7 +107,7 @@ export default ({ blocks, children, menuOpen, setMenuOpen, setUserMenuOpen, scro
             ) : block.template === 'main-product-index' ? (
               <ProductIndex key={i} location={location} />
             ) : block.template === 'main-quote' ? (
-              <Quote key={i} menu={menu} />
+              <Quote key={i} />
             ) : <h1 key={i} className={styles.title}>{block.template} under development</h1>
           })}
         </div>
