@@ -1,12 +1,91 @@
 import React, { createContext, useEffect, useState } from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+import slugify from 'slugify'
 
 const Context = createContext(null)
 
 const ContextProvider = ({ children }) => {
+  const data = useStaticQuery(graphql`{
+    categories: allAirtable(filter: {table: {eq: "Categories"}}, sort: {fields: data___Order, order: ASC}) {
+      nodes {
+        id
+        recordId
+        data {
+          Name
+          Order
+          Image {
+            url
+          }
+        }
+      }
+    }
+    menus: allAirtable(filter: {table: {eq: "Menus"}}) {
+      nodes {
+        id
+        recordId
+        data {
+          Category
+          Name
+          Order
+          Menu_Label
+        }
+      }
+    }
+    submenus: allAirtable(filter: {table: {eq: "Submenus"}}) {
+      nodes {
+        id
+        recordId
+        data {
+          Name
+          Order
+          Menu
+          Submenu
+          Description
+          Image {
+            url
+          }
+        }
+      }
+    }
+    products: allAirtable(filter: {table: {eq: "Products"}}, sort: {fields: data___Order, order: ASC}) {
+      nodes {
+        id
+        recordId
+        data {
+          Name
+          Order
+          Images {
+            url
+          }
+          Brochure_Manual {
+            url
+          }
+          Menu
+          Options
+          Short_Description
+          Description
+        }
+      }
+    }
+    options: allAirtable(filter: {table: {eq: "Options"}}) {
+      nodes {
+        id
+        recordId
+        data {
+          Name
+          Label
+          Type
+          Select_Choices
+        }
+      }
+    }
+  }`)
+
   const [quote, setQuote] = useState([])
   const [quantity, setQuantity] = useState(0)
   const [user, setUser] = useState(undefined)
   const [userFetched, setUserFetched] = useState(false)
+  const [menu, setMenu] = useState([])
 
   const [customerInfo, setCustomerInfo] = useState({
     name: '',
@@ -38,6 +117,61 @@ const ContextProvider = ({ children }) => {
     newQuote[index] = item
     setQuote(newQuote)
   }
+
+  useEffect(() => {
+    if (data) {
+      setMenu(data.categories.nodes.map(category => ({
+        id: category.id,
+        recordId: category.recordId,
+        name: category.data.Name,
+        slug: slugify(category.data.Name).toLowerCase(),
+        path: '/products-and-equipment/' + slugify(category.data.Name).toLowerCase(),
+        order: category.data.Order,
+        image: category.data.Image && category.data.Image[0].url,
+        menus: data.menus.nodes.filter(menu => menu.data.Category[0] === category.recordId).sort((a, b) => a.data.Order < b.data.Order ? -1 : 1).map(menu => ({
+          id: menu.id,
+          recordId: menu.recordId,
+          order: menu.data.Order,
+          name: menu.data.Menu_Label,
+          slug: slugify(menu.data.Menu_Label).toLowerCase(),
+          path: '/' + slugify(category.data.Name).toLowerCase() + '/' + slugify(menu.data.Menu_Label).toLowerCase(),
+          submenus: data.submenus.nodes.filter(submenu => submenu.data.Menu[0] === menu.recordId).sort((a, b) => a.data.Order < b.data.Order ? -1 : 1).map(submenu => ({
+            id: submenu.id,
+            recordId: submenu.recordId,
+            order: submenu.data.Order,
+            name: submenu.data.Submenu,
+            slug: submenu.data.Submenu ? slugify(submenu.data.Submenu).toLowerCase() : '',
+            path: submenu.data.Submenu ? '/' + slugify(category.data.Name).toLowerCase() + '/' + slugify(menu.data.Menu_Label).toLowerCase() + '/' + slugify(submenu.data.Submenu).toLowerCase() : '/' + slugify(category.data.Name).toLowerCase() + '/' + slugify(menu.data.Menu_Label).toLowerCase(),
+            image: submenu.data.Image && submenu.data.Image[0].url,
+            description: submenu.data.Description,
+            products: data.products.nodes.filter(product => product.data.Menu[0] === submenu.recordId).sort((a, b) => a.data.Order < b.data.Order ? -1 : 1).map(product => ({
+              id: product.id,
+              recordId: product.recordId,
+              order: product.data.Order,
+              documents: product.data.Brochure_Manual && product.data.Brochure_Manual.length ? product.data.Brochure_Manual.map(document => document.url) : [],
+              images: product.data.Images && product.data.Images.length ? product.data.Images.map(image => image.url) : [],
+              name: product.data.Name,
+              slug: slugify(product.data.Name).toLowerCase(),
+              path: `/${slugify(category.data.Name).toLowerCase()}/${slugify(menu.data.Menu_Label).toLowerCase()}/${submenu.data.Submenu ? slugify(submenu.data.Submenu).toLowerCase() + '/' : ''}${slugify(product.data.Name).toLowerCase()}`,
+              description: product.data.Description,
+              summary: product.data.Short_Description,
+              options: product.data.Options && product.data.Options.length ? product.data.Options.map(option => {
+                const thisOption = data.options.nodes.find(thisOption => thisOption.recordId === option)
+                return {
+                  id: thisOption.id,
+                  recordId: thisOption.recordId,
+                  name: thisOption.data.Name,
+                  label: thisOption.data.Label,
+                  type: thisOption.data.Type,
+                  choices: thisOption.data.Select_Choices
+                }
+              }) : []
+            }))
+          }))
+        }))
+      })))
+    }
+  }, [data])
 
   useEffect(() => {
     const localStorage = window.localStorage.getItem('quote')
@@ -94,7 +228,7 @@ const ContextProvider = ({ children }) => {
   }, [quote])
 
   return (
-    <Context.Provider value={{ auth, handleLogoutUser, handleValidateUser, user, userFetched, quantity, quote, setQuote, handleAddQuoteItem, handleRemoveQuoteItem, handleUpdateQuoteItem, customerInfo, setCustomerInfo }}>
+    <Context.Provider value={{ auth, handleLogoutUser, handleValidateUser, menu, user, userFetched, quantity, quote, setQuote, handleAddQuoteItem, handleRemoveQuoteItem, handleUpdateQuoteItem, customerInfo, setCustomerInfo }}>
       {children}
     </Context.Provider>)
 }
