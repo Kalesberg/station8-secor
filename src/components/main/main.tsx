@@ -105,7 +105,7 @@ export default ({ blocks, children, menuOpen, setMenuOpen, setUserMenuOpen, scro
                 <ProductDescrip block={block} />
               </ScrollAnimation>
             ) : block.template === 'main-product-index' ? (
-              <ProductIndex menu={menu} key={i} location={location} />
+              <ProductIndex key={i} location={location} />
             ) : block.template === 'main-quote' ? (
               <Quote key={i} menu={menu} />
             ) : <h1 key={i} className={styles.title}>{block.template} under development</h1>

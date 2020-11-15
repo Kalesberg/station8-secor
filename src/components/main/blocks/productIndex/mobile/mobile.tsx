@@ -2,112 +2,95 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Link, navigate } from 'gatsby'
 import camelcase from 'camelcase'
 
-import { Context } from '../../../context/context'
+import { Context } from '../../../../context/context'
 
-import styles from './productsIndexMobile.module.scss'
+import styles from './mobile.module.scss'
 
-export default ({ location, menu }) => {
+export default ({ location }) => {
   const context = useContext(Context)
-  const [path] = useState(location.pathname.slice(1).split('/'))
+  const [path] = useState(() => {
+    const string = location.pathname.charAt(location.pathname.length - 1) === '/' ? location.pathname.substr(1, location.pathname.length - 2) : location.pathname.substr(1, location.pathname.length - 1)
+    return string.split('/')
+  })
   const [productMenu, setProductMenu] = useState(undefined)
   const [submenu, setSubmenu] = useState(undefined)
   const [searchResults, setSearchResults] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
   const [all, setAll] = useState(location.pathname === '/products')
   const [items, setItems] = useState([])
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [sidebarOpen, setSidebarOpen] = useState(path.length === 1)
   const [activeMenu, setActiveMenu] = useState(null)
 
   useEffect(() => {
     if (all) {
       const results = []
-      menu.forEach(category => category.menus.forEach(menu => menu.submenus.forEach(submenu => submenu.products.forEach(product => {
-        results.push(product)
-      }))))
+      context.menu.forEach(category => category.menus.forEach(menu => menu.submenus.forEach(submenu => submenu.products.forEach(product => results.push(product)))))
       setItems(results)
     } else if (searchResults.length > 0) {
       setItems(searchResults)
     } else {
-      const getCategory = () => menu.find(category => category.slug === path[0])
-      const getProductMenu = category => category && menu.find(category => category.slug === path[0]).menus.find(menu => menu.slug === path[1])
+      const getCategory = () => context.menu.find(category => category.slug === path[0])
+      const getProductMenu = category => category && context.menu.find(category => category.slug === path[0]).menus.find(menu => menu.slug === path[1])
       const getSubMenu = productMenu => {
         if (productMenu && productMenu.submenus.length > 1) {
-          // console.log(productMenu)
           return productMenu.submenus.find(submenu => submenu.slug === path[2])
         } else if (productMenu && productMenu.submenus.length === 1) {
-          // console.log(productMenu)
           return productMenu.submenus[0]
         } else {
-          // console.log(productMenu)
           return null
         }
       }
 
-      const invalidCategory = () => {
-        const path = menu[0].menus[0].submenus[0].path
-        // console.log('invalid category', path)
-        navigate(path)
-      }
-      const invalidMenu = category => {
-        const path = category.menus[0].submenus[0].path
-        // console.log('invalid menu', path)
-        navigate(path)
-      }
-      const invalidSubmenu = productMenu => {
-        // console.log(productMenu)
-        const path = productMenu.submenus[0].path
-        // console.log('invalid submenu', path)
-        navigate(path)
-      }
+      const invalidCategory = () => navigate(context.menu[0].menus[0].submenus[0].path)
+      const invalidMenu = category => navigate(category.menus[0].submenus[0].path)
+      const invalidSubmenu = productMenu => navigate(productMenu.submenus[0].path)
 
-      if (path && path.length === 3) {
-        const category = getCategory()
-        const productMenu = getProductMenu(category)
-        const submenu = getSubMenu(productMenu)
+      if (context && context.menu && context.menu.length) {
+        if (path && path.length === 3) {
+          const category = getCategory()
+          const productMenu = getProductMenu(category)
+          const submenu = getSubMenu(productMenu)
 
-        if (submenu) {
-          setSubmenu(submenu)
-          setItems(submenu.products)
-          setProductMenu(productMenu)
-        } else if (productMenu) {
-          invalidSubmenu(productMenu)
-        } else if (category) {
-          invalidMenu(category)
+          if (submenu) {
+            setSubmenu(submenu)
+            setItems(submenu.products)
+            setProductMenu(productMenu)
+          } else if (productMenu) {
+            invalidSubmenu(productMenu)
+          } else if (category) {
+            invalidMenu(category)
+          } else {
+            invalidCategory()
+          }
+        } else if (path && path.length === 2) {
+          const category = getCategory()
+          const productMenu = getProductMenu(category)
+
+          if (productMenu && productMenu.submenus.length === 1) {
+            setSubmenu(productMenu.submenus[0])
+            setItems(productMenu.submenus[0].products)
+            setProductMenu(productMenu)
+          } else if (productMenu) {
+            invalidSubmenu(productMenu)
+          } else if (category) {
+            invalidMenu(category)
+          } else {
+            invalidCategory()
+          }
+        } else if (path && path.length === 1) {
+          const category = getCategory()
+
+          if (category) {
+            invalidMenu(category)
+          } else {
+            invalidCategory()
+          }
         } else {
           invalidCategory()
         }
-      } else if (path && path.length === 2) {
-        const category = getCategory()
-        const productMenu = getProductMenu(category)
-
-        if (productMenu && productMenu.submenus.length === 1) {
-          setSubmenu(productMenu.submenus[0])
-          setItems(productMenu.submenus[0].products)
-          setProductMenu(productMenu)
-        } else if (productMenu) {
-          invalidSubmenu(productMenu)
-        } else if (category) {
-          invalidMenu(category)
-        } else {
-          invalidCategory()
-        }
-      } else if (path && path.length === 1) {
-        const category = getCategory()
-
-        if (category) {
-          invalidMenu(category)
-        } else {
-          invalidCategory()
-        }
-      } else {
-        invalidCategory()
       }
     }
-  }, [path, searchResults])
-
-  // useEffect(() => {
-  //   console.log('menu', productMenu)
-  // }, [productMenu])
+  }, [path, searchResults, context])
 
   const handleSetSearchTerm = e => {
     setSearchTerm(e.target.value)
@@ -124,20 +107,18 @@ export default ({ location, menu }) => {
     if (searchTerm) {
       setAll(false)
       const results = []
-      menu.forEach(category => category.menus.forEach(menu => menu.submenus.forEach(submenu => submenu.products.forEach(product => {
-        if (product.name.replace(/\W/g, '').toLowerCase().includes(searchTerm.replace(/\W/g, '').toLowerCase())) {
-          results.push(product)
-        }
+      context.menu.forEach(category => category.menus.forEach(menu => menu.submenus.forEach(submenu => submenu.products.forEach(product => {
+        if (product.name.replace(/\W/g, '').toLowerCase().includes(searchTerm.replace(/\W/g, '').toLowerCase())) results.push(product)
       }))))
       setSearchResults(results)
     }
   }, [searchTerm])
 
-  return context && (
+  return context && context.menu && context.menu.length ? (
     <section className={styles.section}>
       <div className={styles.sidebarContainer + ` ${sidebarOpen ? `${styles.sidebarOpen}` : ''}`}>
         <div className={styles.sidebar}>
-          {menu.map(category => (
+          {context.menu.map(category => (
             <div key={category.slug} className={styles.category}>
               <p className={styles.categoryName}>{category.name}</p>
               <div className={styles.menuItems}>
@@ -252,5 +233,5 @@ export default ({ location, menu }) => {
         </div>
       ) : null}
     </section>
-  )
+  ) : null
 }
