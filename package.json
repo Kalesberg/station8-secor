@@ -70,6 +70,7 @@
     "@types/airtable": "^0.8.1",
     "@types/css-modules": "^1.0.0",
     "@types/react": "^16.9.41",
+    "@types/react-helmet": "^6.1.0",
     "@typescript-eslint/eslint-plugin": "^3.5.0",
     "@typescript-eslint/parser": "^3.5.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
