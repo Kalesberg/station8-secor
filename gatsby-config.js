@@ -22,15 +22,24 @@ module.exports = {
         tables: [
           {
             baseId: process.env.AIRTABLE_BASE_ID,
-            tableName: 'Categories'
+            tableName: 'Categories',
+            mapping: {
+              Image: 'fileNode'
+            }
           },
           {
             baseId: process.env.AIRTABLE_BASE_ID,
-            tableName: 'Menus'
+            tableName: 'Menus',
+            mapping: {
+              Image: 'fileNode'
+            }
           },
           {
             baseId: process.env.AIRTABLE_BASE_ID,
-            tableName: 'Submenus'
+            tableName: 'Submenus',
+            mapping: {
+              Image: 'fileNode'
+            }
           },
           {
             baseId: process.env.AIRTABLE_BASE_ID,
@@ -38,7 +47,10 @@ module.exports = {
           },
           {
             baseId: process.env.AIRTABLE_BASE_ID,
-            tableName: 'Products'
+            tableName: 'Products',
+            mapping: {
+              Images: 'fileNode'
+            }
           }
         ]
       }
@@ -98,6 +110,8 @@ module.exports = {
         defer: false
       }
     },
+    // 'gatsby-transformer-sharp',
+    // 'gatsby-plugin-sharp',
     'gatsby-plugin-remove-console',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-offline',

@@ -34,7 +34,7 @@ export default ({ block }) => {
           return (
             <div key={i} className={styles.imageContainer}>
               <div key={i} className={styles.background}>
-                <Image className={styles.image} src={pipe.pipe && pipe.pipe} />
+                <Image className={styles.image} src={pipe.pipe} />
               </div>
               <div className={styles.textContainer + ` ${selected === pipe.heading ? `${styles.textContainerShow}` : ''}`}>
                 <div />

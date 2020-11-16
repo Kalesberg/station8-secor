@@ -76,7 +76,9 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
           Name
           Order
           Image {
-            url
+            localFiles {
+              publicURL
+            }
           }
         }
       }
@@ -104,7 +106,9 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
           Submenu
           Description
           Image {
-            url
+            localFiles {
+              publicURL
+            }
           }
         }
       }
@@ -117,7 +121,9 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
           Name
           Order
           Images {
-            url
+            localFiles {
+              publicURL
+            }
           }
           Brochure_Manual {
             url
@@ -151,7 +157,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
     slug: slugify(category.data.Name).toLowerCase(),
     path: '/products-and-equipment/' + slugify(category.data.Name).toLowerCase(),
     order: category.data.Order,
-    image: category.data.Image && category.data.Image[0].url,
+    image: category.data.Image && category.data.Image.localFiles && category.data.Image.localFiles[0] && category.data.Image.localFiles[0].publicURL,
     menus: menus.filter(menu => menu.data.Category[0] === category.recordId).sort((a, b) => a.data.Order < b.data.Order ? -1 : 1).map(menu => ({
       id: menu.id,
       recordId: menu.recordId,
@@ -166,14 +172,14 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         name: submenu.data.Submenu,
         slug: submenu.data.Submenu ? slugify(submenu.data.Submenu).toLowerCase() : '',
         path: submenu.data.Submenu ? '/' + slugify(category.data.Name).toLowerCase() + '/' + slugify(menu.data.Menu_Label).toLowerCase() + '/' + slugify(submenu.data.Submenu).toLowerCase() : '/' + slugify(category.data.Name).toLowerCase() + '/' + slugify(menu.data.Menu_Label).toLowerCase(),
-        image: submenu.data.Image && submenu.data.Image[0].url,
+        image: submenu.data.Image && submenu.data.Image.localFiles && submenu.data.Image.localFiles[0] && submenu.data.Image.localFiles[0].publicURL,
         description: submenu.data.Description,
         products: products.filter(product => product.data.Menu[0] === submenu.recordId).sort((a, b) => a.data.Order < b.data.Order ? -1 : 1).map(product => ({
           id: product.id,
           recordId: product.recordId,
           order: product.data.Order,
           documents: product.data.Brochure_Manual && product.data.Brochure_Manual.length ? product.data.Brochure_Manual.map(document => document.url) : [],
-          images: product.data.Images && product.data.Images.length ? product.data.Images.map(image => image.url) : [],
+          images: product.data.Images && product.data.Images.localFiles && product.data.Images.localFiles.length ? product.data.Images.localFiles.map(image => image.publicURL) : [],
           name: product.data.Name,
           slug: slugify(product.data.Name).toLowerCase(),
           path: `/${slugify(category.data.Name).toLowerCase()}/${slugify(menu.data.Menu_Label).toLowerCase()}/${submenu.data.Submenu ? slugify(submenu.data.Submenu).toLowerCase() + '/' : ''}${slugify(product.data.Name).toLowerCase()}`,
