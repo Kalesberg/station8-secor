@@ -63,3 +63,5 @@ fields:
   label: Type
   hidden: true
   default: video
+pages:
+- ".forestry/content/videos/video-1.md"
