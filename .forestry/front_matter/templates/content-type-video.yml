@@ -1,6 +1,6 @@
 ---
 label: 'Content Type: Video'
-hide_body: true
+hide_body: false
 fields:
 - name: parent
   type: select
@@ -40,17 +40,6 @@ fields:
     time_format: 
     display_utc: false
   default: now
-- name: heroImage
-  type: file
-  config:
-    maxSize: 64
-  label: Hero Image
-  description: Enter hero image for blog post here
-  default: "/.forestry/content/images/placeholder.png"
-- name: tags
-  type: tag_list
-  default: []
-  label: Tags
 - name: video
   type: text
   config:
