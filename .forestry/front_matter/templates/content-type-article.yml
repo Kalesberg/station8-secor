@@ -29,7 +29,7 @@ fields:
   config:
     maxSize: 64
   label: Hero Image
-  description: Enter hero image for blog post here
+  description: Enter hero image for the blog post here
   default: "/.forestry/content/images/placeholder.png"
 - name: type
   type: text
