@@ -1,33 +1,43 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { graphql, Link, navigate, useStaticQuery } from 'gatsby'
+import { graphql, Link, navigate } from 'gatsby'
 import marked from 'marked'
 import parse from 'html-react-parser'
 import camelcase from 'camelcase'
+import slugify from 'slugify'
 
 import { Context } from '../../components/context/context'
 import Layout from '../../components/layout/layout'
 import styles from './product.module.scss'
 
-export default ({ location, pageContext: { product, title } }) => {
-  const { allAirtable: { nodes: allOptions } } = useStaticQuery(graphql`{
-    allAirtable(filter: {table: {eq: "Options"}}) {
-      nodes {
-        id
-        recordId
-        data {
-          Name
-          Label
-          Type
-          Select_Choices
-        }
-      }
-    }
-  }`)
+export default ({ location, data: { options: { nodes: allOptions }, product: productData } }) => {
   const context = useContext(Context)
   const [quantity, setQuantity] = useState(1)
   const [options, setOptions] = useState({})
   const [activeImage, setActiveImage] = useState(0)
   const [showMessage, setShowMessage] = useState(false)
+  const [product] = useState({
+    id: productData.id,
+    recordId: productData.recordId,
+    order: productData.data.Order,
+    documents: productData.data.Brochure_Manual && productData.data.Brochure_Manual.length ? productData.data.Brochure_Manual.map(document => document.url) : [],
+    images: productData.data.Images && productData.data.Images.localFiles && productData.data.Images.localFiles.length ? productData.data.Images.localFiles.map(image => image.publicURL) : [],
+    name: productData.data.Name,
+    path: location.pathname,
+    slug: slugify(productData.data.Name).toLowerCase(),
+    description: productData.data.Description,
+    summary: productData.data.Short_Description,
+    options: productData.data.Options && productData.data.Options.length ? productData.data.Options.map(option => {
+      const thisOption = allOptions.find(thisOption => thisOption.recordId === option)
+      return {
+        id: thisOption.id,
+        recordId: thisOption.recordId,
+        name: thisOption.data.Name,
+        label: thisOption.data.Label,
+        type: thisOption.data.Type,
+        choices: thisOption.data.Select_Choices
+      }
+    }) : []
+  })
 
   const initOptions = () => {
     const options = {}
@@ -44,7 +54,7 @@ export default ({ location, pageContext: { product, title } }) => {
   }
 
   useEffect(() => {
-    initOptions()
+    if (product) initOptions()
   }, [product])
 
   const handleGoBack = () => navigate(location.pathname.split('/').slice(0, -1).join('/'))
@@ -77,8 +87,8 @@ export default ({ location, pageContext: { product, title } }) => {
   }
   const handleQuantity = e => setQuantity(e.target.value)
 
-  return context && (
-    <Layout title={title} location={location}>
+  return context && product && (
+    <Layout title={product.name} location={location}>
       <section className={styles.section}>
         <aside className={styles.aside}>
           <div className={styles.back} onClick={handleGoBack} />
@@ -117,7 +127,7 @@ export default ({ location, pageContext: { product, title } }) => {
                   <div key={i} className={styles.option}>
                     <label className={styles.label} htmlFor={camelcase(option.name)}>{option.label}</label>
                     {option.type === 'Text' ? (
-                      <input type='text' className={styles.input} name={camelcase(option.name)} onChange={handleSetOptions} value={options[camelcase(option.name)]} required />
+                      <input type='text' className={styles.input} name={camelcase(option.name)} onChange={handleSetOptions} defaultValue={options[camelcase(option.name)]} required />
                     ) : option.type === 'Select' ? (
                       <select className={styles.select} name={camelcase(option.name)} onChange={handleSetOptions} value={options[camelcase(option.name)]} required>
                         {option.choices.map((choice, key) => <option className={styles.selectOption} key={key}>{choice}</option>)}
@@ -173,12 +183,11 @@ export default ({ location, pageContext: { product, title } }) => {
                         <p className={styles.title}>{item.name}</p>
                       </Link>
                       {Object.entries(item.options).map((option, i) => {
-                        const optionLabel = allOptions.find(allOption => camelcase(allOption.data.Name) === option[0]).data.Label
-                        return (
+                        const optionLabel = allOptions.find(allOption => allOption.data.Name && camelcase(allOption.data.Name) === option[0]).data.Label
+                        return optionLabel && (
                           <p key={i} className={styles.specs}>{optionLabel}: {option[1]}</p>
                         )
                       })}
-
                       <div className={styles.modify}>
                         <p className={styles.label}>QTY:</p>
                         <input type='number' min='1' value={item.quantity} onChange={updateQuantity} className={styles.quantity} />
@@ -204,3 +213,40 @@ export default ({ location, pageContext: { product, title } }) => {
     </Layout>
   )
 }
+
+export const pageQuery = graphql`
+query ($recordId: String!) {
+  product: airtable(recordId: {eq: $recordId}) {
+    id
+    recordId
+    data {
+      Name
+      Order
+      Images {
+        localFiles {
+          publicURL
+        }
+      }
+      Brochure_Manual {
+        url
+      }
+      Menu
+      Options
+      Short_Description
+      Description
+    }
+  }
+  options: allAirtable(filter: {table: {eq: "Options"}}) {
+    nodes {
+      id
+      recordId
+      data {
+        Name
+        Label
+        Type
+        Select_Choices
+      }
+    }
+  }
+}
+`

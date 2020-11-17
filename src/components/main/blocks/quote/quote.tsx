@@ -248,7 +248,7 @@ export default () => {
                         </Link>
                         <div className={styles.options + `${editing === i ? ` ${styles.hidden}` : ''}`}>
                           {Object.keys(product.options).map((option, i) => {
-                            const opt = options.find(opt => camelcase(opt.data.Name) === option)
+                            const opt = options.find(opt => opt.data.Name && camelcase(opt.data.Name) === option)
 
                             return (
                               <p key={i} className={styles.option}>
@@ -268,7 +268,7 @@ export default () => {
                       <input type='text' className={styles.notes + `${!Object.keys(product.options).length ? ` ${styles.long}` : ''}`} value={product.notes} onChange={handleNotes} />
                       <div className={styles.options + `${editing === i ? '' : ` ${styles.hidden}`}`}>
                         {Object.keys(product.options).map((option, i) => {
-                          const opt = options.find(opt => camelcase(opt.data.Name) === option)
+                          const opt = options.find(opt => opt.data.Name && camelcase(opt.data.Name) === option)
                           return (
                             <div key={i} className={styles.option}>
                               <label className={styles.label} htmlFor={camelcase(opt.data.Name)}>{opt.data.Label}</label>
@@ -338,6 +338,7 @@ export default () => {
                       quantity: 1
                     })
                     context.setQuote(newQuote)
+                    setSearchTerm('')
                   }
                 }
                 console.log(product)

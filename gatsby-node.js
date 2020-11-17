@@ -288,8 +288,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
             component: productTemplate,
             path: product.path,
             context: {
-              title: product.name,
-              product
+              recordId: product.recordId
             }
           })
         })
