@@ -1,6 +1,6 @@
 ---
 label: 'Content Type: Video'
-hide_body: false
+hide_body: true
 fields:
 - name: parent
   type: select
@@ -51,6 +51,11 @@ fields:
   type: tag_list
   default: []
   label: Tags
+- name: video
+  type: text
+  config:
+    required: true
+  label: Video URL
 - name: type
   type: text
   config:
