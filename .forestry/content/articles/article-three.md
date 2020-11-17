@@ -1,9 +1,6 @@
 ---
-parent: ".forestry/content/pages/news-and-resources.json"
 date: 2020-10-16T14:30:12.000+00:00
 heroImage: "/.forestry/content/images/istock-615730568-scaled.jpg"
-tags:
-- articles
 type: article
 title: Article Three
 summary: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
