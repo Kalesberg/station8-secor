@@ -2,22 +2,6 @@
 label: 'Content Type: Video'
 hide_body: false
 fields:
-- name: parent
-  type: select
-  default: ".forestry/content/pages/news-and-resources.json"
-  config:
-    required: true
-    options: []
-    source:
-      type: pages
-      section: pages
-      file: 
-      path: 
-  label: Parent
-  description: Select a page to be the parent folder for this video. For instance,
-    if you have a page named <strong>blog</strong> and you select it as the parent,
-    your video named <strong>video</strong> will be located at <strong>example.com/blog/video</strong>.
-  hidden: true
 - type: text
   name: title
   label: Title
