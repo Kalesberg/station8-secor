@@ -65,3 +65,4 @@ fields:
   default: video
 pages:
 - ".forestry/content/videos/video-1.md"
+- ".forestry/content/videos/video-2.md"
