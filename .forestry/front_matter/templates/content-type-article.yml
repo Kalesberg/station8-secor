@@ -2,22 +2,6 @@
 label: 'Content Type: Article'
 hide_body: false
 fields:
-- name: parent
-  type: select
-  default: ".forestry/content/pages/blog.json"
-  config:
-    required: true
-    options: []
-    source:
-      type: pages
-      section: pages
-      file: 
-      path: 
-  label: Parent
-  description: Select a page to be the parent folder for this article. For instance,
-    if you have a page named <strong>blog</strong> and you select it as the parent,
-    your article named <strong>article</strong> will be located at <strong>example.com/blog/article</strong>.
-  hidden: true
 - type: text
   name: title
   label: Title
@@ -47,10 +31,6 @@ fields:
   label: Hero Image
   description: Enter hero image for blog post here
   default: "/.forestry/content/images/placeholder.png"
-- name: tags
-  type: tag_list
-  default: []
-  label: Tags
 - name: type
   type: text
   config:
