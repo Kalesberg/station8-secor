@@ -41,14 +41,6 @@ sections:
   templates:
   - content-type-form
 - type: directory
-  path: ".forestry/content/literature"
-  label: Literature
-  create: documents
-  match: "**/*"
-  new_doc_ext: md
-  templates:
-  - content-type-literature
-- type: directory
   path: ".forestry/content/videos"
   label: Videos
   create: documents
