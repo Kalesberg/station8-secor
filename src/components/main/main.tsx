@@ -21,9 +21,7 @@ export default ({ blocks, children, menuOpen, setMenuOpen, setUserMenuOpen, scro
             return block.template === 'main-account' ? (
               <Account key={i} location={location} search={location.search} />
             ) : block.template === 'main-articles-grid' ? (
-              <ScrollAnimation key={i} animateIn={animationStyle} animateOnce scrollableParentSelector='#main' offset={150}>
-                <ArticlesGrid block={block} search={location.search} />
-              </ScrollAnimation>
+              <ArticlesGrid block={block} location={location} />
             ) : block.template === 'main-basic-contact-form' ? (
               <ScrollAnimation key={i} animateIn={animationStyle} animateOnce scrollableParentSelector='#main' offset={150}>
                 <BasicContactForm block={block} />

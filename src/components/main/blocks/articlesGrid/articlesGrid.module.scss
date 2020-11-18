@@ -4,6 +4,7 @@
     padding: 6vw 10vw;
     display: grid;
     align-items: center;
+    background-size: cover;
     // background-color: yellow;
     .text {
       .date {
@@ -103,6 +104,11 @@
           // &:hover {
           //   transform: scale(1.1);
           // }
+          &.video {
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat no-repeat;
+          }
         }
         .article-detail {
           padding: 1.5vw;

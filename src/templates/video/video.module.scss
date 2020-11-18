@@ -1,0 +1,176 @@
+.article-container {
+  background: white;
+  font-family: soleto, sans-serif;
+  font-weight: 400;
+  .hero {
+    padding: 6vw 10vw;
+    display: grid;
+    align-items: center;
+    // background-color: yellow;
+    .text {
+      .date {
+        font-size: 1.1vw;
+        margin-bottom: 0;
+        color: #D50F09;
+      }
+      .title {
+        font-size: 6vw;
+        margin-bottom: 2vw;
+        color: #D50F09;
+        text-transform: uppercase;
+        font-weight: 900;
+      }
+      .excerpt {
+        font-size: 1vw;
+        color: #D50F09;
+      }
+    }
+  }
+  .article {
+    display: grid;
+    // grid-template-columns: auto minmax(0, 1140px) auto;
+    justify-content: center;
+    margin: 0;
+    .container {
+      grid-row: 1;
+      column-gap: 3rem;
+      display: grid;
+      width: 100vw;
+      height: 76vw;
+      padding: 4vw 1vw;
+      .video-container {
+        position: relative;
+        width: 100%;
+        .react-player {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+      .body {
+        > * {
+          -webkit-column-break-inside: avoid;
+          page-break-inside: avoid;
+          break-inside: avoid;
+          line-height: 1.6rem;
+        }
+        // max-width: 900px;
+        // grid-column: 2;
+        > blockquote {
+          // font: var(--font-soleto-black);
+          // color: var(--color-midnight-express);
+          margin: 0 0 1.45rem;
+          // margin-left: -4rem;
+          // margin-right: 4rem;
+          > p {
+            font-size: 1.83rem;
+            line-height: 2.4rem;
+            text-transform: uppercase;
+            font-weight: 900;
+          }
+          > blockquote {
+            // font: var(--font-soleto-black);
+            font-size: 3rem;
+            // margin-left: 8rem;
+            // margin-right: -8rem;
+            > p {
+              font-size: 1.83rem;
+              line-height: 2.4rem;
+            }
+          }
+        }
+        > p {
+          font-size: 1.1rem;
+        }
+      }
+      .info {
+        font-size: 1.1rem;
+        .date {
+          // color: var(--color-midnight-express);
+        }
+        .divider {
+          // font: var(--font-soleto-black);
+          // color: var(--color-midnight-express);
+          font-size: 1.1rem;
+        }
+        .authors {
+          .comma {
+            color: inherit;
+          }
+          .author {
+            // font: var(--font-soleto-bold);
+            // color: var(--color-midnight-express);
+            font-size: 1.1rem;
+          }
+        }
+      }
+      .tags {
+        font-size: 1.1rem;
+        .separator {
+          // font: var(--font-soleto-black);
+          // color: var(--color-midnight-express);
+          font-size: 1.1rem;
+        }
+        .link {
+          transition: all 0.5s ease-in-out;
+          position: relative;
+          top: 0;
+          .tag {
+            text-transform: capitalize;
+            // color: var(--color-alizarin);
+            // font: var(--font-soleto-bold);
+            font-size: 1.1rem;
+          }
+          &:hover {
+            top: -0.1rem;
+          }
+        }
+      }
+    }
+    .fill-space {
+      grid-row: 1;
+      grid-column: 3;
+      height: 2rem;
+      width: 3rem;
+    }
+  }
+  // @media (max-width: 1023px) {
+  //   .hero {
+  //     height: calc(var(--window-height) * .5);
+  //     padding: 5vw 22vw 5vw 5vw;
+  //     .title {
+  //       // font-size: 10vw;
+  //       // margin-bottom: 0;
+  //     }
+  //   }
+  //   .article {
+  //     display: unset;
+  //     grid-template-columns: unset;
+  //     margin: unset;
+  //     .back {
+  //       padding: 3rem;
+  //       margin-left: 1rem;
+  //     }
+  //     .container {
+  //       column-count: unset;
+  //       column-gap: unset;
+  //       padding: 0 10vw 10vw;
+  //       .body {
+  //         max-width: unset;
+  //         grid-column: 2;
+  //         > blockquote {
+  //           margin-left: 0;
+  //           margin-right: 0;
+  //           > blockquote {
+  //             margin-left: 0;
+  //             margin-right: 0;
+  //           }
+  //         }
+  //       }
+  //     }
+  //     .fill-space {
+  //       display: none;
+  //     }
+  //   }
+  // }
+}

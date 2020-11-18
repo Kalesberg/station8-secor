@@ -2,6 +2,7 @@ const path = require('path')
 const slugify = require('slugify')
 
 const articleTemplate = path.resolve('./src/templates/article/article.tsx')
+const videoTemplate = path.resolve('./src/templates/video/video.tsx')
 const formTemplate = path.resolve('./src/templates/form/form.tsx')
 const careerTemplate = path.resolve('./src/templates/career/career.tsx')
 const pageTemplate = path.resolve('./src/templates/page/page.tsx')
@@ -16,11 +17,32 @@ module.exports.onCreateNode = ({ node, actions }) => {
       name: 'slug',
       value: slug
     })
+    if (node.frontmatter.type === 'video') {
+      createNodeField({
+        node,
+        name: 'url',
+        value: '/news-and-resources/videos/' + slug
+      })
+    }
+    if (node.frontmatter.type === 'form') {
+      createNodeField({
+        node,
+        name: 'url',
+        value: '/news-and-resources/forms/' + slug
+      })
+    }
+    if (node.frontmatter.type === 'article') {
+      createNodeField({
+        node,
+        name: 'url',
+        value: '/news-and-resources/blog/' + slug
+      })
+    }
   }
 }
 
 module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
-  const { data: { articles: { nodes: articles }, careers: { nodes: careers }, forms: { nodes: forms }, pages: { nodes: pages }, pageFiles: { nodes: pageFiles }, categories: { nodes: categories }, menus: { nodes: menus }, submenus: { nodes: submenus }, options: { nodes: options }, products: { nodes: products } } } = await graphql(`
+  const { data: { articles: { nodes: articles }, careers: { nodes: careers }, forms: { nodes: forms }, pages: { nodes: pages }, categories: { nodes: categories }, menus: { nodes: menus }, submenus: { nodes: submenus }, options: { nodes: options }, products: { nodes: products }, videos: { nodes: videos } } } = await graphql(`
   {
     pages: allPagesJson {
       nodes {
@@ -28,22 +50,17 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         slug
       }
     }
-    pageFiles: allFile(filter: {relativeDirectory: {eq: "pages"}}) {
-      nodes {
-        relativePath
-        childPagesJson {
-          slug
-          title
-        }
-      }
-    }
     articles: allMarkdownRemark(filter: {frontmatter: {type: {eq: "article"}}}) {
       nodes {
         fields {
           slug
         }
-        frontmatter {
-          parent
+      }
+    }
+    videos: allMarkdownRemark(filter: {frontmatter: {type: {eq: "video"}}}) {
+      nodes {
+        fields {
+          slug
         }
       }
     }
@@ -212,6 +229,16 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
       }
     })
 
+    if (getFilePath(page) === '/news-and-resources') {
+      ['blog', 'videos', 'literature', 'forms'].forEach(view => createPage({
+        component: pageTemplate,
+        path: getFilePath(page) + '/' + view,
+        context: {
+          title: page.title
+        }
+      }))
+    }
+
     if (getFilePath(page) === '/account') {
       ['info', 'quotes', 'forms', 'login', 'register', 'recover'].forEach(view => createPage({
         component: pageTemplate,
@@ -221,16 +248,6 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
         }
       }))
     }
-  })
-
-  forms.forEach(form => {
-    createPage({
-      component: formTemplate,
-      path: `/news-and-resources/forms/${form.fileAbsolutePath.split('/').pop().replace('.md', '')}`,
-      context: {
-        title: form.frontmatter.title
-      }
-    })
   })
 
   careers.forEach(career => {
@@ -247,14 +264,33 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
 
   articles.forEach(article => {
     const slug = article.fields.slug
-    const parent = pageFiles.find(page => article.frontmatter.parent.includes(page.relativePath)).childPagesJson
-    const path = `/${parent.slug === '/' ? '' : parent.slug || slugify(parent.title).toLowerCase()}` + `${parent.slug === '/' ? '' : '/'}` + slug
     createPage({
       component: articleTemplate,
+      path: '/news-and-resources/blog/' + slug,
+      context: {
+        slug
+      }
+    })
+  })
+
+  forms.forEach(form => {
+    createPage({
+      component: formTemplate,
+      path: `/news-and-resources/forms/${form.fileAbsolutePath.split('/').pop().replace('.md', '')}`,
+      context: {
+        title: form.frontmatter.title
+      }
+    })
+  })
+
+  videos.forEach(video => {
+    const slug = video.fields.slug
+    const path = '/news-and-resources/videos/' + slug
+    createPage({
+      component: videoTemplate,
       path,
       context: {
-        slug,
-        parent: article.frontmatter.parent
+        slug
       }
     })
   })

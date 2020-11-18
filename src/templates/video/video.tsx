@@ -1,25 +1,20 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Moment from 'react-moment'
-
-import { Image } from '../../functions'
+import ReactPlayer from 'react-player'
 
 import { Layout } from '../../components'
-import { ArticlesGrid } from '../../components/main/blocks'
 
-import styles from './article.module.scss'
+import styles from './video.module.scss'
 
 export default ({
   data: {
     markdownRemark: {
-      fields: {
-        url
-      },
       frontmatter: {
         date,
-        heroImage,
         title,
-        summary
+        summary,
+        video
       },
       html
     }
@@ -28,7 +23,7 @@ export default ({
 }) => (
   <Layout title={title} location={location}>
     <article className={styles.articleContainer}>
-      <Image src={heroImage.relativePath} className={styles.hero} container='div'>
+      <div className={styles.hero}>
         <div className={styles.text}>
           <p className={styles.date}>
             <span>Posted&nbsp;
@@ -38,15 +33,13 @@ export default ({
           <h1 className={styles.title}>{title}</h1>
           <p className={styles.excerpt}>{summary}</p>
         </div>
-      </Image>
+      </div>
       <section className={styles.article}>
-        <Link className={styles.back} to='/press' />
         <div className={styles.container}>
+          <ReactPlayer style={{ objectFit: 'contain' }} wrapper={styles.videoContainer} className={styles.reactPlayer} url={video} width='100%' height='100%' />
           <div className={styles.body} dangerouslySetInnerHTML={{ __html: html }} />
         </div>
-        <div className={styles.fillSpace} />
       </section>
-      <ArticlesGrid block={{}} limit={3} root={url} location={location} menu={false} />
     </article>
   </Layout>
 )
@@ -55,15 +48,13 @@ export const pageQuery = graphql`
 query ($slug: String!) {
   markdownRemark(fields: {slug: {eq: $slug}}) {
     fields {
-      url
+      slug
     }
     frontmatter {
       title
       date
-      heroImage {
-        relativePath
-      }
       summary
+      video
     }
     html
   }
