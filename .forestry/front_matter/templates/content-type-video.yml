@@ -29,6 +29,8 @@ fields:
   config:
     required: true
   label: Video URL
+  description: Your link must be to a public or unlisted YouTube video and must be
+    in the format <em>https://youtu.be/XXXXXX.</em>
 - name: type
   type: text
   config:
