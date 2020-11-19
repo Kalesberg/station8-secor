@@ -93,5 +93,3 @@ fields:
     max: 
     step: 
   description: If set to '0', the position will not display.
-pages:
-- ".forestry/content/careers/position-title.json"
