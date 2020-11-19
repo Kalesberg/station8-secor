@@ -1,8 +1,8 @@
 ---
-date: 2020-11-17T04:32:36Z
+date: 2020-11-19T06:00:00Z
 type: video
-title: Video 5
-summary: This is the fifth sample video
-video: https://youtu.be/TT6BC68UzeY
+title: 'FSEQ Rotary Peeler '
+summary: 'FSEQ Rotary Peeler '
+video: https://www.youtube.com/watch?v=r-AmRuG8DEA
 
 ---
