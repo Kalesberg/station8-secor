@@ -39,6 +39,7 @@ fields:
   hidden: true
   default: video
 pages:
+- ".forestry/content/videos/side-bend-test.md"
 - ".forestry/content/videos/video-1.md"
 - ".forestry/content/videos/video-2.md"
 - ".forestry/content/videos/video-3.md"
