@@ -1,8 +1,8 @@
 ---
-date: 2020-11-17T04:31:36Z
+date: 2020-11-17T04:31:36.000+00:00
 type: video
-title: Video 4
-summary: This is the fourth sample video
-video: https://youtu.be/YV6U-PcSTps
+title: Mustang Squeeze Tools
+summary: 'Please watch this Mustang Squeeze Tool Training Video '
+video: " https://www.youtube.com/watch?v=j-4hVfdZJQs"
 
 ---
