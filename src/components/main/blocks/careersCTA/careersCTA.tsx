@@ -130,7 +130,7 @@ export default ({ block = settings, position = '' }) => {
         <p className={styles.text}>{block.ctaText}</p>
         <div className={styles.buttonContainer}>
           {block.buttonType === 'Contact' ? (
-            <div className={styles.button} onClick={scrollDown}>General inquiry</div>
+            <div className={styles.button} onClick={scrollDown}>Share my experience</div>
           ) : (
             <Link className={styles.button} to='/careers'>See all openings</Link>
           )}
