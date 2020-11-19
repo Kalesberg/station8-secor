@@ -1,8 +1,8 @@
 ---
-date: 2020-11-17T04:28:58Z
+date: 2020-11-17T04:28:58.000+00:00
 type: video
-title: Video 1
-summary: This is the first sample video
-video: https://youtu.be/-2bdxKM5bis
+title: Regent 5230T 4" Squeeze Tool
+summary: 'Regent Tool 5230T 4" Squeeze Tool '
+video: https://www.youtube.com/watch?v=SxxeWw6v-l8&t=16s
 
 ---
