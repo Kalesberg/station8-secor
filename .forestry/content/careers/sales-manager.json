@@ -1,12 +1,12 @@
 {
-  "title": "Sales Manager",
+  "title": "Accounts Payable ",
   "slug": "",
-  "location": "Tulsa OK",
-  "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.",
+  "location": "Houston TX",
+  "description": "SECOR, a leading distributor of High Density Polyethylene pipe, McElroy Fusion Equipment, and a manufacturer of custom fabricated fittings has an opening for a Inside Sales Representative at our headquarters in Houston, TX. This position is full-time, includes health/dental benefits, as well as a 401-K with paid time off. Applicants must be detail oriented, organized, and be a self starting individual.",
   "body": [
     {
       "heading": "Responsibilities",
-      "text": "Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.\n\nMorbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl."
+      "text": "<p>-Servicing incoming calls from customers</p><p>-Reaching out to potential customers to gather new business</p><p>-Entering all customers information and interactions into Salesforce</p><p>-Processing sales orders</p><p>-Assisting all Outside Sales Representatives with sales orders/quotes/various requests</p><p>-Effectively communicating to other SECOR branch offices on a daily basis</p>"
     },
     {
       "heading": "Requirements",
@@ -15,5 +15,5 @@
   ],
   "type": "",
   "openings": 1,
-  "department": "Sales"
+  "department": "Customer Support"
 }
