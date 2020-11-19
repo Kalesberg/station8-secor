@@ -12,6 +12,11 @@ fields:
   config:
     required: true
   label: CTA Text
+- name: ctaButtonLabel
+  type: text
+  config:
+    required: true
+  label: CTA Button Label
 - name: background
   type: file
   config:
