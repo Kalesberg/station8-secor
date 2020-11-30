@@ -97,3 +97,8 @@ fields:
     max: 
     labelField: 
   label: Extra Buttons
+- name: anchor
+  type: text
+  config:
+    required: false
+  label: Anchor
