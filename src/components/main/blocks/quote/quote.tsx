@@ -93,6 +93,11 @@ export default () => {
       if (res.ok) {
         // const data = await res.json()
         context.setQuote([])
+        setCustomerInfo({
+          ...customerInfo,
+          requirements: ''
+        })
+        setAttachment(undefined)
       }
     }
   }
@@ -164,8 +169,12 @@ export default () => {
     setAttachment({ url: json.url })
     setFileName(file.name)
   }
+
+  const handleClearSearch = () => setSearchTerm('')
+
   return context && context.menu && context.menu.length ? (
     <section className={styles.section}>
+      <div className={styles.cover + `${!searchTerm ? ` ${styles.hide}` : ''}`} onClick={handleClearSearch} />
       <div className={styles.header}>
         <button className={styles.label + ` ${active === 'customer' && width <= 600 ? `${styles.active}` : ''}`} onClick={() => setActive('customer')}>
           Customer Info<div className={styles.underline} />
@@ -343,7 +352,7 @@ export default () => {
                     setSearchTerm('')
                   }
                 }
-                console.log(product)
+
                 return (
 
                   <div className={styles.result} key={i}>
