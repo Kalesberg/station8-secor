@@ -34,7 +34,8 @@
       ],
       "extraButtons": [
 
-      ]
+      ],
+      "anchor": "#get-info"
     },
     {
       "template": "main-block-training",

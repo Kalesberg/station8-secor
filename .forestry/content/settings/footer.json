@@ -104,11 +104,15 @@
       "links": [
         {
           "icon": "/.forestry/content/images/linkedin.svg",
-          "url": "https://www.linkedin.com/company/secor-houston"
+          "url": "https://www.linkedin.com/company/secorhdpespecialists"
         },
         {
           "icon": "/.forestry/content/images/youtube.svg",
-          "url": "https://www.youtube.com/channel/UCW-tHxgcILcdCGqAy15J45Q/feed"
+          "url": "https://www.youtube.com/channel/UCW-tHxgcILcdCGqAy15J45Q"
+        },
+        {
+          "icon": "/.forestry/content/images/ig.svg",
+          "url": "https://www.instagram.com/secor_hdpespecialists/"
         }
       ]
     },
