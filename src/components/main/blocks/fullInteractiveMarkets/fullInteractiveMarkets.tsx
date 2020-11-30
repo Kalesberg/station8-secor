@@ -78,7 +78,7 @@ export default ({ block }) => {
   }
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="markets">
       <div className={styles.backgroundContainer}>
         {block.market && block.market.map((market, i) => {
           return (

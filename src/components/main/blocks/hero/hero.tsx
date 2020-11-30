@@ -8,11 +8,13 @@ import styles from './hero.module.scss'
 
 export default ({ block }) => {
   const pageLink = block.buttonLink ? link(block.buttonLink) : null
-
+  console.log(pageLink)
   return (
     <div className={styles.container + `${block.video ? ` ${styles.video}` : ''}`}>
       {block.video ? (
-        <ReactPlayer style={{ objectFit: 'cover' }} wrapper={styles.hero} config={{ wistia: { options: { endVideoBehavior: 'loop', muted: true, fitStrategy: 'cover' } } }} playing muted url='https://station8branding.wistia.com/medias/lng6o2vfr1' />
+        <div className={styles.hero}>
+          <video className={styles.hero} poster="cover.png" playsInline autoPlay muted loop src={"/homeversion7new.mp4"} />
+        </div>
       ) : (
         <div className={styles.hero}>
           <Image className={styles.image} src={block.image} />
@@ -26,7 +28,7 @@ export default ({ block }) => {
           )
         })}
         {block.buttonText && pageLink &&
-          <Link to={pageLink}>
+          <Link to={block.anchor ? (pageLink + block.anchor) : pageLink}>
             <button className={styles.button}>{block.buttonText}
               <span>
                 {block.buttonIcon && (

@@ -27,7 +27,8 @@
       ],
       "extraButtons": [
 
-      ]
+      ],
+      "anchor": ""
     },
     {
       "template": "main-product-descriptions",
@@ -209,7 +210,7 @@
         }
       ],
       "buttonText": "See all markets",
-      "buttonLink": "/why-hdpe#markets",
+      "buttonLink": "/locations",
       "icon": "/.forestry/content/images/arrow-right.svg"
     },
     {

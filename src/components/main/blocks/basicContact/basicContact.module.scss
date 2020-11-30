@@ -123,6 +123,13 @@
         }
       }
     }
+    .message {
+      color: red;
+      width: 100%;
+      text-align: center;
+      margin-top: 3vw;
+      font-size: 1vw;
+    }
   }
 }
 @media (max-width: 1023px) {
@@ -160,6 +167,10 @@
             }
           }
         }
+      }
+      .message {
+        font-size: 1.8vw;
+        margin-top: 7.5vw;
       }
     }
   }
@@ -226,6 +237,10 @@
             }
           }
         }
+      }
+      .message {
+        font-size: 3.5vw;
+        margin-top: 10vw;
       }
     }
   }

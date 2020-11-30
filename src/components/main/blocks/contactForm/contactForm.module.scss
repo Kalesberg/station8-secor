@@ -88,6 +88,12 @@
         background-color: rgb(51, 47, 47);
       }
     }
+    .message {
+      color: white;
+      font-size: 1vw;
+      text-align: center;
+      width: 100%;
+    }
   }
 }
 @media (max-width: 1023px) {
@@ -180,12 +186,15 @@
           border: none;
           color: white;
           background-color: black;
-          font-size: 1vw;
+          font-size: 1.5vw;
           font-weight: bold;
         }
         .button:hover {
           background-color: rgb(51, 47, 47);
         }
+      }
+      .message {
+        font-size: 1.5vw;
       }
     }
   }
@@ -289,6 +298,10 @@
         .button:hover {
           background-color: rgb(51, 47, 47);
         }
+      }
+      .message {
+        font-size: 3.5vw;
+        margin-top: 5vw;
       }
     }
   }

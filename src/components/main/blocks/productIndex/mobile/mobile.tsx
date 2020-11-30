@@ -212,7 +212,7 @@ export default ({ location }) => {
               }
               return (
                 <div key={product.recordId} className={styles.product}>
-                  <div className={styles.image} style={{ backgroundImage: `url(${product.images && product.images[0]})` }} />
+                  <Link to={product.path}><div className={styles.image} style={{ backgroundImage: `url(${product.images && product.images[0]})` }} /></Link>
                   <div className={styles.detail}>
                     <Link className={styles.name} to={product.path}>{product.name}</Link>
                     <p className={styles.description}>{product.summary}</p>
