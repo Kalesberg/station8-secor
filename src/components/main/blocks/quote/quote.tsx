@@ -33,6 +33,8 @@ export default () => {
   const [markdown, setMarkdown] = useState('')
   const [active, setActive] = useState('customer')
   const [width, setWidth] = useState(window.innerWidth)
+  const [errorMsg, setErrorMsg] = useState('')
+  const [quoteSubmitted, setQuoteSubmitted] = useState(false)
 
   const handleSetSearchTerm = e => {
     setSearchTerm(e.target.value)
@@ -78,7 +80,7 @@ export default () => {
     }
   })
   const handleSubmitQuote = async e => {
-    if (typeof window !== 'undefined' && customerInfo.name && customerInfo.company && customerInfo.phone && customerInfo.email) {
+    if (typeof window !== 'undefined' && customerInfo.name && customerInfo.company && customerInfo.phone && customerInfo.email && (customerInfo.requirements || attachment || context.quote.length)) {
       e.preventDefault()
       const res = await window.fetch('/.netlify/functions/quote', {
         method: 'POST',
@@ -91,14 +93,24 @@ export default () => {
         })
       })
       if (res.ok) {
-        // const data = await res.json()
         context.setQuote([])
         setCustomerInfo({
           ...customerInfo,
           requirements: ''
         })
         setAttachment(undefined)
+        setQuoteSubmitted(true)
       }
+    } else if (!customerInfo.name) {
+      setErrorMsg('Name required')
+    } else if (!customerInfo.company) {
+      setErrorMsg('Company required')
+    } else if (!customerInfo.email) {
+      setErrorMsg('Email required')
+    } else if (!customerInfo.phone) {
+      setErrorMsg('Phone number required')
+    } else if (!customerInfo.requirements && !attachment && !context.quote.length) {
+      setErrorMsg('Items to quote required')
     }
   }
 
@@ -119,11 +131,15 @@ export default () => {
     const newCustomerInfo = { ...customerInfo }
     newCustomerInfo[e.target.id] = e.target.value
     setCustomerInfo(newCustomerInfo)
+    setErrorMsg('')
+    setQuoteSubmitted(false)
   }
 
   const handleFileChange = e => {
     if (e.target.files.length) {
       handleFiles(e.target.files[0])
+      setErrorMsg('')
+      setQuoteSubmitted(false)
     }
   }
 
@@ -149,6 +165,7 @@ export default () => {
     preventDefaults(e)
     unhighlight()
     handleFiles(e.dataTransfer.files[0])
+    setQuoteSubmitted(false)
   }
   const removeFile = () => {
     setAttachment(undefined)
@@ -310,7 +327,7 @@ export default () => {
           </>
         ) : (
           <div className={styles.emptyContainer}>
-            <h1 className={styles.emptyTitle}>Below ground. Above expectations</h1>
+            <h1 className={styles.emptyTitle}>{quoteSubmitted ? 'Quote successfully submitted!' : 'Below ground. Above expectations'}</h1>
             <p className={styles.emptyBody}>Add items to start a new quote</p>
           </div>
         )}
@@ -370,7 +387,7 @@ export default () => {
               }) : <p className={styles.error}>No items found</p>}
             </div>
           </div>
-          <button className={styles.submit} onClick={handleSubmitQuote}>Submit Quote</button>
+          <button className={styles.submit} onClick={handleSubmitQuote}>{errorMsg || 'Submit Quote'}</button>
         </div>
         <button className={styles.mobileSubmit} onClick={handleSubmitQuote}>Submit Quote</button>
         <div className={styles.mobileSpecial}>

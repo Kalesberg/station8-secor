@@ -10,7 +10,7 @@ exports.handler = async (event, context, callback) => {
     {
       fields: {
         Status: 'Pending',
-        Customer: [body.user],
+        Customer: body.user ? [body.user] : null,
         'Full Name': body.customer.name,
         Email: body.customer.email,
         Company: body.customer.company,
