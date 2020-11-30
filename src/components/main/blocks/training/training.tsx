@@ -44,7 +44,7 @@ export default ({ block }) => {
           <div key={i} className={styles.training + ` ${selected.toLowerCase() === training.category.toLowerCase() ? `${styles.trainingShow}` : ''}`}>
             {training.image && <Image className={styles.image} src={training.image} />}
             <div className={styles.textContainer}>
-              <p>{training.description && parse(training.description)}</p>
+              <div>{training.description && parse(training.description)}</div>
               {training.buttonText && training.buttonLink &&
                 <Link to={training.buttonLink}>
                   <button className={styles.button}>{training.buttonText}

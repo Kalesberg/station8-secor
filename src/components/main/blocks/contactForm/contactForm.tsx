@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import styles from './contactForm.module.scss'
 import { Image } from '../../../../functions'
 
 export default ({ block }) => {
   const [state, setState] = useState({})
   const [submitFailed, setSubmitFailed] = useState(false)
+  const [message, setMessage] = useState("")
+  const ref = useRef(null);
 
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value })
@@ -17,7 +19,9 @@ export default ({ block }) => {
       body: JSON.stringify({ ...state })
     }).then(async res => {
       if (res.ok) {
-        setState({})
+        setState({});
+        ref.current.reset();
+        setMessage("Form has been submitted.")
       } else {
         const response = await res.json()
         console.log(response.message)
@@ -43,7 +47,7 @@ export default ({ block }) => {
       <div className={styles.container}>
         <h2>{block.heading && block.heading}</h2>
         <div className={styles.form}>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} ref={ref}>
             {block.inputs && block.inputs.map((input, i) => {
               return (
                 <div className={styles.input} key={i}>
@@ -65,7 +69,7 @@ export default ({ block }) => {
             <button className={styles.button}>{block.buttonText && block.buttonText}</button>
           </form>
         </div>
-        <p className={styles.message} />
+        <p className={styles.message}>{message}</p>
       </div>
     </section>
   )

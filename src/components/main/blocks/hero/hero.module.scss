@@ -7,7 +7,6 @@
     background-image: url('/cover.png');
     background-position: center center;
     background-size: cover;
-    pointer-events: none;
   }
   .hero {
     video, img {
@@ -216,7 +215,7 @@
         font-style: italic;
       }
       .heroTextMedium {
-        font-size: 12vw;
+        font-size: 10vw;
         font-weight: 900;
         font-style: italic;
       }
