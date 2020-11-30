@@ -8,7 +8,6 @@ export default ({ block }) => {
   const [selected, setSelected] = useState(block.markets && block.markets.length > 0 ? block.markets[0].market : '')
   const [target, setTarget] = useState(null)
   const container = useRef(null)
-  const pageLinkOne = block.buttonLink ? link(block.buttonLink) : null
 
   const handleClick = e => {
     setSelected(e.target.innerText)
@@ -68,8 +67,8 @@ export default ({ block }) => {
         </div>
       </div>
       <div className={styles.buttonContainer}>
-        {block.buttonText && pageLinkOne && (
-          <Link to={pageLinkOne}>
+        {block.buttonText && block.buttonLink && (
+          <Link to={block.buttonLink}>
             <button className={styles.button}>{block.buttonText}
               <span>
                 {block.icon && (
