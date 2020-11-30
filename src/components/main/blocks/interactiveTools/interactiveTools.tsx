@@ -5,7 +5,7 @@ import styles from './interactiveTools.module.scss'
 
 export default ({ block }) => {
   const [selected, setSelected] = useState(block.tools && block.tools.length > 0 ? block.tools[0].category : '')
-
+  console.log(block)
   return (
     <section className={styles.section}>
       <div className={styles.top}>
@@ -36,7 +36,7 @@ export default ({ block }) => {
                     </button>
                   </Link>
                   {tool.buttonTextTwo &&
-                    <Link to={tool.buttonLink}>
+                    <Link to={tool.buttonLinkTwo}>
                       <button className={styles.button}>{tool.buttonTextTwo && tool.buttonTextTwo}
                         <span>
                           {block.buttonIcon && (
