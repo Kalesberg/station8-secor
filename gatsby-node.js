@@ -143,7 +143,9 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
             }
           }
           Brochure_Manual {
-            url
+            localFiles {
+              publicURL
+            }
           }
           Menu
           Options
@@ -195,7 +197,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
           id: product.id,
           recordId: product.recordId,
           order: product.data.Order,
-          documents: product.data.Brochure_Manual && product.data.Brochure_Manual.length ? product.data.Brochure_Manual.map(document => document.url) : [],
+          documents: product.data.Brochure_Manual && product.data.Brochure_Manual.localFiles && product.data.Brochure_Manual.localFiles.length ? product.data.Brochure_Manual.localFiles.map(document => document.publicURL) : [],
           images: product.data.Images && product.data.Images.localFiles && product.data.Images.localFiles.length ? product.data.Images.localFiles.map(image => image.publicURL) : [],
           name: product.data.Name,
           slug: slugify(product.data.Name).toLowerCase(),

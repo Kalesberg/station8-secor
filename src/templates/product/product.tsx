@@ -19,7 +19,7 @@ export default ({ location, data: { options: { nodes: allOptions }, product: pro
     id: productData.id,
     recordId: productData.recordId,
     order: productData.data.Order,
-    documents: productData.data.Brochure_Manual && productData.data.Brochure_Manual.length ? productData.data.Brochure_Manual.map(document => document.url) : [],
+    documents: productData.data.Brochure_Manual && productData.data.Brochure_Manual.localFiles && productData.data.Brochure_Manual.localFiles.length ? productData.data.Brochure_Manual.localFiles.map(document => document.publicURL) : [],
     images: productData.data.Images && productData.data.Images.localFiles && productData.data.Images.localFiles.length ? productData.data.Images.localFiles.map(image => image.publicURL) : [],
     name: productData.data.Name,
     path: location.pathname,
@@ -119,7 +119,7 @@ export default ({ location, data: { options: { nodes: allOptions }, product: pro
               {product.description && <div className={styles.description}>{parse(marked(product.description))}</div>}
               {product.documents && product.documents.length ? (
                 <div className={styles.pdfContainer}>
-                  <Link className={styles.pdf} to={product.documents[0]}>PDF</Link>
+                  <a className={styles.pdf} href={product.documents[0]}>PDF</a>
                 </div>
               ) : null}
               <div className={styles.options}>
@@ -228,7 +228,9 @@ query ($recordId: String!) {
         }
       }
       Brochure_Manual {
-        url
+        localFiles {
+          publicURL
+        }
       }
       Menu
       Options
