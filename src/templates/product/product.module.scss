@@ -117,7 +117,6 @@
           margin-top: 4vw;
           display: grid;
           gap: 0.5vw;
-          // width: 30vw;
           .option {
             display: grid;
             grid-auto-flow: column;
@@ -135,7 +134,7 @@
               font-weight: 700;
               background-color: white !important;
               border: 1px solid #d0cfcf;
-              text-align: center;
+              text-align: left;
             }
           }
         }
@@ -356,7 +355,6 @@
           .options {
             margin-top: 4vw;
             display: block;
-            // width: 30vw;
             .option {
               display: block;
               margin-bottom: 5vw;

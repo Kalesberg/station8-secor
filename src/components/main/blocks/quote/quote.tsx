@@ -243,9 +243,11 @@ export default () => {
               {context.quote.map((product, i) => {
                 const productMissingInfo = () => !!Object.keys(product.options).find(key => !product.options[key])
                 const handleQuantity = e => {
-                  const quote = [...context.quote]
+                  if (e.target.value) {
+                    const quote = [...context.quote]
                   quote[i].quantity = parseInt(e.target.value)
                   context.setQuote(quote)
+                  }
                 }
                 const handleNotes = e => {
                   const quote = [...context.quote]
