@@ -13,6 +13,7 @@ query ($title: String!) {
     title
     type
     blocks {
+      anchor
       contactFullPageHeading
       contactFullPageSubheading
       video

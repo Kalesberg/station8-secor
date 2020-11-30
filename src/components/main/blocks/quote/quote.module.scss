@@ -102,6 +102,12 @@
         }
       }
     }
+    .lookingFor {
+      color: #4A4A4A;
+      font-size: 1vw;
+      padding: 1vw;
+      display: block;
+    }
   }
   .quote-builder {
     padding: 0 3vw 3vw 0;
@@ -118,6 +124,9 @@
         font-weight: 700;
         color: #525252;
       }
+    }
+    .mobileLookingFor {
+      display: none;
     }
   }
   .products {
@@ -543,6 +552,9 @@
       &.active {
         display: block;
       }
+      .lookingFor {
+        display: none;
+      }
     }
     .quote-builder {
       padding: 0 3vw 3vw 0;
@@ -634,7 +646,8 @@
           // background-color: blue;
         }
       }
-      .lookingFor {
+      .mobileLookingFor {
+        display: block;
         color: #4A4A4A;
         font-size: 5vw;
         padding: 5vw;
@@ -649,6 +662,7 @@
         border-radius: 50%;
         margin-left: 8vw;
         margin-bottom: 5vw;
+        cursor: pointer;
         input[type=file] {
           display: none;
         }
@@ -657,6 +671,10 @@
           margin: 0;
           display: grid;
           align-items: center;
+          cursor: pointer;
+        }
+        .attachments {
+          cursor: pointer;
         }
       }
       .mobileFile {
