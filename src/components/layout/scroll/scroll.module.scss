@@ -6,7 +6,9 @@
   left: 0;
   width: 100%;
   height: 4vw;
+  pointer-events: none;
   .scroll {
+    pointer-events: all;
     cursor: pointer;
     width: 4vw;
     height: 4vw;
@@ -16,7 +18,9 @@
   @media (max-width: 600px) {
     bottom: 3vw;
     height: 10vw;
+    pointer-events: none;
     .scroll {
+      pointer-events: all;
       width: 8vw;
       height: 8vw;
     }
