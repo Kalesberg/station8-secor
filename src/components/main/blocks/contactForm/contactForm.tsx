@@ -8,15 +8,25 @@ export default ({ block }) => {
   const [message, setMessage] = useState("")
   const ref = useRef(null);
 
+  useEffect(() => {
+    console.log('state', state)
+  }, [state])
+
+
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value })
   }
 
   const handleSubmit = e => {
     e.preventDefault()
-    window.fetch('/.netlify/functions/submit', {
+    window.fetch('/.netlify/functions/contact', {
       method: 'POST',
-      body: JSON.stringify({ ...state })
+      body: JSON.stringify({
+        email: state['Email'],
+        requirements: state['Message'],
+        name: state['Contact Name'],
+        phone: state['Phone']
+      })
     }).then(async res => {
       if (res.ok) {
         setState({});
