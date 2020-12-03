@@ -5,13 +5,13 @@ import { Image } from '../../../../functions'
 export default ({ block }) => {
   const [state, setState] = useState({})
   const [submitFailed, setSubmitFailed] = useState(false)
-  const [message, setMessage] = useState("")
-  const ref = useRef(null);
+  const [message, setMessage] = useState('')
+  const [errorMsg, setErrorMsg] = useState('')
+  const ref = useRef(null)
 
   useEffect(() => {
     console.log('state', state)
   }, [state])
-
 
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value })
@@ -19,25 +19,36 @@ export default ({ block }) => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    window.fetch('/.netlify/functions/contact', {
-      method: 'POST',
-      body: JSON.stringify({
-        email: state['Email'],
-        requirements: state['Message'],
-        name: state['Contact Name'],
-        phone: state['Phone']
+    if (state !== {} && state.Email && state.Message && state['Contact Name'] && state.Phone) {
+      setErrorMsg('')
+      window.fetch('/.netlify/functions/contact', {
+        method: 'POST',
+        body: JSON.stringify({
+          email: state.Email,
+          requirements: state.Message,
+          name: state['Contact Name'],
+          phone: state.Phone
+        })
+      }).then(async res => {
+        if (res.ok) {
+          setState({})
+          ref.current.reset()
+          setMessage('Form has been submitted.')
+        } else {
+          const response = await res.json()
+          console.log(response.message)
+        }
       })
-    }).then(async res => {
-      if (res.ok) {
-        setState({});
-        ref.current.reset();
-        setMessage("Form has been submitted.")
-      } else {
-        const response = await res.json()
-        console.log(response.message)
-      }
-    })
-    console.log(state)
+      console.log(state)
+    } else if (!state['Contact Name']) {
+      setErrorMsg('Name required')
+    } else if (!state.Email) {
+      setErrorMsg('Email required')
+    } else if (!state.Phone) {
+      setErrorMsg('Phone required')
+    } else if (!state.Message) {
+      setErrorMsg('Phone number required')
+    }
   }
 
   useEffect(() => {
@@ -68,7 +79,7 @@ export default ({ block }) => {
                         <Image className={styles.icon} src={input.icon} />
                       )}
                     </div>
-                    <input className={styles.field} id={input.label} name={input.label} onChange={handleChange} />
+                    <input className={styles.field} id={input.label} name={input.label} onChange={handleChange} required />
                   </div>
                 </div>
               )
@@ -76,7 +87,7 @@ export default ({ block }) => {
             {/* <div className={styles.recaptchContainer}>
               <Recaptcha size="compact" ref={recaptchaRef} sitekey='6LejSb8ZAAAAANY1Lq_C3JSTs_WwPBdDy5UeqC7U' onChange={handleCaptchaChange} />
             </div> */}
-            <button className={styles.button}>{block.buttonText && block.buttonText}</button>
+            <button className={styles.button}>{errorMsg || (block.buttonText && block.buttonText)}</button>
           </form>
         </div>
         <p className={styles.message}>{message}</p>
