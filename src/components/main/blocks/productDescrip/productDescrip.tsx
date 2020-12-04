@@ -4,7 +4,7 @@ import styles from './productDescrip.module.scss'
 import { Image, link } from '../../../../functions'
 
 export default ({ block }) => {
-  const [selected, setSelected] = useState(block.product && block.product.length > 0 ? block.product[0].category : '')
+  const [selected, setSelected] = useState(block.product && block.product.length > 0 ? block.product[0] : '')
   const [height, setHeight] = useState(null)
   const highlighter = useRef(null)
   const container = useRef(null)
@@ -15,7 +15,7 @@ export default ({ block }) => {
   const pageLinkTwo = block.buttonTwo ? link(block.buttonTwo.buttonTwoLink) : null
 
   const handleClick = (e) => {
-    setSelected(e.target.innerText)
+    setSelected(block.product.filter(prod => prod.category === e.target.innerText)[0])
     const targetHeight = e.target.offsetHeight
     const highlightBoundary = highlighter.current.getBoundingClientRect()
     const selectedBoundary = e.target.getBoundingClientRect()
@@ -66,7 +66,7 @@ export default ({ block }) => {
             return (
               <div
                 key={i} className={styles.category + ` ${prod.category &&
-                (selected === prod.category || (!selected && i === 0)) ? `${styles.categorySelected}` : ''}`}
+                (selected === prod || (!selected && i === 0)) ? `${styles.categorySelected}` : ''}`}
                 onClick={handleClick}
               >{prod.category && prod.category}
               </div>
@@ -87,13 +87,13 @@ export default ({ block }) => {
           <div className={styles.selectButtons}>
             {block.product.map((prod, i) => {
               return (
-                <button key={i} onClick={handleClick} className={styles.selectButton + ` ${selected === prod.category ? `${styles.active}` : ''}`}>{prod.category}</button>
+                <button key={i} onClick={handleClick} className={styles.selectButton + ` ${selected === prod ? `${styles.active}` : ''}`}>{prod.category}</button>
               )
             })}
           </div>
           {block.product && block.product.length > 0 && block.product.map((prod, i) => {
             return (
-              <div key={i} className={styles.info + ` ${prod.category && selected === prod.category ? `${styles.infoShow}` : ''}`}>
+              <div key={i} className={styles.info + ` ${prod.category && selected === prod ? `${styles.infoShow}` : ''}`}>
                 <div className={styles.imgContainer}>
                   <Image className={styles.image} src={prod.image && prod.image} />
                 </div>
@@ -105,9 +105,9 @@ export default ({ block }) => {
               </div>
             )
           })}
-          {block.buttonTwo && pageLinkTwo &&
-            <Link className={styles.buttonContainer} to={pageLinkTwo}>
-              <button className={styles.buttonTwo}>{block.buttonTwo.buttonTwoText}
+          {block.buttonTwo &&
+            <Link className={styles.buttonContainer} to={selected.link}>
+              <button className={styles.buttonTwo}>{selected.buttonText}
                 <span>
                   {block.buttonTwo.buttonTwoIcon && (
                     <Image className={styles.icon} src={block.buttonTwo.buttonTwoIcon} />
