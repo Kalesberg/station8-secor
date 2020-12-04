@@ -3,10 +3,10 @@
    margin-bottom: 9vw;
    overflow: visible;
    padding: 0;
-   height: 95vh;
+   height: 55vw;
   .top {
     position: relative;
-    height: 95vh;
+    height: 55vw;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -18,7 +18,7 @@
       transition: all .7s;
       img {
         object-fit: cover;
-        height: 95vh;
+        height: 55vw;
         width: 100%;
         filter: brightness(50%);
       }
@@ -220,10 +220,10 @@
     margin-bottom: 9vw;
     overflow: visible;
     padding: 0;
-    height: 95vh;
+    height: 55vw;
    .top {
      position: relative;
-     height: 95vh;
+     height: 55vw;
      width: 100%;
      margin: 0;
      padding: 0;
@@ -235,7 +235,7 @@
        transition: all .7s;
        img {
          object-fit: cover;
-         height: 95vh;
+         height: 55vw;
          width: 100%;
          filter: brightness(50%);
        }

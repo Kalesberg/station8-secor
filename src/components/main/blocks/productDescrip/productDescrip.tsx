@@ -72,12 +72,12 @@ export default ({ block }) => {
               </div>
             )
           })}
-          {block.buttonOne && pageLinkOne &&
-            <Link to={pageLinkOne}>
-              <button className={styles.button}>{block.buttonOne.buttonOneText}
+          {block.buttonTwo && pageLinkTwo &&
+            <Link to={pageLinkTwo}>
+              <button className={styles.button}>{block.buttonTwo.buttonTwoText}
                 <span>
-                  {block.buttonOne.buttonOneIcon && (
-                    <Image className={styles.icon} src={block.buttonOne.buttonOneIcon} />
+                  {block.buttonTwo.buttonTwoIcon && (
+                    <Image className={styles.icon} src={block.buttonTwo.buttonTwoIcon} />
                   )}
                 </span>
               </button>
