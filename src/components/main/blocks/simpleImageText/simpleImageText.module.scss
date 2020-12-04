@@ -13,7 +13,7 @@
     }
     .backgroundContainer {
       .background {
-        width: 100vw;
+        width: 100%;
         transition: all .7s;
         padding: 2vw 32vw 0 32vw;;
         img {
@@ -79,7 +79,7 @@
       }
       .backgroundContainer {
         .background {
-          width: 100vw;
+          width: 100%;
           transition: all .7s;
           padding: 2vw 20vw 0 20vw;;
           img {

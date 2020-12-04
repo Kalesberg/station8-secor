@@ -1,5 +1,5 @@
 .section {
-  width: 100vw;
+  width: 100%;
   margin: 0;
   padding: 0;
   height: 85vh;
@@ -12,11 +12,11 @@
     height: 85vh;
     .background {
       height: 85vh;
-      width: 100vw;
+      width: 100%;
       img {
         object-fit: cover;
         height: 85vh;
-        width: 100vw;
+        width: 100%;
         filter: brightness(50%);
       }
     }

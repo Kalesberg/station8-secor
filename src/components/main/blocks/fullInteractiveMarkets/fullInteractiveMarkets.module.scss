@@ -4,9 +4,9 @@
   overflow: visible;
   padding: 0;
   height: 95vh;
-  width: 100vw;
+  width: 100%;
   .background {
-    width: 100vw;
+    width: 100%;
     position: absolute;
     opacity: 0;
     visibility: hidden;
@@ -14,7 +14,7 @@
     img {
       object-fit: cover;
       height: 95vh;
-      width: 100vw;
+      width: 100%;
       filter: brightness(50%);
     }
   }
@@ -24,7 +24,7 @@
   }
   .descriptionsContainer {
     position: absolute;
-    width: 100vw;
+    width: 100%;
     bottom: 40%;
     display: flex;
     justify-content: center;

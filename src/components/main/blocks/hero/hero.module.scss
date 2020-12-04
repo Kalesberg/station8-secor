@@ -1,7 +1,7 @@
 .container {
   position: relative;
   height: 95vh;
-  width: 100vw;
+  width: 100%;
   &.video {
     background-color: #D50F09;
     background-image: url('/cover.png');
@@ -12,7 +12,7 @@
     video, img {
       object-fit: cover !important;
       height: 95vh;
-      width: 100vw;
+      width: 100%;
     }
   }
   .textContainer {
@@ -93,7 +93,7 @@
       video, img {
         object-fit: cover;
         height: 95vh;
-        width: 100vw;
+        width: 100%;
       }
     }
     .textContainer {
@@ -176,12 +176,12 @@
   .container {
     position: relative;
     height: 95vh;
-    width: 100vw;
+    width: 100%;
     .hero {
       video, img {
         object-fit: cover;
         height: 95vh;
-        width: 100vw;
+        width: 100%;
       }
       img {
         filter: brightness(70%);

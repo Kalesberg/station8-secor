@@ -1,17 +1,17 @@
 .section {
   height: 85vh;
-  width: 100vw;
+  width: 100%;
   position: relative;
   .backgroundContainer {
     height: 85vh;
     .background {
       height: 85vh;
-      width: 100vw;
+      width: 100%;
       background-color: #d50f09;
       img {
         object-fit: cover;
         height: 85vh;
-        width: 100vw;
+        width: 100%;
         opacity: .07;
         filter: brightness(140%);
       }
@@ -99,18 +99,18 @@
 @media (max-width: 1023px) {
   .section {
     height: 85vh;
-    width: 100vw;
+    width: 100%;
     position: relative;
     .backgroundContainer {
       height: 85vh;
       .background {
         height: 85vh;
-        width: 100vw;
+        width: 100%;
         background-color: #d50f09;
         img {
           object-fit: cover;
           height: 85vh;
-          width: 100vw;
+          width: 100%;
           opacity: .07;
           filter: brightness(140%);
         }
@@ -202,18 +202,18 @@
 @media (max-width: 600px) {
   .section {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     position: relative;
     .backgroundContainer {
       height: 100vh;
       .background {
         height: 100vh;
-        width: 100vw;
+        width: 100%;
         background-color: #d50f09;
         img {
           object-fit: cover;
           height: 100vh;
-          width: 100vw;
+          width: 100%;
           opacity: .07;
           filter: brightness(140%);
         }

@@ -1,6 +1,6 @@
 .container {
   position: relative;
-  width: 100vw;
+  width: 100%;
   padding: 7vw;
   margin-bottom: 1vw;
   height: auto;
@@ -179,7 +179,7 @@
 @media (max-width: 1023px) {
   .container {
     position: relative;
-    width: 100vw;
+    width: 100%;
     padding: 7vw;
     h2 {
       font-size: 5vw;
@@ -318,7 +318,7 @@
 @media (max-width: 600px) {
   .container {
     position: relative;
-    width: 100vw;
+    width: 100%;
     padding: 7vw;
     height: 210vw;
     h2 {

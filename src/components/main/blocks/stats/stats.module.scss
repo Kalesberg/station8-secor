@@ -41,7 +41,7 @@
   .section {
     .container {
       display: grid;
-      grid-template-columns: 100vw;
+      grid-template-columns: 1fr;
       // grid-column-gap: 3vw;
       .statContainer {
         .icon {
