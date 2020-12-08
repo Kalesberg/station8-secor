@@ -25,6 +25,7 @@ fields:
     - Sales
     - Manufacturing
     - Customer Support
+    - Accounting
     source:
       type: simple
       section: 
