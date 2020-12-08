@@ -18,7 +18,7 @@ export default ({ block, selectedLocation }) => (
         )
       })}
     </div>
-    <Image className={styles.map} src={selectedLocation.mapImage} container='div' gradient='linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1))'>
+    <Image className={styles.map} src={selectedLocation.mapImage} container='div' gradient='linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1))'>
       <div className={styles.address}>
         {selectedLocation.address.split('\n').map((line, i) => (
           <p className={styles.line} key={i}>{line}</p>
