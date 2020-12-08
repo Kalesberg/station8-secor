@@ -19,7 +19,11 @@
           "element": "Heading 1",
           "text": "BELOW GROUND ABOVE EXPECTATIONS"
         }
-      ]
+      ],
+      "extraButtons": [
+
+      ],
+      "anchor": ""
     },
     {
       "template": "main-block-pipe-slide",
@@ -49,7 +53,7 @@
       "market": [
         {
           "title": "Energy",
-          "image": "/.forestry/content/images/istock-530268699-1024x683.jpg",
+          "image": "/.forestry/content/images/energy.jpg",
           "description": "SECOR’s HDPE piping is the proven choice for energy applications. SECOR understands the strict regulatory requirements associated with the transportation of corrosive liquids, brine, produced water, natural gas, and crude oil. Polyethylene pipe offers high levels of impact and corrosion resistance while remaining simple to install and leak-free, making polyethylene pipe the ideal solution for the challenges of complex energy applications."
         },
         {
