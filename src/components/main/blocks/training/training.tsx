@@ -32,7 +32,7 @@ export default ({ block }) => {
           {block.categories && block.categories.map((category, i) => {
             return (
               <div onClick={handleClick} key={i} className={styles.category + ` ${selected.toLowerCase() === category.category.toLowerCase() ? `${styles.categoryShow}` : ''}`}>
-                {category.category}
+                {category.category.toUpperCase().replace('MCELROY', 'McELROY')}
               </div>
             )
           })}
