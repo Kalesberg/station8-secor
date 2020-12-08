@@ -38,31 +38,41 @@
           "category": "HDPE Pipe",
           "heading": "Gas, Water, and Chemical Distribution",
           "description": "Preferred for its leak-proof joints and lasting performance, HDPE piping is the new standard for safely transporting water, natural gas and chemicals. As a leading stocking distributor, SECOR can deliver the exact HDPE piping you need fast.",
-          "image": "/.forestry/content/images/hdpe-pipe.jpg"
+          "image": "/.forestry/content/images/hdpe-pipe.jpg",
+          "link": "/products/hdpe-pipe",
+          "buttonText": "See all products"
         },
         {
           "category": "HDPE Fabricated Fittings",
           "heading": "Gas, Water, and Industrial Applications",
           "image": "/.forestry/content/images/hdpe-fab-fittings.jpg",
-          "description": "Preferred for its leak-proof joints and lasting performance, HDPE piping is the new standard for transporting gas, water, and a broad range of industrial applications. As a leading stocking distributor, SECOR can deliver the exact HDPE piping you need fast."
+          "description": "Preferred for its leak-proof joints and lasting performance, HDPE piping is the new standard for transporting gas, water, and a broad range of industrial applications. As a leading stocking distributor, SECOR can deliver the exact HDPE piping you need fast.",
+          "link": "/products/hdpe-fittings/fabricated-fittings",
+          "buttonText": "See all products"
         },
         {
           "category": "HDPE Molded Fittings and Transitions",
           "heading": "In-demand configurations, SECOR quality",
           "description": "Our molded and transition fittings are stocked and ready to ship in the most commonly specified tees, elbows, flange adapters, reducers, and more.",
-          "image": "/.forestry/content/images/hdpe-mfittings-trans.jpg"
+          "image": "/.forestry/content/images/hdpe-mfittings-trans.jpg",
+          "link": "/products/hdpe-fittings/molded-fittings",
+          "buttonText": "See all products"
         },
         {
           "category": "McElory Rental Equipment",
           "heading": "One of the world’s largest fleets",
           "description": "SECOR is proud to bring our customers an extensive selection of fusion machine rentals from the world leader in pipe fusion — McElroy. SECOR rents and sells quality McElroy equipment to fuse piping ranging from 1/2″ CTS to 65″ IPS.",
-          "image": "/.forestry/content/images/mcelroy-equip.jpg"
+          "image": "/.forestry/content/images/mcelroy-equip.jpg",
+          "link": "/products/hdpe-fittings/molded-fittings",
+          "buttonText": "See all equipment"
         },
         {
           "category": "Tools, Equipment and Accessories",
           "heading": "Everything you need from one trusted source",
           "description": "With more than 40 years of experience supporting our customers at the job site, we have the tools and equipment to complete your project with efficiency and confidence. From Mustang Squeeze Tools to electrofusion fittings and processors, SECOR has you covered.",
-          "image": "/.forestry/content/images/tools-equip-accessories.jpg"
+          "image": "/.forestry/content/images/tools-equip-accessories.jpg",
+          "link": "/equipment/hdpe-squeeze-tools/hydraulic-squeeze-tools",
+          "buttonText": "See all equipment"
         }
       ],
       "showButton": true,

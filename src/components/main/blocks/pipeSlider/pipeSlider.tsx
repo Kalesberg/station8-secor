@@ -38,7 +38,7 @@ export default ({ block }) => {
               </div>
               <div className={styles.textContainer + ` ${selected === pipe.heading ? `${styles.textContainerShow}` : ''}`}>
                 <div />
-                <div className={styles.text}>
+                <div className={styles.text + ` ${i === 1 ? `${styles.one}` : ''}`}>
                   <h2 className={styles.heading}>{pipe.heading && pipe.heading}</h2>
                   <p className={styles.subHeading}>{pipe.subHeading && pipe.subHeading}</p>
                   <p className={styles.description}>{pipe.description && pipe.description}</p>

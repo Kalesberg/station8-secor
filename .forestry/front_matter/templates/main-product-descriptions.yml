@@ -34,6 +34,16 @@ fields:
     config:
       maxSize: 64
     label: Image
+  - name: link
+    type: text
+    config:
+      required: false
+    label: Link
+  - name: buttonText
+    type: text
+    config:
+      required: false
+    label: Button Text
   config:
     min: 
     max: 

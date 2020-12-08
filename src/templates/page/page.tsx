@@ -35,6 +35,8 @@ query ($title: String!) {
         description
         heading
         image
+        link
+        buttonText
       }
       ctaText
       buttonType
